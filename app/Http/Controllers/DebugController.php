@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class DebugController extends Controller
 {
     public function simpleView($view){
-        return view($view);
+        return view("debug.$view");
     }
 }
