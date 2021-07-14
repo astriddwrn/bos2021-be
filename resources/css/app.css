@@ -1,3 +1,72 @@
 @import 'tailwindcss/base';
+
+@layer base{
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 100;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-Thin.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 200;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-ExtraLight.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 300;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-Light.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 400;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-Regular.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 500;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-Medium.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 600;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-SemiBold.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 700;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-Bold.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 800;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-ExtraBold.ttf) format('ttf'),
+    }
+    
+    @font-face {
+        font-family: "Poppins";
+        font-weight: 900;
+        src: local("Poppins"),
+        url(/Asset/Font/Poppins-Black.ttf) format('ttf'),
+    }
+}
+
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+

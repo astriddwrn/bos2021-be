@@ -9,13 +9,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
+   
     </head>
-    <body class="w-50 text-cLightBlue shadow-bsRocket text-xl bg-no-repeat ">
+    <body class="w-50 text-cLightBlue shadow-bsRocket text-xl bg-no-repeat font-bold">
      test123
     </body>
 </html>

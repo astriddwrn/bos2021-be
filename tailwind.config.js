@@ -30,8 +30,11 @@ module.exports = {
             'bgCloud': "radial-gradient(220.05% 220.05% at 50% -133.51%, #FFFFFF 62.51%, #0054A5 100%)",
          },
          boxShadow:{
-            'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);"
+            'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);",
          },
+         fontFamily: {
+            'sans': ['Poppins', 'Helvetica', 'Arial', 'sans-serif'],
+          }
     },
 
     variants: {
