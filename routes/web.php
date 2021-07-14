@@ -21,4 +21,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
+// DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
+// LEAD IT TO SECURITY ISSUE.
+Route::prefix("/debug")->group(function(){
+    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
+});
+
 require __DIR__.'/auth.php';
