@@ -11,7 +11,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
    
     </head>
-    <body class="w-50 text-cLightBlue shadow-bsRocket text-xl bg-no-repeat font-bold">
+    <body class="w-50 text-cLightBlue bg-bgSpace text-xl bg-no-repeat font-bold">
      test123
     </body>
 </html>

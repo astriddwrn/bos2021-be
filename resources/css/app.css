@@ -1,4 +1,6 @@
 @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer base{
     @font-face {
@@ -64,9 +66,3 @@
         url(/Asset/Font/Poppins-Black.ttf) format('ttf'),
     }
 }
-
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-
-

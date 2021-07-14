@@ -7,13 +7,7 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
-        },
         colors:{
             cWhite: '#FBFBFB',
             cBluishGray: '#CDD8DD',
@@ -32,9 +26,12 @@ module.exports = {
          boxShadow:{
             'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);",
          },
-         fontFamily: {
-            'sans': ['Poppins', 'Helvetica', 'Arial', 'sans-serif'],
-          }
+        extend: {
+            fontFamily: {
+                'sans': ['Poppins', 'sans-serif'],
+            },
+        },
+       
     },
 
     variants: {
