@@ -27,7 +27,10 @@ module.exports = {
         },
         backgroundImage: {
             'bgSpace': "linear-gradient(195.99deg, #0C131B -57.79%, #0054A5 49.18%, #CDD8DD 151.55%)",
-            'bgCloud': " radial-gradient(220.05% 220.05% at 50% -133.51%, #FFFFFF 62.51%, #0054A5 100%)",
+            'bgCloud': "radial-gradient(220.05% 220.05% at 50% -133.51%, #FFFFFF 62.51%, #0054A5 100%)",
+         },
+         boxShadow:{
+            'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);"
          },
     },
 

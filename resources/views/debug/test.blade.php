@@ -15,7 +15,7 @@
             }
         </style>
     </head>
-    <body class="w-50 h-screen text-cLightBlue bg-bgCloud text-xl bg-no-repeat ">
+    <body class="w-50 text-cLightBlue shadow-bsRocket text-xl bg-no-repeat ">
      test123
     </body>
 </html>
