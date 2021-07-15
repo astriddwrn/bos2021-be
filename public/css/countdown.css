@@ -1,7 +1,8 @@
 .stars{
-    top:30%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%,-50%);
+    width: 75%;
 }
 
 label{
@@ -38,3 +39,21 @@ label{
     display: none;
 }
 
+.rocket{
+    animation: float-from-bottom 4s ease-in-out infinite !important;
+    bottom: 5%;
+}
+
+@keyframes float-from-bottom {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
