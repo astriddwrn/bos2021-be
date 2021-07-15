@@ -45,6 +45,22 @@
                                 name="password_confirmation" required />
             </div>
 
+            <div class="mt-4">
+                <x-label for="whatsapp" :value="__('Whatsapp')" />
+
+                <x-input id="whatsapp" class="block mt-1 w-full"
+                                type="text"
+                                name="whatsapp" required />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="line_id" :value="__('Line ID')" />
+
+                <x-input id="line_id" class="block mt-1 w-full"
+                                type="text"
+                                name="line_id" required />
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
