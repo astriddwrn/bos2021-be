@@ -24,10 +24,10 @@
                     <label class="font-extrabold text-cWhite text-2xl font-sans">Minutes</label>
                     <label class="font-extrabold text-cWhite text-2xl font-sans">Seconds</label>
                 </div>
-                
+
             </div>
             <div class="text-center font-extrabold text-4xl text-cWhite">left until BNCC Launching!</div>
-            <div class="text-center text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-3/12 mt-20 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer">Back to Home</div>
+            <div class="text-center text-cWhite font-bold text-xl rounded p-2 bg-cDarkBlue w-3/12 mt-20 hover:bg-cWhite hover:text-cDarkBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Back to Home</div>
         </div>
         <img class="stars w-10/12 absolute z-0" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="">
         <img class="absolute bottom-0 z-0 w-full" src="{{url('./Asset/Image/countdown/bg-cloud1.svg')}}" alt="">
