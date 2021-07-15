@@ -1,18 +1,40 @@
-
-
 .stars{
     top:30%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
 
-
-#clock1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 700px;
-	margin-left: -350px; /*set to a negative number 1/2 of your width*/
-	height:100px;
-	margin-top: -60px; /*set to a negative number 1/2 of your height*/
+label{
+    width:160px;
 }
+
+.flip-clock-wrapper ul.flip:nth-child(2) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(3) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(5) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(6) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(8) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(9) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(11) li a div div.inn,
+.flip-clock-wrapper ul.flip:nth-child(12) li a div div.inn
+{
+    background : #CDD8DD;
+}
+
+.flip-clock-wrapper ul.flip .inn{
+    color: #0054A5 !important;
+}
+
+.flip-clock-wrapper .flip{  
+    box-shadow: none;
+}
+
+.flip-clock-dot{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.flip-clock-label{
+    display: none;
+}
+

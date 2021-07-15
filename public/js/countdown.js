@@ -1,7 +1,11 @@
-import FlipClock from 'flipclock';
 
-const el = document.querySelector('.clock');
+// DATE UTC FORMAT (Year, Month-1, Date, Hour-5, Minutes, Seconds)
+var date = new Date(Date.UTC(2021, 6, 15, 8, 00, 60));
+var now = new Date();
+var diff = (date.getTime()/1000) - (now.getTime()/1000);
 
-const clock = new FlipClock(el, new Date, {
-	face: 'HourCounter'
+
+var clock = $('.clock').FlipClock(diff,{
+      clockFace: 'DailyCounter',
+      countdown: true,
 });
