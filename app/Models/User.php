@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\PasswordReset;
 
 class User extends Authenticatable
 {
@@ -22,17 +23,18 @@ class User extends Authenticatable
         'password',
         'whatsapp',
         'line_id',
-        'gender',
-        'date_of_birth',
-        'place_of_birth',
-        'city',
-        'adress',
         'nim',
         'campus',
         'major',
         'schedule_id',
-        'lnt_course'
+        'lnt_course',
+        'payment_pic',
+        'approval_letter'
     ];
+
+    public function schedule() {
+        return $this->hasOne('App\Schedule');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -52,4 +54,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Send the password reset notification.
+    *
+    * @param string $token
+    * @return void
+    */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new PasswordReset($token));
+    }
 }
