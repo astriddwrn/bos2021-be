@@ -16,8 +16,14 @@ class CreateSchedulesTable extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
 
-            $table->date('date');
-            $table->string('link');
+            $table->dateTimeTz('date');
+            $table->integer('quota');
+            $table->string('link1');
+            $table->string('link2')->nullable();
+
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
