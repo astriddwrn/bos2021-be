@@ -21,17 +21,16 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string("whatsapp")->unique();
             $table->string("line_id")->unique();
-            /* $table->set("gender", ["male", "female"]);
-            $table->date("date_of_birth");
-            $table->string('place_of_birth');
-            $table->string('city');
-            $table->string('address');
-            $table->string('nim');
+            $table->string('nim')->unique();
             $table->string('campus');
             $table->string('major');
-            $table->bigInteger('schedule_id');
-            $table->string('lnt_course'); */
-
+            $table->bigInteger('schedule_id')->unsigned()->nullable()/*inget untuk hapus nullable*/;
+            $table->foreign('schedule_id')->references('id')
+                                          ->on('schedules');
+            $table->string('lnt_course');
+            $table->integer('role')->default(0);
+            $table->string('payment_pic')->nullable();
+            $table->string('approval_letter')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
