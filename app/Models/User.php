@@ -33,7 +33,7 @@ class User extends Authenticatable
     ];
 
     public function schedule() {
-        return $this->hasOne('App\Schedule');
+        return $this->belongsTo('App\Models\Schedule');
     }
 
     /**
