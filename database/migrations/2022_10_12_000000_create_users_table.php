@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->integer('role')->default(0);
             $table->string('payment_pic')->nullable();
             $table->string('approval_letter')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
