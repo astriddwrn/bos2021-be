@@ -15,4 +15,9 @@ class Schedule extends Model
         'link2',
         'quota'
     ];
+
+    public function users() {
+        return $this->hasOne('App\Models\User');
+    }
 }
+
