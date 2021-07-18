@@ -29,7 +29,19 @@ module.exports = {
          },
         extend: {
             fontFamily: {
-                'sans': ['Poppins', 'sans-serif'],
+                'sans': ['Poppins', 'sans-serif',  
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+                '"Noto Color Emoji"',],
             },
         },
 
