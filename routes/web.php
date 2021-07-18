@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [App\Http\Controllers\UserController::class, "index"])->middleware(['auth'])->name('dashboard');
+
+Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"])->middleware(['auth'])->name('admin');
+
+Route::patch('/submit-pay', [App\Http\Controllers\UserController::class, "submitPayment"])->name('submit_pay');
+
+Route::get('/download/payment/{id}', [App\Http\Controllers\AdminController::class, "download"])->name('download_payment');
 
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
