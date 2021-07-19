@@ -5,7 +5,7 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: 0px;
-    border: none;
+    border: none !important;
 }
 
 input{
@@ -23,6 +23,10 @@ input{
     left: 60%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+.progress-bar{
+  max-width:450px;
 }
 
 .dot, .line, .title{
@@ -44,7 +48,7 @@ input{
     z-index: -1;
     top: 25%;
     transform: translate(0%, -50%);
-    width: 180%;
+    width: 200%;
 }
 
 /* CUSTOM SELECT */
@@ -197,15 +201,20 @@ input::placeholder{
 
 .left-section{
   transform: translate(-200%, 0);
-  /* transition: all 1s ease; */
 }
 
 .right-section{
   transform: translate(200%, 0);
-  /* transition: all 1s ease; */
 }
 
-/* html{
-  overflow: scroll;
-  height: 10000px;
-} */
+@media all and (max-width: 1280px) {
+  .line{
+    width: 150%;
+}
+}
+
+@media all and (max-width: 1024px) { }
+
+@media all and (max-width: 768px) { }
+
+@media all and (max-width: 480px) { }

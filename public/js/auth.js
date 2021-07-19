@@ -185,6 +185,11 @@ $(document).ready(function(){
 
     function continueTransition(sec){
         if(!sec.find('.msg-error').text()){
+            if(sec.hasClass("login-sec") || se.hasClass("account-sec")){
+                console.log(12);
+                $('form').submit();
+                return;
+            }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
             $("html, body").animate({ 
@@ -192,7 +197,7 @@ $(document).ready(function(){
             }, "slow");
             prog++;
             progressNext();
-        }
+        }  
     }
 
     let prog = 0;
@@ -235,9 +240,8 @@ $(document).ready(function(){
         progressPrev();
     })
 
-    $('form').submit(function (evt) {
-        evt.preventDefault();
-    });
-
+    // $('form').submit(function (evt) {
+    //     evt.preventDefault();
+    // });
 
 });
