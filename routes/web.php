@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [App\Http\Controllers\UserController::class, "index"])->middleware(['auth'])->name('dashboard');
+Route::middleware(["auth"])->group(function(){
+    Route::get('/dashboard', [UserController::class, "index"])->name('dashboard');
+    Route::get('/admin', [AdminController::class, "index"])->name('admin');
+});
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, "index"])->middleware(['auth'])->name('admin');
 
-Route::patch('/submit-pay', [App\Http\Controllers\UserController::class, "submitPayment"])->name('submit_pay');
-
-Route::get('/download/payment/{id}', [App\Http\Controllers\AdminController::class, "download"])->name('download_payment');
+Route::patch('/submit-pay', [UserController::class, "submitPayment"])->name('submit_pay');
+Route::get('/download/payment/{id}', [AdminController::class, "download"])->name('download_payment');
 
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
