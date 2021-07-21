@@ -50,20 +50,7 @@ class UserController extends Controller
             'payment_pic' => 'required|image|max:20480'
         ]);
 
-        // lebih baik langsung $request->file('payment_pic')->store('path')
-        // dia bakal kegenerate nama acak. jadi lebih aman kalo menurut gua.
-        // terus dia bakal simpan kalo ga di /storage/app kalo ga
-        // /storage/app/public, jadi siap" aja kalo dh ngedeploy pasti ada
-        // masalah konfigurasi environment.
-
-        // inget juga. foldernya di link ya ke public, bukan ngebuat folder
-        // dengan nama yang sama. hapus foldernya terus link dengan
-        // > php artisan storage:link
-        // ntar dia bakal bikin linked folder, jadi folder-folder yang tadi
-        // disimpan di dalam storage bisa diakses tanpa hak khusus.
-
-        // hapus aja komen gua kalo udah ga perlu. wkwkwk.
-        // thankyou Gregory. Mangats Mangats ^D^ .
+         // ada nama biar supaya pas didownload langsung retrieve nama file dengan nama_nim
 
         $file = $request->file('payment_pic');
         $fn_payment_pic = $request->user()->name."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
