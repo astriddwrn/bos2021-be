@@ -11,7 +11,11 @@ class UserController extends Controller
 {
     public function index(Request $request) {
         $user = $request->user();
+
+        // ini kalo bisa switch case ya biar rapih.
         if($user->role==0){
+
+            // ini biasanya lgsg di handle di view sih... but its okay.
             if($user->payment_pic!=NULL){
                 if($user->status==1){
                     $verification = "Verified";
@@ -45,6 +49,8 @@ class UserController extends Controller
         $request->validate([
             'payment_pic' => 'required|image|max:20480'
         ]);
+
+         // ada nama biar supaya pas didownload langsung retrieve nama file dengan nama_nim
 
         $file = $request->file('payment_pic');
         $fn_payment_pic = $request->user()->name."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
