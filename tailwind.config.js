@@ -17,6 +17,7 @@ module.exports = {
             cLightGray: '#E7EBED',
             cDarkerGray: '#BFC9CE',
             cDarkerLightBlue: '#0091B7',
+            cHomeGray: '#7A828A',
 
         },
         backgroundImage: {
@@ -25,11 +26,12 @@ module.exports = {
          },
          boxShadow:{
              'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);",
-             'bsBtn' : "0px 4px 12px rgba(0, 0, 0, 0.12);",
+             'bsBtn': "0px 4px 12px rgba(0, 0, 0, 0.12);",
+             'bsfF': "5px 14px 15px 8px rgba(205, 205, 205, 0.25);"
          },
         extend: {
             fontFamily: {
-                'sans': ['Poppins', 'sans-serif',  
+                'sans': ['Poppins', 'sans-serif',
                 '-apple-system',
                 'BlinkMacSystemFont',
                 '"Segoe UI"',
