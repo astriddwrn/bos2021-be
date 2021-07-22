@@ -19,8 +19,8 @@
     <div class="w-screen h-screen bg-bgSpace relative">
 
         <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
-            <div class="font-extrabold text-xl sm:text-3xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
-            <div class="font-extrabold text-5xl sm:text-6xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
+            <div class="font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
+            <div class="font-extrabold text-4xl md:text-6xl sm:text-5xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
             <div class="relative mb-8">
                 <div class="clock" id="clock1"></div>
                 <div class="time flex flex-row justify-around text-center mt-2">
@@ -30,10 +30,10 @@
                     <label class="font-extrabold text-cWhite text-xl md:text-2xl font-sans sec">Seconds</label>
                 </div>
             </div>
-            <div class="text-sans text-cWhite font-medium w-96 sm:w-full text-md sm:text-xl text-center sm:text-lg">Subscribe to our mailing list to get notified when we are open!</div>
+            <div class="text-sans text-cWhite font-medium w-70 md:w-full sm:w-96 text-md sm:text-xl text-center sm:text-lg">Subscribe to our mailing list to get notified when we are open!</div>
             <form action="{{route('newsletter')}}" method="POST">
             @csrf
-                <div class="flex flex-row justify-center items-center h-12 mt-5 mail-cont" style="width: 480px">
+                <div class="flex flex-row justify-center items-center h-12 mt-5 mail-cont">
                     <input class="w-72 sm:w-full h-full px-2 md:px-5 py-2 text-md sm:text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
                     <button class="h-full px-4 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.svg')}}" alt=""></button>
                 </div>
