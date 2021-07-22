@@ -18,7 +18,7 @@ use App\Http\Controllers\NewsLetterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('debug.comingSoon');
 });
 
 Route::middleware(["auth"])->group(function(){
@@ -34,8 +34,8 @@ Route::get('/download/payment/{id}', [AdminController::class, "download"])->name
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
-// Route::prefix("/debug")->group(function(){
-//     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
-// });
+Route::prefix("/debug")->group(function(){
+    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
+});
 
 require __DIR__.'/auth.php';

@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="{{ asset('css/flipclock.css') }}">
     <link rel="stylesheet" href="{{ asset('css/countdown.css') }}">
     <link rel="stylesheet" href="{{ asset('css/comingSoon.css') }}">
-    
+
 </head>
 <body class="font-sans">
-   
+
 
     <div class="w-screen h-screen bg-bgSpace relative">
 
@@ -31,17 +31,20 @@
                 </div>
             </div>
             <div class="text-sans text-cWhite font-medium text-xl ">Subscribe to our mailing list to get notified when we are open!</div>
-            <div class="flex flex-row items-center w- h-12 mt-5" style="width: 480px">
-                <input class="w-full h-full px-5 py-2 text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
-                <button class="h-full px-4 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.svg')}}" alt=""></button>
-            </div>
+            <form action="{{route('newsletter')}}" method="POST">
+            @csrf
+                <div class="flex flex-row items-center w- h-12 mt-5" style="width: 480px">
+                    <input class="w-full h-full px-5 py-2 text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
+                    <button class="h-full px-4 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.svg')}}" alt=""></button>
+                </div>
+            </form>
             <div class="mt-5 flex flex-row social">
                 <span class="mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.png')}}" alt=""></span>
                 <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.png')}}" alt=""></span>
                 <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.png')}}" alt=""></span>
                 <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.png')}}" alt=""></span>
                 <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.png')}}" alt=""></span>
-                
+
             </div>
         </div>
         <img class="stars w-10/12 absolute z-1" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="">
