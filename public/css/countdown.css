@@ -5,9 +5,19 @@
     width: 75%;
 }
 
+.stars-tablet {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-height: 95vh;
+}
+
 label{
     width:160px;
 }
+
+
 
 .flip-clock-wrapper ul.flip:nth-child(2) li a div div.inn,
 .flip-clock-wrapper ul.flip:nth-child(3) li a div div.inn,
@@ -25,7 +35,7 @@ label{
     color: #0054A5 !important;
 }
 
-.flip-clock-wrapper .flip{  
+.flip-clock-wrapper .flip{
     box-shadow: none;
 }
 

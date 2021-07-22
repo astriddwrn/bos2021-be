@@ -18,6 +18,7 @@ module.exports = {
             cDarkerGray: '#BFC9CE',
             cDarkerLightBlue: '#0091B7',
             cHomeGray: '#7A828A',
+            cRed: ''
 
         },
         backgroundImage: {
