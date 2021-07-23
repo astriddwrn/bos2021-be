@@ -16,6 +16,6 @@ class NewsLetterController extends Controller
             'email' => $request->email
         ]);
 
-        return back();
+        return back()->with(['success' => "Your email is added. We'll inform you for further updates soon!"]);
     }
 }

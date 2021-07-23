@@ -14,8 +14,16 @@
 
 </head>
 <body class="font-sans">
+
     <div class="w-screen h-screen bg-bgSpace relative">
+
         <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
+            @if ($message = Session::get('success'))
+	        <div class="alert alert-success alert-block">
+		         <strong>{{ $message }}</strong>
+	        </div>
+        @endif
+        @error('email') <strong> This email has been suscribed! Please enter other email</strong> @enderror
             <div class="font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
             <div class="font-extrabold text-4xl md:text-6xl sm:text-5xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
             <div class="relative mb-8">
@@ -35,6 +43,7 @@
                     <button class="h-full px-2 bg-cLightGray border-none outline-none text-cDarkBlue"><img class="w-6 sm:w-8" src="{{asset('Asset/Image/comingSoon/button.png')}}" alt="BNCC launching"></button>
                 </div>
             </form>
+
             <div class="mt-5 flex flex-row social">
                 <a class=" mr-2" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
