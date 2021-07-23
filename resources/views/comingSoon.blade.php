@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BNCC Launching</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -35,23 +35,23 @@
             @csrf
                 <div class="flex flex-row justify-center items-center h-12 mt-5 mail-cont">
                     <input class="w-72 sm:w-full h-full px-2 md:px-5 py-2 text-md sm:text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
-                    <button class="h-full px-4 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.svg')}}" alt=""></button>
+                    <button class="h-full px-4 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.svg')}}" alt="BNCC launching"></button>
                 </div>
             </form>
             <div class="mt-5 flex flex-row social">
-                <span class="mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.png')}}" alt=""></span>
+                <a class=" mr-2" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.png')}}" alt="BNCC Launching"></a>
+                <a class=" mr-2" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.png')}}" alt="BNCC Launching" ></a>
+                <a class=" mr-2" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.png')}}" alt="BNCC Launching"></a>
+                <a class=" mr-2" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.png')}}" alt="BNCC Launching"></a>
+                <a class=" mr-2" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.png')}}" alt="BNCC Launching" ></a>
 
             </div>
         </div>
-        <img class="stars w-10/12 absolute z-1 lg:block hidden" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="">
-        <img class="stars-tablet w-full absolute z-1 lg:hidden overflow-hidden" src="{{url('./Asset/Image/comingSoon/stars-tablet.svg')}}" alt="">
-        <img class="absolute bottom-0 z-3 w-full" src="{{url('./Asset/Image/countdown/bg-cloud1.svg')}}" alt="">
-        <img class="rocket absolute z-4" src="{{url('./Asset/Image/countdown/bg-rocket.svg')}}" alt="">
-        <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
+        <img class="stars w-10/12 absolute z-1 lg:block hidden" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="BNCC launching">
+        <img class="stars-tablet w-full absolute z-1 lg:hidden overflow-hidden" src="{{url('./Asset/Image/comingSoon/stars-tablet.svg')}}" alt="BNCC launching">
+        <img class="absolute bottom-0 z-3 w-full" src="{{url('./Asset/Image/countdown/bg-cloud1.svg')}}" alt="BNCC launching">
+        <img class="rocket absolute z-4" src="{{url('./Asset/Image/countdown/bg-rocket.svg')}}" alt="BNCC launching">
+        <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="BNCC launching">
     </div>
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
