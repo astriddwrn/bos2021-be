@@ -13,3 +13,11 @@ $( ".close" ).click(function() {
     $(".succeed-notif").css("display", "none");
     $(".failed-notif").css("display", "none");
   });
+
+  $( "#sendBtn" ).hover(
+      function () {
+        $( "#changeClr" ).attr( "fill", "#FBFBFB" );
+    }, function() {
+        $( "#changeClr" ).attr( "fill", "#0054A5" );
+    }
+  );
