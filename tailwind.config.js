@@ -18,8 +18,8 @@ module.exports = {
             cDarkerGray: '#BFC9CE',
             cDarkerLightBlue: '#0091B7',
             cHomeGray: '#7A828A',
-            cRed: ''
-
+            cBlueNotifstart: '#25B8DE',
+            cBlueNotifend: '#68E0FF',
         },
         backgroundImage: {
             'bgSpace': "linear-gradient(195.99deg, #0C131B -57.79%, #0054A5 49.18%, #CDD8DD 151.55%)",

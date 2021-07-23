@@ -8,3 +8,8 @@ var clock = $('.clock').FlipClock(diff,{
       clockFace: 'DailyCounter',
       countdown: true,
 });
+
+$( ".close" ).click(function() {
+    $(".succeed-notif").css("display", "none");
+    $(".failed-notif").css("display", "none");
+  });

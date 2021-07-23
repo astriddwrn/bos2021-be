@@ -15,6 +15,17 @@
 </head>
 <body class="font-sans">
     <div class="w-screen h-screen bg-bgSpace relative">
+        {{-- Succeeed --}}
+        <div class="absolute w-screen z-50 flex flex-row justify-between p-4 succeed-notif hidden">
+            <h6 class="text-cWhite sm:text-md text-sm">Your email is added. We'll inform you for further updates soon!</h6>
+            <img class="w-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
+        </div>
+        {{-- Failed --}}
+        <div class="absolute w-screen z-50 flex flex-row justify-between p-4 failed-notif hidden">
+            <h6 class="text-cWhite sm:text-md text-sm">This email has been suscribed! Please enter other email.</h6>
+            <img class="w-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
+        </div>
+
         <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
             <div class="font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
             <div class="font-extrabold text-4xl md:text-6xl sm:text-5xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
