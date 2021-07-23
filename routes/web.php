@@ -18,24 +18,25 @@ use App\Http\Controllers\NewsLetterController;
 */
 
 Route::get('/', function () {
-    return view('debug.comingSoon');
+    return view('comingSoon');
 });
 
 Route::middleware(["auth"])->group(function(){
     Route::get('/dashboard', [UserController::class, "index"])->name('dashboard');
     Route::get('/admin', [AdminController::class, "index"])->name('admin');
+    Route::patch('/submit-pay', [UserController::class, "submitPayment"])->name('submit_pay');
+    Route::get('/download/payment/{id}', [AdminController::class, "download"])->name('download_payment');
 });
 
 Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsletter');
 
-Route::patch('/submit-pay', [UserController::class, "submitPayment"])->name('submit_pay');
-Route::get('/download/payment/{id}', [AdminController::class, "download"])->name('download_payment');
+
 
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
-Route::prefix("/debug")->group(function(){
-    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
-});
+// Route::prefix("/debug")->group(function(){
+//     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
+// });
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';
