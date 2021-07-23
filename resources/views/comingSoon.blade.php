@@ -36,20 +36,12 @@
                 </div>
             </form>
             <div class="mt-5 flex flex-row social">
-<<<<<<< Updated upstream:resources/views/comingSoon.blade.php
                 <a class=" mr-2" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
                 <a class=" mr-2" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
 
-=======
-                <span class="mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.png')}}" alt=""></span>
-                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.png')}}" alt=""></span>
->>>>>>> Stashed changes:resources/views/debug/comingSoon.blade.php
             </div>
         </div>
         <img class="stars w-10/12 absolute z-1 lg:block hidden" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="BNCC launching">
