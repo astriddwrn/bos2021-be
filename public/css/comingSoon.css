@@ -115,8 +115,9 @@ button{
     }
 
     .rocket {
-        width: 60%;
-        left: 28%;
+        width: 55%;
+        left: 27.5%;
+        bottom: -4rem;
     }
 }
 
