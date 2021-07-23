@@ -102,7 +102,6 @@ $(document).ready(function(){
             x.siblings('.msg-error').text("This is a required space.");
         }
         else if(x.hasClass("custom-select") && x.find(":selected").val()==0){
-            console.log(x.find(":selected").val());
             x.addClass("border-error");
             x.siblings('.msg-error').text("This is a required space.");
         }
@@ -244,10 +243,13 @@ $(document).ready(function(){
     //     evt.preventDefault();
     // });
 
+    // campus
+   
+
+
     // course
     $('.student-sec').find('.btn-continue').click(function(){
         $campus = $('.campus-select').find(":selected").val();
-        // console.log($campus);
         course($campus);
     });
 
