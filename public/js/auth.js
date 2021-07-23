@@ -1,3 +1,6 @@
+
+$(document).ready(function(){
+
 function selectFunc(z){
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
@@ -57,7 +60,16 @@ function selectFunc(z){
         this.classList.toggle("select-arrow-active");
         });
     }
-    function closeAllSelect(elmnt) {
+    
+    
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+    var e = document.getElementById(z);
+    // console.log(e[2].value)
+}
+
+function closeAllSelect(elmnt) {
     /*a function that will close all select boxes in the document,
     except the current select box:*/
     var x, y, i, xl, yl, arrNo = [];
@@ -77,12 +89,6 @@ function selectFunc(z){
         x[i].classList.add("select-hide");
         }
     }
-    }
-    /*if the user clicks anywhere outside the select box,
-    then close all select boxes:*/
-    document.addEventListener("click", closeAllSelect);
-    var e = document.getElementById(z);
-    // console.log(e[2].value)
 }
 
 selectFunc("gender-select");
@@ -94,7 +100,7 @@ selectFunc("fyp-select");
 selectFunc("bncc-select");
 // selectFunc("lnt-select");
 
-$(document).ready(function(){
+
     // check empty
     function checkEmpty(x){
         if(x.is('input') && x.val()==""){
@@ -145,11 +151,11 @@ $(document).ready(function(){
     }
 
     function email(x){
-        var pattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        var pattern = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?binus\.ac.id$/g;
         
         if(x.is('#email') && !pattern.test(x.val())){
             x.addClass("border-error");
-            x.siblings('.msg-error').text("Please input a valid email address.");
+            x.siblings('.msg-error').text("Please input a valid binusian email address.");
         } 
     }
 
@@ -185,8 +191,7 @@ $(document).ready(function(){
     function continueTransition(sec){
         if(!sec.find('.msg-error').text()){
             if(sec.hasClass("login-sec") || sec.hasClass("join-sec")){
-                console.log(12);
-                $('form').submit();
+                $('.pop-up').toggleClass('is-visible');
                 return;
             }
             sec.addClass('left-section');
@@ -217,11 +222,112 @@ $(document).ready(function(){
         checkEmpty($(this));
     })
 
+
+    function changeCampus(x ,cmps){
+        $mBDG = ["Visual Communication Design", "Interior Design", "Creativepreneurship", "Computer Science"];
+        $mMLG = ["Interior Design", "Visual Communication Design", "Entrepreneurship", "Public Relations", "Communication", "Computer Science"];
+        $mKMG = ["Accounting", "Architecture",
+
+        "Business Analytics", "Business Creation", "Business Infromation Technology",  "Business Law", "Business Management",
+
+        "Chinese", "Civil Engineering", "Corporate Information System", "Computer Engineering",
+        "Computer Science", "Computer Science & Mathematics", "Computer Science & Statistics", "Cyber Security",
+
+        "Data Science", "DKV Animation", "DKV Creative Advertising", "DKV New Media",
+
+        "English",
+
+        "Film", "Finance", "Food Technology",
+
+        "Game Application and Technology", "Global Business Marketing",
+
+        "Hotel Management (D4)",
+
+        "Industrial Engineering", "Information Systems",
+        "Information Systems Accounting and Auditing", "Interior Design",
+        "International Business Management", "International Relations","Information Systems and Accounting", "Information Systems and Management",
+
+        "Japanese",
+
+        "Management", "Marketing Communication", "Master of Management", "Master of Computer Science",
+        "Mass Communication", "Mobile Application and Technology",
+
+        "Primary Teacher Education", "Psychology",
+
+        "Tourism"
+        ];
+        
+        $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
+        $cBDG =  ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming'];
+        $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        
+        let a = $cKMG;
+        let b = $mKMG; 
+        (cmps =='ALS') ? a = $cALS : (cmps=='BDG') ? a = $cBDG : (cmps=="KMG") ? a = $cKMG : (cmps=="MLG") ? a = $cMLG : '';
+        (cmps =='ALS') ? b = $mKMG : (cmps=='BDG') ? b = $mBDG : (cmps=="KMG") ? b = $mKMG : (cmps=="MLG") ? b = $mMLG : '';
+        
+        console.log(cmps);
+        
+        $len = b.length;
+        $lenSel = $('#major-select').length;
+        $("#major-select> option:not(:first)").each(function() {
+            $(this).remove();
+        });
+        for(let i = 0; i<$len; i++){
+            $('#major-select').append(new Option(b[i], b[i]));
+        }
+        x.next().remove();
+        x.remove();
+        selectFunc("major-select");
+
+       
+        $len = a.length
+        console.log($len);
+        for(let i = 0; i<$len; i++){
+            $('#lnt-select').append(new Option(a[i], a[i]));
+        }
+        selectFunc('lnt-select');
+    }
+
+
     $('.select-selected').click(function(){
         let select = $(this).parent();
-        if((select).find(":selected").val()!=0){
-            checkEmpty(select);
+        if((select).hasClass('major-select')){
+            if($('.campus-select').find(":selected").val()==0){
+                console.log('1');
+                closeAllSelect($(this));
+                $('.campus-select').addClass("border-error");
+                $('.campus-select').siblings('.msg-error').text("Please fill out this field first.");
+                // return false;
+            }
+            else{
+                cmps = select.find(":selected").val();
+                changeCampus($('.major-select').find('.select-selected'),cmps);
+            }
         }
+        console.log("test"+ $('.campus-select').find(":selected").val());
+
+        if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
+            
+            cmps = select.find(":selected").val();
+            changeCampus($('.major-select').find('.select-selected'),cmps);
+          
+        }
+        // if((select).find(":selected").val()!=0){
+        //     checkEmpty(select);
+        // }
+    });
+
+    // $('.major-select #select-selected').click(function(){
+    //     console.log("new");
+    // });
+
+    $('.select-items div').click(function(){
+        
+        x = $(this).parent().parent();
+        x.removeClass("border-error");
+        x.siblings('.msg-error').empty();
     });
 
     $(".btn-continue").click(function(){
@@ -239,34 +345,12 @@ $(document).ready(function(){
         progressPrev();
     })
 
-    // $('form').submit(function (evt) {
-    //     evt.preventDefault();
-    // });
+    $('form').submit(function (evt) {
+        evt.preventDefault();
+    });
 
     // campus
    
 
-
-    // course
-    $('.student-sec').find('.btn-continue').click(function(){
-        $campus = $('.campus-select').find(":selected").val();
-        course($campus);
-    });
-
-    function course(a){
-        $ALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
-        $BDG =  ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
-        $KMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming'];
-        $MLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
-             
-        (a =='ALS') ? a = $ALS : (a=='BGD') ? a = $BDG : (a=="KMG") ? a = $KMG : (a=="MLG") ? a= $MLG : '';
-        $len = a.length
-        console.log($len);
-        for(let i = 0; i<$len; i++){
-            $('#lnt-select').append(new Option(a[i], a[i]));
-        }
-        selectFunc('lnt-select');
-        
-    }
 
 });

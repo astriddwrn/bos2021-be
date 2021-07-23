@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('css/countdown.css') }}">
     <link rel="stylesheet" href="{{ asset('css/comingSoon.css') }}">
 
+    <link id="favicon" rel="shortcut icon" type="image/png" href="favicon.png" />
+
 </head>
 <body class="font-sans">
 

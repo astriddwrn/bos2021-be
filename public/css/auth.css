@@ -48,7 +48,7 @@ input{
     z-index: -1;
     top: 25%;
     transform: translate(0%, -50%);
-    width: 200%;
+    width: 150%;
 }
 
 /* CUSTOM SELECT */
@@ -112,6 +112,8 @@ input{
     z-index: 99;
     color: #BFC9CE;
     border-top: 1px solid #cccccc;
+    max-height: 300px;
+    overflow-y: scroll;
   }
 
   /*hide the items when the select box is closed:*/
@@ -207,9 +209,28 @@ input::placeholder{
   transform: translate(200%, 0);
 }
 
+.modal{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pop-up{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transition:  opacity .3s linear;
+}
+
+
 @media all and (max-width: 1280px) {
   .line{
-    width: 150%;
+    width: 100%;
 }
 }
 

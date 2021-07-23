@@ -10,34 +10,47 @@
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
 <body>
+    <div class="pop-up fixed  w-screen h-screen z-10">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 w-6/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/auth/group.svg') }}" alt="">
+            <div class="mt-7 font-medium text-2xl">Have you joined BNCC Launching LINE Group?</div>
+            <div class="flex flex-row justify-evenly w-full mt-8">
+                <div class="text-center modal-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Back</div>
+                <div class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44" >Yes, continue</div>
+            </div>
+    </div>
+
+    </div>
+    
     <div class="flex flex-row font-sans">
         <div class="w-5/12 h-screen flex flex-col items-center">
             <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
-            <div class="w-10/12 progress-bar flex flex-row mt-11  justify-evenly">
+            <div class="w-full progress-bar flex flex-row mt-11  justify-evenly">
                 <div class="flex flex-col items-center w-11 text-center">
                     <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
-                    <div class="title active-title text-sm text-cDarkerGray mt-1">Personal Info</div>
+                    <div class="title active-title text-xs text-cDarkerGray mt-1">Personal Info</div>
                 </div>
                 
                 <div class="flex flex-col items-center w-11 text-center relative">
                     <div class="line w-32 bg-cDarkerGray h-2 absolute"></div>
                     <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">2</span>
-                    <div class="title text-sm text-cDarkerGray mt-1">Student Credentials</div>
+                    <div class="title text-xs text-cDarkerGray mt-1">Student Credentials</div>
                 </div>
                 <div class="flex flex-col items-center w-11 text-center relative">
                     <div class="line bg-cDarkerGray h-2 absolute"></div>
                     <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">3</span>
-                    <div class="title text-sm text-cDarkerGray mt-1">BNCC Registration</div>
+                    <div class="title text-xs text-cDarkerGray mt-1">BNCC Registration</div>
                 </div>
                 <div class="flex flex-col items-center w-11 text-center relative">
                     <div class="line bg-cDarkerGray h-2 absolute"></div>
                     <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">4</span>
-                    <div class="title text-sm text-cDarkerGray  mt-1">Account Setup</div>
+                    <div class="title text-xs text-cDarkerGray  mt-1">Account Setup</div>
                 </div>
                 <div class="flex flex-col items-center w-11 text-center relative">
                     <div class="line bg-cDarkerGray h-2 absolute"></div>
                     <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">5</span>
-                    <div class="title text-sm text-cDarkerGray  mt-1">Join Group</div>
+                    <div class="title text-xs text-cDarkerGray  mt-1">Join Group</div>
                 </div>
             </div>
 
@@ -91,14 +104,14 @@
                     </div>
 
                     <div>
-                    <div class="btn-continue text-center text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Continue</div>
+                    <div class="btn-continue text-center text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Continue</div>
                     </div>
                     
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
                 
                 </div>
 
-                <div class="student-sec w-full section absolute ">
+                <div class="student-sec w-full section absolute right-section">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="nim" id="nim" placeholder="25XXXXXXXX">
@@ -120,11 +133,9 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Major</div>
                         <div class="custom-select major-select w-full">
-                            <select id="custom-select major-select">
+                            <select id="major-select">
                                 <option class="off" value="0">Select your major</option>
-                                <option value="ALS">Computer Science</option>
-                                <option value="BDG">System Information</option>
-                                <option value="KMG">dll</option>
+                            
                             </select>
                         </div>
                         <span class="msg-error"></span>
@@ -143,8 +154,8 @@
                     </div>
 
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
                     </div>
                     
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
@@ -177,8 +188,8 @@
                     </div>
 
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
                     </div>
                     
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
@@ -187,7 +198,7 @@
 
                 <div class="account-sec w-full section absolute right-section">
                     <div class="mt-11">
-                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Email</div>
+                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Email Binus</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="email" placeholder="example@binus.ac.id">
                         <span class="msg-error"></span>
                     </div>
@@ -204,15 +215,15 @@
 
 
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
                     </div>
                 
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
                 
                 </div>
 
-                <div class="join-sec w-full section absolute right-section">
+                <div class="join-sec w-full section absolute ">
                     <div class="flex flex-col items-center w-full">
                         <div class="mt-11 text-cDarkBlue font-bold text-center text-3xl">Join Our Line Group!</div>
                         <div class="mt-5"><img src="{{asset('./Asset/Image/auth/qrCode.svg')}}" alt=""></div>
@@ -245,8 +256,8 @@
                     </div>
                    
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Register</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Register</div>                     
                     </div>
                 
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
