@@ -52,6 +52,10 @@ button{
     cursor: pointer;
 }
 
+.bos-text{
+    margin-top: 10vh;
+}
+
 /* Notif */
 .succeed-notif {
     background: linear-gradient(90deg, #25B8DE 2.4%, #68E0FF 102.03%);
@@ -169,5 +173,11 @@ button{
     .social img{
         width: 40px;
         height: 40px;
+    }
+}
+
+@media (max-height: 800px) {
+    .bos-text{
+        margin-top: 5vh;
     }
 }

@@ -32,7 +32,7 @@
                 <img class="w-4 ml-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
             </div>
             @enderror
-            <div class="font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5 mt-5">BNCC Opening Season 2021</div>
+            <div class="bos-text font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
             <div class="font-extrabold text-4xl md:text-6xl sm:text-5xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
             <div class="relative mb-8">
                 <div class="clock" id="clock1"></div>
