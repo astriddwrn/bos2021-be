@@ -92,7 +92,7 @@ selectFunc("campus-select");
 selectFunc("major-select");
 selectFunc("fyp-select");
 selectFunc("bncc-select");
-selectFunc("lnt-select");
+// selectFunc("lnt-select");
 
 $(document).ready(function(){
     // check empty
@@ -185,7 +185,7 @@ $(document).ready(function(){
 
     function continueTransition(sec){
         if(!sec.find('.msg-error').text()){
-            if(sec.hasClass("login-sec") || se.hasClass("account-sec")){
+            if(sec.hasClass("login-sec") || sec.hasClass("join-sec")){
                 console.log(12);
                 $('form').submit();
                 return;
@@ -243,5 +243,28 @@ $(document).ready(function(){
     // $('form').submit(function (evt) {
     //     evt.preventDefault();
     // });
+
+    // course
+    $('.student-sec').find('.btn-continue').click(function(){
+        $campus = $('.campus-select').find(":selected").val();
+        // console.log($campus);
+        course($campus);
+    });
+
+    function course(a){
+        $ALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
+        $BDG =  ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        $KMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming'];
+        $MLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+             
+        (a =='ALS') ? a = $ALS : (a=='BGD') ? a = $BDG : (a=="KMG") ? a = $KMG : (a=="MLG") ? a= $MLG : '';
+        $len = a.length
+        console.log($len);
+        for(let i = 0; i<$len; i++){
+            $('#lnt-select').append(new Option(a[i], a[i]));
+        }
+        selectFunc('lnt-select');
+        
+    }
 
 });

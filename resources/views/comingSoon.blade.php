@@ -14,10 +14,7 @@
 
 </head>
 <body class="font-sans">
-
-
     <div class="w-screen h-screen bg-bgSpace relative">
-
         <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
             <div class="font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
             <div class="font-extrabold text-4xl md:text-6xl sm:text-5xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
@@ -30,7 +27,7 @@
                     <label class="font-extrabold text-cWhite text-xl md:text-2xl font-sans sec">Seconds</label>
                 </div>
             </div>
-            <div class="text-sans text-cWhite font-medium w-70 md:w-full sm:w-96 text-md sm:text-xl text-center sm:text-lg">Subscribe to our mailing list to get notified when we are open!</div>
+            <div class="text-sans text-cWhite font-medium w-70 md:w-full sm:w-96 text-md sm:text-xl text-center sm:text-lg px-2">Subscribe to our mailing list to get notified when we are open!</div>
             <form action="{{route('newsletter')}}" method="POST">
             @csrf
                 <div class="flex flex-row justify-center items-center h-12 mt-5 mail-cont">
@@ -39,12 +36,20 @@
                 </div>
             </form>
             <div class="mt-5 flex flex-row social">
+<<<<<<< Updated upstream:resources/views/comingSoon.blade.php
                 <a class=" mr-2" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
                 <a class=" mr-2" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
                 <a class=" mr-2" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
 
+=======
+                <span class="mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.png')}}" alt=""></span>
+                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.png')}}" alt=""></span>
+                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.png')}}" alt=""></span>
+                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.png')}}" alt=""></span>
+                <span class=" mr-2"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.png')}}" alt=""></span>
+>>>>>>> Stashed changes:resources/views/debug/comingSoon.blade.php
             </div>
         </div>
         <img class="stars w-10/12 absolute z-1 lg:block hidden" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="BNCC launching">

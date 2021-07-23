@@ -34,10 +34,15 @@
                     <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">4</span>
                     <div class="title text-sm text-cDarkerGray  mt-1">Account Setup</div>
                 </div>
+                <div class="flex flex-col items-center w-11 text-center relative">
+                    <div class="line bg-cDarkerGray h-2 absolute"></div>
+                    <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">5</span>
+                    <div class="title text-sm text-cDarkerGray  mt-1">Join Group</div>
+                </div>
             </div>
 
             <form class="w-8/12 relative" action="" method="post">
-                <div class="personal-sec w-full section absolute">
+                <div class="personal-sec w-full section absolute left-section">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Name</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe">
@@ -93,7 +98,7 @@
                 
                 </div>
 
-                <div class="student-sec w-full section absolute right-section">
+                <div class="student-sec w-full section absolute ">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="nim" id="nim" placeholder="25XXXXXXXX">
@@ -163,11 +168,9 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LnT Course</div>
                         <div class="custom-select lnt-select w-full">
-                            <select id="custom-select lnt-select">
+                            <select id="lnt-select">
                                 <option class="off" value="0">Select your course</option>
-                                <option value="ALS">Computer Science</option>
-                                <option value="BDG">System Information</option>
-                                <option value="KMG">dll</option>
+                             
                             </select>
                         </div>
                         <span class="msg-error"></span>
@@ -182,7 +185,7 @@
                 
                 </div>
 
-                <div class="account-sec w-full section absolute right-section ">
+                <div class="account-sec w-full section absolute right-section">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="email" placeholder="example@binus.ac.id">
@@ -200,6 +203,47 @@
                     </div>
 
 
+                    <div class="flex flex-row justify-between">
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                    </div>
+                
+                    <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
+                
+                </div>
+
+                <div class="join-sec w-full section absolute right-section">
+                    <div class="flex flex-col items-center w-full">
+                        <div class="mt-11 text-cDarkBlue font-bold text-center text-3xl">Join Our Line Group!</div>
+                        <div class="mt-5"><img src="{{asset('./Asset/Image/auth/qrCode.svg')}}" alt=""></div>
+                        <div class="mt-5 text-xl">or join us <a class="text-cLightBlue font-bold underline" href="">here</a></div>
+                        <div class="mt-8 text-lg text-center mb-2">Got a question? Reach our contact person!</div>
+                        <div class="w-full flex flex-row justify-evenly text-lg">
+                            <div class="mb-1">
+                                <div class="mb-1">Astrid</div>
+                                <div class="flex flex-row items-center mb-1">
+                                    <img class="mr-2" src="{{asset('./Asset/Image/auth/icon-wa.svg')}}" alt="">
+                                    <div>081287422520</div>
+                                </div>
+                                <div class="flex flex-row items-center mb-1">
+                                    <img class="mr-2"  src="{{asset('./Asset/Image/auth/icon-line.svg')}}" alt="">
+                                    <div>astriddwrn</div>
+                                </div>
+                            </div>
+                            <div class="mb-1">
+                                <div class="mb-1">Samuel</div>
+                                <div class="flex flex-row items-center mb-1">
+                                    <img class="mr-2"  src="{{asset('./Asset/Image/auth/icon-wa.svg')}}" alt="">
+                                    <div>081251442125</div>
+                                </div>
+                                <div class="flex flex-row items-center mb-1">
+                                    <img class="mr-2"  src="{{asset('./Asset/Image/auth/icon-line.svg')}}" alt="">
+                                    <div>ssam223</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
                     <div class="flex flex-row justify-between">
                         <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded p-2 hover:bg-cDarkerLightBlue hover:border-0 w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
                         <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Register</div>                     
