@@ -31,8 +31,8 @@
             <form action="{{route('newsletter')}}" method="POST">
             @csrf
                 <div class="flex flex-row justify-center items-center h-12 mt-5 mail-cont">
-                    <input class="w-72 sm:w-full h-full px-2 md:px-5 py-2 text-md sm:text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
-                    <button class="h-full px-4 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.svg')}}" alt="BNCC launching"></button>
+                    <input class="w-72 sm:w-full h-full px-5 py-2 text-md sm:text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
+                    <button class="h-full px-2 bg-cLightGray border-none outline-none"><img class="w-8" src="{{asset('Asset/Image/comingSoon/button.png')}}" alt="BNCC launching"></button>
                 </div>
             </form>
             <div class="mt-5 flex flex-row social">
