@@ -16,24 +16,22 @@
 <body class="font-sans">
 
     <div class="w-screen h-screen bg-bgSpace relative">
-        {{-- Succeeed --}}
-        <div class="absolute w-screen z-50 flex flex-row justify-between p-4 succeed-notif hidden">
-            <h6 class="text-cWhite sm:text-md text-sm">Your email is added. We'll inform you for further updates soon!</h6>
-            <img class="w-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
-        </div>
-        {{-- Failed --}}
-        <div class="absolute w-screen z-50 flex flex-row justify-between p-4 failed-notif hidden">
-            <h6 class="text-cWhite sm:text-md text-sm">This email has been suscribed! Please enter other email.</h6>
-            <img class="w-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
-        </div>
+
 
         <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
             @if ($message = Session::get('success'))
-	        <div class="alert alert-success alert-block">
-		         <strong>{{ $message }}</strong>
-	        </div>
-        @endif
-        @error('email') <strong> This email has been suscribed! Please enter other email</strong> @enderror
+	        {{-- Succeeed --}}
+            <div class="absolute top-0 w-screen z-50 flex flex-row justify-between p-4 succeed-notif">
+                <h6 class="text-cWhite sm:text-md text-sm">{{ $message }}</h6>
+                <img class="w-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
+            </div>
+            @endif
+            @error('email') {{-- Failed --}}
+            <div class="absolute top-0  w-screen z-50 flex flex-row justify-between p-4 failed-notif">
+                <h6 class="text-cWhite sm:text-md text-sm">This email has been suscribed! Please enter other email.</h6>
+                <img class="w-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
+            </div>
+            @enderror
             <div class="font-extrabold text-md md:text-3xl sm:text-xl text-center text-cWhite font-sans mb-3 sm:mb-5">BNCC Opening Season 2021</div>
             <div class="font-extrabold text-4xl md:text-6xl sm:text-5xl text-center text-cWhite font-sans flex flex-row items-center mb-8">COMING SOON</div>
             <div class="relative mb-8">
@@ -49,8 +47,8 @@
             <form action="{{route('newsletter')}}" method="POST">
             @csrf
                 <div class="flex flex-row justify-center items-center h-12 mt-5 mail-cont">
-                    <input class="w-56 sm:w-72 sm:w-full h-full px-5 py-2 text-md sm:text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here">
-                    <button class="h-full px-2 bg-cLightGray border-none outline-none text-cDarkBlue"><img class="w-6 sm:w-8" src="{{asset('Asset/Image/comingSoon/button.png')}}" alt="BNCC launching"></button>
+                    <input class="w-56 sm:w-72 sm:w-full h-full px-5 py-2 text-md sm:text-xl bg-cLightGray outline-none" type="email" name="email" id="email" placeholder="Leave your email here" required>
+                    <button id="sendBtn" class="h-full px-2 bg-cLightGray border-none outline-none text-cDarkBlue"><img class="w-6 sm:w-8" src="{{asset('Asset/Image/comingSoon/button.png')}}" alt="BNCC launching"></button>
                 </div>
             </form>
 
