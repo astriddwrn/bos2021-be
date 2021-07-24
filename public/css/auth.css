@@ -8,6 +8,11 @@ button:focus {
     border: none !important;
 }
 
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
 input{
     outline: none !important;
     border: none;
@@ -30,7 +35,7 @@ input{
 }
 
 .dot, .line, .title{
-  transition: all .5s ease-in-out;
+  transition: color .5s ease-in-out;
 }
 
 .active-dot, .active-line{
@@ -48,7 +53,7 @@ input{
     z-index: -1;
     top: 25%;
     transform: translate(0%, -50%);
-    width: 150%;
+    width: 200%;
 }
 
 /* CUSTOM SELECT */
@@ -179,6 +184,13 @@ input[type=checkbox] {
 }
 /* END CHECKBOX */
 
+form:not(.login){
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 ::-webkit-calendar-picker-indicator {
   filter: invert(58%) sepia(91%) saturate(525%) hue-rotate(153deg) brightness(93%) contrast(86%);
 }
@@ -212,7 +224,8 @@ input::placeholder{
 .modal{
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transition:  all .3s linear;
+  transform: translate(-50%, -60%);
 }
 
 .pop-up{
@@ -227,10 +240,18 @@ input::placeholder{
   transition:  opacity .3s linear;
 }
 
+.is-visible .modal{
+  transition:  all .3s linear;
+  transform: translate(-50%, -50%);
+}
+
+.failed-notif {
+  background: linear-gradient(90deg, #E76857 0%, #FF9A8D 101%);
+}
 
 @media all and (max-width: 1280px) {
   .line{
-    width: 100%;
+    width: 150%;
 }
 }
 

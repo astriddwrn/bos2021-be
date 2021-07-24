@@ -66,7 +66,6 @@ function selectFunc(z){
     then close all select boxes:*/
     document.addEventListener("click", closeAllSelect);
     var e = document.getElementById(z);
-    // console.log(e[2].value)
 }
 
 function closeAllSelect(elmnt) {
@@ -88,7 +87,14 @@ function closeAllSelect(elmnt) {
         if (arrNo.indexOf(i)) {
         x[i].classList.add("select-hide");
         }
+        
     }
+    if($(elmnt).parent().find(":selected").val() !=0){
+        $(elmnt).parent().removeClass("border-error");
+        $(elmnt).parent().siblings('.msg-error').empty();
+    }
+    
+
 }
 
 selectFunc("gender-select");
@@ -100,6 +106,16 @@ selectFunc("fyp-select");
 selectFunc("bncc-select");
 // selectFunc("lnt-select");
 
+    $('.eye-open, .eye-close').click(function(){
+        x = $(this).siblings('input');
+        if (x.attr('type') === "password") {
+            x.attr('type', "text");
+            $(".eye-open, .eye-close").toggleClass("hidden");
+          } else {
+            x.attr('type', "password");
+            $(".eye-open, .eye-close").toggleClass("hidden");
+          }
+    });
 
     // check empty
     function checkEmpty(x){
@@ -190,13 +206,13 @@ selectFunc("bncc-select");
 
     function continueTransition(sec){
         if(!sec.find('.msg-error').text()){
-            if(sec.hasClass("login-sec") || sec.hasClass("join-sec")){
-                $('.pop-up').toggleClass('is-visible');
+            if(sec.hasClass("join-sec")){
+                $('.confirmation').toggleClass('is-visible');
                 return;
             }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
-            $("html, body").animate({ 
+            $("form").animate({ 
                 scrollTop: 0 
             }, "slow");
             prog++;
@@ -223,7 +239,7 @@ selectFunc("bncc-select");
     })
 
 
-    function changeCampus(x ,cmps){
+    function changeCampus(x, y, z ,cmps){
         $mBDG = ["Visual Communication Design", "Interior Design", "Creativepreneurship", "Computer Science"];
         $mMLG = ["Interior Design", "Visual Communication Design", "Entrepreneurship", "Public Relations", "Communication", "Computer Science"];
         $mKMG = ["Accounting", "Architecture",
@@ -262,16 +278,38 @@ selectFunc("bncc-select");
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         
+        $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
+        $fMLG = ["Batch 1", "Batch 2", "Batch 3"];
+        $fBDG = ["Batch 1", "Batch 2", "Batch 3"];
+
         let a = $cKMG;
         let b = $mKMG; 
-        (cmps =='ALS') ? a = $cALS : (cmps=='BDG') ? a = $cBDG : (cmps=="KMG") ? a = $cKMG : (cmps=="MLG") ? a = $cMLG : '';
-        (cmps =='ALS') ? b = $mKMG : (cmps=='BDG') ? b = $mBDG : (cmps=="KMG") ? b = $mKMG : (cmps=="MLG") ? b = $mMLG : '';
-        
-        console.log(cmps);
+        let c = $fKMG;
+        if(cmps=='ALS'){
+            a = $cALS;
+            b = $mKMG;
+            c = $fKMG;
+        }
+        else if(cmps=='BDG'){
+            a = $cBDG;
+            b = $mBDG;
+            c = $fBDG;
+
+        }
+        else if(cmps=='KMG'){
+            a = $cKMG;
+            b = $mKMG;
+            c = $fKMG;
+        }
+        else if(cmps=='MLG'){
+            a = $cMLG;
+            b = $mMLG;
+            c = $fMLG;
+        }
         
         $len = b.length;
         $lenSel = $('#major-select').length;
-        $("#major-select> option:not(:first)").each(function() {
+        $("#major-select > option:not(:first)").each(function() {
             $(this).remove();
         });
         for(let i = 0; i<$len; i++){
@@ -281,37 +319,52 @@ selectFunc("bncc-select");
         x.remove();
         selectFunc("major-select");
 
+        $len = c.length;
+        $lenSel = $('#fyp-select').length;
+        $("#fyp-select > option:not(:first)").each(function() {
+            $(this).remove();
+        });
+        for(let i = 0; i<$len; i++){
+            $('#fyp-select').append(new Option(c[i], c[i]));
+        }
+        z.next().remove();
+        z.remove();
+        selectFunc('fyp-select');
+
        
-        $len = a.length
-        console.log($len);
+        $len = a.length;
+        $lenSel = $('#lnt-select').length;
+        $("#lnt-select > option:not(:first)").each(function() {
+            $(this).remove();
+        });
         for(let i = 0; i<$len; i++){
             $('#lnt-select').append(new Option(a[i], a[i]));
         }
+        y.next().remove();
+        y.remove();
         selectFunc('lnt-select');
     }
 
 
     $('.select-selected').click(function(){
         let select = $(this).parent();
-        if((select).hasClass('major-select')){
+        if((select).hasClass('major-select') || (select).hasClass('fyp-select')){
             if($('.campus-select').find(":selected").val()==0){
-                console.log('1');
                 closeAllSelect($(this));
                 $('.campus-select').addClass("border-error");
                 $('.campus-select').siblings('.msg-error').text("Please fill out this field first.");
                 // return false;
             }
-            else{
-                cmps = select.find(":selected").val();
-                changeCampus($('.major-select').find('.select-selected'),cmps);
-            }
+            // else{
+            //     cmps = select.find(":selected").val();
+            //     changeCampus($('.major-select').find('.select-selected'),cmps);
+            // }
         }
-        console.log("test"+ $('.campus-select').find(":selected").val());
 
         if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
             
             cmps = select.find(":selected").val();
-            changeCampus($('.major-select').find('.select-selected'),cmps);
+            changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps);
           
         }
         // if((select).find(":selected").val()!=0){
@@ -323,9 +376,9 @@ selectFunc("bncc-select");
     //     console.log("new");
     // });
 
-    $('.select-items div').click(function(){
-        
-        x = $(this).parent().parent();
+    $('.select-items').click(function(){
+        console.log("1");
+        x = $(this).parent();
         x.removeClass("border-error");
         x.siblings('.msg-error').empty();
     });
@@ -345,12 +398,27 @@ selectFunc("bncc-select");
         progressPrev();
     })
 
-    $('form').submit(function (evt) {
-        evt.preventDefault();
+    // submit
+    $('.modal-continue').click(function(){
+        $('.confirmation').toggleClass('is-visible');
+        setTimeout(function(){ 
+            $('form').submit(); }, 1500);
+        $('.success').toggleClass('is-visible');
+
     });
+    $('.modal-back').click(function(){
+        $('.confirmation').toggleClass('is-visible');
+    });
+
+    // $('form').submit(function (evt) {
+    //     evt.preventDefault();
+    // });
 
     // campus
    
-
+    $( ".close" ).click(function() {
+        // $(".succeed-notif").css("display", "none");
+        $(".failed-notif").css("display", "none");
+      })
 
 });

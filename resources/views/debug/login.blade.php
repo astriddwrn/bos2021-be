@@ -10,20 +10,26 @@
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
 <body>
+    <div class="fixed top-0 w-screen z-50 flex flex-row justify-between p-4 failed-notif">
+        <h6 class="text-cWhite sm:text-md text-sm">Message Fail</h6>
+        <img class="w-4 ml-4 close cursor-pointer" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
+    </div>
     <div class="flex flex-row font-sans">
         <div class="w-5/12 h-screen flex flex-col items-center">
             <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
-            <form action="" class="w-8/12 relative" method="post">
-                <div class="login-sec absoluute w-full section">
-                    <div class="mt-11">
-                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Email</div>
+            <form action="" class="w-8/12 relative login" method="post">
+                <div class="login-sec absolute w-full section">
+                    <div class="mt-11 relative">
+                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="login-email" id="login-email" placeholder="example@binus.ac.id">
                         <span class="msg-error"></span>
                     </div>
-                    <div class="mt-11">
+                    <div class="mt-11 relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Password</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" id="login-password" name="login-password" placeholder="Example123">
+                        <img class="absolute x-30 top-12 mt-1 right-3 eye-open" src="{{asset('./Asset/Image/auth/eye-open.svg')}}" alt="">
+                        <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="">
                         <span class="msg-error"></span>
                     </div>
 
