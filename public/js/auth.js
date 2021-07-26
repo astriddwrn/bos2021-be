@@ -372,10 +372,6 @@ selectFunc("bncc-select");
         // }
     });
 
-    // $('.major-select #select-selected').click(function(){
-    //     console.log("new");
-    // });
-
     $('.select-items').click(function(){
         console.log("1");
         x = $(this).parent();
@@ -414,7 +410,9 @@ selectFunc("bncc-select");
     //     evt.preventDefault();
     // });
 
-    // campus
+    // login
+
+
    
     $( ".close" ).click(function() {
         // $(".succeed-notif").css("display", "none");

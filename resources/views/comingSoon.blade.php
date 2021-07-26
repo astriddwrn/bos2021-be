@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BNCC Launching</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
+    <meta name="title" content="BNCC Launching">
+    <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -12,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/countdown.css') }}">
     <link rel="stylesheet" href="{{ asset('css/comingSoon.css') }}">
 
-    <link id="favicon" rel="shortcut icon" type="image/png" href="favicon.png" />
+    
 
 </head>
 <body class="font-sans">

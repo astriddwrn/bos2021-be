@@ -35,8 +35,8 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
-Route::prefix("/debug")->group(function(){
-    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
-});
+// Route::prefix("/debug")->group(function(){
+//     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
+// });
 
 // require __DIR__.'/auth.php';
