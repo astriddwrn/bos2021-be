@@ -22,7 +22,14 @@
         </div>
     </div>
 
-    <div class="pop-up fixed success w-screen h-screen z-10">
+    <div class="pop-up fixed success-reregistration w-screen h-screen z-10">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 w-6/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">
+            <div class="mt-7 font-medium text-2xl">Registration Success!</div>
+        </div>
+    </div>
+    <div class="pop-up fixed success-reregistration w-screen h-screen z-10">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 w-6/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">

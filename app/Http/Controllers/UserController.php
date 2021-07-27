@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Model\User;
 use App\Model\Schedule;
 use Illuminate\Support\Facades\Auth;
@@ -47,14 +48,20 @@ class UserController extends Controller
 
     public function submitPayment(Request $request){
         $request->validate([
-            'payment_pic' => 'required|image|max:20480'
+            'payment_pic' => 'required|mimes:jpg,jpeg,png|max:5480'
         ]);
 
          // ada nama biar supaya pas didownload langsung retrieve nama file dengan nama_nim
 
         $file = $request->file('payment_pic');
-        $fn_payment_pic = $request->user()->name."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
-        $file->storeAs('payment_pic', $fn_payment_pic);
+        $fn_payment_pic = $request->user()->fullName."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
+
+        if($request->user()->payment_pic!=NULL){
+            // dd($request->user()->payment_pic);
+            File::delete(public_path('payment_pic/'.$request->user()->payment_pic));
+        }
+
+        $file->move(public_path('payment_pic'),$fn_payment_pic);
 
         $request->user()->payment_pic = $fn_payment_pic;
         $request->user()->save();
