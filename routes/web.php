@@ -39,4 +39,4 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 //     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"]);
 // });
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

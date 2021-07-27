@@ -16,21 +16,28 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
+            $table->string('fullName');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('gender');
+            $table->date('birthDate');
+            $table->string('placeBirth');
+            $table->string('domicile');
+            $table->string('address');
+
             $table->string("whatsapp")->unique();
             $table->string("line_id")->unique();
             $table->string('nim')->unique();
             $table->string('campus');
             $table->string('major');
-            $table->bigInteger('schedule_id')->unsigned()->nullable()/*inget untuk hapus nullable*/;
-            $table->foreign('schedule_id')->references('id')
-                                          ->on('schedules');
+            $table->string('batch');
+            // $table->bigInteger('schedule_id')->unsigned()->nullable()/*inget untuk hapus nullable*/;
+            // $table->foreign('schedule_id')->references('id')
+            //                               ->on('schedules');
+            $table->string('schedule');
             $table->string('lnt_course');
             $table->integer('role')->default(0);
             $table->string('payment_pic')->nullable();
-            $table->string('approval_letter')->nullable();
             $table->integer('status')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

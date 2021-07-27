@@ -30,14 +30,12 @@
         </div>
     </div>
 
-    
-
-    
     <div class="flex flex-row font-sans">
         <div class="w-5/12 h-screen flex flex-col items-center">
-            
 
-            <form class="w-full relative" action="" method="post">
+
+            <form class="w-full relative" action="{{ route('register') }}" method="POST">
+                @csrf
                 <div class="flex flex-col items-center w-full">
                     <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
                     <div class="w-full progress-bar flex flex-row mt-11  justify-between">
@@ -45,7 +43,7 @@
                             <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
                             <div class="title active-title text-xs text-cDarkerGray mt-1">Personal Info</div>
                         </div>
-                        
+
                         <div class="flex flex-col items-center w-11 text-center relative">
                             <div class="line w-32 bg-cDarkerGray h-2 absolute"></div>
                             <span class="dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">2</span>
@@ -68,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-             
+
 
                 <div class="personal-sec w-full section absolute  px-24 ">
                     <div class="mt-11">
@@ -79,7 +77,7 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Gender</div>
                         <div class="custom-select gender-select w-full">
-                            <select id="custom-select gender-select">
+                            <select id="custom-select gender-select" name="gender">
                                 <option class="off" value="0">Select your gender</option>
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
@@ -121,9 +119,9 @@
                     <div>
                     <div class="btn-continue text-center text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Continue</div>
                     </div>
-                    
+
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
-                
+
                 </div>
 
                 <div class="student-sec w-full section absolute right-section px-24">
@@ -135,7 +133,7 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Campus Area</div>
                         <div class="custom-select campus-select w-full">
-                            <select id="custom-select campus-select">
+                            <select id="custom-select campus-select" name="campus">
                                 <option class="off" value="0">Select your campus location</option>
                                 <option value="ALS">Alam Sutera</option>
                                 <option value="BDG">Bandung</option>
@@ -148,9 +146,9 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Major</div>
                         <div class="custom-select major-select w-full">
-                            <select id="major-select">
+                            <select id="major-select" name="major">
                                 <option class="off" value="0">Select your major</option>
-                            
+
                             </select>
                         </div>
                         <span class="msg-error"></span>
@@ -158,7 +156,7 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">FYP Batch</div>
                         <div class="custom-select fyp-select w-full">
-                            <select id="fyp-select">
+                            <select id="fyp-select" name="batch">
                                 <option class="off" value="0">Select your batch</option>
                             </select>
                         </div>
@@ -166,19 +164,19 @@
                     </div>
 
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>
                     </div>
-                    
+
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
-                
+
                 </div>
 
                 <div class="bncc-sec w-full section absolute right-section px-24">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">BNCC Launching Schedule</div>
                         <div class="custom-select bncc-select w-full">
-                            <select id="custom-select bncc-select">
+                            <select id="custom-select bncc-select" name="schedule">
                                 <option class="off" value="0">Select your schedule</option>
                                 <option value="ALS">Alam Sutera</option>
                                 <option value="BDG">Bandung</option>
@@ -191,21 +189,21 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LnT Course</div>
                         <div class="custom-select lnt-select w-full">
-                            <select id="lnt-select">
+                            <select id="lnt-select" name="lnt_course">
                                 <option class="off" value="0">Select your course</option>
-                             
+
                             </select>
                         </div>
                         <span class="msg-error"></span>
                     </div>
 
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>
                     </div>
-                    
+
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
-                
+
                 </div>
 
                 <div class="account-sec w-full section absolute right-section px-24">
@@ -231,12 +229,12 @@
 
 
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Continue</div>
                     </div>
-                
+
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
-                
+
                 </div>
 
                 <div class="join-sec w-full section absolute right-section px-24">
@@ -270,14 +268,14 @@
                             </div>
                         </div>
                     </div>
-                   
+
                     <div class="flex flex-row justify-between">
-                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>                   
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Register</div>                     
+                        <div class="text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Back</div>
+                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12" type="submit">Register</div>
                     </div>
-                
+
                     <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Already registered?</span><a href=""><span class="text-cLightBlue">Login here</span></a></div>
-                
+
                 </div>
 
             </form>
