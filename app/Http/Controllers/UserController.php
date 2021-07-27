@@ -47,7 +47,7 @@ class UserController extends Controller
 
     public function submitPayment(Request $request){
         $request->validate([
-            'payment_pic' => 'required|image|max:20480'
+            'payment_pic' => 'required|mimes:jpg,jpeg,png|max:5480'
         ]);
 
          // ada nama biar supaya pas didownload langsung retrieve nama file dengan nama_nim
