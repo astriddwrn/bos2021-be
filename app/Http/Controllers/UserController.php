@@ -53,8 +53,8 @@ class UserController extends Controller
          // ada nama biar supaya pas didownload langsung retrieve nama file dengan nama_nim
 
         $file = $request->file('payment_pic');
-        $fn_payment_pic = $request->user()->name."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
-        $file->storeAs('payment_pic', $fn_payment_pic);
+        $fn_payment_pic = $request->user()->fullName."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
+        $file->move(public_path('payment_pic'),$fn_payment_pic);
 
         $request->user()->payment_pic = $fn_payment_pic;
         $request->user()->save();
