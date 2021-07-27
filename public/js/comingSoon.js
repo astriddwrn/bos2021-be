@@ -10,8 +10,8 @@ var clock = $('.clock').FlipClock(diff,{
 });
 
 $( ".close" ).click(function() {
-    $(".succeed-notif").css("display", "none");
-    $(".failed-notif").css("display", "none");
+    $("#succeed-notif").css("display", "none");
+    $("#failed-notif").css("display", "none");
   });
 
   $( "#sendBtn" ).hover(

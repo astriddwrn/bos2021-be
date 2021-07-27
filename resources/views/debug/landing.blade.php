@@ -12,7 +12,7 @@
 <body>
     {{-- Fun Fact --}}
     <div class="w-full font-sans my-12 px-24">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-12">Fun facts about BNCC!</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-12 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col items-center">
             <div>
                 <div class="flex flex-row items-center mb-8">
@@ -20,7 +20,7 @@
                         <img src="{{url('./Asset/Image/landing/ff-32.svg')}}" alt="" class="w-24">
                     </div>
                     <div class="font-medium text-2xl text-cHomeGray leading-10">
-                        BNCC has reached its 32nd year, which means we are the <br>same age as the SM Entertainment and Asus company!
+                        BNCC has reached its 32nd year! We've had an amazing <br>journey so far.
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
 
                 <div class="flex flex-row items-center mb-8">
                     <div class="shadow-bsfF p-6 rounded-2xl mr-8">
-                        <img src="{{url('./Asset/Image/landing/ff-product.svg')}}" alt="" class="w-24">
+                        <img src="{{url('./Asset/Image/landing/ff-product.png')}}" alt="" class="w-24">
                     </div>
                     <div class="font-medium text-2xl text-cHomeGray leading-10">
                         BNCC has a software house (FAVESOLUTION) and online<br> media (Filemagz)!
@@ -44,7 +44,7 @@
 
                 <div class="flex flex-row items-center mb-8">
                     <div class="shadow-bsfF p-6 rounded-2xl mr-8">
-                        <img src="{{url('./Asset/Image/landing/ff-schedule.svg')}}" alt="" class="w-24">
+                        <img src="{{url('./Asset/Image/landing/ff-schedule.svg')}}" alt="" class="w-20">
                     </div>
                     <div class="font-medium text-2xl text-cHomeGray leading-10">
                         BNCC has organized many national events with more than <br>1,000 participants,

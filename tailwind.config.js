@@ -18,12 +18,13 @@ module.exports = {
             cDarkerGray: '#BFC9CE',
             cDarkerLightBlue: '#0091B7',
             cHomeGray: '#7A828A',
-            cBlueNotifstart: '#25B8DE',
-            cBlueNotifend: '#68E0FF',
+            cBlackHome: '#383530',
         },
         backgroundImage: {
             'bgSpace': "linear-gradient(195.99deg, #0C131B -57.79%, #0054A5 49.18%, #CDD8DD 151.55%)",
             'bgCloud': "radial-gradient(220.05% 220.05% at 50% -133.51%, #FFFFFF 62.51%, #0054A5 100%)",
+            'bgNotifSuccess': "linear-gradient(90deg, #25B8DE 2.4%, #68E0FF 102.03%)",
+            'bgNotifFailed': "linear-gradient(90deg, #E76857 0%, #FF9A8D 101%)",
          },
          boxShadow:{
              'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);",

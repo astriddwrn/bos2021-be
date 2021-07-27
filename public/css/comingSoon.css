@@ -56,15 +56,6 @@ button{
     margin-top: 10vh;
 }
 
-/* Notif */
-.succeed-notif {
-    background: linear-gradient(90deg, #25B8DE 2.4%, #68E0FF 102.03%);
-}
-
-.failed-notif {
-    background: linear-gradient(90deg, #E76857 0%, #FF9A8D 101%);
-}
-
 @media (max-width: 1024px) {
     .flip-clock-wrapper ul {
         width: 4.2rem;
@@ -166,7 +157,7 @@ button{
         width: 300px;
     }
 
-    
+
     .flip-clock-divider {
         width: 5px;
     }

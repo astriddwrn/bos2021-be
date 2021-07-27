@@ -15,24 +15,22 @@
     <link rel="stylesheet" href="{{ asset('css/countdown.css') }}">
     <link rel="stylesheet" href="{{ asset('css/comingSoon.css') }}">
 
-    
+
 
 </head>
 <body class="font-sans">
 
     <div class="w-screen h-screen bg-bgSpace relative overflow-hidden">
-
-
         <div class="w-full h-full flex flex-col sm:justify-center items-center relative z-10">
             @if ($message = Session::get('success'))
 	        {{-- Succeeed --}}
-            <div class="absolute top-0 w-screen z-50 flex flex-row justify-between p-4 succeed-notif">
+            <div class="absolute top-0 w-screen z-50 flex flex-row justify-between p-4 bg-bgNotifSuccess succeed-notif">
                 <h6 class="text-cWhite sm:text-md text-sm">{{ $message }}</h6>
                 <img class="w-4 ml-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
             </div>
             @endif
             @error('email') {{-- Failed --}}
-            <div class="absolute top-0  w-screen z-50 flex flex-row justify-between p-4 failed-notif">
+            <div class="absolute top-0  w-screen z-50 flex flex-row justify-between p-4 bg-bgNotifFailed failed-notif">
                 <h6 class="text-cWhite sm:text-md text-sm">This email has been suscribed! Please enter other email.</h6>
                 <img class="w-4 ml-4 close" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
             </div>
