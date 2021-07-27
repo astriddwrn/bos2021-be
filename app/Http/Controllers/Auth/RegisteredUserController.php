@@ -22,7 +22,7 @@ class RegisteredUserController extends Controller
     public function create()
     {
         $schedules = Schedule::all();
-        return view('auth.register', compact('schedules'));
+        return view('debug.signup', compact('schedules'));
     }
 
     /**
@@ -37,40 +37,49 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
 
-        $schedule = Schedule::find((int)$request->input('schedule_id'));
-        if($schedule->quota>0) {
-            $request->request->add(['isQuotaNotZero' => 1]);
-            // $request->request->add([1,'isQuotaNotZero']);
-        }
-        else {
-            $request->request->add(['isQuotaNotZero' => 0]);
-        }
+        // $schedule = Schedule::find((int)$request->input('schedule_id'));
+        // if($schedule->quota>0) {
+        //     $request->request->add(['isQuotaNotZero' => 1]);
+        //     // $request->request->add([1,'isQuotaNotZero']);
+        // }
+        // else {
+        //     $request->request->add(['isQuotaNotZero' => 0]);
+        // }
+
+
+
+        // $message = [
+        //     'isQuotaNotZero.accepted' => 'Selected schedule is full, please select another one'
+        // ];
+
+
+        $request->validate([
+            'fullName' => 'required|string',
+            'gender' => 'required',
+            'birthDate' => 'required',
+            'placeBirth' => 'required',
+            'domicile' => 'required',
+            'address' => 'required',
+            'email' => 'required|string|email|unique:users',
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'whatsapp' => ['required','string','unique:users,whatsapp','regex:/^(08)\d+/','digits_between:10,14'],
+            'line_id' => 'required|string|unique:users,line_id',
+            'nim' => ['required','string','digits:10','regex:/^(23|24|25)\d+/','unique:users,nim'],
+            'batch' => 'required',
+            'campus' => 'required',
+            'major' => 'required',
+            'lnt_course' => 'required',
+            'schedule' => 'required',
+            // 'isQuotaNotZero' => 'accepted'
+        ] /*,$message*/);
+
+        // $schedule->quota--;
+        // $schedule->save();
 
         // dd($request->all());
 
-        $message = [
-            'isQuotaNotZero.accepted' => 'Selected schedule is full, please select another one'
-        ];
-
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'whatsapp' => ['required','string','unique:users,whatsapp','numeric','regex:/^(08)\d+/','digits_between:10,14'],
-            'line_id' => 'required|string|unique:users,line_id',
-            'nim' => ['required','string','numeric','digits:10','regex:/^(23|24|25)\d+/','unique:users,nim'],
-            'campus' => 'required|string',
-            'major' => 'required|string',
-            'lnt_course' => 'required|string',
-            'schedule_id' => 'required',
-            'isQuotaNotZero' => 'accepted'
-        ], $message);
-
-        $schedule->quota--;
-        $schedule->save();
-
         $user = User::create([
-            'name' => $request->name,
+            'fullName' => $request->fullName,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'whatsapp' => $request->whatsapp,
@@ -79,8 +88,16 @@ class RegisteredUserController extends Controller
             'campus' => $request->campus,
             'major' =>$request->major,
             'lnt_course' => $request->lnt_course,
-            'schedule_id' => $request->schedule_id
+            'schedule' => $request->schedule,
+            'batch' => $request->batch,
+            'gender' => $request->gender,
+            'birthDate' => $request->birthDate,
+            'placeBirth' => $request->placeBirth,
+            'domicile' => $request->domicile,
+            'address' => $request->address
         ]);
+
+
 
         event(new Registered($user));
 
