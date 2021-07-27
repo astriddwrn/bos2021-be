@@ -29,7 +29,9 @@ module.exports = {
          boxShadow:{
              'bsRocket': "0px 0px 60px rgba(0, 0, 0, 0.1);",
              'bsBtn': "0px 4px 12px rgba(0, 0, 0, 0.12);",
-             'bsfF': "5px 14px 15px 8px rgba(205, 205, 205, 0.25);"
+             'bsFf': "5px 14px 15px 8px rgba(205, 205, 205, 0.25)",
+             'bsFfhv': "0px 0px 8px rgba(55, 200, 238, 0.2)",
+             'bsWhy': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)"
          },
         extend: {
             fontFamily: {

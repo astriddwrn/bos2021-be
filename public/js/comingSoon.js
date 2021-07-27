@@ -14,10 +14,10 @@ $( ".close" ).click(function() {
     $("#failed-notif").css("display", "none");
   });
 
-  $( "#sendBtn" ).hover(
-      function () {
-        $( "#changeClr" ).attr( "fill", "#FBFBFB" );
-    }, function() {
-        $( "#changeClr" ).attr( "fill", "#0054A5" );
-    }
-  );
+$( "#sendBtn" ).hover(
+    function () {
+    $( "#changeClr" ).attr( "fill", "#FBFBFB" );
+}, function() {
+    $( "#changeClr" ).attr( "fill", "#0054A5" );
+}
+);
