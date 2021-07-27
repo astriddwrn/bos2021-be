@@ -221,7 +221,7 @@
                     </div>
                     <div class="mt-11 relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Confirm Password</div>
-                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" name="confirm" id="confirm" placeholder="Example123">
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" name="password_confirmation" id="confirm" placeholder="Example123">
                         <img class="absolute x-30 top-12 mt-1 right-3 eye-open" src="{{asset('./Asset/Image/auth/eye-open.svg')}}" alt="">
                         <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="">
                         <span class="msg-error"></span>

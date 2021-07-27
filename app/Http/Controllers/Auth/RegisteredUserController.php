@@ -53,25 +53,25 @@ class RegisteredUserController extends Controller
         // ];
 
 
-        // $request->validate([
-        //     'fullName' => 'required|string',
-        //     'gender' => 'required',
-        //     'birthDate' => 'required',
-        //     'placeBirth' => 'required',
-        //     'domicile' => 'required',
-        //     'address' => 'required',
-        //     'email' => 'required|string|email|unique:users',
-        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        //     'whatsapp' => ['required','string','unique:users,whatsapp','numeric','regex:/^(08)\d+/','digits_between:10,14'],
-        //     'line_id' => 'required|string|unique:users,line_id',
-        //     'nim' => ['required','string','numeric','digits:10','regex:/^(23|24|25)\d+/','unique:users,nim'],
-        //     'batch' => 'required',
-        //     'campus' => 'required|string',
-        //     'major' => 'required|string',
-        //     'lnt_course' => 'required|string',
-        //     'schedule' => 'required',
-        //     // 'isQuotaNotZero' => 'accepted'
-        // ] /*,$message*/);
+        $request->validate([
+            'fullName' => 'required|string',
+            'gender' => 'required',
+            'birthDate' => 'required',
+            'placeBirth' => 'required',
+            'domicile' => 'required',
+            'address' => 'required',
+            'email' => 'required|string|email|unique:users',
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'whatsapp' => ['required','string','unique:users,whatsapp','regex:/^(08)\d+/','digits_between:10,14'],
+            'line_id' => 'required|string|unique:users,line_id',
+            'nim' => ['required','string','digits:10','regex:/^(23|24|25)\d+/','unique:users,nim'],
+            'batch' => 'required',
+            'campus' => 'required',
+            'major' => 'required',
+            'lnt_course' => 'required',
+            'schedule' => 'required',
+            // 'isQuotaNotZero' => 'accepted'
+        ] /*,$message*/);
 
         // $schedule->quota--;
         // $schedule->save();
