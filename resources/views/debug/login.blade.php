@@ -36,7 +36,7 @@
                     <div class="text-xl text-center mt-8"><a href=""><span class="text-cLightBlue">Forgot your password?</span></a></div>
 
                     <div class="w-100">
-                        <div class="text-center btn-continue text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-8 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn ">Login</div>                     
+                        <div class="text-center btn-continue btn-login text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-8 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn ">Login</div>                     
                     </div>
                 
                     
