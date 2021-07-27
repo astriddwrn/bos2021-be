@@ -353,12 +353,7 @@ selectFunc("bncc-select");
                 closeAllSelect($(this));
                 $('.campus-select').addClass("border-error");
                 $('.campus-select').siblings('.msg-error').text("Please fill out this field first.");
-                // return false;
             }
-            // else{
-            //     cmps = select.find(":selected").val();
-            //     changeCampus($('.major-select').find('.select-selected'),cmps);
-            // }
         }
 
         if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
@@ -367,13 +362,9 @@ selectFunc("bncc-select");
             changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps);
           
         }
-        // if((select).find(":selected").val()!=0){
-        //     checkEmpty(select);
-        // }
     });
 
     $('.select-items').click(function(){
-        console.log("1");
         x = $(this).parent();
         x.removeClass("border-error");
         x.siblings('.msg-error').empty();
@@ -412,8 +403,6 @@ selectFunc("bncc-select");
 
     // login
 
-
-   
     $( ".close" ).click(function() {
         // $(".succeed-notif").css("display", "none");
         $(".failed-notif").css("display", "none");
