@@ -210,6 +210,10 @@ selectFunc("bncc-select");
                 $('.confirmation').toggleClass('is-visible');
                 return;
             }
+            if(sec.hasClass("login-sec")){
+                $('form').submit();
+                return;
+            }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
             $("form").animate({ 
@@ -401,7 +405,6 @@ selectFunc("bncc-select");
     //     evt.preventDefault();
     // });
 
-    // login
 
     $( ".close" ).click(function() {
         // $(".succeed-notif").css("display", "none");
