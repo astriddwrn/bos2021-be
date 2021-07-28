@@ -7,51 +7,64 @@ use Illuminate\Support\Facades\File;
 use App\Model\User;
 use App\Model\Schedule;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
     public function index(Request $request) {
         $user = $request->user();
 
-        // ini kalo bisa switch case ya biar rapih.
-        if($user->role==0){
-
-            // ini biasanya lgsg di handle di view sih... but its okay.
-            if($user->payment_pic!=NULL){
-                if($user->status==1){
-                    $verification = "Verified";
-                    // dd($verification);
-                    return view('debug.userDashboard',compact('verification'));
-                }
-                else {
-                    $verification = "Not Verified";
-                    // dd($verification);
-                    return view('debug.userDashboard',compact('verification'));
-                }
+        switch($user->role){
+            case 0: {
+               $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
+                // dd($date);
+                return view('debug.userDashboard', compact('date'));
+                break;
             }
-            else{
-                $verification = "Payment Not Submitted";
-                return view('debug.userDashboard',compact('verification'));
-            }
+            case 1: {
 
+                return redirect('/admin');
+                break;
+            }
+            case 2: {
+
+                return redirect('/superadmin');
+                break;
+            }
+            case 3: {
+
+                return redirect('/superadmin-malang');
+                break;
+            }
+            case 4: {
+
+                break;
+            }
         }
-        else if($user->role==1){
-            return redirect('/admin');
-        }
-        else if($user->role==2){
-            return redirect('/superadmin');
-        }
-        else if($user->role==3){
-            return redirect('/superadmin-malang');
-        }
-    }
+
+            // if($user->payment_pic!=NULL){
+            //     if($user->status==1){
+            //         $verification = "Verified";
+            //         // dd($verification);
+            //         return view('debug.userDashboard',compact('verification'));
+            //     }
+            //     else {
+            //         $verification = "Not Verified";
+            //         // dd($verification);
+            //         return view('debug.userDashboard',compact('verification'));
+            //     }
+            // }
+            // else{
+            //     $verification = "Payment Not Submitted";
+            //     return view('debug.userDashboard',compact('verification'));
+            // }
+
+}
 
     public function submitPayment(Request $request){
         $request->validate([
             'payment_pic' => 'required|mimes:jpg,jpeg,png|max:5480'
         ]);
-
-         // ada nama biar supaya pas didownload langsung retrieve nama file dengan nama_nim
 
         $file = $request->file('payment_pic');
         $fn_payment_pic = $request->user()->fullName."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
