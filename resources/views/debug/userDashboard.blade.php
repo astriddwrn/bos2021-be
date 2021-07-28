@@ -43,13 +43,13 @@
                 <div class="text-center modal-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
                 <form action="{{route('logout')}}" method="POST" >
                     @csrf
-                    <div class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Log Out</div>
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Log Out</button>
                 </form>
             </div>
         </div>
     </div>
-    
-    <div class="flex flex-row w-screen">   
+
+    <div class="flex flex-row w-screen">
         <div class="menu-cont menu-off xl:w-3/12 sm:w-80 w-60 h-screen flex flex-col items-center fixed xl:left-0 right-0 xl:flex z-10 bg-cWhite shadow-bsBtn">
             <img class="xl:hidden absolute left-5 top-3 arrow-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/arrow-icon.svg')}}" alt="">
             <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="">
@@ -88,7 +88,7 @@
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
                     <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
-                
+
                 <div class="grid-cont-schedule main-container">
                     <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
@@ -122,7 +122,7 @@
                         <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
                         <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                         <div class="xl:w-full sm:w-96 w-full flex sm:flex-row flex-col sm:justify-around mt-2">
-                            <div class="flex flex-col sm:items-center"> 
+                            <div class="flex flex-col sm:items-center">
                                 <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="sm:text-center font-bold my-2 font-lg">Astrid</div>
                                 <div>
@@ -130,7 +130,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
                                 </div>
                             </div>
-                            <div class="flex flex-col sm:items-center sm:mt-0 mt-3"> 
+                            <div class="flex flex-col sm:items-center sm:mt-0 mt-3">
                                 <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="sm:text-center font-bold my-2 font-lg">Samuel</div>
                                 <div>
@@ -158,7 +158,7 @@
                             <div class="text-2xl font-bold text-cDarkBlue my-3">Hi, {{(Auth::user()->fullName)}}!</div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
-    
+
                         <div class="procedure card bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Payment Procedure</div>
                             <div class="">Proceed your payment via transfer to following BCA account <br>
@@ -274,7 +274,7 @@
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
                             <div class="custom-select lnt-select w-full">
-                                <select id="lnt-select">
+                                <select id="lnt-select" name="lnt_course">
                                     <option class="off" value="0">Select Your Course</option>
                                     <!-- ALS -->
                                     <option value="Front-End Development">Front-End Development</option>
@@ -386,12 +386,12 @@
                             <div class="flex flex-row items-center text-lg font-semibold">Mobile Application Development</div>
                         </div>
                     </div>
-                    
+
                     <div class="card contact bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
                         <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
                         <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                         <div class="w-full flex lg:flex-row flex-col lg:justify-around mt-2">
-                            <div class="flex flex-col lg:items-center"> 
+                            <div class="flex flex-col lg:items-center">
                                 <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="lg:text-center font-bold my-2 font-lg">Astrid</div>
                                 <div>
@@ -399,7 +399,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
                                 </div>
                             </div>
-                            <div class="flex flex-col lg:items-center mt-3 lg:mt-0"> 
+                            <div class="flex flex-col lg:items-center mt-3 lg:mt-0">
                                 <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="lg:text-center font-bold my-2 font-lg">Samuel</div>
                                 <div>
