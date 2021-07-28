@@ -16,9 +16,12 @@ class UserController extends Controller
 
         switch($user->role){
             case 0: {
-               $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
+                //GANTI birthDate to actual schedule
+                $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
                 // dd($date);
-                return view('debug.userDashboard', compact('date'));
+                $start = Carbon::parse('2008-12-15 20:01:25')->format('H : i');
+                $end = Carbon::parse('2008-12-15 20:01:25')->addMinutes('100')->format('H : i');
+                return view('debug.userDashboard', compact('date','start','end'));
                 break;
             }
             case 1: {
