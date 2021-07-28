@@ -21,17 +21,17 @@ class UserController extends Controller
                 if($user->status==1){
                     $verification = "Verified";
                     // dd($verification);
-                    return view('dashboard',compact('verification'));
+                    return view('debug.userDashboard',compact('verification'));
                 }
                 else {
                     $verification = "Not Verified";
                     // dd($verification);
-                    return view('dashboard',compact('verification'));
+                    return view('debug.userDashboard',compact('verification'));
                 }
             }
             else{
                 $verification = "Payment Not Submitted";
-                return view('dashboard',compact('verification'));
+                return view('debug.userDashboard',compact('verification'));
             }
 
         }

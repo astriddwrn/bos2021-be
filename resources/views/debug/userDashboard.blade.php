@@ -41,16 +41,19 @@
             <div class="mt-7 font-medium text-2xl">Are you sure you want to log out?</div>
             <div class="flex flex-row justify-evenly w-full mt-8">
                 <div class="text-center modal-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
-                <div class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Log Out</div>
+                <form action="{{route('logout')}}" method="POST" >
+                    @csrf
+                    <div class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Log Out</div>
+                </form>
             </div>
         </div>
     </div>
-    
-    <div class="flex flex-row w-screen">   
+
+    <div class="flex flex-row w-screen">
         <div class="w-3/12 h-screen flex flex-col items-center fixed left-0">
             <img class="w-28 h-28 rounded-full mt-10" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
-            <div class="text-xl font-semibold mt-1">Jung Kook</div>
+            <div class="text-xl font-semibold mt-1">{{(Auth::user()->fullName)}}</div>
             <div class="mt-8 text-lg menu-list">
                 <div class="flex flex-row items-center font-semibold menu-schedule cursor-pointer">
                     <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="">
@@ -83,7 +86,7 @@
                     <span>Schedule</span>
                     <img class="h-8" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
                 </div>
-                
+
                 <div class="grid-cont-schedule ">
                     <div class="join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
@@ -117,7 +120,7 @@
                         <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
                         <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                         <div class="w-100 flex flex-row justify-around mt-2">
-                            <div class="flex flex-col items-center"> 
+                            <div class="flex flex-col items-center">
                                 <img class="w-12" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="text-center font-bold my-2 font-lg">Astrid</div>
                                 <div>
@@ -125,7 +128,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
                                 </div>
                             </div>
-                            <div class="flex flex-col items-center"> 
+                            <div class="flex flex-col items-center">
                                 <img class="w-12" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="text-center font-bold my-2 font-lg">Samuel</div>
                                 <div>
@@ -133,7 +136,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -149,33 +152,35 @@
                 <div class="">
                     <div class="grid-cont-payment">
                         <div class="info bg-cWhite rounded-xl px-8 py-5 ">
-                            <div class="text-2xl font-bold text-cDarkBlue my-3">Hi, Jung Kook!</div>
+                            <div class="text-2xl font-bold text-cDarkBlue my-3">Hi, {{(Auth::user()->fullName)}}!</div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
-    
+
                         <div class="procedure bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Payment Procedure</div>
                             <div class="">Proceed your payment via transfer to following BCA account <br>
                                             <b>5271723327 (Felisha Miranda)</b> <br>
                                             *Format detail: Full Name - NIM<br><br>
-    
+
                                             Send your payment receipt to our contact person and upload it below
                                             <ul style="list-style-type: inherit;" class="pl-5">
                                                 <li>Astrid - 081287422520 -  LINE: astriddwrn</li>
                                                 <li>Samuel - 081251442125 - LINE: ssam223</li>
-                                            </ul> 
+                                            </ul>
                             </div>
                         </div>
-                        <form id="form-payment" class="submission bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
+                        <form id="form-payment" class="submission bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly" action="{{ route('submit_pay') }}" enctype="multipart/form-data" method="POST">
+                            @method('PATCH')
+                            @csrf
                             <div class="text-2xl font-bold text-cDarkBlue">Payment Submission</div>
-                            
+
                             <div class="text-cDarkBlue font-medium text-xl">Payment Proof</div>
                             <div class="relative -mt-1">
                                 <div class="bg-cLightGray font-sans rounded-xl py-2 px-3 text-lg flex flex-row justify-between overflow-hidden">
                                     <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your Payment Proof Here </span>
                                 </div>
                                 <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
-                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="payment-upload" id="payment-upload" accept="image/png, image/jpeg, image/jpg">           
+                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="payment_pic" id="payment-upload" accept="image/png, image/jpeg, image/jpg">
                                 <div class="file-constraint">Your payment receipt must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
                             <div class="btn payment-btn w-full mt-3 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-2 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Submit</div>
@@ -215,7 +220,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
                                 </div>
                             </div>
-                            <div class="flex flex-col items-center"> 
+                            <div class="flex flex-col items-center">
                                 <div class="text-center font-bold mb-2 font-lg">Samuel</div>
                                 <div>
                                     <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081251442125</div>
@@ -294,8 +299,8 @@
                                     <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your KTP or Binusan Card Here</span>
                                 </div>
                                 <img class="absolute top-2 right-3 " src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
-                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="ktp-upload" id="ktp-upload" accept="image/png, image/jpeg, image/jpg" >     
-                                <div class="file-constraint">Your KTP or Binusian Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>      
+                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="ktp-upload" id="ktp-upload" accept="image/png, image/jpeg, image/jpg" >
+                                <div class="file-constraint">Your KTP or Binusian Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
                         </div>
                         <div class="mt-5">
@@ -305,11 +310,11 @@
                                     <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your FYP Card Here</span>
                                 </div>
                                 <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
-                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="fyp-upload" id="fyp-upload" accept="image/png, image/jpeg, image/jpg" >     
-                                <div class="file-constraint">Your FYP Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>      
+                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="fyp-upload" id="fyp-upload" accept="image/png, image/jpeg, image/jpg" >
+                                <div class="file-constraint">Your FYP Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
                         </div>
-                    
+
                         <div class="btn reregistration-btn w-full mt-16 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-2 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Submit</div>
                     </div>
                 </form>
@@ -333,7 +338,7 @@
                     <div class="personal bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
                         <div class="text-2xl font-bold text-cDarkBlue">Personal Info</div>
                         <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">Jung Kook</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->fullName)}}</div></div>
                         <div><div class="">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">Male</div></div>
                         <div> <div class="">Date of Birth</div>
@@ -350,27 +355,27 @@
                         <div class="flex flex-row items-center text-lg font-semibold">081234567890</div></div>
                         <div> <div class="">Binusian Email</div>
                         <div class="flex flex-row items-center text-lg font-semibold">jkjkjkjk@binus.ac.id</div></div>
-                       
+
                     </div>
 
                     <div class="student bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Student Credentials</div>
                         <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">Jung Kook</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->fullName)}}</div></div>
                         <div> <div class="">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">Male</div></div>
                         <div><div class="">Date of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">February 29, 1945</div></div>
                         <div><div class="">Place of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">Seoul</div></div>
-                        
+
                     </div>
 
                     <div class="contact bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
                         <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
                         <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                         <div class="w-full flex flex-row justify-around mt-2">
-                            <div class="flex flex-col items-center"> 
+                            <div class="flex flex-col items-center">
                                 <img class="" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="text-center font-bold my-2 font-lg">Astrid</div>
                                 <div>
@@ -378,7 +383,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
                                 </div>
                             </div>
-                            <div class="flex flex-col items-center"> 
+                            <div class="flex flex-col items-center">
                                 <img class="" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
                                 <div class="text-center font-bold my-2 font-lg">Samuel</div>
                                 <div>
@@ -386,7 +391,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
 
@@ -405,7 +410,7 @@
             </div>
 
 
-            
+
         </div>
 
     </div>
