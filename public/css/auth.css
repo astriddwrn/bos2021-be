@@ -53,7 +53,7 @@ input{
     z-index: -1;
     top: 25%;
     transform: translate(0%, -50%);
-    width: 200%;
+    width: 250%;
 }
 
 /* CUSTOM SELECT */
@@ -225,13 +225,11 @@ input::placeholder{
   top: 50%;
   left: 50%;
   transition:  all .3s linear;
-  transform: translate(-50%, -60%);
 }
 
 .pop-up{
   visibility: hidden;
   opacity: 0;
-  transition: opacity .3s linear;
 }
 
 .is-visible {
@@ -249,9 +247,10 @@ input::placeholder{
   background: linear-gradient(90deg, #E76857 0%, #FF9A8D 101%);
 }
 
+
 @media all and (max-width: 1280px) {
   .line{
-    width: 150%;
+    width: 200%;
 }
 }
 

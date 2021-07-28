@@ -110,10 +110,11 @@ selectFunc("bncc-select");
         x = $(this).siblings('input');
         if (x.attr('type') === "password") {
             x.attr('type', "text");
-            $(".eye-open, .eye-close").toggleClass("hidden");
+            x.siblings(".eye-open, .eye-close").toggleClass("hidden");
           } else {
             x.attr('type', "password");
-            $(".eye-open, .eye-close").toggleClass("hidden");
+            x.siblings(".eye-open, .eye-close").toggleClass("hidden");
+
           }
     });
 
@@ -138,10 +139,13 @@ selectFunc("bncc-select");
         }
     }
     function checkbox(x){
+
         if(!x.is(":checked")){
             x.parent().next().text("This field must be checked.");
         }
         else{
+        console.log(x);
+
             x.parent().next().empty();
         }
     }
@@ -206,8 +210,11 @@ selectFunc("bncc-select");
 
     function continueTransition(sec){
         if(!sec.find('.msg-error').text()){
-            if(sec.hasClass("join-sec")){
-                $('.confirmation').toggleClass('is-visible');
+            if(sec.hasClass("account-sec")){
+                $('.success').toggleClass('is-visible');
+                setTimeout(function(){ 
+                    $('form').submit(); 
+                }, 1500);
                 return;
             }
             if(sec.hasClass("login-sec")){

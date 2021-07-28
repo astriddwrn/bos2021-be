@@ -114,7 +114,6 @@ $(document).ready(function(){
 
      function checkValidationInput(x){
         if(x.attr('type') == 'file'){
-         console.log(x);
             fileVal(x);
         }
         else if(x.is('input') && x.val()==""){
@@ -257,7 +256,21 @@ $(document).ready(function(){
             $(this).addClass('hidden');
         });
         sec.removeClass('hidden');
-     });
+    });
 
+    // menu-slide
+    $('.menu-icon, .arrow-icon, .menu-list .menu, .main-container').click(function(){
+       if($(this).hasClass('main-container')){
+           if(!$(".menu-cont").hasClass('menu-off')){
+                $(".menu-cont").addClass('menu-off');
+           }
+            return;
+        }
+        
+        $(".menu-cont").toggleClass('menu-off');
+        
+    });
+
+    
 
 });
