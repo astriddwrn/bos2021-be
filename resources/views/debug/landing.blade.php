@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 <body class="bg-cWhite">
+
     {{-- Fun Fact --}}
-    <div class="w-full font-sans py-16 px-24 overflow-x">
+    <div class="w-full font-sans my-32 px-24">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
@@ -61,7 +62,7 @@
     </div>
 
     {{-- Why BNCC? --}}
-    <div class="w-full font-sans py-16 px-24">
+    <div class="w-full font-sans my-32 px-24">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
 
@@ -124,6 +125,115 @@
             </div>
         </div>
         <h1 class="font-bold text-cBlackHome text-4xl text-center mt-14">And many more!</h1>
+    </div>
+
+    {{-- FAQ --}}
+    <div class="w-full font-sans my-32 px-48">
+        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Frequently Asked Questions</h1>
+        <div class="w-full flex flex-col justify-center items-center">
+            <div class="w-full flex flex-col">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What is BNCC Expo?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    BNCC (Bina Nusantara Computer Club) is the <strong>best computer-based organization</strong> in Binus University that has already reached its 32nd year. This organization has built a
+                    strong foundation and experiences in educating people about computers, technology,
+                    business, and organizational skills. For further information, you can access the following link.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What are the benefits offered by BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
+                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
+                    technology industry, soft skills such as public speaking, time management, and many
+                    more.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">
+                        Do I have to come from the School of Computer Science or
+                        School of Information Systems to join BNCC?
+                    </h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    BNCC is <strong>open to all</strong> Binusians. Even though you are not from School of Computer
+                    Science or School of Information Systems, you can still become a member of BNCC.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">How is the learning schedule at LnT?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    The learning schedule is <strong>flexible</strong>, where members can choose a schedule that they
+                    can follow weekly so that it will not clash with the lecture schedule.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">How to join BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
+                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
+                    technology industry, soft skills such as public speaking, time management, and many
+                    more.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">Where can I get the latest info about BNCC Expo?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
+                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
+                    technology industry, soft skills such as public speaking, time management, and many
+                    more.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">How is the LnT learning process during the pandemic?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
+                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
+                    technology industry, soft skills such as public speaking, time management, and many
+                    more.
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-16 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">If I have further questions, who should I contact?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-16 px-20">
+                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
+                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
+                    technology industry, soft skills such as public speaking, time management, and many
+                    more.
+                </div>
+            </div>
+
+        </div>
     </div>
 
     {{-- Sponsor --}}

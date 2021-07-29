@@ -6,3 +6,9 @@ $( ".shadow-bsFf" ).hover(
 }
 );
 
+
+$('.arrow').click(function () {
+    $(this).parent().siblings(".bot").slideToggle();
+    $(this).parent().toggleClass("top-active");
+    $(this).toggleClass("arrow-active");
+});

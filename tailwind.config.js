@@ -19,6 +19,7 @@ module.exports = {
             cDarkerLightBlue: '#0091B7',
             cHomeGray: '#7A828A',
             cBlackHome: '#383530',
+            cGray: '#DADEDF',
         },
         backgroundImage: {
             'bgSpace': "linear-gradient(195.99deg, #0C131B -57.79%, #0054A5 49.18%, #CDD8DD 151.55%)",
