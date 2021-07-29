@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="{{ asset('css/countdown.css') }}">
 </head>
 <body class="font-sans">
-   
+
 
     <div class="w-screen h-screen bg-bgSpace relative">
 
         <div class="w-full h-full flex flex-col justify-center items-center relative z-10">
-            <div class="font-extrabold text-5xl text-center text-cWhite font-sans">Hi, Alexander Rainer</div>
+            <div class="font-extrabold text-5xl text-center text-cWhite font-sans">Hi, {{(Auth::user()->fullName)}}</div>
             <div class="relative mt-20 mb-8">
                 <div class="clock" id="clock1"></div>
                 <div class="flex flex-row justify-around text-center mt-2">
@@ -36,7 +36,9 @@
         <img class="rocket absolute z-4" src="{{url('./Asset/Image/countdown/bg-rocket.svg')}}" alt="">
         <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
     </div>
-
+    <script>
+         var countdownTime = new Date({{$countdown}});
+    </script>
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/flipclock.js')}}"></script>
     <script src="{{url('./js/countdown.js')}}"></script>

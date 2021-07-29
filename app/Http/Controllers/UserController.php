@@ -14,14 +14,17 @@ class UserController extends Controller
     public function index(Request $request) {
         $user = $request->user();
 
+        //scuffed temporarily
         switch($user->role){
             case 0: {
+                $countdown = Carbon::parse('2021-08-15 09:30:00')->subHours('5')->subMonths('1')->format('Y, m, d, H, i, s');
+                // dd($countdown);
                 //GANTI birthDate to actual schedule
                 $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
                 // dd($date);
                 $start = Carbon::parse('2008-12-15 20:01:25')->format('H : i');
                 $end = Carbon::parse('2008-12-15 20:01:25')->addMinutes('100')->format('H : i');
-                return view('debug.userDashboard', compact('date','start','end'));
+                return view('debug.countdown', compact('date','start','end','countdown'));
                 break;
             }
             case 1: {
