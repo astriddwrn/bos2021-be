@@ -8,6 +8,31 @@
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+
+    <style>
+        .say-pic-active{
+            box-shadow:5px 14px 13px #CDCDCD;
+            transition: all .5s ease-in-out;
+        }
+        .say-card{
+            opacity: 0;
+        }
+        .say-card-visible{
+            opacity: 1 !important;
+            transition: opacity 1s ease-in-out;
+            /* animation: jJump-frames .8s; */
+        }
+        @keyframes jJump-frames {
+        0%, 70%, 100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        40%{
+            -webkit-transform: translateY(-18px);
+            transform: translateY(-18px);
+        }
+    </style>
 </head>
 <body class="bg-cWhite">
     {{-- Fun Fact --}}
@@ -155,8 +180,94 @@
         </div>
     </div>
 
+    {{-- say --}}
+    <div class="w-full font-sans my-32 px-72">
+        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">What they say about BNCC?</h1>
+        <div class="relative h-56">
+            <div class="flex flex-row say-card say-card-visible absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person1.svg')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
+                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person2.svg')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
+                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person3.svg')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
+                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person4.svg')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
+                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person5.svg')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
+                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="flex flex-row justify-evenly width-full mt-10">
+            <div class="text-center font-bold cursor-pointer say-btn">   
+                <img class="rounded-full w-24 h-24 say-pic-active mb-3" src="{{ asset('Asset/Image/landing/say-person1.svg')}}" alt="">
+                Kevin
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">   
+                <img class="rounded-full w-24 h-24 mb-3" src="{{ asset('Asset/Image/landing/say-person2.svg')}}" alt="">
+                Kevin
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">   
+                <img class="rounded-full w-24 h-24 mb-3" src="{{ asset('Asset/Image/landing/say-person3.svg')}}" alt="">
+                Kevin
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">   
+                <img class="rounded-full w-24 h-24 mb-3" src="{{ asset('Asset/Image/landing/say-person4.svg')}}" alt="">
+                Kevin
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">   
+                <img class="rounded-full w-24 h-24 mb-3" src="{{ asset('Asset/Image/landing/say-person5.svg')}}" alt="">
+                Kevin
+            </div>
+        </div>
+    </div>
+
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/landing.js')}}"></script>
+
+    <script>
+        $(document).ready(function(){
+            let sayCurrNum = 0;
+            $('.say-btn').click(function(){
+                let sayThisNum = $(this).index();
+                $('.say-btn img').removeClass('say-pic-active');
+                $(this).find('img').addClass('say-pic-active');
+                $('.say-card').removeClass('say-card-visible');
+                $('.say-card').eq(sayThisNum).addClass('say-card-visible');
+
+
+            });
+
+        });
+
+
+
+    </script>
 </body>
 </html>
