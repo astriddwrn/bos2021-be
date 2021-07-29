@@ -50,7 +50,7 @@
                 </div>
 
 
-                <div class="personal-sec w-full section absolute right-section  px-24 ">
+                <div class="personal-sec w-full section absolute  px-24 ">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Name</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe">
@@ -188,7 +188,7 @@
 
                 </div>
 
-                <div class="account-sec w-full section absolute px-24">
+                <div class="account-sec w-full section absolute right-section  px-24">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="email" placeholder="example@binus.ac.id">

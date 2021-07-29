@@ -12,7 +12,6 @@ class Member extends Model
     protected $fillable = [
         'fullName',
         'email',
-        'password',
         'gender',
         'placeBirth',
         'birthDate',
@@ -31,4 +30,8 @@ class Member extends Model
         'ktp-upload',
         'fyp-upload'
     ];
+
+    public function user() {
+        return $this->has('App\Models\User');
+    }
 }

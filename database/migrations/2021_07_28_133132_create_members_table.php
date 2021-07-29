@@ -29,7 +29,7 @@ class CreateMembersTable extends Migration
             $table->string('major');
             $table->string('batch');
             $table->string('lnt_course');
-            $table->string('bnccid');
+            $table->string('bnccid')->unique();
             $table->string('linkedinUrl');
             $table->string('githubUrl');
             $table->string('ktp-upload');

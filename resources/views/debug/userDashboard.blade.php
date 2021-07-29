@@ -252,13 +252,14 @@
                 </div>
 
                 <!-- SEBELUM MEREKA REGIS -->
-                <form id="form-reregistration" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-8/12">
+                <form id="form-reregistration" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-8/12" action="{{ route('reregister') }}" enctype="multipart/form-data" method="POST">
+                @csrf
                     <div class="xl:w-10/12 sm:w-8/12 w-full">
                         <div class="text-2xl font-bold text-cDarkBlue my-3">Re-Registration Form</div>
 
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnnid" id="bnccid" placeholder="e.g. BNCC21xxx">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC21xxx">
                             <span class="msg-error"></span>
                         </div>
                         <div class="mt-5">
@@ -277,21 +278,27 @@
                                 <select id="lnt-select" name="lnt_course">
                                     <option class="off" value="0">Select Your Course</option>
                                     <!-- ALS -->
+                                    @if (Auth::user()->campus=='ALS')
                                     <option value="Front-End Development">Front-End Development</option>
                                     <option value="UI/UX Design">UI/UX Design</option>
                                     <option value="C Programming">C Programming</option>
                                     <option value="Java Programming">Java Programming</option>
+                                    @endif
                                     <!-- BDG & MLG-->
+                                    @if (Auth::user()->campus=='BDG' || Auth::user()->campus=='MLG')
                                     <option value="Back-End Development">Back-End Development</option>
                                     <option value="UI/UX Design">UI/UX Design</option>
                                     <option value="C Programming">C Programming</option>
                                     <option value="Mobile Application Development">Mobile Application Development</option>
                                     <option value="Game Development">Game Development</option>
+                                    @endif
                                     <!-- KMG -->
+                                    @if (Auth::user()->campus=='KMG')
                                     <option value="Back-End Development">Back-End Development</option>
                                     <option value="Front-End Development">Front-End Development</option>
                                     <option value="UI/UX Design">UI/UX Design</option>
                                     <option value="Java Programming">Java Programming</option>
+                                    @endif
                                 </select>
                             </div>
                             <span class="msg-error"></span>
