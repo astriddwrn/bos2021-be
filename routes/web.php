@@ -26,6 +26,7 @@ Route::middleware(["auth"])->group(function(){
     Route::get('/admin', [AdminController::class, "index"])->name('admin');
     Route::patch('/submit-pay', [UserController::class, "submitPayment"])->name('submit_pay');
     Route::get('/download/payment/{id}', [AdminController::class, "download"])->name('download_payment');
+    Route::post('/reregister', 'App\Http\Controllers\MemberController@create')->name('reregister');
 });
 
 Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsletter');

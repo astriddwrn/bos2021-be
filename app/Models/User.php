@@ -42,6 +42,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Schedule');
     }
 
+    public function member() {
+        return $this->belongsTo('App\Models\Member');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

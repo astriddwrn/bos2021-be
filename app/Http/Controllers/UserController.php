@@ -24,7 +24,7 @@ class UserController extends Controller
                 // dd($date);
                 $start = Carbon::parse('2008-12-15 20:01:25')->format('H : i');
                 $end = Carbon::parse('2008-12-15 20:01:25')->addMinutes('100')->format('H : i');
-                return view('debug.countdown', compact('date','start','end','countdown'));
+                return view('debug.userDashboard', compact('date','start','end','countdown'));
                 break;
             }
             case 1: {
