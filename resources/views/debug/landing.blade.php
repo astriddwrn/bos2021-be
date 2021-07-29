@@ -16,7 +16,7 @@
 <body class="bg-cWhite">
 
     {{-- Fun Fact --}}
-    <div class="w-full font-sans my-32 px-24">
+    <div class="w-full font-sans my-32 px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
@@ -24,7 +24,7 @@
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-32.svg')}}" alt="" class="w-24 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-2xl text-cBlackHome leading-10 pr-48">
+                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-10 pr-32">
                         BNCC has reached its 32nd year! We've had an amazing journey so far.
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-partner.svg')}}" alt="" class="w-24 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-2xl text-cBlackHome leading-10 pr-48">
+                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-10 pr-32">
                         BNCC has partnered with many big companies, such as Gojek, tiket.com, Shopee, Tokopedia and more!
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-product.svg')}}" alt="" class="w-24 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-2xl text-cBlackHome leading-10 pr-48">
+                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-10 pr-32">
                         BNCC has a software house (FAVESOLUTION) and online media (Filemagz)!
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-schedule.svg')}}" alt="" class="w-20 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-2xl text-cBlackHome leading-10 pr-48">
+                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-10 pr-32">
                         BNCC has organized many national events with more than 1,000 participants,
                         including BNCC Techno Talk  1, BNCC Techno Talk 2, TechnoScape, and more!
                     </div>
@@ -128,7 +128,7 @@
     </div>
 
     {{-- FAQ --}}
-    <div class="w-full font-sans my-32 px-48">
+    <div class="w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
             <div class="w-full flex flex-col">
@@ -236,6 +236,73 @@
         </div>
     </div>
 
+    {{-- What They Say? --}}
+    <div class="w-full font-sans my-32 px-72">
+        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">What they say about BNCC?</h1>
+        <div class="relative h-56">
+            <div class="flex flex-row say-card say-card-visible absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
+                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Clario Johan</div>
+                    <div class="font-medium leading-7">“Menurutku kesempatan join BNCC itu it’s now or never, apakah kalian mau ambil kesempatan yang akan berguna bagi masa depan kalian atau tidak, jadi langsung aja yah daftar BNCC, see you in BNCC!”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Benedic Matthew Halim</div>
+                    <div class="font-medium leading-7">“Pengalaman dan koneksi yang didapatkan sangat berharga dan tidak dapat dinilai dengan apapun.”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Yesaya Kevin</div>
+                    <div class="font-medium leading-7">“Buat aku BNCC itu bagaikan sebuah batu loncatan untuk keluar dari zona nyamanku, dan saranku bagi kalian yang ingin berkembang juga, kalian wajib banget nih join BNCC!”</div>
+                </div>
+            </div>
+            <div class="flex flex-row say-card absolute">
+                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+                <div>
+                    <div class="text-2xl font-bold my-3">Muhammad Rafi Wira Pratama</div>
+                    <div class="font-medium leading-7">“Di BNCC aku belajar time management yang baik dan kita selalu dituntut untuk tetap profesional karena bisa dikatakan BNCC sudah layaknya sebuah perusahaan.”</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="flex flex-row justify-evenly width-full mt-10">
+            <div class="text-center font-bold cursor-pointer say-btn">
+                <img class="rounded-full w-24 h-24 say-pic-active mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+                Kevin
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">
+                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+                Clario
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">
+                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+                Benedic
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">
+                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+                Yesaya
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn">
+                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+                Rafi
+            </div>
+        </div>
+    </div>
+
     {{-- Sponsor --}}
     <div class="w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Sponsors</h1>
@@ -266,6 +333,65 @@
         </div>
     </div>
 
+    {{-- Footer --}}
+    <div class="footer-sec w-full font-sans relative bg-bgSpace">
+
+        <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
+        <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
+
+        <div class="flex flex-row footer-content absolute z-10 text-cWhite ">
+            <div class="p-12 border-r-4">
+                <div class="text-3xl font-medium text-cWhite tracking-wide got-question">Got a question? Contact us!</div>
+                <div class="flex flex-row justify-around text-lg mt-3">
+                    <div>
+                        <div class="flex flex-row items-center  mt-3">
+                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
+                        </div>
+                        <div class="flex flex-row items-center  mt-3">
+                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
+                        </div>
+                        <div class="flex flex-row items-center  mt-3">
+                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-row items-center  mt-3">
+                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
+                        </div>
+                        <div class="flex flex-row items-center  mt-3">
+                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
+                        </div>
+                        <div class="flex flex-row items-center  mt-3">
+                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-12">
+                <div class="h-full flex flex-col justify-end">
+                    <div class="text-2xl font-medium w-80">Check our Social Media:</div>
+                    <div class="w-full flex flex-row justify-between mt-3 social">
+                        <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
+                        <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
+                        <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
+                        <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
+                        <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full bottom-0 absolute p-10">
+            <div class="flex flex-row justify-between items-end pb-5 border-b-4 border-cWhite">
+                <a class="" href="https://bncc.net/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
+                <a class="" href="https://www.gojek.com/en-id/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
+            </div>
+            <div class="flex flex-row justify-between items-end mt-5 text-cWhite">
+                <div>All Right Reserved BNCC 2021 © Bina Nusantara Computer Club</div>
+                <div>Privacy Policy & Terms of Service</div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/landing.js')}}"></script>

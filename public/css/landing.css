@@ -44,3 +44,49 @@
     display: none;
     border-radius: 0px 0px 24px 24px;
 }
+
+.say-pic-active{
+    box-shadow:5px 14px 13px #CDCDCD;
+    transition: all .5s ease-in-out;
+}
+
+.say-card{
+    opacity: 0;
+}
+
+.say-card-visible{
+    opacity: 1 !important;
+    transition: opacity 1s ease-in-out;
+}
+
+.footer-sec{
+    height:900px;
+}
+
+.footer-content{
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.footer-sec .got-question{
+    width: 450px;
+}
+
+.footer-sec .social img{
+    width: 50px;
+    height: 50px;
+}
+
+.footer-sec .social a {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+}
+
+.footer-sec .social a:hover{
+    cursor: pointer;
+    box-shadow:0 0 10px .5px  #FBFBFB;
+    transition: 0.3s;
+}
