@@ -68,7 +68,8 @@ return [
 
     'links' => [
         public_path('payment_pic') => storage_path('app/payment_pic'),
-        public_path('approval_letter') => storage_path('app/approval_letter')
+        public_path('ktp') => storage_path('app/ktp'),
+        public_path('fyp') => storage_path('app/fyp')
     ],
 
 ];
