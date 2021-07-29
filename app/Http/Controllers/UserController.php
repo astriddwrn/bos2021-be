@@ -17,7 +17,7 @@ class UserController extends Controller
         //scuffed temporarily
         switch($user->role){
             case 0: {
-                $countdown = Carbon::parse('2021-08-15 13:30:00')->subHours('5')->subMonths('1')->format('Y, m, d, H, i, s');
+                $countdown = Carbon::parse('2021-08-15 09:30:00')->subHours('5')->subMonths('1')->format('Y, m, d, H, i, s');
                 // dd($countdown);
                 //GANTI birthDate to actual schedule
                 $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
