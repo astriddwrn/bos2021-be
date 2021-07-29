@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ asset('css/countdown.css') }}">
 </head>
 <body class="font-sans">
-   
+
 
     <div class="w-screen h-screen bg-bgSpace relative">
 
@@ -36,7 +36,10 @@
         <img class="rocket absolute z-4" src="{{url('./Asset/Image/countdown/bg-rocket.svg')}}" alt="">
         <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
     </div>
-
+    <script>
+         var countdownTime = new Date({{$countdown}});
+         console.log(countdownTime);
+    </script>
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/flipclock.js')}}"></script>
     <script src="{{url('./js/countdown.js')}}"></script>
