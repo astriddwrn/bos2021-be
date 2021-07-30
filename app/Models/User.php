@@ -35,7 +35,7 @@ class User extends Authenticatable
         'schedule',
         'lnt_course',
         'payment_pic',
-        'is_re-registered'
+        'is_reregistered'
     ];
 
     public function schedule() {

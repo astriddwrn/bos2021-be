@@ -152,6 +152,7 @@
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
                 <!-- SEBELUM UPLOAD PAYMENT -->
+                @if (Auth::user()->payment_pic==NULL)
                 <div class="main-container">
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
@@ -190,27 +191,33 @@
                         </form>
                     </div>
                 </div>
+                @endif
 
                 <!-- PAYMENT UPLOADED -->
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="hidden main-container absolute md:w-8/12 w-11/12">
+                @if (Auth::user()->payment_pic!=NULL && Auth::user()->status==NULL)
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" main-container absolute md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">Your Payment is Being Verified</div>
                         <div class="font-medium mt-3">Thank you for registering, your payment receipt is now being validated by our crew. Your payment will be validated no later than 1 x 24 hours.</div>
                     </div>
                 </div>
+                @endif
 
                 <!-- PAYMENT VERIFIED -->
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container hidden md:w-8/12 w-11/12">
+                @if (Auth::user()->status==1)
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">Payment Success</div>
                         <div class="font-medium mt-3">Thank you for registering, your payment has been verified successfully! Now, you can continue to the Re-Registration step.</div>
                     </div>
                 </div>
+                @endif
 
                 <!-- PAYMENT REJECTED -->
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
+                @if (Auth::user()->status==2)
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold xs:mt-10 mt-5">Oops! There’s an Error in Verifying Your Payment</div>
@@ -233,6 +240,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 <!-- USER REGISTERED -->
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
@@ -252,86 +260,89 @@
                 </div>
 
                 <!-- SEBELUM MEREKA REGIS -->
+                @if (Auth::user()->is_reregistered==0)
                 <form id="form-reregistration" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-8/12" action="{{ route('reregister') }}" enctype="multipart/form-data" method="POST">
-                @csrf
-                    <div class="xl:w-10/12 sm:w-8/12 w-full">
-                        <div class="text-2xl font-bold text-cDarkBlue my-3">Re-Registration Form</div>
+                    @csrf
+                        <div class="xl:w-10/12 sm:w-8/12 w-full">
+                            <div class="text-2xl font-bold text-cDarkBlue my-3">Re-Registration Form</div>
 
-                        <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC21xxx">
-                            <span class="msg-error"></span>
-                        </div>
-                        <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">linkedIn URL</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="linkedinUrl" id="linkedinUrl" placeholder="e.g. https://www.linkedin.com/in/abc/">
-                            <span class="msg-error"></span>
-                        </div>
-                        <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">GitHub URL</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-lh my-1 border-0" type="text" name="githubUrl" id="githubUrl" placeholder="e.g. https://www.github.com/jungkook/">
-                            <span class="msg-error"></span>
-                        </div>
-                        <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
-                            <div class="custom-select lnt-select w-full">
-                                <select id="lnt-select" name="lnt_course">
-                                    <option class="off" value="0">Select Your Course</option>
-                                    <!-- ALS -->
-                                    @if (Auth::user()->campus=='ALS')
-                                    <option value="Front-End Development">Front-End Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="C Programming">C Programming</option>
-                                    <option value="Java Programming">Java Programming</option>
-                                    @endif
-                                    <!-- BDG & MLG-->
-                                    @if (Auth::user()->campus=='BDG' || Auth::user()->campus=='MLG')
-                                    <option value="Back-End Development">Back-End Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="C Programming">C Programming</option>
-                                    <option value="Mobile Application Development">Mobile Application Development</option>
-                                    <option value="Game Development">Game Development</option>
-                                    @endif
-                                    <!-- KMG -->
-                                    @if (Auth::user()->campus=='KMG')
-                                    <option value="Back-End Development">Back-End Development</option>
-                                    <option value="Front-End Development">Front-End Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="Java Programming">Java Programming</option>
-                                    @endif
-                                </select>
+                            <div class="mt-5">
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
+                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC21xxx">
+                                <span class="msg-error"></span>
                             </div>
-                            <span class="msg-error"></span>
-                        </div>
-                        <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">KTP or Binusian Card</div>
-                            <div class="relative">
-                                <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
-                                    <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your KTP or Binusan Card Here</span>
+                            <div class="mt-5">
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">linkedIn URL</div>
+                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="linkedinUrl" id="linkedinUrl" placeholder="e.g. https://www.linkedin.com/in/abc/">
+                                <span class="msg-error"></span>
+                            </div>
+                            <div class="mt-5">
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">GitHub URL</div>
+                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lh my-1 border-0" type="text" name="githubUrl" id="githubUrl" placeholder="e.g. https://www.github.com/jungkook/">
+                                <span class="msg-error"></span>
+                            </div>
+                            <div class="mt-5">
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
+                                <div class="custom-select lnt-select w-full">
+                                    <select id="lnt-select" name="lnt_course">
+                                        <option class="off" value="0">Select Your Course</option>
+                                        <!-- ALS -->
+                                        @if (Auth::user()->campus=='ALS')
+                                        <option value="Front-End Development">Front-End Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="C Programming">C Programming</option>
+                                        <option value="Java Programming">Java Programming</option>
+                                        @endif
+                                        <!-- BDG & MLG-->
+                                        @if (Auth::user()->campus=='BDG' || Auth::user()->campus=='MLG')
+                                        <option value="Back-End Development">Back-End Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="C Programming">C Programming</option>
+                                        <option value="Mobile Application Development">Mobile Application Development</option>
+                                        <option value="Game Development">Game Development</option>
+                                        @endif
+                                        <!-- KMG -->
+                                        @if (Auth::user()->campus=='KMG')
+                                        <option value="Back-End Development">Back-End Development</option>
+                                        <option value="Front-End Development">Front-End Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="Java Programming">Java Programming</option>
+                                        @endif
+                                    </select>
                                 </div>
-                                <img class="absolute top-2 right-3 " src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
-                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="ktp-upload" id="ktp-upload" accept="image/png, image/jpeg, image/jpg" >
-                                <div class="file-constraint">Your KTP or Binusian Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
+                                <span class="msg-error"></span>
                             </div>
-                        </div>
-                        <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">FYP Card</div>
-                            <div class="relative">
-                                <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
-                                    <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your FYP Card Here</span>
+                            <div class="mt-5">
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">KTP or Binusian Card</div>
+                                <div class="relative">
+                                    <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
+                                        <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your KTP or Binusan Card Here</span>
+                                    </div>
+                                    <img class="absolute top-2 right-3 " src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
+                                    <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="ktp-upload" id="ktp-upload" accept="image/png, image/jpeg, image/jpg" >
+                                    <div class="file-constraint">Your KTP or Binusian Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                                 </div>
-                                <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
-                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="fyp-upload" id="fyp-upload" accept="image/png, image/jpeg, image/jpg" >
-                                <div class="file-constraint">Your FYP Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
-                        </div>
+                            <div class="mt-5">
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">FYP Card</div>
+                                <div class="relative">
+                                    <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
+                                        <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your FYP Card Here</span>
+                                    </div>
+                                    <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
+                                    <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="fyp-upload" id="fyp-upload" accept="image/png, image/jpeg, image/jpg" >
+                                    <div class="file-constraint">Your FYP Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
+                                </div>
+                            </div>
 
-                        <div class="btn reregistration-btn w-full mt-16 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-2 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Submit</div>
-                    </div>
-                </form>
+                            <button class="btn reregistration-btn w-full mt-16 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-2 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Submit</button>
+                        </div>
+                    </form>
+                @endif
 
                 <!-- SETELAH MEREKA REGIS -->
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
+                @if (Auth::user()->is_reregistered==1)
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
@@ -339,6 +350,7 @@
                     </div>
                 </div>
             </div>
+                @endif
 
             <div class="section profile-sec hidden bg-cLightGray  h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">

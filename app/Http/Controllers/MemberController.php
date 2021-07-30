@@ -48,6 +48,8 @@ class MemberController extends Controller
             'ktp-upload' => $fn_ktp,
             'fyp-upload' => $fn_fyp
         ]);
+        $request->user()->is_reregistered = 1;
+        $request->user()->save();
 
         return back();
     }
