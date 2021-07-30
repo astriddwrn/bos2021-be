@@ -145,6 +145,10 @@
     overflow-y: scroll;
   }
 
+  .schedule-select .select-items {
+    max-height: 100px !important;
+  }
+
   /*hide the items when the select box is closed:*/
 .select-hide {
     display: none;

@@ -103,7 +103,7 @@ selectFunc("nim-select");
 selectFunc("campus-select");
 selectFunc("major-select");
 selectFunc("fyp-select");
-selectFunc("bncc-select");
+selectFunc("bncc-select-kmg");
 // selectFunc("lnt-select");
 
     $('.eye-open, .eye-close').click(function(){
@@ -166,7 +166,7 @@ selectFunc("bncc-select");
         
         if(x.is('#whatsapp') && !pattern.test(x.val())){
             x.addClass("border-error");
-            x.siblings('.msg-error').text("Pleane input a valid phone number.");
+            x.siblings('.msg-error').text("please input a valid phone number.");
         } 
     }
 
@@ -285,7 +285,7 @@ selectFunc("bncc-select");
         ];
         
         $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
-        $cBDG =  ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        $cBDG =  ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         
@@ -354,6 +354,8 @@ selectFunc("bncc-select");
         y.next().remove();
         y.remove();
         selectFunc('lnt-select');
+
+
     }
 
 

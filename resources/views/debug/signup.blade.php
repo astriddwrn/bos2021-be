@@ -160,13 +160,31 @@
                         <div class="custom-select lnt-select w-full">
                             <select id="lnt-select" name="lnt_course">
                                 <option class="off" value="0">Select your course</option>
-
                             </select>
                         </div>
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">BNCC Launching Schedule</div>
+                        <!-- Kemanggisan -->
+                        <div class="custom-select bncc-select-kmg w-full hidden">
+                            <select id="bncc-select-kmg" name="schedule">
+                                <option class="off" value="0">Select your schedule</option>
+                                <option value="BL1 sesi1">31 Agustus 2021 (11.00-13.00)</option>
+                                <option value="BL1 sesi2">31 Agustus 2021 (13.20-15.20)</option>
+                                <option value="BL1 sesi3">31 Agustus 2021 (15.40-17.40)</option>
+                                <option value="BL1 sesi4">31 Agustus 2021 (19.00-21.00)</option>
+                                <option value="BL2 sesi1">01 September 2021 (11.00-13.00)</option>
+                                <option value="BL2 sesi2">01 September 2021 (13.20-15.20)</option>
+                                <option value="BL2 sesi3">01 September 2021 (15.40-17.40)</option>
+                                <option value="BL2 sesi4">01 September 2021 (19.00-21.00)</option>
+                                <option value="BL3 sesi1">02 September 2021 (11.00-13.00)</option>
+                                <option value="BL3 sesi2">02 September 2021 (13.20-15.20)</option>
+                                <option value="BL3 sesi3">02 September 2021 (15.40-17.40)</option>
+                                <option value="BL3 sesi4">02 September 2021 (19.00-21.00)</option>
+                            </select>
+                        </div>
+                        <!-- Bandung -->
                         <div class="custom-select bncc-select w-full">
                             <select id="custom-select bncc-select" name="schedule">
                                 <option class="off" value="0">Select your schedule</option>
