@@ -54,21 +54,21 @@
             <img class="xl:hidden absolute left-5 top-3 arrow-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/arrow-icon.svg')}}" alt="">
             <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
-            <div class="text-xl font-semibold mt-1">{{(Auth::user()->fullName)}}</div>
-            <div class="mt-8 text-lg menu-list">
+            <div class="text-xl font-semibold mt-1"></div>
+            <div class="mt-7 text-lg menu-list">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
                     <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="">
                     <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
                     Schedule</div>
-                <div class="menu mt-8 flex flex-row items-center font-semibold menu-payment cursor-pointer">
+                <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="">
                     Payment</div>
-                <div class="menu mt-8 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
+                <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="">
                     Re-Registration</div>
-                <div class="menu mt-8 flex flex-row items-center font-semibold menu-profile cursor-pointer">
+                <div class="menu mt-7 flex flex-row items-center font-semibold menu-profile cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-profile-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="">Profile</div>
             </div>
@@ -76,7 +76,7 @@
                 <div class="mt-5 flex flex-row items-center font-semibold text-md cursor-pointer">
                     <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="">
                     <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt="">Return to Home</div>
-                <div class="mt-8 logout flex flex-row items-center font-semibold text-md text-cLightBlue cursor-pointer">
+                <div class="mt-7 logout flex flex-row items-center font-semibold text-md text-cLightBlue cursor-pointer">
                     <img class="mr-3 px-2" src="{{ asset('Asset/Image/userDashboard/menu-logout.svg')}}" alt="">Log out</div>
             </div>
         </div>
@@ -89,62 +89,62 @@
                     <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
                 <!-- SEBELUM REREGIST -->
-                <div class="grid-cont-schedule main-container">
-                    <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
-                        <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
-                        <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
-                        <div class="mt-2">
-                            <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">{{$date}}</div>
-                            <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">{{$start}} - {{$end}} (GMT +07.00)</div>
-                        </div>
-                        <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
-                    </div>
-
-                    <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
-                        <div class="text-2xl font-bold text-cDarkBlue">Change Your Schedule</div>
-                        <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
-                        <div><div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Schedule</div>
-                        <div class="custom-select schedule-select xl:w-full sm:w-96 w-full">
-                                <select id="schedule-select">
-                                    <option class="off" value="0">Select Your Course</option>
-                                    <option value="ALS">Alam Sutera</option>
-                                    <option value="BDG">Bandung</option>
-                                    <option value="KMG">Kemanggisan</option>
-                                    <option value="MLG">Malang</option>
-                                </select>
+                <div class="main-container">
+                    <div class="grid-cont-schedule">
+                        <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
+                            <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
+                            <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
+                            <div class="mt-2">
+                                <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt=""></div>
+                                <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt=""></div>
                             </div>
-                            <span class="msg-error"></span>
+                            <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
                         </div>
-                        <div class="btn schedule-btn xl:w-full sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn cursor-pointer">Submit</div>
-                    </form>
-
-                    <div class="contact card rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
-                        <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
-                        <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
-                        <div class="xl:w-full sm:w-96 w-full flex sm:flex-row flex-col sm:justify-around mt-2">
-                            <div class="flex flex-col sm:items-center">
-                                <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
-                                <div class="sm:text-center font-bold my-2 font-lg">Astrid</div>
-                                <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081287422520</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
+    
+                        <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
+                            <div class="text-2xl font-bold text-cDarkBlue">Change Your Schedule</div>
+                            <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
+                            <div><div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Schedule</div>
+                            <div class="custom-select schedule-select xl:w-full sm:w-96 w-full">
+                                    <select id="schedule-select">
+                                        <option class="off" value="0">Select Your Course</option>
+                                        <option value="ALS">Alam Sutera</option>
+                                        <option value="BDG">Bandung</option>
+                                        <option value="KMG">Kemanggisan</option>
+                                        <option value="MLG">Malang</option>
+                                    </select>
+                                </div>
+                                <span class="msg-error"></span>
+                            </div>
+                            <div class="btn schedule-btn xl:w-full sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn cursor-pointer">Submit</div>
+                        </form>
+    
+                        <div class="contact card rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
+                            <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
+                            <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
+                            <div class="xl:w-full sm:w-96 w-full flex sm:flex-row flex-col sm:justify-around mt-2">
+                                <div class="flex flex-col sm:items-center">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Astrid</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081287422520</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:items-center sm:mt-0 mt-3">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Samuel</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081251442125</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex flex-col sm:items-center sm:mt-0 mt-3">
-                                <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
-                                <div class="sm:text-center font-bold my-2 font-lg">Samuel</div>
-                                <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081251442125</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
-
                 </div>
                 <!-- USER REGISTERED -->
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="hidden absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
@@ -160,11 +160,10 @@
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
                 <!-- SEBELUM UPLOAD PAYMENT -->
-                @if (Auth::user()->payment_pic==NULL)
                 <div class="main-container">
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
-                            <div class="text-2xl font-bold text-cDarkBlue my-3">Hi, {{(Auth::user()->fullName)}}!</div>
+                            <div class="text-2xl font-bold text-cDarkBlue my-3">Hi,!</div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
 
@@ -199,33 +198,33 @@
                         </form>
                     </div>
                 </div>
-                @endif
+             
 
                 <!-- PAYMENT UPLOADED -->
-                @if (Auth::user()->payment_pic!=NULL && Auth::user()->status==NULL)
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" main-container absolute md:w-8/12 w-11/12">
+               
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" main-container hidden absolute md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">Your Payment is Being Verified</div>
                         <div class="font-medium mt-3">Thank you for registering, your payment receipt is now being validated by our crew. Your payment will be validated no later than 1 x 24 hours.</div>
                     </div>
                 </div>
-                @endif
+              
 
                 <!-- PAYMENT VERIFIED -->
-                @if (Auth::user()->status==1)
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
+                
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">Payment Success</div>
                         <div class="font-medium mt-3">Thank you for registering, your payment has been verified successfully! Now, you can continue to the Re-Registration step.</div>
                     </div>
                 </div>
-                @endif
+                
 
                 <!-- PAYMENT REJECTED -->
-                @if (Auth::user()->status==2)
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
+
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container hidden md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold xs:mt-10 mt-5">Oops! There’s an Error in Verifying Your Payment</div>
@@ -248,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                @endif
+              
 
                 <!-- USER REGISTERED -->
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
@@ -262,13 +261,13 @@
 
             <div class="section reregistration-sec  hidden bg-cLightGray  h-full">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
-                    <span>Payment</span>
+                    <span>Re-Registration</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
 
                 <!-- SEBELUM MEREKA REGIS -->
-                @if (Auth::user()->is_reregistered==0)
+             
                     <form id="form-reregistration" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-8/12" action="{{ route('reregister') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                     <div class="xl:w-10/12 sm:w-8/12 w-full">
@@ -295,27 +294,27 @@
                                 <select id="lnt-select" name="lnt_course">
                                     <option class="off" value="0">Select Your Course</option>
                                     <!-- ALS -->
-                                    @if (Auth::user()->campus=='ALS')
+                                  
                                     <option value="Front-End Development">Front-End Development</option>
                                     <option value="UI/UX Design">UI/UX Design</option>
                                     <option value="C Programming">C Programming</option>
                                     <option value="Java Programming">Java Programming</option>
-                                    @endif
+                            
                                     <!-- BDG & MLG-->
-                                    @if (Auth::user()->campus=='BDG' || Auth::user()->campus=='MLG')
+                                    
                                     <option value="Back-End Development">Back-End Development</option>
                                     <option value="UI/UX Design">UI/UX Design</option>
                                     <option value="C Programming">C Programming</option>
                                     <option value="Mobile Application Development">Mobile Application Development</option>
                                     <option value="Game Development">Game Development</option>
-                                    @endif
+                          
                                     <!-- KMG -->
-                                    @if (Auth::user()->campus=='KMG')
+                         
                                     <option value="Back-End Development">Back-End Development</option>
                                     <option value="Front-End Development">Front-End Development</option>
                                     <option value="UI/UX Design">UI/UX Design</option>
                                     <option value="Java Programming">Java Programming</option>
-                                    @endif
+                                   
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -346,11 +345,9 @@
                         <button class="btn reregistration-btn w-full mt-16 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-2 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Submit</button>
                     </div>
                 </form>
-                @endif
 
                 <!-- SETELAH MEREKA REGIS -->
-                @if (Auth::user()->is_reregistered==1)
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container hidden md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
@@ -358,7 +355,6 @@
                     </div>
                 </div>
             </div>
-                @endif
 
             <div class="section profile-sec hidden bg-cLightGray  h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
@@ -370,7 +366,7 @@
                     <div class="card1 personal bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
                         <div class="text-2xl font-bold text-cDarkBlue">Personal Info</div>
                         <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->fullName)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold"></div></div>
                         <div><div class="">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">Male</div></div>
                         <div> <div class="">Date of Birth</div>
@@ -393,24 +389,24 @@
                     <div class="card student bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Student Credentials</div>
                         <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->fullName)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold"></div></div>
                         <div> <div class="">Gender</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->gender)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold"></div></div>
                         <div><div class="">Date of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{$birthDate}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold"></div></div>
                         <div><div class="">Place of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->placeBirth)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold"></div></div>
                     </div>
 
                     <div class="card bncc bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">BNCC Registration</div>
                         <div>
                             <div class="">BNCC Launching Schedule</div>
-                            <div class="flex flex-row items-center text-lg font-semibold">{{$date}} <br>{{$start}} - {{$end}} (GMT +07.00)</div>
+                            <div class="flex flex-row items-center text-lg font-semibold"> <br></div>
                         </div>
                         <div>
                             <div class="">LnT Course</div>
-                            <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->lnt_course)}}</div>
+                            <div class="flex flex-row items-center text-lg font-semibold"></div>
                         </div>
                     </div>
 
