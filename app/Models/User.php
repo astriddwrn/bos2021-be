@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\PasswordReset;
 
+use App\Models\Schedule;
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
@@ -38,8 +40,20 @@ class User extends Authenticatable
         'is_reregistered'
     ];
 
-    public function schedule() {
-        return $this->belongsTo('App\Models\Schedule');
+    // ref: https://stackoverflow.com/a/24441480/5832341
+    // ref: https://laravel.com/docs/8.x/eloquent-mutators#defining-an-accessor
+    public function getScheduleAttribute($schedule){
+        return json_decode($schedule);
+    }
+
+    // ref: https://stackoverflow.com/a/37857795/5832341
+    // ref: https://laravel.com/docs/8.x/eloquent-mutators#defining-a-mutator
+    public function setScheduleAttribute($schedule){
+        return json_encode($schedule);
+    }
+
+    public function schedules() {
+        return Schedule::findOrFail($this->schedule);
     }
 
     public function member() {

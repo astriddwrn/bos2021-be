@@ -34,7 +34,7 @@ class CreateUsersTable extends Migration
             // $table->bigInteger('schedule_id')->unsigned()->nullable() /*inget untuk hapus nullable*/;
             // $table->foreign('schedule_id')->references('id')
             //                               ->on('schedules');
-            $table->bigInteger('schedule_id');
+            $table->json('schedule');
             $table->string('lnt_course');
             $table->integer('role')->default(0);
             $table->string('payment_pic')->nullable();

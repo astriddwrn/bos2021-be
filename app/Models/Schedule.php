@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Carbon;
+use App\Models\User;
 
 class Schedule extends Model
 {
@@ -20,13 +21,16 @@ class Schedule extends Model
         'lnt_course'
     ];
 
-    // ref: https://stackoverflow.com/a/24441480/5832341
-    public function GetDateAttribute($date){
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y H:i');
+    public function formatting_date(){
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->format('l, d F, Y H:i');
     }
 
     public function users() {
-        return $this->hasOne('App\Models\User');
+        return User::whereJsonContains('schedule', $this->id)->get();
+    }
+
+    public function count_users() {
+        return User::whereJsonContains('schedule', $this->id)->count();
     }
 }
 
