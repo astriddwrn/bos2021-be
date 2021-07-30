@@ -21,33 +21,62 @@
             opacity: 1 !important;
             transition: opacity 1s ease-in-out;
         }
-        .footer-sec{
-            height:900px;
-        }
-        .footer-content{
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, 0%);
-        }
-        .footer-sec .got-question{
-            width: 450px;
-        }
-        .footer-sec .social img{
-            width: 50px;
-            height: 50px;
-        }
 
-        .footer-sec .social a {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            transition: 0.3s;
-        }
 
-        .footer-sec .social a:hover{
-            cursor: pointer;
-            box-shadow:0 0 10px .5px  #FBFBFB;
-            transition: 0.3s;
+        /* Event CSS */
+        .carousel-event .layer{
+            background: linear-gradient(179.23deg, rgba(0, 0, 0, 0) 46.65%, rgba(0, 0, 0, 0.54) 101.2%);
+        }
+        .carousel-event .arrow-cont.prev{
+            background: linear-gradient(88.13deg, rgba(0, 0, 0, 0.3) -2.23%, rgba(0, 0, 0, 0) 91.21%);
+            transition: all .5s ease-in-out;
+
+        }
+        .carousel-event .arrow-cont.prev:hover{
+            background: linear-gradient(88.13deg, rgba(255, 255, 255, 0.4) -2.23%, rgba(255, 255, 255, 0) 96.08%);
+            transition: all .5s ease-in-out;
+
+        }
+        .carousel-event .arrow-cont.next{
+            background: linear-gradient(88.13deg, rgba(0, 0, 0, 0.3) -2.23%, rgba(0, 0, 0, 0) 91.21%);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            transition: all .5s ease-in-out;
+
+        }
+        .carousel-event .arrow-cont.next:hover{
+            background: linear-gradient(88.13deg, rgba(255, 255, 255, 0.4) -2.23%, rgba(255, 255, 255, 0) 96.08%);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            transition: all .5s ease-in-out;
+        }
+        .carousel-event .slide{
+            left:0;
+            transition: all 1s linear;
+            z-index: 5;
+
+        }
+        .carousel-event .slide-right{
+            transform: translate(100%, 0);
+            transition: all 1s linear;
+            z-index: 4;
+
+        }
+        .carousel-event .slide-left{
+            transform: translate(-100%, 0);
+            transition: all 1s linear;
+            z-index: 4;
+
+        }
+        .carousel-event .slide-behind{
+            left:0;
+            z-index: -1 !important;
+        }
+        .dot-cont-event div{
+            background: #CDD8DD;
+            transition: all 1s ease-in-out;
+        }
+        .dot-cont-event .on{
+            background: #0054A5 !important;
+            transition: all 1s ease-in-out;
         }
 
 
@@ -267,65 +296,59 @@
         </div>
     </div>
 
-    {{-- footer --}}
-    <div class="footer-sec w-full font-sans relative bg-bgSpace">
-        
-        <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
-        <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
+    {{-- event --}}
+    <div class="w-full h-screen font-sans my-32 px-72">
+        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">Our Events</h1>
+        <div class="text-base mb-14">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
-        <div class="flex flex-row footer-content absolute z-10 text-cWhite ">
-            <div class="p-12 border-r-4">
-                <div class="text-3xl font-medium text-cWhite tracking-wide got-question">Got a question? Contact us!</div>
-                <div class="flex flex-row justify-around text-lg mt-3">
-                    <div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
-                        </div>
-                    </div>
-                </div>
+        <div class="relative w-full carousel-event rounded-xl h-3/6 overflow-hidden">
+            <div class="w-full h-full slide  absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">Technoscape</div>
             </div>
-            <div class="p-12">
-                <div class="h-full flex flex-col justify-end">
-                    <div class="text-2xl font-medium w-80">Check our Social Media:</div>
-                    <div class="w-full flex flex-row justify-between mt-3 social">
-                        <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
-                        <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
-                    </div>
-                </div>
+            <div class="w-full h-full slide slide-right absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">BTT1</div>
             </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">BTT2</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">Expo</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">CSR</div>
+            </div>
+            <div class="w-full h-full slide slide-left absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">DLL</div>
+            </div>
+            
+            <div class="cursor-pointer h-full w-28 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
+            <div class="cursor-pointer h-full w-28 z-20 right-0 absolute arrow-cont next flex flex-row justify-center items-center"><img  style="transform: rotate(-180deg);" src="{{ asset('Asset/Image/landing/event-arrow-next.svg')}}" alt=""></div>
+        
+            
         </div>
-        <div class="w-full bottom-0 absolute p-10">
-            <div class="flex flex-row justify-between items-end pb-5 border-b-4 border-cWhite">
-                <a class="" href="https://bncc.net/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
-                <a class="" href="https://www.gojek.com/en-id/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
+        <div class="w-full flex flex-row mt-10 justify-center dot-cont-event">
+                <div class="h-2 w-10 mr-5 rounded-lg on"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 rounded-lg"></div>
             </div>
-            <div class="flex flex-row justify-between items-end mt-5 text-cWhite">
-                <div>All Right Reserved BNCC 2021 © Bina Nusantara Computer Club</div>
-                <div>Privacy Policy & Terms of Service</div>
-            </div>
-        </div>
         
     </div>
+    
 
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
@@ -343,6 +366,62 @@
 
 
             });
+
+
+            // Event JS
+            let eventCurrNum = 0;
+            $(".carousel-event .next").click(function(){
+                if($(this).hasClass('non-clickable')){
+                    return false;
+                }
+                $(".carousel-event .slide").eq(eventCurrNum).addClass('slide-left');
+                eventCurrNum++;
+                eventCurrNum>5 ? eventCurrNum=0 : '';
+                let a=eventCurrNum;
+                let b=eventCurrNum;
+                a -=2;
+                a==-2 ? a=4 : '';
+                a==-1 ? a=5 : '';
+                b +=1;
+                b>5 ? b=0 : '';
+                $(".carousel-event .slide").eq(a).removeClass('slide-left').addClass('slide-behind');
+                $(".carousel-event .slide").eq(eventCurrNum).removeClass('slide-right');
+                $(".carousel-event .slide").eq(b).removeClass('slide-behind').addClass('slide-right');
+                $(".dot-cont-event div").removeClass('on');
+                $(".dot-cont-event div").eq(eventCurrNum).addClass('on');
+
+                $('.carousel-event .next, .carousel-event .prev').addClass('non-clickable');
+                setTimeout(function(){
+                     $('.carousel-event .next, .carousel-event .prev').removeClass('non-clickable');
+                },1000);
+                
+            });
+            $(".carousel-event .prev").click(function(){
+                if($(this).hasClass('non-clickable')){
+                    return false;
+                }
+                $(".carousel-event .slide").eq(eventCurrNum).addClass('slide-right');
+                eventCurrNum--;
+                eventCurrNum<0 ? eventCurrNum=5 : '';
+                let a=eventCurrNum;
+                let b=eventCurrNum;
+                a +=2;
+                a==7 ? a=1 : '';
+                a==6 ? a=0 : '';
+                b -=1;
+                b<0 ? b=5 : '';
+                $(".carousel-event .slide").eq(a).removeClass('slide-right').addClass('slide-behind');
+                $(".carousel-event .slide").eq(eventCurrNum).removeClass('slide-left');
+                $(".carousel-event .slide").eq(b).removeClass('slide-behind').addClass('slide-left');
+                $(".dot-cont-event div").removeClass('on');
+                $(".dot-cont-event div").eq(eventCurrNum).addClass('on');
+
+                $('.carousel-event .next, .carousel-event .prev').addClass('non-clickable');
+                setTimeout(function(){
+                     $('.carousel-event .next, .carousel-event .prev').removeClass('non-clickable');
+                },1000);
+            });
+
 
         });
 
