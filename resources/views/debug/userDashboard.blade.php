@@ -94,8 +94,8 @@
                         <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
                         <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
                         <div class="mt-2">
-                            <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">Tuesday, August 31, 2021</div>
-                            <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">11.20 - 13.00 (GMT +07.00)</div>
+                            <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">{{$date}}</div>
+                            <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">{{$start}} - {{$end}} (GMT +07.00)</div>
                         </div>
                         <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
                     </div>
@@ -205,7 +205,7 @@
                 @endif
 
                 <!-- PAYMENT VERIFIED -->
-                @if (Auth::user()->status==1)
+                @if (Auth::user()->status==1 && Auth::user()->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
@@ -243,7 +243,8 @@
                 @endif
 
                 <!-- USER REGISTERED -->
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
+                @if (Auth::user()->is_reregistered==1)
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
@@ -251,6 +252,7 @@
                     </div>
                 </div>
             </div>
+                @endif
 
             <div class="section reregistration-sec  hidden bg-cLightGray  h-full">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
@@ -387,22 +389,22 @@
                         <div><div class="">Name</div>
                         <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->fullName)}}</div></div>
                         <div> <div class="">Gender</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">Male</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->gender)}}</div></div>
                         <div><div class="">Date of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">February 29, 1945</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">{{$birthDate}}</div></div>
                         <div><div class="">Place of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">Seoul</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->placeBirth)}}</div></div>
                     </div>
 
                     <div class="card bncc bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">BNCC Registration</div>
                         <div>
                             <div class="">BNCC Launching Schedule</div>
-                            <div class="flex flex-row items-center text-lg font-semibold">Tuesday, August 32, 2021 <br>11.20 - 13.00 (GMT +07.00)</div>
+                            <div class="flex flex-row items-center text-lg font-semibold">{{$date}} <br>{{$start}} - {{$end}} (GMT +07.00)</div>
                         </div>
                         <div>
                             <div class="">LnT Course</div>
-                            <div class="flex flex-row items-center text-lg font-semibold">Mobile Application Development</div>
+                            <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->lnt_course)}}</div>
                         </div>
                     </div>
 

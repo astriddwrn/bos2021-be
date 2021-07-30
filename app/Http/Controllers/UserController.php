@@ -21,10 +21,14 @@ class UserController extends Controller
                 // dd($countdown);
                 //GANTI birthDate to actual schedule
                 $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
+
                 // dd($date);
                 $start = Carbon::parse('2008-12-15 20:01:25')->format('H : i');
                 $end = Carbon::parse('2008-12-15 20:01:25')->addMinutes('100')->format('H : i');
-                return view('debug.userDashboard', compact('date','start','end','countdown'));
+
+                $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
+
+                return view('debug.userDashboard', compact('date','start','end','countdown', 'birthDate'));
                 break;
             }
             case 1: {

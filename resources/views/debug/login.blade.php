@@ -45,12 +45,12 @@
                     <div class="text-xl text-center mt-8"><a href="{{ route('password.request') }}"><span class="text-cLightBlue">Forgot your password?</span></a></div>
 
                     <div class="w-100">
-                        <div class="text-center btn-continue btn-login text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-8 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn ">Login</div>                     
+                        <div class="text-center btn-continue btn-login text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-8 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn ">Login</div>
                     </div>
                     {{-- <button type="submit">Login</button> --}}
                 </form>
 
-                    <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Not registered yet?</span><a href=""><span class="text-cLightBlue">Register here</span></a></div>
+                    <div class="info text-xl w-full text-center mb-20"><span class="text-cDarkBlue mr-2">Not registered yet?</span><a href="{{url('/register')}}"><span class="text-cLightBlue">Register here</span></a></div>
 
                 </div>
 
