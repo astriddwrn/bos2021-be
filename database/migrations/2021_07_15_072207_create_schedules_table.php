@@ -23,8 +23,6 @@ class CreateSchedulesTable extends Migration
             $table->string('link1');
             $table->string('link2')->nullable();
 
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
             $table->timestamps();
         });
     }

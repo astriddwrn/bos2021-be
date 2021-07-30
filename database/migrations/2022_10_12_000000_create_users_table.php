@@ -31,15 +31,16 @@ class CreateUsersTable extends Migration
             $table->string('campus');
             $table->string('major');
             $table->string('batch');
-            // $table->bigInteger('schedule_id')->unsigned()->nullable()/*inget untuk hapus nullable*/;
+            // $table->bigInteger('schedule_id')->unsigned()->nullable() /*inget untuk hapus nullable*/;
             // $table->foreign('schedule_id')->references('id')
             //                               ->on('schedules');
-            $table->string('schedule');
+            $table->bigInteger('schedule_id');
             $table->string('lnt_course');
             $table->integer('role')->default(0);
             $table->string('payment_pic')->nullable();
             $table->integer('status')->nullable();
             $table->integer('is_reregistered')->default(0);
+
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
