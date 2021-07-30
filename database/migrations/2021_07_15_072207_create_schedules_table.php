@@ -18,6 +18,8 @@ class CreateSchedulesTable extends Migration
 
             $table->dateTimeTz('date');
             $table->integer('quota');
+            $table->string('lnt_course');
+            $table->string('campus');
             $table->string('link1');
             $table->string('link2')->nullable();
 

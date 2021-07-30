@@ -13,7 +13,9 @@ class Schedule extends Model
         'date',
         'link1',
         'link2',
-        'quota'
+        'quota',
+        'campus',
+        'lnt_course'
     ];
 
     public function users() {
