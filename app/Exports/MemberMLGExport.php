@@ -2,20 +2,19 @@
 
 namespace App\Exports;
 
-use App\Models\User;
+use App\Models\Member;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
-use Maatwebsite\Excel\Facades\Excel;
 
-class MLGExport implements FromCollection, WithHeadings
+class MemberMLGExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
     */
-
     public function headings(): array
     {
         return [
+            'BNCC ID',
             'Nama',
             'NIM',
             'Kampus',
@@ -27,14 +26,15 @@ class MLGExport implements FromCollection, WithHeadings
             'Domisili',
             'Tempat lahir',
             'Tanggal lahir',
-            'Batch FYP'
+            'Batch FYP',
+            'Linkedin',
+            'Github',
+            'Course LnT'
         ];
     }
 
     public function collection()
     {
-        return User::select('fullName', 'nim', 'campus', 'major', 'whatsapp', 'line_id', 'gender', 'address', 'domicile', 'placeBirth', 'birthDate', 'batch')->where('campus','=','MLG')->get();
+        return Member::select('bnccid','fullName', 'nim', 'campus', 'major', 'whatsapp', 'line_id', 'gender', 'address', 'domicile', 'placeBirth', 'birthDate', 'batch', 'linkedinUrl', 'githubUrl','lnt_course')->where('campus','=','MLG')->get();
     }
-
 }
-
