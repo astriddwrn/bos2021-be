@@ -88,7 +88,7 @@
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
                     <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
-
+                <!-- SEBELUM REREGIST -->
                 <div class="grid-cont-schedule main-container">
                     <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
@@ -142,6 +142,14 @@
                         </div>
                     </div>
 
+                </div>
+                <!-- USER REGISTERED -->
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute hidden main-container md:w-8/12 w-11/12">
+                    <div class="w-full flex flex-col items-center text-center">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
+                        <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
+                        <div class="font-medium mt-3">Thank you for registering! You are now registered as a member of BNCC.</div>
+                    </div>
                 </div>
             </div>
 
