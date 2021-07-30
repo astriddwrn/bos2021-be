@@ -1,4 +1,5 @@
-$( ".shadow-bsFf" ).hover(
+/* Fun Fact */
+$(".shadow-bsFf").hover(
     function () {
     $(this).children( ".ff-img" ).css( "filter", "grayscale(0%)" );
 }, function() {
@@ -7,6 +8,7 @@ $( ".shadow-bsFf" ).hover(
 );
 
 
+/* FAQ */
 $('.arrow').click(function () {
     $(this).parent().siblings(".bot").slideToggle();
     $(this).parent().toggleClass("top-active");
