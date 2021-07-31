@@ -57,9 +57,15 @@ class RegisteredUserController extends Controller
         ]);
 
         foreach(Schedule::findOrFail($request->schedule) as $schedule){
-            if($schedule->count_users() >= $schedule->quota){
-                return back()->with("full", $schedule->id)->withInput();
-            }
+            if($request->campus != $schedule->campus)
+                return back()->withInput()->withErrors([
+                    "schedule" => "The schedule you choose is not available in your campus."
+                ]);
+
+            if($schedule->count_users() >= $schedule->quota)
+                return back()->withInput()->withErrors([
+                    "schedule" => "The schedule you choose is full right now."
+                ]);
         }
 
         $user = User::create([
