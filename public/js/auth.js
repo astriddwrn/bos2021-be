@@ -425,14 +425,7 @@ selectFunc("bncc-select-als");
         progressPrev();
     })
 
-    // submit
-    $('.modal-continue').click(function(){
-        $('.confirmation').toggleClass('is-visible');
-        setTimeout(function(){ 
-            $('form').submit(); }, 1500);
-        $('.success').toggleClass('is-visible');
-
-    });
+    
     $('.modal-back').click(function(){
         $('.confirmation').toggleClass('is-visible');
     });
@@ -443,7 +436,6 @@ selectFunc("bncc-select-als");
 
 
     $( ".close" ).click(function() {
-        // $(".succeed-notif").css("display", "none");
         $(".failed-notif").css("display", "none");
       })
 
