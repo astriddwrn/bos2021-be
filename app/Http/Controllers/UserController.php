@@ -26,7 +26,14 @@ class UserController extends Controller
 
                 $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
 
-                return view('debug.userDashboard', compact('date','start','end','birthDate'));
+                $now = Carbon::now('GMT+7');
+
+                $payment_appear = Carbon::parse('2021-08-31 12:50:00')->addMinutes(120);
+                $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
+
+                $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
+
+                return view('debug.userDashboard', compact('date','start','end','birthDate','diff_payment', 'diff_reregis'));
                 break;
             }
             case 1: {
@@ -48,6 +55,11 @@ class UserController extends Controller
 
                 break;
             }
+
+            case 5: {
+
+                break;
+            }
         }
 
 }
@@ -55,10 +67,10 @@ class UserController extends Controller
     public function countdown(Request $request) {
         $user = $request->user();
 
-        $countdown = Carbon::parse('2021-07-31 12:20:00')->format('Y, m, d, H, i, s');
+        $countdown = Carbon::parse('2021-08-02 12:20:00')->format('Y, m, d, H, i, s');
 
         $now = Carbon::now('GMT+7');
-        $diff = ((new \DateTime('2021-07-31 12:20:00'))->diff(new \DateTime($now)));
+        $diff = ((new \DateTime('2021-08-02 12:20:00'))->diff(new \DateTime($now)));
         // dd($diff);
         if(!$diff->invert)
             return redirect('https://www.youtube.com/');
