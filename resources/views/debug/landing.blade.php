@@ -127,14 +127,58 @@
         <h1 class="font-bold text-cBlackHome text-4xl text-center mt-14">And many more!</h1>
     </div>
 
-    {{-- Our Courses --}}
-    <div class="w-full font-sans my-32 px-24">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-8 text-center">Our Courses</h1>
-        <div class="w-full">
+    {{-- Our Event --}}
+    <div class="w-full h-screen font-sans my-32 px-72">
+        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">Our Events</h1>
+        <div class="text-base mb-14">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
+
+        <div class="relative w-full carousel-event rounded-xl h-3/6 overflow-hidden">
+            <div class="w-full h-full slide  absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">Technoscape</div>
+            </div>
+            <div class="w-full h-full slide slide-right absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">BTT1</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">BTT2</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">Expo</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">CSR</div>
+            </div>
+            <div class="w-full h-full slide slide-left absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">DLL</div>
+            </div>
+
+            <div class="cursor-pointer h-full w-28 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
+            <div class="cursor-pointer h-full w-28 z-20 right-0 absolute arrow-cont next flex flex-row justify-center items-center"><img  style="transform: rotate(-180deg);" src="{{ asset('Asset/Image/landing/event-arrow-next.svg')}}" alt=""></div>
+
 
         </div>
-    </div>
+        <div class="w-full flex flex-row mt-10 justify-center dot-cont-event">
+                <div class="h-2 w-10 mr-5 rounded-lg on"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 mr-5 rounded-lg"></div>
+                <div class="h-2 w-10 rounded-lg"></div>
+            </div>
 
+    </div>
 
     {{-- What They Say? --}}
     <div class="w-full font-sans my-32 px-72">

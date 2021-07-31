@@ -90,3 +90,60 @@
     box-shadow:0 0 10px .5px  #FBFBFB;
     transition: 0.3s;
 }
+
+/* Carousel Event */
+/* Event CSS */
+.carousel-event .layer{
+    background: linear-gradient(179.23deg, rgba(0, 0, 0, 0) 46.65%, rgba(0, 0, 0, 0.54) 101.2%);
+}
+.carousel-event .arrow-cont.prev{
+    background: linear-gradient(88.13deg, rgba(0, 0, 0, 0.3) -2.23%, rgba(0, 0, 0, 0) 91.21%);
+    transition: all .5s ease-in-out;
+
+}
+.carousel-event .arrow-cont.prev:hover{
+    background: linear-gradient(88.13deg, rgba(255, 255, 255, 0.4) -2.23%, rgba(255, 255, 255, 0) 96.08%);
+    transition: all .5s ease-in-out;
+
+}
+.carousel-event .arrow-cont.next{
+    background: linear-gradient(88.13deg, rgba(0, 0, 0, 0.3) -2.23%, rgba(0, 0, 0, 0) 91.21%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transition: all .5s ease-in-out;
+
+}
+.carousel-event .arrow-cont.next:hover{
+    background: linear-gradient(88.13deg, rgba(255, 255, 255, 0.4) -2.23%, rgba(255, 255, 255, 0) 96.08%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transition: all .5s ease-in-out;
+}
+.carousel-event .slide{
+    left:0;
+    transition: all 1s linear;
+    z-index: 5;
+
+}
+.carousel-event .slide-right{
+    transform: translate(100%, 0);
+    transition: all 1s linear;
+    z-index: 4;
+
+}
+.carousel-event .slide-left{
+    transform: translate(-100%, 0);
+    transition: all 1s linear;
+    z-index: 4;
+
+}
+.carousel-event .slide-behind{
+    left:0;
+    z-index: -1 !important;
+}
+.dot-cont-event div{
+    background: #CDD8DD;
+    transition: all 1s ease-in-out;
+}
+.dot-cont-event .on{
+    background: #0054A5 !important;
+    transition: all 1s ease-in-out;
+}

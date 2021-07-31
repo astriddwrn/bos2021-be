@@ -17,8 +17,6 @@ class UserController extends Controller
         //scuffed temporarily
         switch($user->role){
             case 0: {
-                $countdown = Carbon::parse('2021-08-15 09:30:00')->subHours('5')->subMonths('1')->format('Y, m, d, H, i, s');
-                // dd($countdown);
                 //GANTI birthDate to actual schedule
                 $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
 
@@ -28,7 +26,33 @@ class UserController extends Controller
 
                 $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
 
-                return view('debug.userDashboard', compact('date','start','end','countdown', 'birthDate'));
+                $now = Carbon::now('GMT+7');
+
+                if($user->campus == 'KMG')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(120);
+                }
+                else if($user->campus == 'ALS')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 15:00:00')->addMinutes(145);
+                }
+                else if($user->campus == 'BDG')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(115);
+                }
+                else if($user->campus == 'MLG')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(115);
+                }
+
+                $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
+
+                $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
+
+                //Untuk disable change schedule kalau jadwal BL sudah mulai
+                $diff_change_schedule = ((new \DateTime('2021-07-31 16:08:00'))->diff(new \DateTime($now)));
+
+                return view('debug.userDashboard', compact('date','start','end','birthDate','diff_payment', 'diff_reregis', 'diff_change_schedule'));
                 break;
             }
             case 1: {
@@ -50,26 +74,30 @@ class UserController extends Controller
 
                 break;
             }
+
+            case 5: {
+
+                break;
+            }
         }
 
-            // if($user->payment_pic!=NULL){
-            //     if($user->status==1){
-            //         $verification = "Verified";
-            //         // dd($verification);
-            //         return view('debug.userDashboard',compact('verification'));
-            //     }
-            //     else {
-            //         $verification = "Not Verified";
-            //         // dd($verification);
-            //         return view('debug.userDashboard',compact('verification'));
-            //     }
-            // }
-            // else{
-            //     $verification = "Payment Not Submitted";
-            //     return view('debug.userDashboard',compact('verification'));
-            // }
-
 }
+
+    public function countdown(Request $request) {
+        $user = $request->user();
+
+        $countdown = Carbon::parse('2021-08-02 12:20:00')->format('Y, m, d, H, i, s');
+
+        $now = Carbon::now('GMT+7');
+        $diff = ((new \DateTime('2021-08-02 12:20:00'))->diff(new \DateTime($now)));
+        // dd($diff);
+        if(!$diff->invert)
+            return redirect('https://www.youtube.com/');
+        else
+            return view('debug.countdown', compact('countdown'));
+        // dd($countdown);
+
+    }
 
     public function submitPayment(Request $request){
         $request->validate([

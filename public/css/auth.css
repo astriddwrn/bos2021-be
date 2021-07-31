@@ -184,6 +184,62 @@ input[type=checkbox] {
 }
 /* END CHECKBOX */
 
+/* RADIO CUSTOM */
+.radio {
+  --border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.radio input[type="radio"]{
+  display: none;
+}
+
+.radio label{
+  position: relative;
+  
+  display: inline-block;
+  
+  width: 20px;
+  height: 20px;
+  
+  border: 3px solid #37C8EE;
+  border-radius: var(--border-radius);
+  
+  box-sizing: border-box;
+}
+
+.radio label::before {
+  content: "";
+  
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  width: 10px;
+  height: 10px;
+  
+  border-radius: var(--border-radius);
+  
+  background-color: transparent;
+  
+  transform: translate(-50%, -50%);
+  
+  transition: background-color 0.25s;
+}
+
+.radio :checked ~ label::before{
+  background-color: #37C8EE;
+}
+
+.radio span{
+  vertical-align: top;
+  
+  transition: color 0.25s;
+}
+/* END RADIO */
+
 form:not(.login){
   height: 100vh;
   overflow-y: scroll;

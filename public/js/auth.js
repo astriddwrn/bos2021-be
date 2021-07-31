@@ -104,7 +104,7 @@ selectFunc("campus-select");
 selectFunc("major-select");
 selectFunc("fyp-select");
 selectFunc("bncc-select-kmg");
-// selectFunc("lnt-select");
+selectFunc("bncc-select-als");
 
     $('.eye-open, .eye-close').click(function(){
         x = $(this).siblings('input');
@@ -144,9 +144,24 @@ selectFunc("bncc-select-kmg");
             x.parent().next().text("This field must be checked.");
         }
         else{
-        console.log(x);
-
             x.parent().next().empty();
+        }
+    }
+    function multiple(x){
+        console.log(x);
+        let a = false;
+        x.find('label input').each(function() {
+            if($(this).is(':checked')){
+                a=true;
+            }
+        })
+        console.log(a);
+
+        if(!a){
+            x.next().text("This field must be checked.");
+        }
+        else{
+            x.next().empty();
         }
     }
 
@@ -201,14 +216,18 @@ selectFunc("bncc-select-kmg");
         sec.find("input").each(function(){
             checkEmpty($(this));
         });
-        sec.find(".custom-select").each(function(){
+        sec.find(".custom-select:visible").each(function(){
             checkEmpty($(this));
         });
         checkbox(sec.find('#checkbox'));
+        if(sec.find('.multiple:visible')){
+            multiple(sec.find('.multiple:visible'))
+        }
         callback(sec);
     }
 
     function continueTransition(sec){
+        console.log(sec.find('.msg-error').text());
         if(!sec.find('.msg-error').text()){
             if(sec.hasClass("account-sec")){
                 $('.success').toggleClass('is-visible');
@@ -217,9 +236,10 @@ selectFunc("bncc-select-kmg");
                 }, 1500);
                 return;
             }
-            if(sec.hasClass("login-sec")){
+            if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
                 $('form').submit();
                 return;
+            
             }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
@@ -296,26 +316,30 @@ selectFunc("bncc-select-kmg");
         let a = $cKMG;
         let b = $mKMG; 
         let c = $fKMG;
+        let d;
         if(cmps=='ALS'){
             a = $cALS;
             b = $mKMG;
             c = $fKMG;
+            d = $('.schedule-als')
         }
         else if(cmps=='BDG'){
             a = $cBDG;
             b = $mBDG;
             c = $fBDG;
-
+            d = $('.schedule-bdg')
         }
         else if(cmps=='KMG'){
             a = $cKMG;
             b = $mKMG;
             c = $fKMG;
+            d = $('.schedule-kmg')
         }
         else if(cmps=='MLG'){
             a = $cMLG;
             b = $mMLG;
             c = $fMLG;
+            d = $('.schedule-mlg')
         }
         
         $len = b.length;
@@ -355,7 +379,11 @@ selectFunc("bncc-select-kmg");
         y.remove();
         selectFunc('lnt-select');
 
-
+        $('.schedule').each(function(){
+            $(this).addClass('hidden');
+            $(this).find('.msg-error').empty();
+        });
+        d.removeClass('hidden');
     }
 
 
@@ -392,20 +420,13 @@ selectFunc("bncc-select-kmg");
         let sec = $(this).parent().parent();
         sec.addClass('right-section');
         sec.prev().removeClass('left-section');
-        $("html, body").animate({ 
+        $("form").animate({ 
             scrollTop: 0 
-        }, "fast");
+        }, "slow");
         progressPrev();
     })
 
-    // submit
-    $('.modal-continue').click(function(){
-        $('.confirmation').toggleClass('is-visible');
-        setTimeout(function(){ 
-            $('form').submit(); }, 1500);
-        $('.success').toggleClass('is-visible');
-
-    });
+    
     $('.modal-back').click(function(){
         $('.confirmation').toggleClass('is-visible');
     });
@@ -416,7 +437,6 @@ selectFunc("bncc-select-kmg");
 
 
     $( ".close" ).click(function() {
-        // $(".succeed-notif").css("display", "none");
         $(".failed-notif").css("display", "none");
       })
 
