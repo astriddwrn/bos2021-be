@@ -99,6 +99,7 @@ $(document).ready(function(){
     selectFunc("lnt-select");
     selectFunc("schedule-select");
 
+
     $('input:file').change(function() {
         var file = $(this)[0].files[0].name;
         $(this).prev().prev().find(".file-name").text(file).css("color", "black");
