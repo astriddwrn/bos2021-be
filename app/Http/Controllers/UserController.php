@@ -17,8 +17,6 @@ class UserController extends Controller
         //scuffed temporarily
         switch($user->role){
             case 0: {
-                $countdown = Carbon::parse('2021-08-15 09:30:00')->subHours('5')->subMonths('1')->format('Y, m, d, H, i, s');
-                // dd($countdown);
                 //GANTI birthDate to actual schedule
                 $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
 
@@ -28,7 +26,7 @@ class UserController extends Controller
 
                 $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
 
-                return view('debug.userDashboard', compact('date','start','end','countdown', 'birthDate'));
+                return view('debug.userDashboard', compact('date','start','end','birthDate'));
                 break;
             }
             case 1: {
@@ -52,24 +50,23 @@ class UserController extends Controller
             }
         }
 
-            // if($user->payment_pic!=NULL){
-            //     if($user->status==1){
-            //         $verification = "Verified";
-            //         // dd($verification);
-            //         return view('debug.userDashboard',compact('verification'));
-            //     }
-            //     else {
-            //         $verification = "Not Verified";
-            //         // dd($verification);
-            //         return view('debug.userDashboard',compact('verification'));
-            //     }
-            // }
-            // else{
-            //     $verification = "Payment Not Submitted";
-            //     return view('debug.userDashboard',compact('verification'));
-            // }
-
 }
+
+    public function countdown(Request $request) {
+        $user = $request->user();
+
+        $countdown = Carbon::parse('2021-07-31 12:20:00')->format('Y, m, d, H, i, s');
+
+        $now = Carbon::now('GMT+7');
+        $diff = ((new \DateTime('2021-07-31 12:20:00'))->diff(new \DateTime($now)));
+        // dd($diff);
+        if(!$diff->invert)
+            return redirect('https://www.youtube.com/');
+        else
+            return view('debug.countdown', compact('countdown'));
+        // dd($countdown);
+
+    }
 
     public function submitPayment(Request $request){
         $request->validate([
