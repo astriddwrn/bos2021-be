@@ -53,7 +53,7 @@ class User extends Authenticatable
     }
 
     public function schedules() {
-        return Schedule::findOrFail($this->schedule);
+        return Schedule::find($this->schedule);
     }
 
     public function member() {
