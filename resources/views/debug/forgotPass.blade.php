@@ -22,7 +22,7 @@
     </div>
 
         <div style="left:50%; top:50%; transform: translate(-50%, -50%); height:630px; width: 550px" class="absolute rounded-xl flex flex-col items-center justify-center absolute bg-cWhite my-10">
-            
+
 
             <form action="" class="w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
                 @csrf
@@ -32,9 +32,11 @@
                 <div class="text-center text-3xl font-bold text-cDarkBlue">Forgot your Password?</div>
                 <div class="text-center mt-5">Enter the binusian email and we will send an email with instructions to reset your password.</div>
                 <!-- INSTRUCTIONS -->
+                @if ($message = Session::get('status'))
                 <div class="text-center text-3xl font-bold text-cDarkBlue">Instructions has been sent!</div>
                 <div class="text-center mt-5 w-full">Please check your binusian email for the link we sent to reset your password. If it does not appear within a few minutes, please check your spam folder. If you have not received the email, you may try again.</div>
-              
+                @endif
+
                 <div class="mt-5 w-full">
                     <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                     <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="forgot-email" placeholder="example@binus.ac.id">
@@ -49,8 +51,8 @@
             </form>
 
         </div>
-    
-        
+
+
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/auth.js')}}"></script>
