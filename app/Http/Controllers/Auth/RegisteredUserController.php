@@ -21,7 +21,16 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        $schedules = Schedule::all();
+        // masih perlu diselidiki apakah metode ini aman
+        // dan efisien atau tidak.
+
+        $schedules = collect([]);
+
+        foreach(Schedule::lazy() as $schedule){
+            if($schedule->count_users() < $schedule->quota)
+                $schedules->push($schedule);
+        }
+
         return view('debug.signup', compact('schedules'));
     }
 
