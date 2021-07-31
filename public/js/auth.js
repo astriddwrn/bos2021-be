@@ -236,9 +236,10 @@ selectFunc("bncc-select-als");
                 }, 1500);
                 return;
             }
-            if(sec.hasClass("login-sec")){
+            if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
                 $('form').submit();
                 return;
+            
             }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
