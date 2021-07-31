@@ -49,7 +49,7 @@ class User extends Authenticatable
     // ref: https://stackoverflow.com/a/37857795/5832341
     // ref: https://laravel.com/docs/8.x/eloquent-mutators#defining-a-mutator
     public function setScheduleAttribute($schedule){
-        return json_encode($schedule);
+        $this->attributes['schedule'] = json_encode($schedule);
     }
 
     public function schedules() {

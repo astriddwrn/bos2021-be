@@ -27,7 +27,7 @@ class UserSampleSeeder extends Seeder
             'campus' => 'None',
             'major' => 'None',
             'lnt_course' => Str::random(8),
-            'schedule' => json_encode([2, 4, 5]),
+            'schedule' => [2, 4, 5],
             'batch' => 'None',
             'gender' => 'None',
             'birthDate' => now(),
