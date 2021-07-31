@@ -99,7 +99,9 @@
                                 <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">{{$date}}</div>
                                 <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">{{$start}} - {{$end}} (GMT +07.00)</div>
                             </div>
-                            <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
+                            <a href="{{route('countdown')}}">
+                                <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
+                            </a>
                         </div>
 
                         <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">

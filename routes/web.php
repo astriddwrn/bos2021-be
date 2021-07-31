@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::middleware(["auth"])->group(function(){
     //Regular User
     Route::get('/dashboard', [UserController::class, "index"])->name('dashboard');
+    Route::get('/countdown', [UserController::class, "countdown"])->name('countdown');
     Route::patch('/submit-pay', [UserController::class, "submitPayment"])->name('submit_pay');
 
     //Re-registration
