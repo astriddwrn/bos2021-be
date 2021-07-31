@@ -105,7 +105,6 @@ selectFunc("major-select");
 selectFunc("fyp-select");
 selectFunc("bncc-select-kmg");
 selectFunc("bncc-select-als");
-// selectFunc("lnt-select");
 
     $('.eye-open, .eye-close').click(function(){
         x = $(this).siblings('input');
@@ -149,6 +148,7 @@ selectFunc("bncc-select-als");
         }
     }
     function multiple(x){
+        console.log(x);
         let a = false;
         x.find('label input').each(function() {
             if($(this).is(':checked')){
@@ -216,15 +216,18 @@ selectFunc("bncc-select-als");
         sec.find("input").each(function(){
             checkEmpty($(this));
         });
-        sec.find(".custom-select").each(function(){
+        sec.find(".custom-select:visible").each(function(){
             checkEmpty($(this));
         });
         checkbox(sec.find('#checkbox'));
-        multiple(sec.find('.multiple:visible'));
+        if(sec.find('.multiple:visible')){
+            multiple(sec.find('.multiple:visible'))
+        }
         callback(sec);
     }
 
     function continueTransition(sec){
+        console.log(sec.find('.msg-error').text());
         if(!sec.find('.msg-error').text()){
             if(sec.hasClass("account-sec")){
                 $('.success').toggleClass('is-visible');
@@ -377,6 +380,7 @@ selectFunc("bncc-select-als");
 
         $('.schedule').each(function(){
             $(this).addClass('hidden');
+            $(this).find('.msg-error').empty();
         });
         d.removeClass('hidden');
     }
@@ -421,14 +425,7 @@ selectFunc("bncc-select-als");
         progressPrev();
     })
 
-    // submit
-    $('.modal-continue').click(function(){
-        $('.confirmation').toggleClass('is-visible');
-        setTimeout(function(){ 
-            $('form').submit(); }, 1500);
-        $('.success').toggleClass('is-visible');
-
-    });
+    
     $('.modal-back').click(function(){
         $('.confirmation').toggleClass('is-visible');
     });
@@ -439,7 +436,6 @@ selectFunc("bncc-select-als");
 
 
     $( ".close" ).click(function() {
-        // $(".succeed-notif").css("display", "none");
         $(".failed-notif").css("display", "none");
       })
 
