@@ -57,7 +57,7 @@
             <div class="text-xl font-semibold mt-1">
                 {{-- {{(Auth::user()->fullName)}} --}}
             </div>
-            <div class="mt-7 text-lg menu-list">
+            <div class="mt-7 text-lg menu-list w-52">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
                     <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="">
                     <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
@@ -78,7 +78,7 @@
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-profile-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="">Profile</div>
             </div>
-            <div class="absolute return-list bottom-10 text-lg">
+            <div class="absolute return-list bottom-10 text-lg w-52">
                 <div class="mt-5 flex flex-row items-center font-semibold text-md cursor-pointer">
                     <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="">
                     <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt="">Return to Home</div>
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen">
+        <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
             <div class="section schedule-sec bg-cLightGray h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Schedule</span>
