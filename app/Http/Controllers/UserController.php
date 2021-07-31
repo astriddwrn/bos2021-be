@@ -49,7 +49,10 @@ class UserController extends Controller
 
                 $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
 
-                return view('debug.userDashboard', compact('date','start','end','birthDate','diff_payment', 'diff_reregis'));
+                //Untuk disable change schedule kalau jadwal BL sudah mulai
+                $diff_change_schedule = ((new \DateTime('2021-07-31 16:08:00'))->diff(new \DateTime($now)));
+
+                return view('debug.userDashboard', compact('date','start','end','birthDate','diff_payment', 'diff_reregis', 'diff_change_schedule'));
                 break;
             }
             case 1: {
