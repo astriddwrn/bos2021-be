@@ -28,7 +28,23 @@ class UserController extends Controller
 
                 $now = Carbon::now('GMT+7');
 
-                $payment_appear = Carbon::parse('2021-08-31 12:50:00')->addMinutes(120);
+                if($user->campus == 'KMG')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(120);
+                }
+                else if($user->campus == 'ALS')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 15:00:00')->addMinutes(145);
+                }
+                else if($user->campus == 'BDG')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(115);
+                }
+                else if($user->campus == 'MLG')
+                {
+                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(115);
+                }
+
                 $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
 
                 $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
