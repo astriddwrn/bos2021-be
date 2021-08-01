@@ -37,7 +37,8 @@ class User extends Authenticatable
         'schedule',
         'lnt_course',
         'payment_pic',
-        'is_reregistered'
+        'is_reregistered',
+        'is_esport'
     ];
 
     // ref: https://stackoverflow.com/a/24441480/5832341
