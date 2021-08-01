@@ -25,19 +25,19 @@ class UserController extends Controller
 
                 if($user->campus == 'KMG')
                 {
-                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(120);
+                    $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(120);
                 }
                 else if($user->campus == 'ALS')
                 {
-                    $payment_appear = Carbon::parse('2021-08-31 15:00:00')->addMinutes(145);
+                    $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(145);
                 }
                 else if($user->campus == 'BDG')
                 {
-                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(115);
+                    $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(115);
                 }
                 else if($user->campus == 'MLG')
                 {
-                    $payment_appear = Carbon::parse('2021-08-31 10:00:00')->addMinutes(115);
+                    $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(115);
                 }
 
                 $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
@@ -84,8 +84,8 @@ class UserController extends Controller
         $user = $request->user();
 
         $schedule = Schedule::findOrFail($request->s);
-        $countdown = Carbon::parse($schedule->date)->format('Y, m, d, H, i, s');
-
+        $countdown = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->format('Y, m, d, H, i, s');
+        // dd($countdown);
         $now = Carbon::now('GMT+7');
         $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
 
