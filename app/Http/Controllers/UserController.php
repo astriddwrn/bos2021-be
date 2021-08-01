@@ -12,9 +12,9 @@ use Carbon\Carbon;
 class UserController extends Controller
 {
     public function index(Request $request) {
-        // $user = $request->user();
+        $user = $request->user();
 
-        $user = User::find(1);
+        // $user = User::find(1);
 
         //scuffed temporarily
         switch($user->role){
