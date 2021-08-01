@@ -13,10 +13,6 @@ class UserController extends Controller
 {
     public function index(Request $request) {
         $user = $request->user();
-
-        // $user = User::find(1);
-
-        //scuffed temporarily
         switch($user->role){
             case 0: {
                 $schedules = $user->schedules();

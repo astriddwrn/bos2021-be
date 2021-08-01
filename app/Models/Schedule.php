@@ -32,13 +32,13 @@ class Schedule extends Model
     }
 
     public function end_date(){
-        if($this->campus == "Kemanggisan")
+        if($this->campus == "kmg")
             return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(120)->format('H:i');
-        else if($this->campus == "Alam Sutera")
+        else if($this->campus == "als")
             return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(145)->format('H:i');
-        else if($this->campus == "Bandung")
+        else if($this->campus == "bdg")
             return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(115)->format('H:i');
-        else if($this->campus == "Malang")
+        else if($this->campus == "mlg")
             return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(115)->format('H:i');
     }
 
