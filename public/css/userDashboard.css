@@ -7,7 +7,7 @@
     grid-template-areas: 
     'one one'
     'two three';
-    grid-template-rows: 280px 280px;
+    /* grid-template-rows: 280px 280px; */
     width: 100%;
     grid-template-columns: 55% 42% ;
 }
@@ -161,6 +161,54 @@
 
 /* END CUSTOM SELECT */
 
+/* CHECKBOX */
+.main {
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  text-align: left !important;
+}
+input[type=checkbox] {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+}
+.mark {
+  position: absolute;
+  top: 0%;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 2px solid #25B8DE;
+  border-radius: 5px;
+}
+.main input:checked ~ .mark {
+  background-color: #25B8DE;
+}
+.mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.main input:checked ~ .mark:after {
+  display: block;
+}
+.main .mark:after {
+  left: 5px;
+  bottom: 5px;
+  width: 7px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* END CHECKBOX */
+
 input::placeholder{
     color: rgba(32, 32, 32, 0.2);
 }
@@ -230,9 +278,12 @@ input::placeholder{
     display: flex;
     flex-direction: column;
   }
-  .grid-cont-schedule .card, .grid-cont-payment .card{
+  .grid-cont-payment .card{
     padding-right: 20vw;
     height: 300px;
+  }
+  .grid-cont-schedule .card{
+    padding-right: 20vw;
   }
   .grid-cont-profile{
     display: grid;
@@ -251,16 +302,22 @@ input::placeholder{
 }
 /* md */
 @media all and (max-width: 767px) {
-  .grid-cont-schedule .card, .grid-cont-payment .card{
+  .grid-cont-payment .card{
     padding-right: 10vw;
     height: 300px;
+  }
+  .grid-cont-schedule .card{
+    padding-right: 10vw;
   }
 }
 /* sm */
 @media all and (max-width: 639px) {
-  .grid-cont-schedule .card, .grid-cont-payment .card{
+  .grid-cont-payment .card{
     padding-right: 2rem;
     height: 300px;
+  }
+  .grid-cont-schedule .card{
+    padding-right: 2rem;
   }
   .grid-cont-profile{
     display: flex;

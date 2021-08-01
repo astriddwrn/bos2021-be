@@ -73,7 +73,6 @@ class UserController extends Controller
                 break;
             }
         }
-
 }
 
     public function countdown(Request $request) {

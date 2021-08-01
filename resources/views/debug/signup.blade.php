@@ -274,6 +274,28 @@
     </div>
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
+    <script>
+        $(document).ready(function(){
+            const json = JSON.parse($("meta[name=schedules]").attr("content"));
+            var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
+            var outputALS =  json.filter(schedule => schedule.campus == "als");
+            var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
+            var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
+            // console.log(outputKMG);
+            for (const [key, val] of Object.entries(outputKMG)) {
+                $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.text}`));
+            }
+            for (const [key, val] of Object.entries(outputALS)) {
+                $('#bncc-select-als').append(new Option(`${val.text}`, `${val.text}`));
+            }
+            for (const [key, val] of Object.entries(outputMLG)) {
+                $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+            }
+            for (const [key, val] of Object.entries(outputBDG)) {
+                $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+            }
+        })
+    </script>
     <script src="{{url('./js/auth.js')}}"></script>
 </body>
 </html>

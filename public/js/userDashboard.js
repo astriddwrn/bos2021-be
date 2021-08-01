@@ -1,4 +1,39 @@
 $(document).ready(function(){
+
+    const json1 = JSON.parse($("meta[name=user]").attr("content"));
+    const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
+    var campus = json1.campus;
+    var schedule =  json1.schedule;
+    for (const [key, val] of Object.entries(schedule)){
+        if(campus == 'MLG' || campus == 'BDG'){
+            var s = json2.find(schedule => schedule.id == val);
+            $('.schedule-checkbox').append('<label class="my-1 main text-sm w-full">'+ `${s.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${s.text}` + '"> <span class="mark"></span> </label>');
+        }
+        if(campus == 'KMG' || campus == 'ALS'){
+            var s = json2.find(schedule => schedule.id == val);
+            $('#schedule-select').append(new Option(`${s.text}`, `${s.text}`));
+        }
+    }
+
+    $('.schedule').each(function(){
+        $(this).addClass('hidden');
+        $(this).find('.msg-error').empty();
+        $(this).find('select').removeAttr('name');
+    });
+    if(campus == 'MLG' || campus == 'BDG'){
+        $(this).removeClass('hidden');
+    }
+    else{
+        $(this).removeClass('hidden');
+        $(this).find('select').attr('name', 'schedule[]');
+    }
+    
+    
+
+
+    
+    
+
     
     function selectFunc(z){
         var x, i, j, l, ll, selElmnt, a, b, c;

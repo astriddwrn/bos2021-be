@@ -19,12 +19,12 @@ class UserSampleSeeder extends Seeder
     {
         User::create([
             'fullName' => Str::random(10),
-            'email' => Str::random(6) . "@email.com",
+            'email' => "test@binus.ac.id",
             'password' => Hash::make('TestPass123'),
             'whatsapp' => '08' . rand(1000, 9999) . rand(1000, 9999),
             'line_id' => Str::random(8),
             'nim' => '25' . rand(1000, 9999) . rand(1000, 9999),
-            'campus' => 'KMG',
+            'campus' => 'MLG',
             'major' => 'None',
             'lnt_course' => Str::random(8),
             'schedule' => [2, 4, 5],

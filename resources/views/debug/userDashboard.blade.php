@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schedules" content="{{ $schedules->toJson() }}">
+    <meta name="user" content="{{ $user->toJson() }}">
 
     <title>User Dashboard</title>
 
@@ -115,8 +117,8 @@
                                 $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
                                 $is_waiting_end = !$diff->invert;
                             @endphp
-                            <a href="{{$is_waiting_end ? $schedule->link1 : route("countdown") . "?s=" . $schedule->id}}">
-                                <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
+                            <a class="mb-5 sm:w-96 w-full mt-3 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn" href="{{$is_waiting_end ? $schedule->link1 : route("countdown") . "?s=" . $schedule->id}}">
+                                Join Now
                             </a>
                             @endforeach
                         </div>
@@ -125,17 +127,25 @@
                         <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Change Your Schedule</div>
                             <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
-                            <div><div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Schedule</div>
-                            <div class="custom-select schedule-select xl:w-full sm:w-96 w-full">
-                                    <select id="schedule-select">
-                                        <option class="off" value="0">Select Your Course</option>
-                                        <option value="ALS">Alam Sutera</option>
-                                        <option value="BDG">Bandung</option>
-                                        <option value="KMG">Kemanggisan</option>
-                                        <option value="MLG">Malang</option>
-                                    </select>
-                                </div>
-                                <span class="msg-error"></span>
+                            <div>
+                                <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Schedule</div>
+                                
+                                <span class="schedule schedule-select-cont schedule xl:w-full sm:w-96 w-full">
+                                    <div class="custom-select schedule-select xl:w-full sm:w-96 w-full">
+                                        <select id="schedule-select">
+                                            <option class="off" value="0">Select Your Course</option>
+                                        </select>
+                                    </div>
+                                    <span class="msg-error"></span>
+                                </span>
+
+                                <span class="schedule schedule-checkbox-cont schedule xl:w-full sm:w-96 w-full">
+                                    <span class="schedule-checkbox multiple w-full">
+                                        
+                                    </span>
+                                    <span class="msg-error"></span>
+                                </span>
+
                             </div>
                             <div class="btn schedule-btn xl:w-full sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn cursor-pointer">Submit</div>
                         </form>
