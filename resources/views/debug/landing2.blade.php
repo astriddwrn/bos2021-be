@@ -120,7 +120,7 @@
 <body class="bg-cWhite">
     
 
-    {{-- Sponsor --}}
+    <!-- {{-- Sponsor --}}
 
     <div class="w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-4xl mb-14 text-center">Our Sponsors</h1>
@@ -229,7 +229,7 @@
                 <span>Rafi</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
     {{-- event --}}
     <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5 text-base">
@@ -281,6 +281,66 @@
             </div>
         
     </div>
+
+    <div id="footer" class="footer footer-sec w-full font-sans relative bg-bgSpace">
+
+<img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
+<img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
+
+<div class="flex flex-row footer-content absolute z-10 text-cWhite ">
+    <div class="p-12 border-r-4">
+        <div class="text-3xl font-medium text-cWhite tracking-wide got-question">Got a question? Contact us!</div>
+        <div class="flex flex-row justify-around text-lg mt-3">
+            <div>
+                <div class="flex flex-row items-center  mt-3">
+                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
+                </div>
+                <div class="flex flex-row items-center  mt-3">
+                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
+                </div>
+                <div class="flex flex-row items-center  mt-3">
+                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
+                </div>
+            </div>
+            <div>
+                <div class="flex flex-row items-center  mt-3">
+                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
+                </div>
+                <div class="flex flex-row items-center  mt-3">
+                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
+                </div>
+                <div class="flex flex-row items-center  mt-3">
+                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-12">
+        <div class="h-full flex flex-col justify-end">
+            <div class="text-2xl font-medium w-80">Check our Social Media:</div>
+            <div class="w-full flex flex-row justify-between mt-3 social">
+                <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
+                <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
+                <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
+                <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
+                <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full bottom-0 absolute p-10">
+    <div class="flex flex-row justify-between items-end pb-5 border-b-4 border-cWhite">
+        <a class="" href="https://bncc.net/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
+        <a class="" href="https://www.gojek.com/en-id/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
+    </div>
+    <div class="flex flex-row justify-between items-end mt-5 text-cWhite">
+        <div>All Right Reserved BNCC 2021 © Bina Nusantara Computer Club</div>
+        <div>Privacy Policy & Terms of Service</div>
+    </div>
+</div>
+
+</div>
+
     
 
 

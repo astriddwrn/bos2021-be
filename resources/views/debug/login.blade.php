@@ -30,7 +30,7 @@
                     <a href="#"><img class="lg:mt-20 mt-10 sm:w-56 w-44 " src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
                     @csrf
-                    <div class="login-sec w-full section w-full xl:px-24 px-10 ">
+                    <div class="login-sec w-96 section xl:px-0 px-10 ">
                         <div class="mt-11 relative">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                             <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="login-email" placeholder="example@binus.ac.id">
