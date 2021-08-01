@@ -39,6 +39,8 @@
                     <a class="navlink font-semibold text-lg mx-4    " href="#faq">FAQ</a>
                     @if (!Auth::check())
                         <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
+                    @else
+                        <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{route('dashboard')}}">Dashboard</a>
                     @endif
                 </div>
             </div>
