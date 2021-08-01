@@ -14,6 +14,7 @@
     <div class="fixed top-0 w-screen z-50 flex flex-row justify-between p-4 failed-notif">
         <h6 class="text-cWhite sm:text-md text-sm">Message Fail</h6>
         <img class="w-4 ml-4 close cursor-pointer" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
+        <!-- $message -->
     </div>
     @enderror
 
