@@ -65,6 +65,22 @@
         </div>
     </div>
 
+    {{-- Video Company --}}
+    <div id="vc" class="vc w-full font-sans my-32 px-12 sm:px-72">
+        <h1 class="font-extrabold text-center text-cDarkBlue text-5xl mb-14">Video Company</h1>
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center">
+            <iframe
+            class="rounded-2xl w-full video shadow-bsVideo"
+            height="480"
+            src="https://www.youtube.com/embed/pDk94cOADQI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
     {{-- Fun Fact --}}
     <div id="ff" class="ff w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
@@ -178,7 +194,7 @@
     </div>
 
      {{-- Our Courses --}}
-     <div id="oc" class="oc w-full font-sans my-32 px-36">
+     <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
@@ -353,15 +369,18 @@
                         as it can be used to construct mobile and web-based applications, video games, and more.
                         Through this course, you will learn about object-oriented programming and GUI in Java.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5  mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Malang
                         </div>
                     </div>
                 </div>
@@ -374,11 +393,14 @@
                         you’ll learn how to develop android applications from scratch.
                         This course is the perfect start for your journey to becoming a mobile apps developer!
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Malang
                         </div>
                     </div>
@@ -392,14 +414,14 @@
                         If you are curious about the answer or interested in becoming a back-end developer,
                         consider joining our Web Programming course!
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Bandung
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Malang
                         </div>
                     </div>
@@ -413,14 +435,17 @@
                         you will learn how to create a beautiful and user-friendly interface.
                         Improve your sense of design through various researches to achieve the best user satisfaction.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Malang
                         </div>
                     </div>
@@ -434,11 +459,11 @@
                         If so, our Front-End Development course is a perfect fit for you!
                         You will be able to develop creative displays of a website using HTML, CSS, and Javascript.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
                     </div>
@@ -452,8 +477,8 @@
                         you will be able to learn other programming languages much more easily.
                         C can be used in creating softwares, like operating systems, game engines, and many more.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
                     </div>
@@ -468,9 +493,12 @@
                         you will be able to understand the process of making a game and gain the skills to stand out as a game developer.
                         Turn your passion for gaming into your career!
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Malang
                         </div>
                     </div>
                 </div>
@@ -535,6 +563,29 @@
                 <div class="h-2 w-10 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-10 rounded-lg"></div>
             </div>
+    </div>
+
+    {{-- BOS Events --}}
+    <div id="bose" class="bose w-full font-sans my-32 px-12 sm:px-48">
+        <h1 class="font-extrabold text-center text-cDarkBlue text-5xl mb-14">BNCC Opening Season Events</h1>
+        <div class="w-full flex flex-col lg:flex-row items-center">
+            <div class="card rounded-xl flex flex-row flex-wrap p-8 shadow-bsWhy">
+                <h2 class="font-bold text-2xl mb-4">BNCC Expo</h2>
+                <p class="text-cBlackHome mb-4">
+                    A session to introduce BNCC to everyone who comes and satisfies their curiosity.
+                </p>
+                <p class="bose-click text-cLntBlue mb-4 cursor-pointer">
+                    Click here to see schedule
+                </p>
+                <p class="bose-clickcont mb-4">
+
+                </p>
+                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center text-cWhite font-semibold rounded py-2"
+                href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
+                BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&ten
+                antId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a>
+            </div>
+        </div>
     </div>
 
     {{-- What They Say? --}}
@@ -621,19 +672,20 @@
     <div id="faq" class="faq w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
-            <div class="w-full flex flex-col">
+            <div class="ques w-full flex flex-col">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">What is BNCC Expo?</h1>
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What is BNCC?</h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    BNCC (Bina Nusantara Computer Club) is the <strong>best computer-based organization</strong> in Binus University that has already reached its 32nd year. This organization has built a
-                    strong foundation and experiences in educating people about computers, technology,
-                    business, and organizational skills. For further information, you can access the following link.
+                    BNCC (Bina Nusantara Computer Club) is the best computer-based organization in
+                    Binus University that has already reached its 32nd year. This organization has built a strong
+                    foundation and experiences in educating people about computers, technology business, and organizational skills.
+                    For further information, you can access the following <a class="font-bold underline" href="https://bncc.net/"> link</a>.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
                     <h1 class="text-2xl text-cDarkBlue font-bold">What are the benefits offered by BNCC?</h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
@@ -646,80 +698,92 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
                     <h1 class="text-2xl text-cDarkBlue font-bold">
-                        Do I have to come from the School of Computer Science or
-                        School of Information Systems to join BNCC?
+                        Do I have to come from the School of
+                        Computer Science or School of Information Systems to join BNCC?
                     </h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    BNCC is <strong>open to all</strong> Binusians. Even though you are not from School of Computer
-                    Science or School of Information Systems, you can still become a member of BNCC.
+                    BNCC is open to all Binusians. Even though you are not from School of
+                    Computer Science or School of Information Systems, you can still become a member of BNCC.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What materials are available at LnT classes in BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    LnT is divided into 4 regions, namely Kemanggisan, Alam Sutera, Bandung, and Malang regions.
+                    Presented below are each region's LnT materials.
+                    <br>
+                    <li><strong>LnT Kemanggisan:</strong> Mobile Application Development, Java Programming, Back-End Development,
+                        Front-End Development, and UI/UX Design.</li>
+                    <li><strong>LnT Alam Sutera:</strong> Java Programming, Front-End Development, UI/UX Design, and C Programming.</li>
+                    <li><strong>LnT Bandung & Malang:</strong> Mobile Application Development, Java Programming, Back-End Development,
+                        UI/UX Design, and Game Development.</li>
+                </div>
+            </div>
+
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
                     <h1 class="text-2xl text-cDarkBlue font-bold">How is the learning schedule at LnT?</h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    The learning schedule is <strong>flexible</strong>, where members can choose a schedule that they
-                    can follow weekly so that it will not clash with the lecture schedule.
+                    The learning schedule is flexible, where members can choose a schedule that they can follow weekly so that it will not
+                    clash with the lecture schedule.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
                     <h1 class="text-2xl text-cDarkBlue font-bold">How to join BNCC?</h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                    To become a BNCC member, you can directly register yourself on
+                    <a class="font-bold underline" href="{{url('/login')}}">this</a> website.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
                     <h1 class="text-2xl text-cDarkBlue font-bold">Where can I get the latest info about BNCC Expo?</h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                    The latest information regarding BNCC Expo can be obtained
+                    through the
+                    <a class="font-bold underline" href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
+                    BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&
+                    tenantId=3485b963-82ba-4a6f-810f-b5cc226ff898">Microsoft Teams</a> platform as well as
+                    <a href="https://www.instagram.com/bnccbinus/">Instagram</a>.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
                     <h1 class="text-2xl text-cDarkBlue font-bold">How is the LnT learning process during the pandemic?</h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                    The learning will take place online using a video conferencing platform or Discord voice channel.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
+            <div class="ques w-full flex flex-col mt-12">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">If I have further questions, who should I contact?</h1>
+                    <h1 class="text-2xl text-cDarkBlue font-bold">If I have further questions, who should I contact ? </h1>
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                    If you still have further questions, you can reach out to the contact persons listed
+                    <a class="font-bold underline" href="#footer">below</a> for more information.
                 </div>
             </div>
 

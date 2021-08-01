@@ -39,7 +39,8 @@ module.exports = {
              'bsFfhv': "0px 0px 8px rgba(55, 200, 238, 0.2)",
              'bsWhy': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
              'bsOc': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
-             'bsOcBig': "4px 16px 20px 8px rgba(205, 205, 205, 0.3)"
+             'bsOcBig': "4px 16px 20px 8px rgba(205, 205, 205, 0.3)",
+             'bsVideo': "4px 12px 28px 6px rgba(119, 119, 119, 0.3)"
          },
         extend: {
             fontFamily: {
