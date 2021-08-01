@@ -18509,7 +18509,7 @@ html {
 }
 
 .shadow-bsFfhv {
-  --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+  --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -18549,7 +18549,7 @@ html {
 }
 
 .group:hover .group-hover\:shadow-bsFfhv {
-  --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+  --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -18589,7 +18589,7 @@ html {
 }
 
 .focus-within\:shadow-bsFfhv:focus-within {
-  --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+  --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -18629,7 +18629,7 @@ html {
 }
 
 .hover\:shadow-bsFfhv:hover {
-  --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+  --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -18669,7 +18669,7 @@ html {
 }
 
 .focus\:shadow-bsFfhv:focus {
-  --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+  --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -37961,7 +37961,7 @@ html {
   }
 
   .sm\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -38001,7 +38001,7 @@ html {
   }
 
   .group:hover .sm\:group-hover\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -38041,7 +38041,7 @@ html {
   }
 
   .sm\:focus-within\:shadow-bsFfhv:focus-within {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -38081,7 +38081,7 @@ html {
   }
 
   .sm\:hover\:shadow-bsFfhv:hover {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -38121,7 +38121,7 @@ html {
   }
 
   .sm\:focus\:shadow-bsFfhv:focus {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -57246,7 +57246,7 @@ html {
   }
 
   .md\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -57286,7 +57286,7 @@ html {
   }
 
   .group:hover .md\:group-hover\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -57326,7 +57326,7 @@ html {
   }
 
   .md\:focus-within\:shadow-bsFfhv:focus-within {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -57366,7 +57366,7 @@ html {
   }
 
   .md\:hover\:shadow-bsFfhv:hover {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -57406,7 +57406,7 @@ html {
   }
 
   .md\:focus\:shadow-bsFfhv:focus {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -76531,7 +76531,7 @@ html {
   }
 
   .lg\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -76571,7 +76571,7 @@ html {
   }
 
   .group:hover .lg\:group-hover\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -76611,7 +76611,7 @@ html {
   }
 
   .lg\:focus-within\:shadow-bsFfhv:focus-within {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -76651,7 +76651,7 @@ html {
   }
 
   .lg\:hover\:shadow-bsFfhv:hover {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -76691,7 +76691,7 @@ html {
   }
 
   .lg\:focus\:shadow-bsFfhv:focus {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -95816,7 +95816,7 @@ html {
   }
 
   .xl\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -95856,7 +95856,7 @@ html {
   }
 
   .group:hover .xl\:group-hover\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -95896,7 +95896,7 @@ html {
   }
 
   .xl\:focus-within\:shadow-bsFfhv:focus-within {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -95936,7 +95936,7 @@ html {
   }
 
   .xl\:hover\:shadow-bsFfhv:hover {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -95976,7 +95976,7 @@ html {
   }
 
   .xl\:focus\:shadow-bsFfhv:focus {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -115101,7 +115101,7 @@ html {
   }
 
   .\32xl\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -115141,7 +115141,7 @@ html {
   }
 
   .group:hover .\32xl\:group-hover\:shadow-bsFfhv {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -115181,7 +115181,7 @@ html {
   }
 
   .\32xl\:focus-within\:shadow-bsFfhv:focus-within {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -115221,7 +115221,7 @@ html {
   }
 
   .\32xl\:hover\:shadow-bsFfhv:hover {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -115261,7 +115261,7 @@ html {
   }
 
   .\32xl\:focus\:shadow-bsFfhv:focus {
-    --tw-shadow: 0px 0px 8px rgba(55, 200, 238, 0.2);
+    --tw-shadow: 5px 14px 15px 8px rgba(205, 205, 205, 0.75);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 

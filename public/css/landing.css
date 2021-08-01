@@ -22,7 +22,7 @@ html {
     transition: 0.3s;
 }
 
-.arrowLan {
+.landing .arrow {
     animation: float-from-top 2s ease-in-out infinite;
 }
 
@@ -99,6 +99,16 @@ html {
     }
 }
 
+.oc .oc-tags-cont {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.oc .oc-tags {
+    margin: 1rem 1rem;
+}
 
 /* FAQ */
 .top {
@@ -128,9 +138,9 @@ html {
 
 /* Bose */
 .bose .card {
-    width: 30rem;
+    width: 32rem;
     height: min-content;
-    margin: 2rem 1rem;
+    margin: 1rem 0.5rem;
 }
 
 /* Say */
@@ -238,13 +248,29 @@ html {
     transition: all 1s ease-in-out;
 }
 
-
 @media all and (max-width: 1279px) {
-    #navbar {
+    .navbar-desk {
         padding: 0 3rem;
         width: 90%;
     }
 
+    .menu-icon{
+        display: block;
+    }
+    .logo-icon{
+    display: none;
+    }
+    .menu-cont{
+    transition: all .5s ease-in-out;
+    }
+    .menu-off{
+    right: -100% !important;
+    transition: all .5s ease-in-out;
+    }
+
+    .bose .card {
+        width: 27rem;
+    }
     /* Fun fact */
     .ff .pr-12,
     .ff .pr-24 {
@@ -267,21 +293,59 @@ html {
     .sponsor {
         padding: 0rem 3rem;
     }
+
+    .about {
+        padding: 3rem 3rem;
+    }
   }
 
 @media all and (max-width: 1023px) {
-
-    .font-extrabold {
-        font-size: 3rem;
+    /* Landing */
+    .landing .stars {
+        display: none;
     }
 
-    #navbar {
+    .landing .stars-tab {
+        display: block;
+    }
+
+    .landing .arrow {
+        width: 2rem;
+    }
+    .landing .arrowcont {
+        bottom: 0.4rem;
+    }
+
+    .navbar-desk {
         display: none;
     }
 
     /* vc */
     .vc .video {
         height: 24rem;
+    }
+
+    /* why */
+    .card-why {
+        max-width: 18rem;
+        height: 24rem;
+        padding: 3rem 0.8rem;
+        margin: 0.5rem 0.2rem;
+    }
+
+    .card-why img {
+        width: 7rem;
+    }
+
+    .card-why h2 {
+        font-size: 1.2rem;
+        padding: 0.5rem 0rem;
+    }
+
+    .card-why .text-base {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        padding: 0rem 0.5rem;
     }
 
     /* Our Courses */
@@ -293,12 +357,32 @@ html {
         padding: 0.5rem;
     }
 
-        .oc .oc-tags {
-            width: 7rem;
-            margin: 0rem 0.2rem;
-        }
+    .oc .oc-tags {
+        width: 7rem;
+        margin: 0rem 0.2rem;
+    }
 
-        /* Footer */
+    /* Bose */
+    .bose .card {
+        width: 19rem;
+        padding: 1rem;
+    }
+
+    /* faq */
+    .faq .ques .top .arrow {
+        margin-left: 1rem;
+    }
+
+    .faq .ques .top h1 {
+        font-size: 1.4rem;
+    }
+
+    .faq .ques .bot {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    /* Footer */
     .footer-content {
         top: 10rem;
     }
@@ -314,173 +398,301 @@ html {
         width: 100px;
     }
 
-
 }
 
 @media all and (max-width: 767px) {
-.font-extrabold {
-    font-size: 2.2rem;
-}
+    /* ff */
+    .ff .boxCont .w-32 {
+        width: 6rem;
+        padding: 1rem;
+    }
+    .ff .boxCont .w-32 img {
+        width: 4rem;
+    }
+    .ff .boxCont .font-regular {
+        font-size: 1rem;
+    }
 
-.about,
-.vc,
-.ff,
-.why,
-.oc,
-.oe,
-.bose,
-.what,
-.faq,
-.sponsor {
-    padding: 0rem 0rem;
-}
-/* vc */
-.vc .video {
-    height: 18rem;
-}
+    /* why */
+    .card-why {
+        max-width: 15rem;
+        height: 20rem;
+        padding: 1.5rem 0rem;
+        margin: 0.5rem 0.2rem;
+    }
+
+    .card-why img {
+        width: 4.5rem;
+    }
+
+    .card-why h2 {
+        font-size: 1rem;
+        padding: 0.5rem 0rem;
+    }
+
+    .card-why .text-base {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        padding: 0rem 0.5rem;
+    }
+
+    .vc,
+    .ff,
+    .why,
+    .oc,
+    .oe,
+    .bose,
+    .what,
+    .faq,
+    .sponsor {
+        padding: 0rem 0rem;
+    }
+
+    .about {
+        padding: 3rem 0rem;
+    }
+
+    /* vc */
+    .vc .video {
+        height: 18rem;
+    }
 
 
-/* Our Courses */
-.ocBigBox {
-    padding: 3rem 0rem;
-}
+    /* Our Courses */
+    .ocBigBox {
+        padding: 3rem 0rem;
+    }
 
-.ocBigBox .ocCon .bg-cBabyBlue {
-    margin: 0rem 0.2rem;
-}
+    .oc .ocBigBox .oc-tags {
+        margin: 0rem 0.2rem;
+    }
 
-.oc .oc-tags-cont {
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.oc .oc-tags {
-    width: 7rem;
-    margin: 0rem 1rem;
-}
+    .oc .oc-tags {
+        width: 7rem;
+        margin: 0rem 1rem;
+    }
 
-/* Bose */
-.bose .card {
-    width: 100%;
-}
+    /* Bose */
+    .bose .card {
+        width: 25rem;
+        padding: 1rem;
+    }
 
-/* Footer */
-.footer-sec .got-question{
-    width: 10rem;
-}
+    /* Faq */
+    .faq .ques .top {
+        padding: 1.5rem 2rem;
+    }
 
-.footer .socmed-cont {
-    padding: 0.5rem;
-}
+    .faq .ques .top h1 {
+        font-size: 1.2rem;
+    }
 
-.footer .gotaq-cont {
-    padding: 0.5rem;
-    width: 4rem;
-}
+    .faq .ques .bot {
+        padding: 1.2rem 2.5rem;
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    /* Footer */
+    .footer-sec .got-question{
+        width: 10rem;
+    }
+
+    .footer .socmed-cont {
+        padding: 0.5rem;
+    }
+
+    .footer .gotaq-cont {
+        padding: 0.5rem;
+        width: 4rem;
+    }
 }
 
 @media all and (max-width: 479px) {
-/* vc */
-.vc .video {
-    height: 14rem;
-}
+    /* Landing */
+    .landing .stars-mobile {
+        display: block;
+    }
+    .landing .stars-tab {
+        display: none;
+    }
+    .landing .cloud {
+        bottom: 0rem;
+    }
+    .landing .arrow {
+        width: 1.5rem;
+    }
+    .landing .arrowcont {
+        bottom: 0.1rem;
+    }
 
-/* why */
-.card-why {
-    max-width: 12rem;
-    height: 20rem;
-    margin: 0.8rem 0rem;
-    padding: 2rem 0rem;
-}
+    /* vc */
+    .vc .video {
+        height: 14rem;
+    }
 
-/* oc */
-.oc .ocBigBox {
-    min-height: 27rem;
-}
-.oc .ocCon {
-    padding: 1rem 0rem;
-}
+    /* ff */
+    .ff .boxCont .w-32 {
+        width: 5rem;
+    }
+    .ff .boxCont .w-32 img {
+        width: 3rem;
+    }
 
-.oc .ocCon .text-3xl {
-    text-align: center;
-    font-size: 1.2rem;
-}
+    /* why */
+    .card-why {
+        max-width: 9.2rem;
+        height: 14rem;
+        margin: 0.4rem 0.2rem;
+        padding: 1rem 0rem;
+        border-radius: 12px;
+    }
 
-.oc .ocCon .px-16{
-    padding: 0rem 0.5rem;
-    font-size: 0.9rem;
-}
+    .card-why img {
+        width: 2.5rem;
+    }
 
-.oc .ocBigBox .w-36 {
-    width: max-content;
-    font-size: 0.8rem;
-    margin: 0rem 0.2rem;
-    padding: 0.2rem 0.4rem;
-}
+    .card-why h2 {
+        font-size: 0.9rem;
+        padding: 0.5rem 0rem;
+    }
 
-.oc .btnCont {
-    min-height: 4rem;
-}
+    .card-why .text-base {
+        font-size: 0.6rem;
+        line-height: 0.9rem;
+        padding: 0rem 0.8rem;
+    }
 
-.oc .btnCont .ocBox {
-    padding: 0.5rem;
-}
+    /* oc */
+    .oc .ocBigBox {
+        min-height: 24rem;
+        padding: 1rem 0rem;
+    }
+    .oc .ocCon {
+        padding: 1rem 0rem;
+    }
 
-.oc .btnCont .ocBox .ocBtn{
-    width: 40px;
-}
+    .oc .ocCon img {
+        width: 5rem;
+    }
 
-.oc .oc-text {
-    padding: 1rem;
-    font-size: 0.8rem;
-}
+    .oc .ocCon .text-3xl {
+        text-align: center;
+        font-size: 1.2rem;
+    }
 
-.bose .card {
-    width: 100%;
-    height: min-content;
-}
+    .oc .ocCon .px-16{
+        padding: 0rem 0.5rem;
+        font-size: 0.9rem;
+    }
 
-/* ff */
-.ff .boxCont .font-regular  {
-    font-size: 0.8rem;
-}
-.ff .shadow-bsFf {
-    padding: 0.5rem;
-    margin: 0rem 0.2rem 0rem 0rem;
-    width: 4rem;
-}
+    .oc .ocBigBox .oc-tags {
+        font-size: 0.8rem;
+        margin: 0.2rem;
+        padding: 0.2rem 0.4rem;
+    }
 
-.ff-img {
-    width: 4rem;
-}
+    .oc .btnCont {
+        min-height: 4rem;
+        justify-content: center;
+        padding: 0rem 2rem;
+    }
 
-/* Say */
-.say-card img{
-    width: 80px;
-    height: 80px;
-}
-.say-card .text-sm{
-    font-size: .7rem;
-    line-height: .9rem;
-}
-.say-btn{
-    font-size: .6rem;
-    font-weight: 600;
-}
-.say-btn img{
-    width: 30px;
-    height: 30px;
-}
-.say-card-cont{
-    height: 130px;
-}
-.say-card-cont .title{
-    font-size: .8rem;
-}
-.say-title{
-    /* font-size: 1.2rem; */
-}
-.text-base{
-    font-size: .8rem;
-    line-height: 1.2rem;
-}
+    .oc .btnCont .ocBox {
+        padding: 0.5rem;
+    }
+
+    .oc .btnCont .ocBox .ocBtn{
+        width: 40px;
+    }
+
+    .oc .oc-text {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* ff */
+    .ff .boxCont .font-regular  {
+        font-size: 0.8rem;
+    }
+    .ff .shadow-bsFf {
+        padding: 0.5rem;
+        margin: 0rem 0.2rem 0rem 0rem;
+        width: 4rem;
+    }
+
+    .ff-img {
+        width: 4rem;
+    }
+
+    /* Bose */
+    .bose .card {
+        width: 18rem;
+        padding: 1rem;
+        margin: 0.8rem 0rem;
+    }
+
+    .bose .card h2 {
+        font-size: 1.2rem;
+    }
+    .bose .card .font-bold + .text-cBlackHome {
+        font-size: 0.8rem;
+    }
+    .bose-cc {
+        font-size: 0.8rem;
+    }
+    .bose-cs {
+        font-size: 0.9rem;
+    }
+
+    /* Faq */
+    .faq .ques .top {
+        padding: 1rem 1rem;
+    }
+
+    .faq .ques:not(:first-child) {
+        margin: 1rem 0rem 0rem 0rem;
+    }
+
+    .faq .ques .top h1 {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .faq .ques .bot {
+        padding: 1.2rem 1rem;
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }
+
+    /* Say */
+    .say-card img{
+        width: 80px;
+        height: 80px;
+    }
+    .say-card .text-sm{
+        font-size: .7rem;
+        line-height: .9rem;
+    }
+    .say-btn{
+        font-size: .6rem;
+        font-weight: 600;
+    }
+    .say-btn img{
+        width: 30px;
+        height: 30px;
+    }
+    .say-card-cont{
+        height: 130px;
+    }
+    .say-card-cont .title{
+        font-size: .8rem;
+    }
+    .say-title{
+        /* font-size: 1.2rem; */
+    }
+    .text-base{
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
 }

@@ -13,21 +13,31 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
-<body class="bg-cWhite">
+<body class="bg-cWhite text-cBlackHome">
     {{-- Landing --}}
     <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite">
-        <div class="w-full flex flex-col justify-content items-center z-10 mb-20">
-            <div class="font-extrabold text-8xl">We Are BNCC</div>
-            <h3 class="font-semibold text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
-            <h5 class="font-medium text-2xl mb-4">Want to be a part of BNCC?</h5>
-            <a class="btnReg bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out rounded-lg font-semibold text-lg py-1.5 px-28" href="{{url('/register')}}">Register Now!</a>
+        <div class="landing-content w-full flex flex-col justify-content items-center z-10 mb-20">
+            <h1 class="font-extrabold text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl">We Are BNCC</h1>
+            <h3 class="font-semibold text-center text-xs sm:text-lg md:text-xl lg:text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
+            <h5 class="font-medium text-xs sm:text-lg md:text-xl lg:text-2xl mb-4">Want to be a part of BNCC?</h5>
+            <a class="btnReg
+            bg-cLntBlue
+            hover:bg-cDarkerLightBlue
+            transition
+            duration-300
+            ease-in-out
+            rounded-md xl:rounded-lg
+            font-semibold text-sm sm:text-lg md:text-xl
+            py-1.5 px-12" href="{{url('/register')}}">Register Now!</a>
         </div>
-        <img class="absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-stars.svg')}}" alt="">
-        <img class="w-full absolute -bottom-8 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
-        <a class="absolute bottom-6 z-10" href="#about"><img class="arrowLan " src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt=""></a>
+        <img class="stars absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-stars.svg')}}" alt="">
+        <img class="starstablet absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-starstablet.svg')}}" alt="">
+        <img class="starsmobile absolute top-0 z-0 hidden" src="{{url('./Asset/Image/landing/landing-starsmobile.svg')}}" alt="">
+        <img class="cloud w-full absolute bottom-0 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
+        <a class="arrowcont absolute bottom-6 z-10" href="#about"><img class="arrow" src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt=""></a>
         {{-- Navbar --}}
-        <div id="navbar" class="w-full  fixed top-0 h-24 z-50 px-48">
-            <div class="w-full flex flex-row justify-between items-center py-8">
+        <div id="navbar" class="w-full fixed top-0 z-50 px-48">
+            <div class="navbar-desk w-full h-24 flex flex-row justify-between items-center py-8">
                 <a class="w-3/12 relative">
                     <img id="logo-up" class="absolute -top-4" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
                     <img id="logo-down" class="absolute -top-4 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
@@ -36,7 +46,7 @@
                     <a class="navlink font-semibold text-lg mx-4" href="#about">About</a>
                     <a class="navlink font-semibold text-lg mx-4" href="#oc">Courses</a>
                     <a class="navlink font-semibold text-lg mx-4" href="#bose">Ongoing Events</a>
-                    <a class="navlink font-semibold text-lg mx-4    " href="#faq">FAQ</a>
+                    <a class="navlink font-semibold text-lg mx-4" href="#faq">FAQ</a>
                     @if (!Auth::check())
                         <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
                     @else
@@ -48,8 +58,8 @@
     </div>
 
     {{-- About Us --}}
-    <div id="about" class="about w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">About Us</h1>
+    <div id="about" class="about w-full font-sans py-32 px-12 sm:px-48">
+        <h1 class="font-extrabold text-cDarkBlue mb-14 text-3xl sm:text-4xl md:text-5xl lg:text-7xl">About Us</h1>
         <div class="w-full flex flex-col lg:flex-row items-center">
             <div class="w-full lg:w-1/2 leading-7">
                 <p class="">
@@ -65,9 +75,9 @@
         </div>
     </div>
 
-    {{-- Video Company --}}
+    {{-- Company Video --}}
     <div id="vc" class="vc w-full font-sans my-32 px-12 sm:px-72">
-        <h1 class="font-extrabold text-center text-cDarkBlue text-5xl mb-14">Video Company</h1>
+        <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14">Company Video</h1>
         <div class="w-full flex flex-col lg:flex-row justify-center items-center">
             <iframe
             class="rounded-2xl w-full video shadow-bsVideo"
@@ -83,7 +93,7 @@
 
     {{-- Fun Fact --}}
     <div id="ff" class="ff w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
                 <div class="boxCont w-full flex flex-row justify-around sm:justify-center items-center mb-8">
@@ -129,10 +139,9 @@
 
     {{-- Why BNCC? --}}
     <div id="why" class="why w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-8 text-center">Why BNCC?</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
-
-            <div class="w-full flex flex-row flex-wrap justify-center items-center mb-12">
+            <div class="w-full flex flex-row flex-wrap justify-around lg:justify-center items-center mb-12">
                 <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-networking.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Networking</h2>
@@ -190,12 +199,12 @@
                 </div>
             </div>
         </div>
-        <h1 class="font-bold text-cBlackHome text-4xl text-center mt-14">And many more!</h1>
+        <h1 class="font-bold text-cBlackHome text-2xl lg:text-4xl text-center mt-8 sm:mt-14">And many more!</h1>
     </div>
 
      {{-- Our Courses --}}
      <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Courses</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
                 <div class="ocBox ocBox-active bg-cWhite rounded-lg shadow-bsOc p-4">
@@ -567,24 +576,135 @@
 
     {{-- BOS Events --}}
     <div id="bose" class="bose w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-center text-cDarkBlue text-5xl mb-14">BNCC Opening Season Events</h1>
-        <div class="w-full flex flex-col lg:flex-row items-center">
-            <div class="card rounded-xl flex flex-row flex-wrap p-8 shadow-bsWhy">
+        <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl mb-14">BNCC Opening Season Events</h1>
+        <div class="w-full flex flex-col md:flex-row flex-wrap justify-center items-center">
+            <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl mb-4">BNCC Expo</h2>
                 <p class="text-cBlackHome mb-4">
                     A session to introduce BNCC to everyone who comes and satisfies their curiosity.
                 </p>
-                <p class="bose-click text-cLntBlue mb-4 cursor-pointer">
+                <p class="bose-cs text-cLntBlue mb-4 cursor-pointer">
                     Click here to see schedule
                 </p>
-                <p class="bose-clickcont mb-4">
+                <div class="bose-cc mb-4 hidden">
+                    <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Schedule</h5>
+                    1st Batch: August 7, 2021 at 2.00 - 3.00 PM WIB
+                    <br>
+                    2nd Batch: August 14, 2021 at 2.00 - 3.00 PM WIB
+                    <br>
+                    3rd Batch: August 21, 2021 at 2.00 - 3.00 PM WIB
+                    <br>
+                    4th Batch: August 28, 2021 at 2.00 - 3.00 PM WIB
 
-                </p>
-                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center text-cWhite font-semibold rounded py-2"
+                    <div class="bose-ch text-cLntBlue mb-4 cursor-pointer">
+                        Click here to hide schedule
+                    </div>
+                </div>
+                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                text-cWhite font-semibold rounded py-2"
                 href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
                 BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&ten
                 antId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a>
             </div>
+
+            <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
+                <h2 class="font-bold text-2xl mb-4">LIVE Session QnA</h2>
+                <p class="text-cBlackHome mb-4">
+                    A live session where attendees can ask BNCC colleagues any questions they have regarding the organization.
+                </p>
+                <p class="bose-cs text-cLntBlue mb-4 cursor-pointer">
+                    Click here to see schedule
+                </p>
+                <div class="bose-cc mb-4 hidden">
+                    <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Schedule</h5>
+                        Every Monday to Saturday
+                        <br>
+                        August 2 - 28, 2021
+                        <br>
+                        05.00 - 10.00 PM
+                    <div class="bose-ch text-cLntBlue mb-4 cursor-pointer">
+                        Click here to hide schedule
+                    </div>
+                </div>
+                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                text-cWhite font-semibold rounded py-2"
+                href="">Join Now</a>
+            </div>
+
+            <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
+                <h2 class="font-bold text-2xl text-cBlackHome mb-2">Twibbon Challenge</h2>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Ends in August DD, 2021</h5>
+                <p class="text-cBlackHome mb-4">
+                    Show to the world that you are going to be a part of BNCC family and get your chance to win valuable prizes!
+                </p>
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Coming Soon
+                </a>
+                {{-- <a class="w-full flex flex-row justify-center items-center
+                bg-cLntBlue
+                hover:bg-cDarkerLightBlue
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2" href="">
+                <img class="w-6 mr-2" src="{{url('./Asset/Image/landing/bose-download.svg')}}" alt="">
+                    Download
+                </a> --}}
+            </div>
+
+            <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
+                <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: Front-End Development</h2>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 26, 2021</h5>
+                <p class="text-cBlackHome mb-4">
+                    An online workshop that will teach you the fundamentals of how to design and build a website.
+                </p>
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Coming Soon
+                </a>
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                text-cWhite font-semibold rounded py-2"
+                href="">Join Now</a> --}}
+            </div>
+
+            <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
+                <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: UI/UX Design</h2>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 25, 2021</h5>
+                <p class="text-cBlackHome mb-4">
+                    A challenge encouraging you to help BNCC by sharing your unique photo for a chance to win a reward.
+                </p>
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Coming Soon
+                </a>
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                text-cWhite font-semibold rounded py-2"
+                href="">Join Now</a> --}}
+            </div>
+
+            <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
+                <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
+                <p class="text-cBlackHome mb-4">
+                    Sessions to welcome new members and discover more about BNCC.
+                </p>
+                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                text-cWhite font-semibold rounded py-2"
+                href="">Register Now</a>
+            </div>
+
         </div>
     </div>
 
@@ -670,7 +790,7 @@
 
     {{-- FAQ --}}
     <div id="faq" class="faq w-full font-sans my-32 px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Frequently Asked Questions</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
             <div class="ques w-full flex flex-col">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
@@ -762,7 +882,7 @@
                     <a class="font-bold underline" href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
                     BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&
                     tenantId=3485b963-82ba-4a6f-810f-b5cc226ff898">Microsoft Teams</a> platform as well as
-                    <a href="https://www.instagram.com/bnccbinus/">Instagram</a>.
+                    <a class="font-bold underline" href="https://www.instagram.com/bnccbinus/">Instagram</a>.
                 </div>
             </div>
 

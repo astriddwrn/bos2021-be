@@ -13,11 +13,11 @@ $(document).ready(() => {
                 $("#navbar").addClass("scroll-down");
             } */
             if (currPosition > 700) {
-                $("#navbar").addClass("change-bg");
+                $(".navbar-desk").addClass("change-bg");
                 $("#logo-down").css("display", "block")
                 $("#logo-up").css("display","none")
             } else {
-                $("#navbar").removeClass("change-bg");
+                $(".navbar-desk").removeClass("change-bg");
                 $("#logo-up").css("display", "block")
                 $("#logo-down").css("display","none")
             }
@@ -103,7 +103,7 @@ $(document).ready(function(){
      setTimeout(function(){
           $('.carousel-event .next, .carousel-event .prev').removeClass('non-clickable');
      },1000);
-     
+
  });
  $(".carousel-event .prev").click(function(){
      if($(this).hasClass('non-clickable')){
@@ -171,3 +171,15 @@ ourCourse(btnUi, conUi);
 ourCourse(btnFe, conFe);
 ourCourse(btnC, conC);
 ourCourse(btnGame, conGame);
+
+/* Bose */
+$(".bose-cs").click(function () {
+    $(this).slideUp();
+    $(this).siblings(".bose-cc").slideDown();
+});
+
+$(".bose-ch").click(function () {
+    $(this).parent().slideUp();
+    $(this).parent().siblings(".bose-cs").slideDown();
+});
+
