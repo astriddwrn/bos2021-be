@@ -22,6 +22,7 @@ class CreateSchedulesTable extends Migration
             $table->string('campus');
             $table->string('link1');
             $table->string('link2')->nullable();
+            $table->string('text');
 
             $table->timestamps();
         });

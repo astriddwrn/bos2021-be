@@ -280,6 +280,7 @@ input::placeholder{
 .modal{
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -30%);
   transition:  all .3s linear;
 }
 

@@ -22,7 +22,7 @@
 
     <div class="flex flex-row font-sans">
         <div class="w-5/12 h-screen flex flex-col items-center">
-            <form class="w-full relative" action="{{ route('register') }}" method="POST">
+            <form class="w-full relative" action="{{ route('debug.view', 'sample_show') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
                     <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
@@ -51,7 +51,7 @@
                 </div>
 
 
-                <div class="personal-sec w-full section absolute px-24 ">
+                <div class="personal-sec w-full section absolute  px-24 ">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Name</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe">
@@ -107,7 +107,7 @@
 
                 </div>
 
-                <div class="student-sec w-full section absolute  right-section px-24">
+                <div class="student-sec w-full section absolute right-section  px-24">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="nim" id="nim" placeholder="25XXXXXXXX">
@@ -170,20 +170,8 @@
                         <!-- Kemanggisan -->
                         <span class="schedule-kmg hidden schedule">
                             <div class="custom-select bncc-select-kmg w-full">
-                                <select id="bncc-select-kmg" name="schedule">
-                                <option class="off" value="0">Select your schedule</option>
-                                    <option value="BL1 sesi1">31 Agustus 2021 (11.00-13.00)</option>
-                                    <option value="BL1 sesi2">31 Agustus 2021 (13.20-15.20)</option>
-                                    <option value="BL1 sesi3">31 Agustus 2021 (15.40-17.40)</option>
-                                    <option value="BL1 sesi4">31 Agustus 2021 (19.00-21.00)</option>
-                                    <option value="BL2 sesi1">01 September 2021 (11.00-13.00)</option>
-                                    <option value="BL2 sesi2">01 September 2021 (13.20-15.20)</option>
-                                    <option value="BL2 sesi3">01 September 2021 (15.40-17.40)</option>
-                                    <option value="BL2 sesi4">01 September 2021 (19.00-21.00)</option>
-                                    <option value="BL3 sesi1">02 September 2021 (11.00-13.00)</option>
-                                    <option value="BL3 sesi2">02 September 2021 (13.20-15.20)</option>
-                                    <option value="BL3 sesi3">02 September 2021 (15.40-17.40)</option>
-                                    <option value="BL3 sesi4">02 September 2021 (19.00-21.00)</option>
+                                <select id="bncc-select-kmg">
+                                    <option class="off" value="0">Select your schedule</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -191,12 +179,8 @@
                         <!-- alsut -->
                         <span class="schedule-als hidden schedule">
                             <div class="custom-select bncc-select-als w-full">
-                                <select id="bncc-select-als" name="schedule">
+                                <select id="bncc-select-als">
                                     <option class="off" value="0">Select your schedule</option>
-                                    <option value="ALS">3 September 2021 (11.00 - 13.25)- C Programming</option>
-                                    <option value="BDG">3 September 2021 (15.00 - 17.25) - Java Programming</option>
-                                    <option value="KMG">4 September 2021 (11.00 - 13.25) - Front-End Development</option>
-                                    <option value="MLG">4 September 2021 (15.00 - 17.25) - UI/UX Design</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -207,42 +191,19 @@
                         <!-- Bandung -->
                         <span class="schedule-bdg schedule hidden">
                             <span class="multiple">
-                                <label class="my-2 main">2 September (10.00 - 11.55) - Back-End Development
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">2 September (13.00 - 14.55) - Java Programming
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">3 September (10.00 - 11.55) - Mobile Apps Development
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">3 September (13.00 - 14.55) - UI/UX Design
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">4 September (10.00 - 11.55) - Game Development
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">4 September (13.00 - 14.55) - E-Sports
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
+
                             </span>
                             <span class="msg-error"></span>
 
                             <div class="mt-11 text-cDarkBlue font-sans font-medium w-100 text-2xl mb-4">Do You Want to Join Our E-Sport Community?</div>
                             <div class="flex">
                                 <span class="radio">
-                                    <input type="radio" id="radio-1" value="yes" name="is_esport" checked/>
+                                    <input type="radio" id="radio-1" class="radio-input" value="yes" checked/>
                                     <label for="radio-1"></label>
                                     <span class="text-xl ml-3">Yes</span>
                                 </span>
                                 <span class="radio ml-5">
-                                    <input type="radio" id="radio-2" value="no" name="is_esport"/>
+                                    <input type="radio" id="radio-2" class="radio-input" value="no"/>
                                     <label for="radio-2"></label>
                                     <span class="text-xl ml-3">No</span>
                                 </span>
@@ -252,26 +213,7 @@
                         <!-- malang -->
                         <span class="schedule-mlg hidden schedule">
                             <span class="multiple">
-                                <label class="my-2 main">16 September (10.00 - 11.55) - Game Development
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">16 September (13.00 - 14.55) - Java Programming
-                                    <input type="checkbox" >
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">17 September (10.00 - 11.55) - Back-End Development
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">17 September (13.00 - 14.55) - UI/UX Design
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
-                                <label class="my-2 main">18 September (10.00 - 11.55) - Mobile Apps Deveelopment
-                                    <input type="checkbox">
-                                    <span class="mark"></span>
-                                </label>
+                              
                             </span>
                             <span class="msg-error"></span>
                         </span>
