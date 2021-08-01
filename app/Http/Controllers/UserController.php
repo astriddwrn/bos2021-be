@@ -17,6 +17,8 @@ class UserController extends Controller
             case 0: {
                 $schedules = $user->schedules();
 
+                $schedules_from_region = Schedule::where('campus', 'like', $user->campus)->get();
+
                 $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
 
                 $now = Carbon::now('GMT+7');
@@ -42,10 +44,13 @@ class UserController extends Controller
 
                 $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
 
+                dd($schedules);
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
                 $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
 
-                return view('debug.userDashboard', compact('user','schedules','birthDate','diff_payment', 'diff_reregis', 'diff_change_schedule'));
+                return view('debug.userDashboard', compact('user','schedules','birthDate',
+                                                        'diff_payment', 'diff_reregis',
+                                                        'diff_change_schedule', 'schedules_from_region'));
                 break;
             }
             case 1: {

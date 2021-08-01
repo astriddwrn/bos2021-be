@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="schedules" content="{{ $schedules->toJson() }}">
     <meta name="user" content="{{ $user->toJson() }}">
+    
 
     <title>User Dashboard</title>
 
