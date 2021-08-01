@@ -30,7 +30,7 @@
             </div>
             <div class="text-center font-extrabold text-4xl text-cWhite">left until BNCC Launching!</div>
 
-            <div class="text-center text-cWhite font-bold text-xl rounded p-2 bg-cDarkBlue w-3/12 mt-20 hover:bg-cWhite hover:text-cDarkBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn"><a href="{{route('dashboard')}}">Back to Home</a></div>
+            <div class="text-center text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-3/12 mt-20 hover:bg-cWhite hover:text-cLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn"><a href="{{route('dashboard')}}">Return to Dashboard</a></div>
 
         </div>
         <img class="stars w-10/12 absolute z-1" src="{{url('./Asset/Image/countdown/bg-stars.svg')}}" alt="">
