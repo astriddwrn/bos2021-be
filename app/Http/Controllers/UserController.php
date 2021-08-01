@@ -42,6 +42,7 @@ class UserController extends Controller
 
                 $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
 
+                dd($schedules);
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
                 $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
 

@@ -36,7 +36,9 @@
                     <a class="navlink font-semibold text-lg" href="">Courses</a>
                     <a class="navlink font-semibold text-lg" href="">Ongoing Events</a>
                     <a class="navlink font-semibold text-lg" href="">FAQ</a>
-                    <a class="border-2 rounded-3xl py-1.5 px-12 navlink font-semibold text-lg" href="">Login</a>
+                    @if (!Auth::check())
+                        <a class="border-2 rounded-3xl py-1.5 px-12 navlink font-semibold text-lg" href="{{url('/login')}}">Login</a>
+                    @endif
                 </div>
             </div>
         </div>
