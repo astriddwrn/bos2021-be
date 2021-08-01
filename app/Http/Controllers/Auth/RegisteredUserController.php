@@ -21,7 +21,16 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        $schedules = Schedule::all();
+        // masih perlu diselidiki apakah metode ini aman
+        // dan efisien atau tidak.
+
+        $schedules = collect([]);
+
+        foreach(Schedule::lazy() as $schedule){
+            if($schedule->count_users() < $schedule->quota)
+                $schedules->push($schedule);
+        }
+
         return view('debug.signup', compact('schedules'));
     }
 
@@ -36,22 +45,6 @@ class RegisteredUserController extends Controller
 
     public function store(Request $request)
     {
-
-        // $schedule = Schedule::find((int)$request->input('schedule_id'));
-        // if($schedule->quota>0) {
-        //     $request->request->add(['isQuotaNotZero' => 1]);
-        //     // $request->request->add([1,'isQuotaNotZero']);
-        // }
-        // else {
-        //     $request->request->add(['isQuotaNotZero' => 0]);
-        // }
-
-
-
-        // $message = [
-        //     'isQuotaNotZero.accepted' => 'Selected schedule is full, please select another one'
-        // ];
-
 
         $request->validate([
             'fullName' => 'required|string',
@@ -69,14 +62,20 @@ class RegisteredUserController extends Controller
             'campus' => 'required',
             'major' => 'required',
             'lnt_course' => 'required',
-            'schedule' => 'required',
-            // 'isQuotaNotZero' => 'accepted'
-        ] /*,$message*/);
+            'schedule' => 'required'
+        ]);
 
-        // $schedule->quota--;
-        // $schedule->save();
+        foreach(Schedule::findOrFail($request->schedule) as $schedule){
+            if($request->campus != $schedule->campus)
+                return back()->withInput()->withErrors([
+                    "schedule" => "The schedule you choose is not available in your campus."
+                ]);
 
-        // dd($request->all());
+            if($schedule->count_users() >= $schedule->quota)
+                return back()->withInput()->withErrors([
+                    "schedule" => "The schedule you choose is full right now."
+                ]);
+        }
 
         $user = User::create([
             'fullName' => $request->fullName,
@@ -96,8 +95,6 @@ class RegisteredUserController extends Controller
             'domicile' => $request->domicile,
             'address' => $request->address
         ]);
-
-
 
         event(new Registered($user));
 

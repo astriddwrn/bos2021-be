@@ -24,15 +24,13 @@
         <div style="left:50%; top:50%; transform: translate(-50%, -50%); height:630px; width: 550px" class="absolute rounded-xl flex flex-col items-center justify-center absolute bg-cWhite my-10">
 
 
-            <form action="{{ route('password.email') }}" class="w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
+            <form action="" class="w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
                 @csrf
                 <a href="#"><img class="mb-10" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
                 <!-- SEND EMAIL PERTAMA -->
-                @if (!Session::get('status'))
                 <div class="text-center text-3xl font-bold text-cDarkBlue">Forgot your Password?</div>
                 <div class="text-center mt-5">Enter the binusian email and we will send an email with instructions to reset your password.</div>
-                @endif
                 <!-- INSTRUCTIONS -->
                 @if ($message = Session::get('status'))
                 <div class="text-center text-3xl font-bold text-cDarkBlue">Instructions has been sent!</div>

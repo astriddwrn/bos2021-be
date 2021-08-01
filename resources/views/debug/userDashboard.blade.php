@@ -54,25 +54,31 @@
             <img class="xl:hidden absolute left-5 top-3 arrow-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/arrow-icon.svg')}}" alt="">
             <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
-            <div class="text-xl font-semibold mt-1">{{(Auth::user()->fullName)}}</div>
-            <div class="mt-7 text-lg menu-list">
+            <div class="text-xl font-semibold mt-1">
+                {{(Auth::user()->fullName)}}
+            </div>
+            <div class="mt-7 text-lg menu-list w-52">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
                     <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="">
                     <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
                     Schedule</div>
+                @if (!$diff_payment->invert)
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="">
                     Payment</div>
+                @endif
+                @if (!$diff_reregis->invert)
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="">
                     Re-Registration</div>
+                @endif
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-profile cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-profile-off.svg')}}" alt="">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="">Profile</div>
             </div>
-            <div class="absolute return-list bottom-10 text-lg">
+            <div class="absolute return-list bottom-10 text-lg w-52">
                 <div class="mt-5 flex flex-row items-center font-semibold text-md cursor-pointer">
                     <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="">
                     <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt="">Return to Home</div>
@@ -81,7 +87,7 @@
             </div>
         </div>
 
-        <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen">
+        <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
             <div class="section schedule-sec bg-cLightGray h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Schedule</span>
@@ -96,14 +102,19 @@
                             <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
                             <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
                             <div class="mt-2">
-                                <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">{{$date}}</div>
-                                <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">{{$start}} - {{$end}} (GMT +07.00)</div>
+                                <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
+                                {{$date}}
+                                </div>
+                                <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">
+                                    {{$start}} - {{$end}} (GMT +07.00)
+                                </div>
                             </div>
                             <a href="{{route('countdown')}}">
                                 <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
                             </a>
                         </div>
 
+                        @if ($diff_change_schedule->invert)
                         <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Change Your Schedule</div>
                             <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
@@ -121,6 +132,7 @@
                             </div>
                             <div class="btn schedule-btn xl:w-full sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn cursor-pointer">Submit</div>
                         </form>
+                        @endif
 
                         <div class="contact card rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
@@ -171,7 +183,9 @@
                 <div class="main-container">
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
-                            <div class="text-2xl font-bold text-cDarkBlue my-3">Hi, {{(Auth::user()->fullName)}}!</div>
+                            <div class="text-2xl font-bold text-cDarkBlue my-3">
+                                Hi, {{(Auth::user()->fullName)}}!
+                            </div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
 
@@ -389,47 +403,77 @@
                     <div class="card1 personal bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
                         <div class="text-2xl font-bold text-cDarkBlue">Personal Info</div>
                         <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold"></div>{{(Auth::user()->fullName)}}</div>
+                        <div class="flex flex-row items-center text-lg font-semibold"></div>
+                        {{(Auth::user()->fullName)}}
+                    </div>
                         <div><div class="">Gender</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->gender)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->gender)}}
+                        </div></div>
                         <div> <div class="">Date of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{$date}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{$date}}
+                        </div></div>
                         <div><div class="">Place of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->placeBirth)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->placeBirth)}}
+                        </div></div>
                         <div><div class="">Domicile City</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->domicile)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->domicile)}}
+                        </div></div>
                         <div> <div class="">Full Address</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->address)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->address)}}
+                        </div></div>
                         <div><div class="">LINE ID</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->line_id)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->line_id)}}
+                        </div></div>
                         <div><div class="">Whatsapp Number</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->whatsapp)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->whatsapp)}}
+                        </div></div>
                         <div> <div class="">Binusian Email</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->email)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->email)}}
+                        </div></div>
 
                     </div>
 
                     <div class="card student bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Student Credentials</div>
                         <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->fullName)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->fullName)}}
+                        </div></div>
                         <div> <div class="">Gender</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->gender)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->gender)}}
+                        </div></div>
                         <div><div class="">Date of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{$date}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{$date}}
+                        </div></div>
                         <div><div class="">Place of Birth</div>
-                        <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->placeBirth)}}</div></div>
+                        <div class="flex flex-row items-center text-lg font-semibold">
+                            {{(Auth::user()->placeBirth)}}
+                        </div></div>
                     </div>
 
                     <div class="card bncc bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">BNCC Registration</div>
                         <div>
                             <div class="">BNCC Launching Schedule</div>
-                            <div class="flex flex-row items-center text-lg font-semibold"> {{$date}} <br>{{$start}} - {{$end}} (GMT +07.00)</div>
+                            <div class="flex flex-row items-center text-lg font-semibold">
+                                {{$date}} <br>{{$start}} - {{$end}} (GMT +07.00)
+                            </div>
                         </div>
                         <div>
                             <div class="">LnT Course</div>
-                            <div class="flex flex-row items-center text-lg font-semibold">{{(Auth::user()->lnt_course)}}</div>
+                            <div class="flex flex-row items-center text-lg font-semibold">
+                                {{(Auth::user()->lnt_course)}}
+                            </div>
                         </div>
                     </div>
 

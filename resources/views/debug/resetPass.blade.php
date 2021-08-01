@@ -22,20 +22,14 @@
     </div>
 
         <div style="left:50%; top:50%; transform: translate(-50%, -50%);" class="absolute">
-
-            <form action="{{ route('password.update') }}" style="overflow:hidden; height:630px; width: 550px" class="w-full resetPass-form px-14 rounded-xl flex flex-col items-center  justify-center bg-cWhite " method="POST" style="overflow: hidden;">
+            
+            <form action="" style="overflow:hidden; height:630px; width: 550px" class="w-full resetPass-form px-14 rounded-xl flex flex-col items-center  justify-center bg-cWhite " method="POST" style="overflow: hidden;">
                 @csrf
                 <a href="#"><img class="mb-10" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
-                <!-- Password Reset Token -->
-                <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-                <!-- Email Address -->
-                <input type="hidden" value="{{$request->email}}" name="email">
-
                 <!-- SEND EMAIL PERTAMA -->
                 <div class="text-center text-3xl font-bold text-cDarkBlue">Reset Your Password</div>
-
+                
                 <div class="mt-5 w-full relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Password</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" id="password" name="password" placeholder="Example123">
@@ -57,12 +51,11 @@
                 <div class="info text-xl w-full text-center"><span class="text-cDarkBlue mr-2">Remember your password?</span><a href=""><span class="text-cLightBlue">Login Here</span></a></div>
             </form>
         </div>
-
-
-
+    
+        
+        
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/auth.js')}}"></script>
 </body>
 </html>
-

@@ -16,6 +16,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
+        if($request->user()->role != 1) {
+            return back()->with('alert', 'You are not an admin!');
+        }
         return $next($request);
     }
 }
