@@ -85,16 +85,16 @@
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Address</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="address" id="address" placeholder="e.g. DKI Jakarta, Jakarta Barat, Kebon...">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon...">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
-                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Line ID</div>
+                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LINE ID</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="line_id" id="line_id" placeholder="e.g. line_id">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
-                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Whatsapp Number</div>
+                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">WhatsApp Number</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX">
                         <span class="msg-error"></span>
                     </div>

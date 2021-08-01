@@ -14,8 +14,22 @@ html {
 }
 /* Landing */
 
+#navbar{
+  transition: all 0.5s;
+}
+
+.scrollUp{
+    transform: translateY(-100%);
+}
+
 .change-bg {
-    color: #37C8EE;
+    color: #37C8EE ;
+    background: #FBFBFB;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+.addFilter{
+    filter: brightness(0) saturate(100%) invert(64%) sepia(90%) saturate(617%) hue-rotate(157deg) brightness(97%) contrast(92%);
 }
 
 .btnReg {
@@ -251,8 +265,9 @@ html {
 @media all and (max-width: 1279px) {
     .navbar-desk {
         padding: 0 3rem;
-        width: 90%;
+        /* width: 90%; */
     }
+
 
     .menu-icon{
         display: block;
@@ -316,8 +331,40 @@ html {
         bottom: 0.4rem;
     }
 
-    .navbar-desk {
-        display: none;
+    #navbar {
+        padding: 0 0rem;
+        width: 100%;
+    }
+    .change-bg{
+        color: white !important;
+    }
+    .addFilter.profile{
+        filter: none;
+    }
+    .menu-cont{
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        background-color: rgba(0, 84, 165, 1);
+        width: 300px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translate(200%, 0);
+        padding: 50px 30px;
+        transition: transform .5s ease-in-out;
+        z-index: 999999;
+    }
+
+    .menu-cont.active{
+        transform: translate(0, 0);
+        right: 0;
+    }
+
+    .font-extrabold {
+        font-size: 3rem;
     }
 
     /* vc */
@@ -398,7 +445,7 @@ html {
         width: 100px;
     }
 
-}
+};
 
 @media all and (max-width: 767px) {
     /* ff */
@@ -524,6 +571,9 @@ html {
     }
     .landing .arrowcont {
         bottom: 0.1rem;
+    }
+    .menu-cont{
+        width: 250px;
     }
 
     /* vc */
@@ -695,4 +745,66 @@ html {
         font-size: .8rem;
         line-height: 1.2rem;
     }
+
+    .text-sm{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .text-base{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .text-lg{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .text-xl{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .text-2xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .text-3xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .text-4xl{
+      font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .say-card img{
+      width: 80px;
+      height: 80px;
+  }
+  .say-card .text-sm{
+      font-size: .7rem;
+      line-height: .9rem;
+  }
+  .say-btn{
+      font-size: .6rem;
+      font-weight: 600;
+  }
+  .say-btn img{
+      width: 30px;
+      height: 30px;
+  }
+  .say-card-cont{
+      height: 130px;
+  }
+  .say-card-cont .title{
+      font-size: .8rem;
+  }
+  .say-title{
+      /* font-size: 1.2rem; */
+  }
+  .text-base{
+      font-size: .8rem;
+      line-height: 1.2rem;
+  }
+  .question-faq{
+      font-weight: 600;
+  }
 }

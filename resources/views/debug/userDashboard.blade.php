@@ -449,7 +449,7 @@
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->line_id)}}
                         </div></div>
-                        <div><div class="">Whatsapp Number</div>
+                        <div><div class="">WhatsApp Number</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->whatsapp)}}
                         </div></div>
