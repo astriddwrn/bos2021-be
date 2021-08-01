@@ -34,7 +34,7 @@
               <td>{{($user->major)}}</td>
               <td>{{($user->whatsapp)}}</td>
               <td>{{($user->line_id)}}</td>
-              <td>{{($user->schedule->date)}}</td>
+              {{-- <td>{{($user->schedule->date)}}</td> --}}
               <td>{{($user->lnt_course)}}</td>
               <td>
                 <form action="{{route('download_payment', $user->id)}}"method="GET">

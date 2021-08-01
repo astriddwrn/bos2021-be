@@ -30,7 +30,10 @@ Route::middleware(["auth"])->group(function(){
     //Re-registration
     Route::post('/reregister', 'App\Http\Controllers\MemberController@create')->name('reregister');
 
-    //Admin
+
+});
+
+Route::middleware(["auth", 'admin'])->group(function() {
     Route::get('/admin', [AdminController::class, "index"])->name('admin');
     Route::get('/download/payment/{id}', [AdminController::class, "download"])->name('download_payment');
     Route::get('/admin/downl/alsexlsx', [AdminController::class, "downloadALS"])->name('download_ALS');

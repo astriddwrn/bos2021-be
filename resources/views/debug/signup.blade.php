@@ -10,29 +10,23 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
-<body>
+<body class="text-base">
 
-    <!--
-        @foreach ($errors->all() as $error)
-            {{ $error }}
-        @endforeach
-    -->
-
-    <div class="pop-up fixed success w-screen h-screen z-10">
-        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
-        <div class="modal fixed z-20 w-6/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
+    <div class="pop-up fixed success w-screen h-screen z-30">
+        <div class="fixed z-20 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">
             <div class="mt-7 font-medium text-2xl">Registration Success!</div>
         </div>
     </div>
 
-    <div class="flex flex-row font-sans">
-        <div class="w-5/12 h-screen flex flex-col items-center">
-            <form class="w-full relative" action="{{ route('register') }}" method="POST">
+    <div class="flex flex-row font-sans h-full w-full">
+        <div  class="main-container lg:static absolute lg:w-5/12 sm:w-8/12 w-11/12 lg:h-screen h-5/6 flex flex-col items-center z-10 bg-cWhite lg:rounded-none rounded-2xl " >
+            <form class="w-full relative signup" action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
-                    <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
-                    <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between px-16 max-w-96">
+                    <a href="#"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
+                    <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between xl:px-16 sm:px-10 px-4 max-w-96">
                         <div class="flex flex-col items-center w-11 text-center">
                             <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
                             <div class="title active-title text-xs text-cDarkerGray mt-1">Personal Info</div>
@@ -57,7 +51,7 @@
                 </div>
 
 
-                <div class="personal-sec w-full section absolute px-24 ">
+                <div class="personal-sec w-full section absolute xl:px-24 px-10 ">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Name</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe">
@@ -113,7 +107,7 @@
 
                 </div>
 
-                <div class="student-sec w-full section absolute right-section  px-24">
+                <div class="student-sec w-full section absolute right-section  xl:px-24 px-10">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="nim" id="nim" placeholder="25XXXXXXXX">
@@ -161,7 +155,7 @@
 
                 </div>
 
-                <div class="bncc-sec w-full section absolute right-section px-24">
+                <div class="bncc-sec w-full section absolute right-section xl:px-24 px-10">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LnT Course</div>
                         <div class="custom-select lnt-select w-full">
@@ -234,7 +228,7 @@
 
                 </div>
 
-                <div class="account-sec w-full section absolute right-section  px-24">
+                <div class="account-sec w-full section absolute right-section xl:px-24 px-10">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="email" placeholder="example@binus.ac.id">
@@ -273,9 +267,9 @@
 
             </form>
         </div>
-        <div class="w-7/12 h-screen bg-bgSpace h-screen overflow-hidden fixed right-0">
+        <div class="lg:w-7/12 w-full h-screen bg-bgSpace overflow-hidden fixed right-0" >
             <img class="stars absolute z-1 w-screen h-screen" src="{{url('./Asset/Image/auth/bg-stars.svg')}}" alt="">
-            <img class="rocket absolute z-2" src="{{url('./Asset/Image/auth/rocket.svg')}}" alt="">
+            <img class="lg:block hidden rocket absolute z-2" src="{{url('./Asset/Image/auth/rocket.svg')}}" alt="">
         </div>
     </div>
 

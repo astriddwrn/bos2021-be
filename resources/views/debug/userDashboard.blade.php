@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="schedules" content="{{ $schedules_from_region->toJson() }}">
     <meta name="user" content="{{ $user->toJson() }}">
-    
+
 
     <title>User Dashboard</title>
 
@@ -85,7 +85,7 @@
                 <div class="mt-5 flex flex-row items-center font-semibold text-md cursor-pointer">
                     <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="">
                     <!-- <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt=""> -->
-                    Return to Home</div>
+                    <a href="{{url('/')}}">Return to Home</a></div>
                 <div class="mt-7 logout flex flex-row items-center font-semibold text-md text-cLightBlue cursor-pointer">
                     <img class="mr-3 px-2" src="{{ asset('Asset/Image/userDashboard/menu-logout.svg')}}" alt="">Log out</div>
             </div>
@@ -131,7 +131,7 @@
                             <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
                             <div>
                                 <div class="text-cDarkBlue font-sans font-medium w-100 text-xl mt-5">Schedule</div>
-                                
+
                                 <span class="schedule-input schedule-select-cont schedule xl:w-full sm:w-96 w-full hidden">
                                     <div class="custom-select schedule-select xl:w-full sm:w-96 w-full">
                                         <select id="schedule-select">
@@ -143,7 +143,7 @@
 
                                 <span class="schedule-input schedule-checkbox-cont schedule xl:w-full sm:w-96 w-full">
                                     <span class="schedule-checkbox multiple w-full ">
-                                        
+
                                     </span>
                                     <span class="msg-error"></span>
                                 </span>
