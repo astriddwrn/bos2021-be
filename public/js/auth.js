@@ -1,6 +1,25 @@
 
 $(document).ready(function(){
 
+    const json = JSON.parse($("meta[name=schedules]").attr("content"));
+    var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
+    var outputALS =  json.filter(schedule => schedule.campus == "als");
+    var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
+    var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
+    // console.log(outputKMG);
+    for (const [key, val] of Object.entries(outputKMG)) {
+        $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.text}`));
+    }
+    for (const [key, val] of Object.entries(outputALS)) {
+        $('#bncc-select-als').append(new Option(`${val.text}`, `${val.text}`));
+    }
+    for (const [key, val] of Object.entries(outputMLG)) {
+        $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+    }
+    for (const [key, val] of Object.entries(outputBDG)) {
+        $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+    }
+
 function selectFunc(z){
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
@@ -67,7 +86,6 @@ function selectFunc(z){
     document.addEventListener("click", closeAllSelect);
     var e = document.getElementById(z);
 }
-
 function closeAllSelect(elmnt) {
     /*a function that will close all select boxes in the document,
     except the current select box:*/
@@ -93,8 +111,6 @@ function closeAllSelect(elmnt) {
         $(elmnt).parent().removeClass("border-error");
         $(elmnt).parent().siblings('.msg-error').empty();
     }
-    
-
 }
 
 selectFunc("gender-select");
@@ -382,10 +398,18 @@ selectFunc("bncc-select-als");
         $('.schedule').each(function(){
             $(this).addClass('hidden');
             $(this).find('.msg-error').empty();
+            $(this).find('select').removeAttr('name');
+            $(this).find('.radio-input').removeAttr('name');
         });
         d.removeClass('hidden');
+        d.find('select').attr('name', 'schedule[]');
+        if (cmps=='BDG'){
+
+            d.find('.radio-input').attr('name', 'esport');
+        }
     }
 
+    
 
     $('.select-selected').click(function(){
         let select = $(this).parent();
