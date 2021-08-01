@@ -14,8 +14,22 @@ html {
 }
 /* Landing */
 
+#navbar{
+  transition: all 0.5s;
+}
+
+.scrollUp{
+    transform: translateY(-100%);
+}
+
 .change-bg {
-    color: #37C8EE;
+    color: #37C8EE ;
+    background: #FBFBFB;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+.addFilter{
+    filter: brightness(0) saturate(100%) invert(64%) sepia(90%) saturate(617%) hue-rotate(157deg) brightness(97%) contrast(92%); 
 }
 
 .btnReg {
@@ -244,6 +258,7 @@ html {
         padding: 0 3rem;
         width: 90%;
     }
+    
 
     /* Fun fact */
     .ff .pr-12,
@@ -270,13 +285,40 @@ html {
   }
 
 @media all and (max-width: 1023px) {
+    #navbar {
+        padding: 0 0rem;
+        width: 100%;
+    }
+    .change-bg{
+        color: white !important;
+    }
+    .addFilter.profile{
+        filter: none; 
+    }
+    .menu-cont{
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        background-color: rgba(0, 84, 165, 1);
+        width: 300px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translate(200%, 0);
+        padding: 50px 30px;
+        transition: transform .5s ease-in-out;
+        z-index: 999999;
+    }
+
+    .menu-cont.active{
+        transform: translate(0, 0);
+        right: 0;
+    }
 
     .font-extrabold {
         font-size: 3rem;
-    }
-
-    #navbar {
-        display: none;
     }
 
     /* vc */
@@ -379,6 +421,11 @@ html {
 }
 
 @media all and (max-width: 479px) {
+.menu-cont{
+    width: 250px;
+}
+
+
 /* vc */
 .vc .video {
     height: 14rem;

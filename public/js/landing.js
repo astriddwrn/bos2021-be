@@ -4,7 +4,7 @@ $(document).ready(() => {
     $(window).scroll(() => {
         let currPosition = $(window).scrollTop();
         const mediaQuery = window.matchMedia("(min-width: 768px)");
-        if (mediaQuery.matches) {
+      
             /* if (scrollPrevPosition > currPosition) {
                 $("#navbar").removeClass("scroll-down");
                 $("#navbar").addClass("scroll-up");
@@ -14,16 +14,44 @@ $(document).ready(() => {
             } */
             if (currPosition > 700) {
                 $("#navbar").addClass("change-bg");
+                $(".burger").addClass("addFilter");
+                $(".profile").addClass("addFilter");
                 $("#logo-down").css("display", "block")
                 $("#logo-up").css("display","none")
             } else {
                 $("#navbar").removeClass("change-bg");
+                $(".burger").removeClass("addFilter");
+                $(".profile").removeClass("addFilter");
                 $("#logo-up").css("display", "block")
                 $("#logo-down").css("display","none")
             }
             scrollPrevPosition = currPosition;
-        }
+        
     });
+
+    var c, currentScrollTop = 0,
+    navbar = $('#navbar');
+    $(window).scroll(function () {
+    var a = $(window).scrollTop();
+    var b = navbar.height();
+    currentScrollTop = a;
+    if (c < currentScrollTop && a > b + b) {
+        $('.menu-cont').removeClass('active');
+        navbar.addClass("scrollUp");
+    } else if (c > currentScrollTop && !(a <= b)) {
+        $('.menu-cont').removeClass('active');
+        navbar.removeClass("scrollUp");
+    }
+    c = currentScrollTop;
+    });
+
+    $('.burger').click(function () {
+        $('.menu-cont').addClass('active');
+    });
+    $('.menu-close').click(function () {
+        $('.menu-cont').removeClass('active');
+    });
+
 });
 
 /* Fun Fact */
@@ -82,17 +110,14 @@ $(document).ready(function(){
      }
      $(".carousel-event .slide").eq(eventCurrNum).addClass('slide-left');
      eventCurrNum++;
-     eventCurrNum>13 ? eventCurrNum=0 : '';
+     eventCurrNum>8 ? eventCurrNum=0 : '';
      let a=eventCurrNum;
      let b=eventCurrNum;
      a -= 2;
-     a==-2 ? a=12 : '';
-     a==-1 ? a=13 : '';
+     a==-2 ? a=7 : '';
+     a==-1 ? a=8 : '';
      b +=1;
-     b>13 ? b=0 : '';
-     console.log(a);
-     console.log(eventCurrNum);
-     console.log(b);
+     b>8 ? b=0 : '';
      $(".carousel-event .slide").eq(a).removeClass('slide-left').addClass('slide-behind');
      $(".carousel-event .slide").eq(eventCurrNum).removeClass('slide-right');
      $(".carousel-event .slide").eq(b).removeClass('slide-behind').addClass('slide-right');
@@ -111,14 +136,14 @@ $(document).ready(function(){
      }
      $(".carousel-event .slide").eq(eventCurrNum).addClass('slide-right');
      eventCurrNum--;
-     eventCurrNum<0 ? eventCurrNum=13 : '';
+     eventCurrNum<0 ? eventCurrNum=8 : '';
      let a=eventCurrNum;
      let b=eventCurrNum;
      a +=2;
-     a==15 ? a=1 : '';
-     a==14 ? a=0 : '';
+     a==10 ? a=1 : '';
+     a==9 ? a=0 : '';
      b -=1;
-     b<0 ? b=13 : '';
+     b<0 ? b=8 : '';
      $(".carousel-event .slide").eq(a).removeClass('slide-right').addClass('slide-behind');
      $(".carousel-event .slide").eq(eventCurrNum).removeClass('slide-left');
      $(".carousel-event .slide").eq(b).removeClass('slide-behind').addClass('slide-left');

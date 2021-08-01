@@ -26,22 +26,37 @@
         <img class="w-full absolute -bottom-8 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
         <a class="absolute bottom-6 z-10" href="#about"><img class="arrowLan " src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt=""></a>
         {{-- Navbar --}}
-        <div id="navbar" class="w-full  fixed top-0 h-24 z-50 px-48">
-            <div class="w-full flex flex-row justify-between items-center py-8">
-                <a class="w-3/12 relative">
-                    <img id="logo-up" class="absolute -top-4" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
-                    <img id="logo-down" class="absolute -top-4 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
+        <div id="navbar" class="w-full fixed top-0 h-24 z-50 lg:px-48 px-0">
+            <div class="w-full  flex flex-row h-full justify-between items-center py-8">
+                <a class="w-32 flex items-center relative lg:ml-0 ml-5">
+                    <img id="logo-up" class="absolute w-32" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
+                    <img id="logo-down" class="absolute w-32 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
                 </a>
-                <div class="w-full text-right flex flex-row justify-end items-center">
-                    <a class="navlink font-semibold text-lg mx-4" href="#about">About</a>
-                    <a class="navlink font-semibold text-lg mx-4" href="#oc">Courses</a>
-                    <a class="navlink font-semibold text-lg mx-4" href="#bose">Ongoing Events</a>
-                    <a class="navlink font-semibold text-lg mx-4    " href="#faq">FAQ</a>
-                    @if (!Auth::check())
+                <div class="w-full text-right flex flex-row justify-end items-center ">
+                    <div class="menu-cont w-full  flex flex-row justify-end">
+                        <img class="lg:hidden block w-7 mb-5 menu-close" src="{{('Asset/Image/landing/navbar-close.svg')}}" alt="">
+                        <hr class="lg:hidden border-cWhite my-7 border w-full">
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
+                        <hr class="lg:hidden border-cWhite my-7 border w-full">
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#oc">Courses</a>
+                        <hr class="lg:hidden border-cWhite my-7 border w-full">
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#bose">Ongoing Events</a>
+                        <hr class="lg:hidden border-cWhite my-7 border w-full">
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#faq">FAQ</a>
+                        <hr class="lg:hidden border-cWhite my-7 border w-full">
+                        @if (!Auth::check())
                         <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
-                    @else
-                        <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{route('dashboard')}}">Dashboard</a>
-                    @endif
+                        @else
+                            <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
+                                <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
+                            </a>
+                        @endif
+                        <hr class="lg:hidden border-cWhite my-7 border w-full">
+
+                    </div>
+                    <img class="lg:hidden block w-8 mx-5 burger " src="{{('Asset/Image/landing/navbar-burger.svg')}}" alt="">
+
+                    
                 </div>
             </div>
         </div>
@@ -516,7 +531,7 @@
     </div>
 
     {{-- Our Event --}}
-    <!-- <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
+    <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
         <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
@@ -570,25 +585,6 @@
                     <span style="color: #85E4F1; ">Hackathon</span>
                 </div>
             </div>
-            <div class="w-full h-full slide slide-behind absolute">
-                <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Design</div>
-            </div>
-            <div class="w-full h-full slide slide-behind absolute">
-                <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic10.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Menulis Artikel</div>
-            </div>
-            <div class="w-full h-full slide slide-behind absolute">
-                <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic11.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Motion Graphic</div>
-            </div>
-            <div class="w-full h-full slide slide-behind absolute">
-                <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic12.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Video Editing</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
@@ -597,11 +593,6 @@
                     <span class="sm:text-3xl text-xl">Corporate Social</span> <br> 
                     <span style="">Responsibility (CSR)</span>
                 </div>
-            </div>
-            <div class="w-full h-full slide slide-left absolute">
-                <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic14.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Meet Up</div>
             </div>
             
             <div class="cursor-pointer h-full sm:w-28 w-16 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img class="sm:w-6 w-3" src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
@@ -617,14 +608,9 @@
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 
             </div>
-    </div> -->
+    </div>
 
 
     {{-- What They Say? --}}
