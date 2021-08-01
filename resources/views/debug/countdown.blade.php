@@ -39,7 +39,7 @@
         <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
     </div>
     <script>
-         var countdownTime = new Date({{$countdown}});
+        var countdownTime = new Date({{$countdown}});
     </script>
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/flipclock.js')}}"></script>
