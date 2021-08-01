@@ -22,7 +22,7 @@
 
     <div class="flex flex-row font-sans h-full w-full">
         <div  class="main-container lg:static absolute lg:w-5/12 sm:w-8/12 w-11/12 lg:h-screen h-5/6 flex flex-col items-center z-10 bg-cWhite lg:rounded-none rounded-2xl " >
-            <form class="w-full relative signup" action="{{ route('debug.view', 'sample_show') }}" method="POST">
+            <form class="w-full relative signup" action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
                     <a href="#"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
@@ -213,7 +213,7 @@
                         <!-- malang -->
                         <span class="schedule-mlg hidden schedule">
                             <span class="multiple">
-                              
+
                             </span>
                             <span class="msg-error"></span>
                         </span>

@@ -15,7 +15,7 @@
 </head>
 <body class="bg-cWhite">
     {{-- Landing --}}
-    <div class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite">
+    <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite">
         <div class="w-full flex flex-col justify-content items-center z-10 mb-20">
             <div class="font-extrabold text-8xl">We Are BNCC</div>
             <h3 class="font-semibold text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
@@ -24,20 +24,23 @@
         </div>
         <img class="absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-stars.svg')}}" alt="">
         <img class="w-full absolute -bottom-8 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
-        <img class="arrowLan absolute bottom-0 z-10" src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt="">
+        <a class="absolute bottom-6 z-10" href="#about"><img class="arrowLan " src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt=""></a>
         {{-- Navbar --}}
-        <div class="w-full fixed top-0 h-24 z-50 px-48">
+        <div id="navbar" class="w-full fixed top-0 h-24 z-50 px-48">
             <div class="w-full flex flex-row justify-between items-center py-8">
-                <a>
-                    <img src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
+                <a class="w-3/12 relative">
+                    <img id="logo-up" class="absolute -top-4" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
+                    <img id="logo-down" class="absolute -top-4 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
                 </a>
-                <div class="w-7/12 text-right flex flex-row justify-between items-center">
-                    <a class="navlink font-semibold text-lg" href="">About</a>
-                    <a class="navlink font-semibold text-lg" href="">Courses</a>
-                    <a class="navlink font-semibold text-lg" href="">Ongoing Events</a>
-                    <a class="navlink font-semibold text-lg" href="">FAQ</a>
+                <div class="w-full text-right flex flex-row justify-end items-center">
+                    <a class="navlink font-semibold text-lg mx-4" href="#about">About</a>
+                    <a class="navlink font-semibold text-lg mx-4" href="#oc">Courses</a>
+                    <a class="navlink font-semibold text-lg mx-4" href="#bose">Ongoing Events</a>
+                    <a class="navlink font-semibold text-lg mx-4    " href="#faq">FAQ</a>
                     @if (!Auth::check())
-                        <a class="border-2 rounded-3xl py-1.5 px-12 navlink font-semibold text-lg" href="{{url('/login')}}">Login</a>
+                        <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
+                    @else
+                        <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{route('dashboard')}}">Dashboard</a>
                     @endif
                 </div>
             </div>
@@ -45,7 +48,7 @@
     </div>
 
     {{-- About Us --}}
-    <div class="w-full font-sans my-32 px-72">
+    <div id="about" class="about w-full font-sans my-32 px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">About Us</h1>
         <div class="w-full flex flex-row items-center">
             <div class="w-1/2 leading-7">
@@ -63,7 +66,7 @@
     </div>
 
     {{-- Fun Fact --}}
-    <div class="w-full font-sans my-32 px-72">
+    <div id="ff" class="ff w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
@@ -109,7 +112,7 @@
     </div>
 
     {{-- Why BNCC? --}}
-    <div class="w-full font-sans my-32 px-48">
+    <div id="why" class="why w-full font-sans my-32 px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
 
@@ -175,7 +178,7 @@
     </div>
 
      {{-- Our Courses --}}
-     <div class="w-full font-sans my-32 px-72">
+     <div id="oc" class="oc w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="w-full flex flex-row justify-between items-center">
@@ -485,7 +488,7 @@
     </div>
 
     {{-- Our Event --}}
-    <div class="w-full h-screen font-sans my-32 px-72">
+    <div id="oe" class="oe w-full h-screen font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">Our Events</h1>
         <div class="text-base mb-14">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
@@ -538,7 +541,7 @@
     </div>
 
     {{-- What They Say? --}}
-    <div class="w-full font-sans my-32 px-72">
+    <div id="what" class="what w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">What they say about BNCC?</h1>
         <div class="relative h-56">
             <div class="flex flex-row say-card say-card-visible absolute">
@@ -605,7 +608,7 @@
     </div>
 
     {{-- FAQ --}}
-    <div class="w-full font-sans my-32 px-72">
+    <div id="faq" class="faq w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
             <div class="w-full flex flex-col">
@@ -714,7 +717,7 @@
     </div>
 
     {{-- Sponsor --}}
-    <div class="w-full font-sans my-32 px-72">
+    <div id="sponsor" class="sponsor w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Sponsors</h1>
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center">
             <span class="text-base text-2xl font-medium -mt-5 bg-cWhite px-5">Gold Sponsor</span>
@@ -744,7 +747,7 @@
     </div>
 
     {{-- Footer --}}
-    <div class="footer-sec w-full font-sans relative bg-bgSpace">
+    <div id="footer" class="footer footer-sec w-full font-sans relative bg-bgSpace">
 
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">

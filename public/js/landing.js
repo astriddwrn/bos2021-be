@@ -1,3 +1,31 @@
+/* Navbar */
+let scrollPrevPosition = $(window).scrollTop();
+$(document).ready(() => {
+    $(window).scroll(() => {
+        let currPosition = $(window).scrollTop();
+        const mediaQuery = window.matchMedia("(min-width: 768px)");
+        if (mediaQuery.matches) {
+            /* if (scrollPrevPosition > currPosition) {
+                $("#navbar").removeClass("scroll-down");
+                $("#navbar").addClass("scroll-up");
+            } else {
+                $("#navbar").removeClass("scroll-up");
+                $("#navbar").addClass("scroll-down");
+            } */
+            if (currPosition > 700) {
+                $("#navbar").addClass("change-bg");
+                $("#logo-down").css("display", "block")
+                $("#logo-up").css("display","none")
+            } else {
+                $("#navbar").removeClass("change-bg");
+                $("#logo-up").css("display", "block")
+                $("#logo-down").css("display","none")
+            }
+            scrollPrevPosition = currPosition;
+        }
+    });
+});
+
 /* Fun Fact */
 $(".shadow-bsFf").hover(
     function () {
