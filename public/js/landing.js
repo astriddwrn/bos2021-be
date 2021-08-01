@@ -10,10 +10,29 @@ $(".shadow-bsFf").hover(
 
 /* FAQ */
 $('.arrow').click(function () {
-    $(this).parent().siblings(".bot").slideToggle();
-    $(this).parent().toggleClass("top-active");
+    let thisFaq = $(this);
     $(this).toggleClass("arrow-active");
+
+    if ($(this).parent().hasClass("top-active")) {
+        $(this).parent().siblings(".bot").slideToggle();
+        setTimeout(function () {
+            topFaq(thisFaq);
+        }, 300);
+    } else {
+        $(this).parent().toggleClass("top-active");
+        setTimeout(function () {
+            botFaq(thisFaq);
+        }, 100);
+    }
 });
+
+const topFaq = (thisFaq) => {
+    $(thisFaq).parent().toggleClass("top-active");
+}
+
+const botFaq = (thisFaq) => {
+    $(thisFaq).parent().siblings(".bot").slideToggle();
+}
 
 $(document).ready(function(){
     let sayCurrNum = 0;
@@ -80,3 +99,43 @@ $(document).ready(function(){
           $('.carousel-event .next, .carousel-event .prev').removeClass('non-clickable');
      },1000);
  });
+
+ /* Our Courses */
+
+ $(".ocBtn").click(function () {
+     $(this).parent().siblings().removeClass("ocBox-active");
+     $(this).parent().addClass("ocBox-active");
+     $(this).parent().siblings().children(".ocBtn").removeClass("ocBtn-active");
+     $(this).addClass("ocBtn-active");
+});
+
+let btnJava = $("#ocBtn-java");
+let btnMobile = $("#ocBtn-mobile");
+let btnBe = $("#ocBtn-be");
+let btnUi = $("#ocBtn-ui");
+let btnFe = $("#ocBtn-fe");
+let btnC = $("#ocBtn-c");
+let btnGame = $("#ocBtn-game");
+
+let conJava = $("#oc-java");
+let conMobile = $("#oc-mobile");
+let conBe = $("#oc-be");
+let conUi = $("#oc-ui");
+let conFe = $("#oc-fe");
+let conC = $("#oc-c");
+let conGame = $("#oc-game");
+
+const ourCourse = (btn, con) => {
+    $(btn).click(function () {
+        $(con).siblings().removeClass("ocCon-active");
+        $(con).addClass("ocCon-active");
+    });
+}
+
+ourCourse(btnJava, conJava);
+ourCourse(btnMobile, conMobile);
+ourCourse(btnBe, conBe);
+ourCourse(btnUi, conUi);
+ourCourse(btnFe, conFe);
+ourCourse(btnC, conC);
+ourCourse(btnGame, conGame);

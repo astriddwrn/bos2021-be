@@ -21,6 +21,10 @@ module.exports = {
             cBlackHome: '#383530',
             cGray: '#DADEDF',
             cLighterGray: '#EFF3F4',
+            cBlacker: '#2B2B2B',
+            cBabyBlue: '#CCE4F9',
+            cLighterBlue: '#3371AD',
+            cLntBlue: '#37C8EE',
         },
         backgroundImage: {
             'bgSpace': "linear-gradient(195.99deg, #0C131B -57.79%, #0054A5 49.18%, #CDD8DD 151.55%)",
@@ -33,7 +37,9 @@ module.exports = {
              'bsBtn': "0px 4px 12px rgba(0, 0, 0, 0.12);",
              'bsFf': "5px 14px 15px 8px rgba(205, 205, 205, 0.25)",
              'bsFfhv': "0px 0px 8px rgba(55, 200, 238, 0.2)",
-             'bsWhy': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)"
+             'bsWhy': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
+             'bsOc': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
+             'bsOcBig': "4px 16px 20px 8px rgba(205, 205, 205, 0.3)"
          },
         extend: {
             fontFamily: {

@@ -2,24 +2,102 @@
     border: 1px solid rgba(255, 0, 0, 1)
 } */
 
-.arrow {
+/* Landing */
+.navlink {
+}
+
+.btnReg {
+    transition: 0.3s;
+}
+
+.arrowLan {
+    animation: float-from-top 2s ease-in-out infinite;
+}
+
+@keyframes float-from-top {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.arrow,
+a {
     cursor: pointer;
 }
 
+/* ff */
 .ff-img {
     filter: grayscale(100%);
     transition: 0.5s;
 }
 
+/* why bncc */
 .shadow-bsWhy {
     width: 26rem;
 }
 
 .card-why {
-    width: 23rem;
-    height: 28rem;
+    width: 18.5rem;
+    height: 26rem;
 }
 
+/* Our courses */
+.ocBtn {
+  transition: 0.3s;
+  fill: #B5B7B8;
+}
+
+.ocBtn:hover {
+    cursor: pointer;
+    fill: #37C8EE;
+    transition: 0.3s;
+}
+
+.ocBtn-active {
+    fill: #FBFBFB;
+}
+
+.ocBox-active {
+    background-color: #37C8EE;
+}
+
+.ocBtn-active:hover {
+    fill: #FBFBFB !important;
+}
+
+.ocBigBox {
+    min-height: 25rem;
+}
+
+.ocCon {
+    display: none;
+    opacity: 0;
+}
+
+.ocCon-active {
+    display: flex;
+    animation: fade-in 1000ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* FAQ */
 .top {
     border: 2px solid #DADEDF;
     border-radius: 24px;
@@ -45,6 +123,7 @@
     border-radius: 0px 0px 24px 24px;
 }
 
+/* Say */
 .say-pic-active{
     box-shadow:5px 14px 13px #CDCDCD;
     transition: all .5s ease-in-out;
@@ -59,6 +138,7 @@
     transition: opacity 1s ease-in-out;
 }
 
+/* Footer */
 .footer-sec{
     height:900px;
 }
