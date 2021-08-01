@@ -20,7 +20,7 @@
             <div class="font-extrabold text-8xl">We Are BNCC</div>
             <h3 class="font-semibold text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
             <h5 class="font-medium text-2xl mb-4">Want to be a part of BNCC?</h5>
-            <a class="btnReg bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out rounded-lg font-semibold text-lg py-1.5 px-28">Register Now!</a>
+            <a class="btnReg bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out rounded-lg font-semibold text-lg py-1.5 px-28" href="{{url('/register')}}">Register Now!</a>
         </div>
         <img class="absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-stars.svg')}}" alt="">
         <img class="w-full absolute -bottom-8 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
