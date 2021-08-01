@@ -2,37 +2,30 @@ $(document).ready(function(){
 
     const json1 = JSON.parse($("meta[name=user]").attr("content"));
     const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
-    var campus = json1.campus;
-    var schedule =  json1.schedule;
+    const campus = json1.campus;
+    var schedule =  json2;
+    console.log(schedule);
     for (const [key, val] of Object.entries(schedule)){
         if(campus == 'MLG' || campus == 'BDG'){
-            var s = json2.find(schedule => schedule.id == val);
-            $('.schedule-checkbox').append('<label class="my-1 main text-sm w-full">'+ `${s.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${s.text}` + '"> <span class="mark"></span> </label>');
+            $('.schedule-checkbox').append('<label class=" main text-sm w-full">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
         }
         if(campus == 'KMG' || campus == 'ALS'){
-            var s = json2.find(schedule => schedule.id == val);
-            $('#schedule-select').append(new Option(`${s.text}`, `${s.text}`));
+            $('#schedule-select').append(new Option(`${val.text}`, `${val.text}`));
         }
     }
 
-    $('.schedule').each(function(){
+    $('.schedule-input').each(function(){
         $(this).addClass('hidden');
         $(this).find('.msg-error').empty();
         $(this).find('select').removeAttr('name');
     });
     if(campus == 'MLG' || campus == 'BDG'){
-        $(this).removeClass('hidden');
+        $('.schedule-checkbox-cont').removeClass('hidden');
     }
     else{
-        $(this).removeClass('hidden');
-        $(this).find('select').attr('name', 'schedule[]');
+        $('.schedule-select-cont').removeClass('hidden');
+        $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
     }
-    
-    
-
-
-    
-    
 
     
     function selectFunc(z){
@@ -142,7 +135,7 @@ $(document).ready(function(){
      });
 
      function checkValidationSelect(x){
-        if(x.hasClass("custom-select") && x.find(":selected").val()==0){
+        if(x.hasClass("custom-select") && x.find(":selected").val()==0 && x.is(':visible')){
             x.addClass("border-error");
             x.siblings('.msg-error').text("This is a required space.");
         }
@@ -223,6 +216,7 @@ $(document).ready(function(){
         let a;
         let b;
         let c;
+        let e;
         if( $(this).hasClass("reregistration-btn")){
             a=$('#form-reregistration input');
             b=$('#form-reregistration .custom-select');
@@ -240,6 +234,21 @@ $(document).ready(function(){
             b=$('#form-schedule .custom-select');
             c=$('#form-schedule');
             d=$('.success-schedule');
+            if(campus == 'MLG' || campus == 'BDG'){
+                let z = false;
+                $('.schedule-checkbox').find('label input').each(function() {
+                    if($(this).is(':checked')){
+                        z=true;
+                    }
+                });
+                if(!z){
+                    $('.schedule-checkbox').next().text("This field must be checked.");
+                }
+                else{
+                    $('.schedule-checkbox').next().empty();
+                }
+            }
+           
         }
         a.each(function() {
             checkValidationInput($(this));

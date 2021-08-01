@@ -154,7 +154,6 @@ selectFunc("bncc-select-als");
                 a=true;
             }
         })
-        console.log(a);
 
         if(!a){
             x.next().text("This field must be checked.");
