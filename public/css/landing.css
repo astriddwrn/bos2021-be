@@ -1,9 +1,15 @@
+@import url(base.css);
 /* div {
     border: 1px solid rgba(255, 0, 0, 1)
 } */
 
+html {
+    scroll-behavior: smooth;
+}
 /* Landing */
-.navlink {
+
+.change-bg {
+    color: #37C8EE;
 }
 
 .btnReg {
