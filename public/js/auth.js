@@ -405,7 +405,7 @@ selectFunc("bncc-select-als");
         d.find('select').attr('name', 'schedule[]');
         if (cmps=='BDG'){
 
-            d.find('.radio-input').attr('name', 'esport');
+            d.find('.radio-input').attr('name', 'is_esport');
         }
     }
 
