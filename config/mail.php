@@ -45,6 +45,14 @@ return [
             'auth_mode' => null,
         ],
 
+        'stream' => [
+            'ssl' => [
+                'allow_self_signed' => true,
+                'verify_peer'       => false,
+                'verify_peer_name'  => false,
+            ],
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
@@ -84,8 +92,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hugo.gregory5@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Gregory'),
+        'address' => env('MAIL_FROM_ADDRESS', 'technoevent@bncc.net'),
+        'name' => env('MAIL_FROM_NAME', 'BNCC Launching'),
     ],
 
     /*

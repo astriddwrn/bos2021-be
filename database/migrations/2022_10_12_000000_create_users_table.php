@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('placeBirth');
             $table->string('domicile');
             $table->string('address');
-
+            $table->string('personal_email')->unique();
             $table->string("whatsapp")->unique();
             $table->string("line_id")->unique();
             $table->string('nim')->unique();

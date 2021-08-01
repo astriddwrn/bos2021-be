@@ -72,14 +72,14 @@ margin: 0px; padding: 0px; text-align: center; font-family: Arial, Helvetica, sa
     <div class="container">
         <div class="card">
             <div class="image">
-                <a href="{{url('/')}}"><img class="" src="{{url('./Asset/Image/auth/logo-png.png')}}" alt=""></a>
+                <a href="{{url('/')}}"><img style="max-width:100%;" src="{{url('./Asset/Image/auth/logo-png.png')}}" alt=""></a>
             </div>
             <div class="content">
                 <p>Hello</p>
                 <p>You are receiving this email because we received a password reset request for your account</p>
                 <a href="{{ $url }}" class="btn">Reset Password</a>
                 <p>If you did not request a password reset, no further action is required.</p>
-                <p>Regard,<br />
+                <p>Regards,<br />
                     BNCC</p>
                 <div class="line"></div>
                 <p>If you’re having trouble clicking the "Reset Password" button, copy and paste the URL below into your web browser:</p>
@@ -87,7 +87,7 @@ margin: 0px; padding: 0px; text-align: center; font-family: Arial, Helvetica, sa
             </div>
         </div>
         <div class="copy">
-            All Right Reserved BNCC 2021 © Bina Nusantara Computer Club
+            All Rights Reserved BNCC 2021 © Bina Nusantara Computer Club
         </div>
     </div>
 </body>
