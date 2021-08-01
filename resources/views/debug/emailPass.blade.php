@@ -18,8 +18,8 @@
         .container{
             display: inline-block;
             text-align: center;
-            max-width: calc(100% - 2rem);
-            margin: 2rem;
+            max-width: calc(100% - 3rem);
+            margin: 1.5rem;
             width: 36rem;
         }
         .card{
@@ -75,7 +75,7 @@ margin: 0px; padding: 0px; text-align: center; font-family: Arial, Helvetica, sa
                 <a href="{{url('/')}}"><img class="" src="{{url('./Asset/Image/auth/logo-png.png')}}" alt=""></a>
             </div>
             <div class="content">
-                <p>Hello sample2036</p>
+                <p>Hello</p>
                 <p>You are receiving this email because we received a password reset request for your account</p>
                 <a href="{{ $url }}" class="btn">Reset Password</a>
                 <p>If you did not request a password reset, no further action is required.</p>
