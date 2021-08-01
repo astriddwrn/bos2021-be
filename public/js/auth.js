@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-    
+
 
 function selectFunc(z){
     var x, i, j, l, ll, selElmnt, a, b, c;
@@ -47,10 +47,10 @@ function selectFunc(z){
             }
             }
             h.click();
-            
+
         });
         b.appendChild(c);
-       
+
     }
     x[i].appendChild(b);
     a.addEventListener("click", function(e) {
@@ -62,8 +62,8 @@ function selectFunc(z){
         this.classList.toggle("select-arrow-active");
         });
     }
-    
-    
+
+
     /*if the user clicks anywhere outside the select box,
     then close all select boxes:*/
     document.addEventListener("click", closeAllSelect);
@@ -88,7 +88,7 @@ function closeAllSelect(elmnt) {
         if (arrNo.indexOf(i)) {
         x[i].classList.add("select-hide");
         }
-        
+
     }
     if($(elmnt).parent().find(":selected").val() !=0){
         $(elmnt).parent().removeClass("border-error");
@@ -176,38 +176,38 @@ selectFunc("bncc-select-als");
 
     function phoneNumber(x){
         var pattern = /^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$/g;
-        
+
         if(x.is('#whatsapp') && !pattern.test(x.val())){
             x.addClass("border-error");
             x.siblings('.msg-error').text("please input a valid phone number.");
-        } 
+        }
     }
 
     function email(x){
         var pattern = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?binus\.ac.id$/g;
-        
+
         if(x.is('#email') && !pattern.test(x.val())){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Please input a valid binusian email address.");
-        } 
+        }
     }
 
     function password(x){
         var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-        
+
         if(x.is('#password') && !pattern.test(x.val())){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number");
-        } 
+        }
     }
-    
+
     function confirm(x){
         var password = $("#password").val();
         var confirmPassword = x.val();
         if(x.is('#confirm') && password != confirmPassword){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Confirm password does not match.");
-        } 
+        }
     }
 
     function lastValidation (sec, callback){
@@ -229,27 +229,27 @@ selectFunc("bncc-select-als");
         if(!sec.find('.msg-error').text()){
             if(sec.hasClass("account-sec")){
                 $('.success').toggleClass('is-visible');
-                setTimeout(function(){ 
-                    $('form').submit(); 
+                setTimeout(function(){
+                    $('form').submit();
                 }, 1500);
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
                 $('form').submit();
                 return;
-            
+
             }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
-            $("form").animate({ 
-                scrollTop: 0 
+            $("form").animate({
+                scrollTop: 0
             }, "slow");
-            $('html, body').animate({ 
-                scrollTop: 0 
+            $('html, body').animate({
+                scrollTop: 0
             }, "slow");
             prog++;
             progressNext();
-        }  
+        }
     }
 
     let prog = 0;
@@ -299,25 +299,25 @@ selectFunc("bncc-select-als");
 
         "Japanese",
 
-        "Management", "Marketing Communication", "Master of Management", "Master of Computer Science",
+        "Management", "Marketing Communication", "Master of Information Systems","Master of Management", "Master of Computer Science",
         "Mass Communication", "Mobile Application and Technology",
 
         "Primary Teacher Education", "Psychology",
 
         "Tourism"
         ];
-        
+
         $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
         $cBDG =  ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
-        $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming'];
+        $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
-        
+
         $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
         $fMLG = ["Batch 1", "Batch 2", "Batch 3"];
         $fBDG = ["Batch 1", "Batch 2", "Batch 3"];
 
         let a = $cKMG;
-        let b = $mKMG; 
+        let b = $mKMG;
         let c = $fKMG;
         let d;
         if(cmps=='ALS'){
@@ -344,7 +344,7 @@ selectFunc("bncc-select-als");
             c = $fMLG;
             d = $('.schedule-mlg')
         }
-        
+
         $len = b.length;
         $lenSel = $('#major-select').length;
         $("#major-select > option:not(:first)").each(function() {
@@ -369,7 +369,7 @@ selectFunc("bncc-select-als");
         z.remove();
         selectFunc('fyp-select');
 
-       
+
         $len = a.length;
         $lenSel = $('#lnt-select').length;
         $("#lnt-select > option:not(:first)").each(function() {
@@ -407,10 +407,10 @@ selectFunc("bncc-select-als");
         }
 
         if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
-            
+
             cmps = select.find(":selected").val();
             changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps);
-          
+
         }
     });
 
@@ -429,16 +429,16 @@ selectFunc("bncc-select-als");
         let sec = $(this).parent().parent();
         sec.addClass('right-section');
         sec.prev().removeClass('left-section');
-        $("form").animate({ 
-            scrollTop: 0 
+        $("form").animate({
+            scrollTop: 0
         }, "slow");
-        $('html, body').animate({ 
-            scrollTop: 0 
+        $('html, body').animate({
+            scrollTop: 0
         }, "slow");
         progressPrev();
     })
 
-    
+
     $('.modal-back').click(function(){
         $('.confirmation').toggleClass('is-visible');
     });

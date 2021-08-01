@@ -62,7 +62,8 @@ class RegisteredUserController extends Controller
             'campus' => 'required',
             'major' => 'required',
             'lnt_course' => 'required',
-            'schedule' => 'required'
+            'schedule' => 'required',
+            'personal_email' => 'required|string|email|unique:users,personal_email',
         ]);
 
         foreach(Schedule::findOrFail($request->schedule) as $schedule){
@@ -94,7 +95,8 @@ class RegisteredUserController extends Controller
             'placeBirth' => $request->placeBirth,
             'domicile' => $request->domicile,
             'address' => $request->address,
-            'is_esport' => $request->is_esport
+            'is_esport' => $request->is_esport,
+            'personal_email' => $request->personal_email
         ]);
 
         event(new Registered($user));

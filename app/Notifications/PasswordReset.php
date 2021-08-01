@@ -41,13 +41,14 @@ class PasswordReset extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-                    ->from($address = 'hugo.gregory5@gmail.com', $name = 'Greg')
-                    ->subject('Password Reset')
-                    ->greeting('Holla!!')
-                    ->line('You are receiving this email because we received a password reset request for your account.')
-                    ->action('Reset Password', url('password/reset', [$this->token, 'email'=>$this->email]))
-                    ->line('If you did not request a password reset, no further action is required.');
+        $url = url('password/reset', [$this->token, 'email'=>$this->email]);
+        return (new MailMessage)->view("debug.emailPass", compact('url'));
+                    // ->from($address = 'hugo.gregory5@gmail.com', $name = 'Greg')
+                    // ->subject('Password Reset')
+                    // ->greeting('Holla!!')
+                    // ->line('You are receiving this email because we received a password reset request for your account.')
+                    // ->action('Reset Password', url('password/reset', [$this->token, 'email'=>$this->email]))
+                    // ->line('If you did not request a password reset, no further action is required.');
     }
 
     /**
