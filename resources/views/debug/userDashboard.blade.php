@@ -84,7 +84,8 @@
             <div class="absolute return-list bottom-10 text-lg w-52">
                 <div class="mt-5 flex flex-row items-center font-semibold text-md cursor-pointer">
                     <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="">
-                    <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt="">Return to Home</div>
+                    <!-- <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt=""> -->
+                    Return to Home</div>
                 <div class="mt-7 logout flex flex-row items-center font-semibold text-md text-cLightBlue cursor-pointer">
                     <img class="mr-3 px-2" src="{{ asset('Asset/Image/userDashboard/menu-logout.svg')}}" alt="">Log out</div>
             </div>

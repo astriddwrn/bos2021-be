@@ -4,13 +4,12 @@ $(document).ready(function(){
     const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
     const campus = json1.campus;
     var schedule =  json2;
-    console.log(schedule);
     for (const [key, val] of Object.entries(schedule)){
         if(campus == 'MLG' || campus == 'BDG'){
-            $('.schedule-checkbox').append('<label class=" main text-sm w-full">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+            $('.schedule-checkbox').append('<label class=" main text-sm w-full">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
         }
         if(campus == 'KMG' || campus == 'ALS'){
-            $('#schedule-select').append(new Option(`${val.text}`, `${val.text}`));
+            $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
         }
     }
 
