@@ -26,7 +26,7 @@
                 @csrf
                 <div class="flex flex-col items-center w-full">
                     <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
-                    <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between">
+                    <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between px-16 max-w-96">
                         <div class="flex flex-col items-center w-11 text-center">
                             <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
                             <div class="title active-title text-xs text-cDarkerGray mt-1">Personal Info</div>
@@ -51,7 +51,7 @@
                 </div>
 
 
-                <div class="personal-sec w-full section absolute  px-24 ">
+                <div class="personal-sec w-full section absolute px-24 ">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Name</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe">
@@ -283,16 +283,16 @@
             var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
             // console.log(outputKMG);
             for (const [key, val] of Object.entries(outputKMG)) {
-                $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.text}`));
+                $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
             }
             for (const [key, val] of Object.entries(outputALS)) {
-                $('#bncc-select-als').append(new Option(`${val.text}`, `${val.text}`));
+                $('#bncc-select-als').append(new Option(`${val.text}`, `${val.id}`));
             }
             for (const [key, val] of Object.entries(outputMLG)) {
-                $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+                $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
             }
             for (const [key, val] of Object.entries(outputBDG)) {
-                $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.text}` + '"> <span class="mark"></span> </label>');
+                $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
             }
         })
     </script>
