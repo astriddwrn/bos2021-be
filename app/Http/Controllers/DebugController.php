@@ -11,7 +11,6 @@ class DebugController extends Controller
     }
 
     public function simpleResponse($view, Request $request){
-        var_dump([$request->all()]);
-        die();
+        return response()->json($request->all());
     }
 }

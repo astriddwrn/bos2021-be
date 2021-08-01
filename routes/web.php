@@ -18,7 +18,7 @@ use App\Http\Controllers\NewsLetterController;
 */
 
 Route::get('/', function () {
-    return view('comingSoon');
+    return view('debug.landing');
 });
 
 Route::middleware(["auth"])->group(function(){
