@@ -55,7 +55,7 @@
             <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
             <div class="text-xl font-semibold mt-1">
-                {{(Auth::user()->fullName)}}
+                {{($user->fullName)}}
             </div>
             <div class="mt-7 text-lg menu-list w-52">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
@@ -95,23 +95,30 @@
                     <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
                 <!-- SEBELUM REREGIST -->
-                @if (Auth::user()->is_reregistered==0)
+                @if ($user->is_reregistered==0)
                 <div class="main-container">
                     <div class="grid-cont-schedule">
                         <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
                             <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
+                            @foreach ($schedules as $schedule)
                             <div class="mt-2">
                                 <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
-                                {{$date}}
+                                {{$schedule->formatting_date()}}
                                 </div>
                                 <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">
-                                    {{$start}} - {{$end}} (GMT +07.00)
+                                    {{$schedule->start_date()}} - {{$schedule->end_date()}} (GMT +07.00)
                                 </div>
                             </div>
-                            <a href="{{route('countdown')}}">
+                            @php
+                                $now = Carbon\Carbon::now('GMT+7');
+                                $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
+                                $is_waiting_end = !$diff->invert;
+                            @endphp
+                            <a href="{{$is_waiting_end ? $schedule->link1 : route("countdown") . "?s=" . $schedule->id}}">
                                 <div class="sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Join Now</div>
                             </a>
+                            @endforeach
                         </div>
 
                         @if ($diff_change_schedule->invert)
@@ -160,7 +167,7 @@
                 </div>
                 @endif
                 <!-- USER REGISTERED -->
-                @if (Auth::user()->is_reregistered==1)
+                @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
@@ -179,12 +186,12 @@
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
                 </div>
                 <!-- SEBELUM UPLOAD PAYMENT -->
-                @if (Auth::user()->payment_pic==NULL)
+                @if ($user->payment_pic==NULL)
                 <div class="main-container">
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
                             <div class="text-2xl font-bold text-cDarkBlue my-3">
-                                Hi, {{(Auth::user()->fullName)}}!
+                                Hi, {{($user->fullName)}}!
                             </div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
@@ -224,7 +231,7 @@
 
 
                 <!-- PAYMENT UPLOADED -->
-                @if (Auth::user()->payment_pic!=NULL && Auth::user()->status==NULL && Auth::user()->is_reregistered==0)
+                @if ($user->payment_pic!=NULL && $user->status==NULL && $user->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" main-container absolute md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
@@ -238,7 +245,7 @@
 
                 <!-- PAYMENT VERIFIED -->
 
-                @if (Auth::user()->payment_pic!=NULL && Auth::user()->status==1 && Auth::user()->is_reregistered==0)
+                @if ($user->payment_pic!=NULL && $user->status==1 && $user->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
@@ -250,7 +257,7 @@
 
 
                 <!-- PAYMENT REJECTED -->
-                @if (Auth::user()->payment_pic!=NULL && Auth::user()->status==2 && Auth::user()->is_reregistered==0)
+                @if ($user->payment_pic!=NULL && $user->status==2 && $user->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="">
@@ -279,7 +286,7 @@
 
 
                 <!-- USER REGISTERED -->
-                @if (Auth::user()->is_reregistered==1)
+                @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
@@ -299,7 +306,7 @@
                 </div>
 
                 <!-- SEBELUM MEREKA REGIS -->
-                @if (Auth::user()->is_reregistered==0)
+                @if ($user->is_reregistered==0)
                 <form id="form-reregistration" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-8/12" action="{{ route('reregister') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                         <div class="xl:w-10/12 sm:w-8/12 w-full">
@@ -381,7 +388,7 @@
 
 
                 <!-- SETELAH MEREKA REGIS -->
-                @if (Auth::user()->is_reregistered==1)
+                @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
@@ -404,39 +411,39 @@
                         <div class="text-2xl font-bold text-cDarkBlue">Personal Info</div>
                         <div><div class="">Name</div>
                         <div class="flex flex-row items-center text-lg font-semibold"></div>
-                        {{(Auth::user()->fullName)}}
+                        {{($user->fullName)}}
                     </div>
                         <div><div class="">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->gender)}}
+                            {{($user->gender)}}
                         </div></div>
                         <div> <div class="">Date of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{$date}}
+                            {{$birthDate}}
                         </div></div>
                         <div><div class="">Place of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->placeBirth)}}
+                            {{($user->placeBirth)}}
                         </div></div>
                         <div><div class="">Domicile City</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->domicile)}}
+                            {{($user->domicile)}}
                         </div></div>
                         <div> <div class="">Full Address</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->address)}}
+                            {{($user->address)}}
                         </div></div>
                         <div><div class="">LINE ID</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->line_id)}}
+                            {{($user->line_id)}}
                         </div></div>
                         <div><div class="">Whatsapp Number</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->whatsapp)}}
+                            {{($user->whatsapp)}}
                         </div></div>
                         <div> <div class="">Binusian Email</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->email)}}
+                            {{($user->email)}}
                         </div></div>
 
                     </div>
@@ -445,19 +452,19 @@
                         <div class="text-2xl font-bold text-cDarkBlue">Student Credentials</div>
                         <div><div class="">Name</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->fullName)}}
+                            {{($user->fullName)}}
                         </div></div>
                         <div> <div class="">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->gender)}}
+                            {{($user->gender)}}
                         </div></div>
                         <div><div class="">Date of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{$date}}
+                            {{$birthDate}}
                         </div></div>
                         <div><div class="">Place of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
-                            {{(Auth::user()->placeBirth)}}
+                            {{($user->placeBirth)}}
                         </div></div>
                     </div>
 
@@ -465,15 +472,19 @@
                         <div class="text-2xl font-bold text-cDarkBlue">BNCC Registration</div>
                         <div>
                             <div class="">BNCC Launching Schedule</div>
+                            @foreach ($schedules as $schedule)
                             <div class="flex flex-row items-center text-lg font-semibold">
-                                {{$date}} <br>{{$start}} - {{$end}} (GMT +07.00)
+                                {{$schedule->formatting_date()}} <br>{{$schedule->start_date()}} - {{$schedule->end_date()}} (GMT +07.00)
                             </div>
+                            @endforeach
                         </div>
                         <div>
                             <div class="">LnT Course</div>
+                            @foreach ($schedules as $schedule)
                             <div class="flex flex-row items-center text-lg font-semibold">
-                                {{(Auth::user()->lnt_course)}}
+                                {{($schedule->lnt_course)}}
                             </div>
+                            @endforeach
                         </div>
                     </div>
 
