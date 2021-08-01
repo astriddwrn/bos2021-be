@@ -33,7 +33,7 @@
                     <img id="logo-down" class="absolute w-32 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
                 </a>
                 <div class="w-full text-right flex flex-row justify-end items-center ">
-                    <div class="menu-cont w-full  flex flex-row justify-end">
+                    <div class="menu-cont w-full  flex flex-row justify-end items-center">
                         <img class="lg:hidden block w-7 mb-5 menu-close" src="{{('Asset/Image/landing/navbar-close.svg')}}" alt="">
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
@@ -47,10 +47,11 @@
                         @if (!Auth::check())
                         <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
                         @else
-                            <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
-                                <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
-                            </a>
-                        @endif
+                        <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
+                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
+                        </a>
+                         @endif   
+                   
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
 
                     </div>
@@ -81,7 +82,7 @@
     </div>
 
     {{-- Video Company --}}
-    <div id="vc" class="vc w-full font-sans my-32 px-12 sm:px-72">
+    <!-- <div id="vc" class="vc w-full font-sans my-32 px-12 sm:px-72">
         <h1 class="font-extrabold text-center text-cDarkBlue text-5xl mb-14">Video Company</h1>
         <div class="w-full flex flex-col lg:flex-row justify-center items-center">
             <iframe
@@ -94,10 +95,10 @@
             allowfullscreen>
             </iframe>
         </div>
-    </div>
+    </div> -->
 
     {{-- Fun Fact --}}
-    <div id="ff" class="ff w-full font-sans my-32 px-12 sm:px-48">
+    <!-- <div id="ff" class="ff w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
@@ -140,10 +141,10 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
     {{-- Why BNCC? --}}
-    <div id="why" class="why w-full font-sans my-32 px-12 sm:px-48">
+    <!-- <div id="why" class="why w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
 
@@ -206,10 +207,10 @@
             </div>
         </div>
         <h1 class="font-bold text-cBlackHome text-4xl text-center mt-14">And many more!</h1>
-    </div>
+    </div> -->
 
      {{-- Our Courses --}}
-     <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
+     <!-- <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
@@ -528,7 +529,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     {{-- Our Event --}}
     <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
