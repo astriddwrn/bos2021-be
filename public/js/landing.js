@@ -82,14 +82,17 @@ $(document).ready(function(){
      }
      $(".carousel-event .slide").eq(eventCurrNum).addClass('slide-left');
      eventCurrNum++;
-     eventCurrNum>5 ? eventCurrNum=0 : '';
+     eventCurrNum>13 ? eventCurrNum=0 : '';
      let a=eventCurrNum;
      let b=eventCurrNum;
-     a -=2;
-     a==-2 ? a=4 : '';
-     a==-1 ? a=5 : '';
+     a -= 2;
+     a==-2 ? a=12 : '';
+     a==-1 ? a=13 : '';
      b +=1;
-     b>5 ? b=0 : '';
+     b>13 ? b=0 : '';
+     console.log(a);
+     console.log(eventCurrNum);
+     console.log(b);
      $(".carousel-event .slide").eq(a).removeClass('slide-left').addClass('slide-behind');
      $(".carousel-event .slide").eq(eventCurrNum).removeClass('slide-right');
      $(".carousel-event .slide").eq(b).removeClass('slide-behind').addClass('slide-right');
@@ -100,7 +103,7 @@ $(document).ready(function(){
      setTimeout(function(){
           $('.carousel-event .next, .carousel-event .prev').removeClass('non-clickable');
      },1000);
-
+     
  });
  $(".carousel-event .prev").click(function(){
      if($(this).hasClass('non-clickable')){
@@ -108,14 +111,14 @@ $(document).ready(function(){
      }
      $(".carousel-event .slide").eq(eventCurrNum).addClass('slide-right');
      eventCurrNum--;
-     eventCurrNum<0 ? eventCurrNum=5 : '';
+     eventCurrNum<0 ? eventCurrNum=13 : '';
      let a=eventCurrNum;
      let b=eventCurrNum;
      a +=2;
-     a==7 ? a=1 : '';
-     a==6 ? a=0 : '';
+     a==15 ? a=1 : '';
+     a==14 ? a=0 : '';
      b -=1;
-     b<0 ? b=5 : '';
+     b<0 ? b=13 : '';
      $(".carousel-event .slide").eq(a).removeClass('slide-right').addClass('slide-behind');
      $(".carousel-event .slide").eq(eventCurrNum).removeClass('slide-left');
      $(".carousel-event .slide").eq(b).removeClass('slide-behind').addClass('slide-left');
@@ -127,6 +130,7 @@ $(document).ready(function(){
           $('.carousel-event .next, .carousel-event .prev').removeClass('non-clickable');
      },1000);
  });
+
 
  /* Our Courses */
 
