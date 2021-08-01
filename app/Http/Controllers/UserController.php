@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use App\Model\User;
-use App\Model\Schedule;
+use App\Models\User;
+use App\Models\Schedule;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -17,12 +17,7 @@ class UserController extends Controller
         //scuffed temporarily
         switch($user->role){
             case 0: {
-                //GANTI birthDate to actual schedule
-                $date = Carbon::parse($user->birthDate)->format('l, F d, Y');
-
-                // dd($date);
-                $start = Carbon::parse('2008-12-15 20:01:25')->format('H : i');
-                $end = Carbon::parse('2008-12-15 20:01:25')->addMinutes('100')->format('H : i');
+                $schedules = $request->user()->schedules();
 
                 $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
 
@@ -50,9 +45,9 @@ class UserController extends Controller
                 $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
 
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
-                $diff_change_schedule = ((new \DateTime('2021-07-31 16:08:00'))->diff(new \DateTime($now)));
+                $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
 
-                return view('debug.userDashboard', compact('date','start','end','birthDate','diff_payment', 'diff_reregis', 'diff_change_schedule'));
+                return view('debug.userDashboard', compact('user','schedules','birthDate','diff_payment', 'diff_reregis', 'diff_change_schedule'));
                 break;
             }
             case 1: {
@@ -86,16 +81,16 @@ class UserController extends Controller
     public function countdown(Request $request) {
         $user = $request->user();
 
-        $countdown = Carbon::parse('2021-08-02 12:20:00')->format('Y, m, d, H, i, s');
+        $schedule = Schedule::findOrFail($request->s);
+        $countdown = Carbon::parse($schedule->date)->format('Y, m, d, H, i, s');
 
         $now = Carbon::now('GMT+7');
-        $diff = ((new \DateTime('2021-08-02 12:20:00'))->diff(new \DateTime($now)));
-        // dd($diff);
+        $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
+
         if(!$diff->invert)
-            return redirect('https://www.youtube.com/');
+            return redirect('/dashboard');
         else
             return view('debug.countdown', compact('countdown'));
-        // dd($countdown);
 
     }
 

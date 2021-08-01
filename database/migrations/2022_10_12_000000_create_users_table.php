@@ -31,10 +31,8 @@ class CreateUsersTable extends Migration
             $table->string('campus');
             $table->string('major');
             $table->string('batch');
-            // $table->bigInteger('schedule_id')->unsigned()->nullable() /*inget untuk hapus nullable*/;
-            // $table->foreign('schedule_id')->references('id')
-            //                               ->on('schedules');
             $table->json('schedule');
+            $table->string('is_esport')->nullable();
             $table->string('lnt_course');
             $table->integer('role')->default(0);
             $table->string('payment_pic')->nullable();

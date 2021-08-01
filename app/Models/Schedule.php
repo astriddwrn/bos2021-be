@@ -27,6 +27,21 @@ class Schedule extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->format('l, d F, Y H:i');
     }
 
+    public function start_date(){
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->format('H:i');
+    }
+
+    public function end_date(){
+        if($this->campus == "Kemanggisan")
+            return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(120)->format('H:i');
+        else if($this->campus == "Alam Sutera")
+            return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(145)->format('H:i');
+        else if($this->campus == "Bandung")
+            return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(115)->format('H:i');
+        else if($this->campus == "Malang")
+            return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(115)->format('H:i');
+    }
+
     public function users() {
         return User::whereJsonContains('schedule', $this->id)->get();
     }

@@ -93,7 +93,8 @@ class RegisteredUserController extends Controller
             'birthDate' => $request->birthDate,
             'placeBirth' => $request->placeBirth,
             'domicile' => $request->domicile,
-            'address' => $request->address
+            'address' => $request->address,
+            'is_esport' => $request->is_esport
         ]);
 
         event(new Registered($user));

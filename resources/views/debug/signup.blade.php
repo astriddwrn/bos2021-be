@@ -198,17 +198,17 @@
                             <div class="mt-11 text-cDarkBlue font-sans font-medium w-100 text-2xl mb-4">Do You Want to Join Our E-Sport Community?</div>
                             <div class="flex">
                                 <span class="radio">
-                                    <input type="radio" class="radio-input" id="radio-1" value="yes" checked/>
+                                    <input type="radio" id="radio-1" class="radio-input" value="yes" checked/>
                                     <label for="radio-1"></label>
                                     <span class="text-xl ml-3">Yes</span>
                                 </span>
                                 <span class="radio ml-5">
-                                    <input type="radio" class="radio-input" id="radio-2" value="no"/>
+                                    <input type="radio" id="radio-2" class="radio-input" value="no"/>
                                     <label for="radio-2"></label>
                                     <span class="text-xl ml-3">No</span>
                                 </span>
                             </div>
-                            
+
                         </span>
                         <!-- malang -->
                         <span class="schedule-mlg hidden schedule">
