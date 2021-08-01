@@ -17,7 +17,7 @@ class ScheduleSampleSeeder extends Seeder
      */
     public function run()
     {
-        
+
         $schedules = [
             // KMG
             ['date' =>  "2021-08-31 11:00:00",
@@ -40,14 +40,14 @@ class ScheduleSampleSeeder extends Seeder
             'campus' => 'kmg',
             'lnt_course' => '',
             'text' => '31 Agustus 2021 (15.40-17.40)'],
-            
+
             ['date' =>  "2021-08-31 19:00:00",
             'link1' => 'https://zoom.us/' . Str::random(16),
             'quota' => rand(10, 200),
             'campus' => 'kmg',
             'lnt_course' => '',
             'text' => '31 Agustus 2021 (19.00-21.00)'],
-            
+
             ['date' =>  "2021-09-01 11:00:00",
             'link1' => 'https://zoom.us/' . Str::random(16),
             'quota' => rand(10, 200),
@@ -68,7 +68,7 @@ class ScheduleSampleSeeder extends Seeder
             'campus' => 'kmg',
             'lnt_course' => '',
             'text' => '01 September 2021 (15.40-17.40)'],
-            
+
             ['date' =>  "2021-09-01 19:00:00",
             'link1' => 'https://zoom.us/' . Str::random(16),
             'quota' => rand(10, 200),
@@ -96,14 +96,14 @@ class ScheduleSampleSeeder extends Seeder
             'campus' => 'kmg',
             'lnt_course' => '',
             'text' => '02 September 2021 (15.40-17.40)'],
-            
+
             ['date' =>  "2021-09-02 19:00:00",
             'link1' => 'https://zoom.us/' . Str::random(16),
             'quota' => rand(10, 200),
             'campus' => 'kmg',
             'lnt_course' => '',
             'text' => '02 September 2021 (19.00-21.00)'],
-            
+
             // als
             ['date' =>  "2021-09-03 11:00:00",
             'link1' => 'https://zoom.us/' . Str::random(16),

@@ -24,7 +24,7 @@ class UserSampleSeeder extends Seeder
             'whatsapp' => '08' . rand(1000, 9999) . rand(1000, 9999),
             'line_id' => Str::random(8),
             'nim' => '25' . rand(1000, 9999) . rand(1000, 9999),
-            'campus' => 'None',
+            'campus' => 'KMG',
             'major' => 'None',
             'lnt_course' => Str::random(8),
             'schedule' => [2, 4, 5],
