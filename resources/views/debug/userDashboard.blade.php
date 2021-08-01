@@ -492,11 +492,17 @@
                         </div>
                         <div>
                             <div class="">LnT Course</div>
-                            @foreach ($schedules as $schedule)
-                            <div class="flex flex-row items-center text-lg font-semibold">
-                                {{($schedule->lnt_course)}}
-                            </div>
+                            @if ($user->campus=="KMG")
+                                <div class="flex flex-row items-center text-lg font-semibold">
+                                    {{($user->lnt_course)}}
+                                </div>
+                            @else
+                                @foreach ($schedules as $schedule)
+                                    <div class="flex flex-row items-center text-lg font-semibold">
+                                        {{($schedule->lnt_course)}}
+                                    </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
 
