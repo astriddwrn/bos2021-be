@@ -12,6 +12,12 @@
 </head>
 <body>
 
+    <!--
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    -->
+
     <div class="pop-up fixed success w-screen h-screen z-10">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 w-6/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
@@ -22,7 +28,7 @@
 
     <div class="flex flex-row font-sans">
         <div class="w-5/12 h-screen flex flex-col items-center">
-            <form class="w-full relative" action="{{ route('debug.view', 'sample_show') }}" method="POST">
+            <form class="w-full relative" action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
                     <a href="#"><img class="mt-20" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
@@ -213,7 +219,7 @@
                         <!-- malang -->
                         <span class="schedule-mlg hidden schedule">
                             <span class="multiple">
-                              
+
                             </span>
                             <span class="msg-error"></span>
                         </span>
