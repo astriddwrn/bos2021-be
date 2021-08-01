@@ -26,7 +26,7 @@
         <img class="w-full absolute -bottom-8 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
         <a class="absolute bottom-6 z-10" href="#about"><img class="arrowLan " src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt=""></a>
         {{-- Navbar --}}
-        <div id="navbar" class="w-full fixed top-0 h-24 z-50 px-48">
+        <div id="navbar" class="w-full  fixed top-0 h-24 z-50 px-48">
             <div class="w-full flex flex-row justify-between items-center py-8">
                 <a class="w-3/12 relative">
                     <img id="logo-up" class="absolute -top-4" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
@@ -48,10 +48,10 @@
     </div>
 
     {{-- About Us --}}
-    <div id="about" class="about w-full font-sans my-32 px-48">
+    <div id="about" class="about w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">About Us</h1>
-        <div class="w-full flex flex-row items-center">
-            <div class="w-1/2 leading-7">
+        <div class="w-full flex flex-col lg:flex-row items-center">
+            <div class="w-full lg:w-1/2 leading-7">
                 <p class="">
                     BNCC (Bina Nusantara Computer Club) is one of the <strong>best technology-based organizations</strong> at Binus University.
                     Since our establishment in 1989, BNCC has been <strong>educating society</strong> through our courses, innovative events,
@@ -65,43 +65,59 @@
         </div>
     </div>
 
+    {{-- Video Company --}}
+    <div id="vc" class="vc w-full font-sans my-32 px-12 sm:px-72">
+        <h1 class="font-extrabold text-center text-cDarkBlue text-5xl mb-14">Video Company</h1>
+        <div class="w-full flex flex-col lg:flex-row justify-center items-center">
+            <iframe
+            class="rounded-2xl w-full video shadow-bsVideo"
+            height="480"
+            src="https://www.youtube.com/embed/pDk94cOADQI"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
     {{-- Fun Fact --}}
-    <div id="ff" class="ff w-full font-sans my-32 px-72">
+    <div id="ff" class="ff w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
-                <div class="w-full flex flex-row justify-center items-center mb-8">
+                <div class="boxCont w-full flex flex-row justify-around sm:justify-center items-center mb-8">
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-32.svg')}}" alt="" class="w-24 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-10 mr-16">
+                    <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-24">
                         BNCC has reached its 32nd year! We've had an amazing journey so far.
                     </div>
                 </div>
 
-                <div class="w-full flex flex-row justify-center items-center mb-8">
+                <div class="boxCont w-full flex flex-row justify-around sm:justify-center items-center mb-8">
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-partner.svg')}}" alt="" class="w-24 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-9 mr-16">
+                    <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-12">
                         BNCC has partnered with many big companies, such as Gojek, tiket.com, Shopee, Tokopedia and more!
                     </div>
                 </div>
 
-                <div class="w-full flex flex-row justify-center items-center mb-8">
+                <div class="boxCont w-full flex flex-row justify-around sm:justify-center items-center mb-8">
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-product.svg')}}" alt="" class="w-24 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-9 mr-16">
+                    <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-12">
                         BNCC has a software house (FAVESOLUTION) and online media (Filemagz)!
                     </div>
                 </div>
 
-                <div class="w-full flex flex-row justify-center items-center mb-8">
+                <div class="boxCont w-full flex flex-row justify-around sm:justify-center items-center mb-8">
                     <div class="w-32 bg-cWhite shadow-bsFf hover:shadow-bsFfhv p-6 rounded-2xl mr-8 duration-300">
                         <img src="{{url('./Asset/Image/landing/ff-schedule.svg')}}" alt="" class="w-20 ff-img">
                     </div>
-                    <div class="w-4/6 font-medium text-xl text-cBlackHome leading-9 mr-16">
+                    <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-12">
                         BNCC has organized many national events with more than 1,000 participants,
                         including BNCC Techno Talk  1, BNCC Techno Talk 2, TechnoScape, and more!
                     </div>
@@ -112,7 +128,7 @@
     </div>
 
     {{-- Why BNCC? --}}
-    <div id="why" class="why w-full font-sans my-32 px-48">
+    <div id="why" class="why w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
 
@@ -178,10 +194,10 @@
     </div>
 
      {{-- Our Courses --}}
-     <div id="oc" class="oc w-full font-sans my-32 px-72">
+     <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
         <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
-            <div class="w-full flex flex-row justify-between items-center">
+            <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
                 <div class="ocBox ocBox-active bg-cWhite rounded-lg shadow-bsOc p-4">
                     <svg id="ocBtn-java" class="ocBtn ocBtn-active" viewBox="0 0 64 64" width="64" fill="#B5B7B8">
                         <g id="java-logo">
@@ -344,24 +360,27 @@
                     </svg>
                 </div>
             </div>
-            <div class="ocBigBox bg-cLighterGray shadow-bsOcBig rounded-2xl my-16 p-12 relative">
+            <div class="ocBigBox bg-cLighterGray shadow-bsOcBig rounded-2xl my-16 sm:mx-8 p-12 relative">
                 <div id="oc-java" class="ocCon ocCon-active w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Java Programming</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-java.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         Java is well-known for its high performance and flexibility,
                         as it can be used to construct mobile and web-based applications, video games, and more.
                         Through this course, you will learn about object-oriented programming and GUI in Java.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5  mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Malang
                         </div>
                     </div>
                 </div>
@@ -369,16 +388,19 @@
                 <div id="oc-mobile" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Mobile Application Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-mobile.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         Ever considered mobile app development? In this course,
                         you’ll learn how to develop android applications from scratch.
                         This course is the perfect start for your journey to becoming a mobile apps developer!
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Malang
                         </div>
                     </div>
@@ -387,19 +409,19 @@
                 <div id="oc-be" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Back-End Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-be.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         When you visit several websites every day, have you ever wondered how these websites actually work?
                         If you are curious about the answer or interested in becoming a back-end developer,
                         consider joining our Web Programming course!
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Bandung
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Malang
                         </div>
                     </div>
@@ -408,19 +430,22 @@
                 <div id="oc-ui" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">UI/UX Design</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-ui.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         More of a design person? Well, this course is just for you! Through this course,
                         you will learn how to create a beautiful and user-friendly interface.
                         Improve your sense of design through various researches to achieve the best user satisfaction.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Malang
                         </div>
                     </div>
@@ -429,16 +454,16 @@
                 <div id="oc-fe" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Front-End Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-fe.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         Want to learn how to make both beautiful and functional websites?
                         If so, our Front-End Development course is a perfect fit for you!
                         You will be able to develop creative displays of a website using HTML, CSS, and Javascript.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Kemanggisan
                         </div>
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
                     </div>
@@ -447,13 +472,13 @@
                 <div id="oc-c" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">C Programming</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-c.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         As the foundation for most programming languages, by learning C,
                         you will be able to learn other programming languages much more easily.
                         C can be used in creating softwares, like operating systems, game engines, and many more.
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Alam Sutera
                         </div>
                     </div>
@@ -462,22 +487,25 @@
                 <div id="oc-game" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Game Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-game.svg')}}" alt="">
-                    <p class="text-justify leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-16">
                         Ever thought about developing your own games?
                         By joining this course,
                         you will be able to understand the process of making a game and gain the skills to stand out as a game developer.
                         Turn your passion for gaming into your career!
                     </p>
-                    <div class="flex flex-row mt-4">
-                        <div class="w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                    <div class="oc-tags-cont flex flex-row mt-4">
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
                             Bandung
+                        </div>
+                        <div class="oc-tags w-36 bg-cBabyBlue rounded text-sm text-center text-cLighterBlue py-1.5 mx-4">
+                            Malang
                         </div>
                     </div>
                 </div>
 
             </div>
             <div class="w-full">
-                <p class="text-center leading-7">
+                <p class="oc-text text-center leading-6 sm:leading-7 px-16">
                     Due to COVID-19, classes are currently being held virtually.
                     We are now <strong>accepting members</strong> for the upcoming semester.
                     No prior knowledge is needed to get started for any of our classes.
@@ -611,7 +639,7 @@
                 </div>
             </div>
             <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <div>
                     <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Clario Johan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Menurutku kesempatan join BNCC itu it’s now or never, apakah kalian mau ambil kesempatan yang akan berguna bagi masa depan kalian atau tidak, jadi langsung aja yah daftar BNCC, see you in BNCC!”</div>
@@ -825,7 +853,7 @@
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
 
         <div class="flex flex-row footer-content absolute z-10 text-cWhite ">
-            <div class="p-12 border-r-4">
+            <div class="gotaq-cont p-12 border-r-4">
                 <div class="text-3xl font-medium text-cWhite tracking-wide got-question">Got a question? Contact us!</div>
                 <div class="flex flex-row justify-around text-lg mt-3">
                     <div>
@@ -852,7 +880,7 @@
                     </div>
                 </div>
             </div>
-            <div class="p-12">
+            <div class="socmed-cont p-12">
                 <div class="h-full flex flex-col justify-end">
                     <div class="text-2xl font-medium w-80">Check our Social Media:</div>
                     <div class="w-full flex flex-row justify-between mt-3 social">

@@ -37,17 +37,17 @@ $(".shadow-bsFf").hover(
 
 
 /* FAQ */
-$('.arrow').click(function () {
+$(".top").click(function () {
     let thisFaq = $(this);
-    $(this).toggleClass("arrow-active");
+    $(this).children(".arrow").toggleClass("arrow-active");
 
-    if ($(this).parent().hasClass("top-active")) {
-        $(this).parent().siblings(".bot").slideToggle();
+    if ($(this).hasClass("top-active")) {
+        $(this).siblings(".bot").slideToggle();
         setTimeout(function () {
             topFaq(thisFaq);
         }, 300);
     } else {
-        $(this).parent().toggleClass("top-active");
+        $(this).toggleClass("top-active");
         setTimeout(function () {
             botFaq(thisFaq);
         }, 100);
@@ -55,11 +55,11 @@ $('.arrow').click(function () {
 });
 
 const topFaq = (thisFaq) => {
-    $(thisFaq).parent().toggleClass("top-active");
+    $(thisFaq).toggleClass("top-active");
 }
 
 const botFaq = (thisFaq) => {
-    $(thisFaq).parent().siblings(".bot").slideToggle();
+    $(thisFaq).siblings(".bot").slideToggle();
 }
 
 $(document).ready(function(){
