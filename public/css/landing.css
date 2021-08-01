@@ -233,3 +233,96 @@ a {
     background: #0054A5 !important;
     transition: all 1s ease-in-out;
 }
+
+@media all and (max-width: 1279px) {
+    .menu-icon{
+      display: block;
+    }
+    .logo-icon{
+      display: none;
+    }
+    .menu-cont{
+      transition: all .5s ease-in-out;
+    }
+    .menu-off{
+      right: -100% !important;
+      transition: all .5s ease-in-out;
+    }
+    
+  }
+  /* lg */
+  @media all and (max-width: 1023px) {
+  }
+  /* md */
+  @media all and (max-width: 767px) {
+  }
+  /* sm */
+  @media all and (max-width: 639px) {
+  }
+  
+  
+  @media all and (max-width: 479px) {
+  
+    .text-sm{
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+    .text-base{
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+    .text-lg{
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    .text-xl{
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+    .text-2xl{
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    .text-3xl{
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    .text-4xl{
+        font-size: 1.7rem;
+      line-height: 2rem;
+    }
+
+    .say-card img{
+        width: 80px;
+        height: 80px;
+    }
+    .say-card .text-sm{
+        font-size: .7rem;
+        line-height: .9rem;
+    }
+    .say-btn{
+        font-size: .6rem;
+        font-weight: 600;
+    }
+    .say-btn img{
+        width: 30px;
+        height: 30px;
+    }
+    .say-card-cont{
+        height: 130px;
+    }
+    .say-card-cont .title{
+        font-size: .8rem;
+    }
+    .say-title{
+        /* font-size: 1.2rem; */
+    }
+    .text-base{
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
+    .question-faq{
+        font-weight: 600;
+    }
+  
+  }

@@ -488,147 +488,219 @@
     </div>
 
     {{-- Our Event --}}
-    <div id="oe" class="oe w-full h-screen font-sans my-32 px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">Our Events</h1>
-        <div class="text-base mb-14">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
+    <!-- <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
+        <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
-        <div class="relative w-full carousel-event rounded-xl h-3/6 overflow-hidden">
-            <div class="w-full h-full slide  absolute">
+        <div style="max-width: 800px; margin: 0 auto;" class="relative w-full carousel-event rounded-xl md:h-80 sm:h-60 h-52 overflow-hidden">
+            <div class="w-full h-full slide absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">Technoscape</div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Company Visit</div>
             </div>
             <div class="w-full h-full slide slide-right absolute">
-                <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">BTT1</div>
+                <div class="w-full h-full layer absolute z-20 "></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic2.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Techno Talk</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">BTT2</div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic3.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Webinar Series</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">Expo</div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic4.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">LnT Webinar</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">CSR</div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic5.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Birthday Party</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic6.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
+                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br> 
+                    <span style="color: #BDC1F0; ">Virtual Conference</span>
+                </div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic7.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
+                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br> 
+                    <span style="color: #FFAAA5; ">Developer Workshop</span>
+                </div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic8.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
+                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br> 
+                    <span style="color: #85E4F1; ">Hackathon</span>
+                </div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Design</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic10.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Menulis Artikel</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic11.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Motion Graphic</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic12.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Video Editing</div>
+            </div>
+            <div class="w-full h-full slide slide-behind absolute">
+                <div class="w-full h-full layer absolute z-20"></div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic13.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
+                    <span class="sm:text-3xl text-xl">Corporate Social</span> <br> 
+                    <span style="">Responsibility (CSR)</span>
+                </div>
             </div>
             <div class="w-full h-full slide slide-left absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full rounded-xl z-10" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center bottom-10 text-4xl font-bold text-cWhite">DLL</div>
+                <img  class="absolute w-full rounded-xl z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic14.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Meet Up</div>
             </div>
-
-            <div class="cursor-pointer h-full w-28 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
-            <div class="cursor-pointer h-full w-28 z-20 right-0 absolute arrow-cont next flex flex-row justify-center items-center"><img  style="transform: rotate(-180deg);" src="{{ asset('Asset/Image/landing/event-arrow-next.svg')}}" alt=""></div>
-
-
+            
+            <div class="cursor-pointer h-full sm:w-28 w-16 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img class="sm:w-6 w-3" src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
+            <div class="cursor-pointer h-full sm:w-28 w-16 z-20 right-0 absolute arrow-cont next flex flex-row justify-center items-center"><img class="sm:w-6 w-3" style="transform: rotate(-180deg);" src="{{ asset('Asset/Image/landing/event-arrow-next.svg')}}" alt=""></div>       
         </div>
-        <div class="w-full flex flex-row mt-10 justify-center dot-cont-event">
-                <div class="h-2 w-10 mr-5 rounded-lg on"></div>
-                <div class="h-2 w-10 mr-5 rounded-lg"></div>
-                <div class="h-2 w-10 mr-5 rounded-lg"></div>
-                <div class="h-2 w-10 mr-5 rounded-lg"></div>
-                <div class="h-2 w-10 mr-5 rounded-lg"></div>
-                <div class="h-2 w-10 rounded-lg"></div>
+        <div class="w-full flex flex-row mt-10 justify-center dot-cont-event px-5">
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg on"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
+                
             </div>
+    </div> -->
 
-    </div>
 
     {{-- What They Say? --}}
-    <div id="what" class="what w-full font-sans my-32 px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14">What they say about BNCC?</h1>
-        <div class="relative h-56">
-            <div class="flex flex-row say-card say-card-visible absolute">
-                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+    <div class="w-full font-sans my-32 xl:px-72 lg:px-40 px-10">
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC?</h1>
+        <div class="relative say-card-cont sm:h-56 h-44">
+            <div class="flex flex-row items-center say-card say-card-visible absolute h-full">
+                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <div>
-                    <div class="text-2xl font-bold my-3">Kevin Bryan</div>
-                    <div class="font-medium leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
+                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Kevin Bryan</div>
+                    <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
                 </div>
             </div>
-            <div class="flex flex-row say-card absolute">
-                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+            <div class="flex flex-row items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <div>
-                    <div class="text-2xl font-bold my-3">Clario Johan</div>
-                    <div class="font-medium leading-7">“Menurutku kesempatan join BNCC itu it’s now or never, apakah kalian mau ambil kesempatan yang akan berguna bagi masa depan kalian atau tidak, jadi langsung aja yah daftar BNCC, see you in BNCC!”</div>
+                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Clario Johan</div>
+                    <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Menurutku kesempatan join BNCC itu it’s now or never, apakah kalian mau ambil kesempatan yang akan berguna bagi masa depan kalian atau tidak, jadi langsung aja yah daftar BNCC, see you in BNCC!”</div>
                 </div>
             </div>
-            <div class="flex flex-row say-card absolute">
-                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+            <div class="flex flex-row items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <div>
-                    <div class="text-2xl font-bold my-3">Benedic Matthew Halim</div>
-                    <div class="font-medium leading-7">“Pengalaman dan koneksi yang didapatkan sangat berharga dan tidak dapat dinilai dengan apapun.”</div>
+                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Benedic Matthew Halim</div>
+                    <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pengalaman dan koneksi yang didapatkan sangat berharga dan tidak dapat dinilai dengan apapun.”</div>
                 </div>
             </div>
-            <div class="flex flex-row say-card absolute">
-                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+            <div class="flex flex-row items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <div>
-                    <div class="text-2xl font-bold my-3">Yesaya Kevin</div>
-                    <div class="font-medium leading-7">“Buat aku BNCC itu bagaikan sebuah batu loncatan untuk keluar dari zona nyamanku, dan saranku bagi kalian yang ingin berkembang juga, kalian wajib banget nih join BNCC!”</div>
+                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Felisha Kwan</div>
+                    <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Bagiku BNCC adalah wadah untuk menyalurkan aspirasi dan mengembangkan diri.”</div>
                 </div>
             </div>
-            <div class="flex flex-row say-card absolute">
-                <img class="rounded-full w-52 h-52 mx-7" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+            <div class="flex flex-row items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <div>
-                    <div class="text-2xl font-bold my-3">Muhammad Rafi Wira Pratama</div>
-                    <div class="font-medium leading-7">“Di BNCC aku belajar time management yang baik dan kita selalu dituntut untuk tetap profesional karena bisa dikatakan BNCC sudah layaknya sebuah perusahaan.”</div>
+                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Yesaya Kevin</div>
+                    <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Buat aku BNCC itu bagaikan sebuah batu loncatan untuk keluar dari zona nyamanku, dan saranku bagi kalian yang ingin berkembang juga, kalian wajib banget nih join BNCC!”</div>
+                </div>
+            </div>
+            <div class="flex flex-row items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+                <div>
+                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Muhammad Rafi W P</div>
+                    <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Di BNCC aku belajar time management yang baik dan kita selalu dituntut untuk tetap profesional karena bisa dikatakan BNCC sudah layaknya sebuah perusahaan.”</div>
                 </div>
             </div>
         </div>
 
-
-
         <div class="flex flex-row justify-evenly width-full mt-10">
-            <div class="text-center font-bold cursor-pointer say-btn">
-                <img class="rounded-full w-24 h-24 say-pic-active mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
-                Kevin
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+                <img class="rounded-full md:w-20 md:h-20 w-14 h-14 say-pic-active mb-2" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+                <span>Kevin</span>
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn">
-                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
-                Clario
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+                <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+                <span>Clario</span>
+
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn">
-                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
-                Benedic
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+                <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+                <span>Benedic</span>
+
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn">
-                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
-                Yesaya
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+                <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
+                <span>Felicia</span>
+
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn">
-                <img class="rounded-full w-24 h-24 mb-3 duration-1000" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
-                Rafi
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+                <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+                <span>Yesaya</span>
+
+            </div>
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+                <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+                <span>Rafi</span>
             </div>
         </div>
     </div>
 
     {{-- FAQ --}}
-    <div id="faq" class="faq w-full font-sans my-32 px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Frequently Asked Questions</h1>
+    <div id="faq" class="faq w-full text-base font-sans font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-4xl mb-14 text-center">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
             <div class="w-full flex flex-col">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">What is BNCC Expo?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">What is BNCC Expo?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     BNCC (Bina Nusantara Computer Club) is the <strong>best computer-based organization</strong> in Binus University that has already reached its 32nd year. This organization has built a
                     strong foundation and experiences in educating people about computers, technology,
                     business, and organizational skills. For further information, you can access the following link.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">What are the benefits offered by BNCC?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">What are the benefits offered by BNCC?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
                     you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
                     technology industry, soft skills such as public speaking, time management, and many
@@ -636,37 +708,37 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">
                         Do I have to come from the School of Computer Science or
                         School of Information Systems to join BNCC?
                     </h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     BNCC is <strong>open to all</strong> Binusians. Even though you are not from School of Computer
                     Science or School of Information Systems, you can still become a member of BNCC.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">How is the learning schedule at LnT?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">How is the learning schedule at LnT?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     The learning schedule is <strong>flexible</strong>, where members can choose a schedule that they
                     can follow weekly so that it will not clash with the lecture schedule.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">How to join BNCC?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">How to join BNCC?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
                     you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
                     technology industry, soft skills such as public speaking, time management, and many
@@ -674,12 +746,12 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">Where can I get the latest info about BNCC Expo?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">Where can I get the latest info about BNCC Expo?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
                     you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
                     technology industry, soft skills such as public speaking, time management, and many
@@ -687,12 +759,12 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">How is the LnT learning process during the pandemic?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">How is the LnT learning process during the pandemic?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
                     you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
                     technology industry, soft skills such as public speaking, time management, and many
@@ -700,12 +772,12 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col mt-12">
-                <div class="top w-full flex flex-row justify-between py-8 px-16">
-                    <h1 class="text-2xl text-cDarkBlue font-bold">If I have further questions, who should I contact?</h1>
-                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="w-full flex flex-col sm:mt-12 mt-8">
+                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
+                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">If I have further questions, who should I contact?</h1>
+                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
                     At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
                     you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
                     technology industry, soft skills such as public speaking, time management, and many
@@ -717,31 +789,31 @@
     </div>
 
     {{-- Sponsor --}}
-    <div id="sponsor" class="sponsor w-full font-sans my-32 px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-5xl mb-14 text-center">Our Sponsors</h1>
+    <div class="w-full font-sans my-32 xl:px-72 lg:px-40 px-10">
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-4xl mb-14 text-center">Our Sponsors</h1>
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center">
-            <span class="text-base text-2xl font-medium -mt-5 bg-cWhite px-5">Gold Sponsor</span>
-            <div class="p-10">
-                <img class="h-52" src="{{ asset('Asset/Image/landing/sponsor-gold.svg')}}" alt="">
+            <span class=" sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Gold Sponsor</span>
+            <div class="sm:p-5 p-0">
+                <img class="sm:h-52 h-28 m-5" src="{{ asset('Asset/Image/landing/sponsor-gold.svg')}}" alt="">
             </div>
         </div>
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
-            <span class="text-base text-2xl font-medium -mt-5 bg-cWhite px-5">Silver Sponsor</span>
-            <div class="p-10 flex flex-row justify-around w-full">
-                <img class="h-20" src="{{ asset('Asset/Image/landing/sponsor-silver1.svg')}}" alt="">
-                <img class="h-20" src="{{ asset('Asset/Image/landing/sponsor-silver2.svg')}}" alt="">
+            <span class="sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Silver Sponsor</span>
+            <div class="sm:p-5 p-0 flex flex-row justify-around w-full flex-wrap">
+                <img class="sm:h-20 h-12 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver1.svg')}}" alt="">
+                <img class="sm:h-20 h-12 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver2.svg')}}" alt="">
             </div>
         </div>
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
-            <span class="text-base text-2xl font-medium -mt-5 bg-cWhite px-5">Bronze Sponsor</span>
-            <div class="p-5 flex flex-row justify-around w-full flex-wrap">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze1.svg')}}" alt="">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze2.svg')}}" alt="">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze3.svg')}}" alt="">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze4.svg')}}" alt="">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze5.svg')}}" alt="">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze6.svg')}}" alt="">
-                <img class="h-16 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze7.svg')}}" alt="">
+            <span class="sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Bronze Sponsor</span>
+            <div class="sm:p-5 p-0 flex flex-row justify-around w-full flex-wrap">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze1.svg')}}" alt="">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze2.svg')}}" alt="">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze3.svg')}}" alt="">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze4.svg')}}" alt="">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze5.svg')}}" alt="">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze6.svg')}}" alt="">
+                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze7.svg')}}" alt="">
             </div>
         </div>
     </div>
