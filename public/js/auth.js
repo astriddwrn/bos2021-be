@@ -244,6 +244,9 @@ selectFunc("bncc-select-als");
             $("form").animate({ 
                 scrollTop: 0 
             }, "slow");
+            $('html, body').animate({ 
+                scrollTop: 0 
+            }, "slow");
             prog++;
             progressNext();
         }  
@@ -254,6 +257,7 @@ selectFunc("bncc-select-als");
         $('.dot').eq(prog).addClass('active-dot');
         $('.line').eq(prog-1).addClass('active-line');
         $('.title').eq(prog).addClass('active-title');
+        heightChanges();
     }
 
     function progressPrev(){
@@ -261,6 +265,7 @@ selectFunc("bncc-select-als");
         $('.line').eq(prog-1).removeClass('active-line');
         $('.title').eq(prog).removeClass('active-title');
         prog--;
+        heightChanges();
     }
 
     $("input").blur(function(){
@@ -427,6 +432,9 @@ selectFunc("bncc-select-als");
         $("form").animate({ 
             scrollTop: 0 
         }, "slow");
+        $('html, body').animate({ 
+            scrollTop: 0 
+        }, "slow");
         progressPrev();
     })
 
@@ -438,6 +446,26 @@ selectFunc("bncc-select-als");
     // $('form').submit(function (evt) {
     //     evt.preventDefault();
     // });
+
+    // height
+    heightChanges();
+    function heightChanges(){
+        return;
+        if($('.personal-sec').hasClass('left-section')==false && !$('.personal-sec').hasClass('right-section')){
+        console.log($('.personal-sec').hasClass('hidden'));
+
+            $('form').css('height', '1650px');
+        }
+        else if($('.student-sec').hasClass('left-section')==false && !$('.student-sec').hasClass('right-section')){
+            $('form').css('height', '1050px');
+        }
+        else if($('.bncc-sec').hasClass('left-section')==false && !$('.bncc-sec').hasClass('right-section')){
+            $('form').css('height', '1100px');
+        }
+        else if($('.account-sec').hasClass('left-section')==false && !$('.account-sec').hasClass('right-section')){
+            $('form').css('height', '1500px');
+        }
+    }
 
 
     $( ".close" ).click(function() {
