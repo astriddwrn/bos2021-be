@@ -17,16 +17,18 @@
     </div>
     @enderror
 
-    <div class="bg-bgSpace w-full h-screen fixed">
-        <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="">
+    <div class="bg-bgSpace w-screen h-full fixed overflow-hidden">
+        <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen h-full absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="">
     </div>
 
-        <div style="left:50%; top:50%; transform: translate(-50%, -50%); height:630px; width: 550px" class="absolute rounded-xl flex flex-col items-center justify-center absolute bg-cWhite my-10">
+    
+    <div style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen absolute flex flex-col items-center justify-center ">
 
-
-            <form action="{{ route('password.email') }}" class="w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
+        <div class="flex flex-col items-center justify-center ">
+            <div class="h-10 lg-hidden"></div>
+            <form action="{{ route('password.email') }}" class="w-11/12 forgotPass-form sm:px-14 px-5 py-10 flex flex-col justify-center items-center rounded-xl bg-cWhite" method="POST" style="overflow: hidden; max-height:630px; max-width: 550px">
                 @csrf
-                <a href="#"><img class="mb-10" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
+                <a href="#"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
                 <!-- SEND EMAIL PERTAMA -->
                 @if (!Session::get('status'))
@@ -51,8 +53,10 @@
                 </div>
                 <div class="info text-xl w-full text-center"><span class="text-cDarkBlue mr-2">Remember your password?</span><a href=""><span class="text-cLightBlue">Login Here</span></a></div>
             </form>
-
+            <div class="h-10 lg-hidden"></div>
         </div>
+
+    </div>
 
 
 

@@ -21,10 +21,10 @@
         <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="">
     </div>
 
-        <div style="left:50%; top:50%; transform: translate(-50%, -50%); height:630px; width: 550px" class="absolute rounded-xl flex flex-col items-center justify-center absolute bg-cWhite my-10">
+    <div class="absolute flex flex-col items-center justify-center absolute " style="left:50%; top:0%; transform: translate(-50%, -50%); max-height:630px; max-width: 550px" >
 
-
-            <form action="" class="w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
+        <div>
+            <form action="" class="rounded-xl bg-cWhite w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
                 @csrf
                 <a href="#"><img class="mb-10" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
@@ -48,8 +48,10 @@
                 </div>
                 <div class="info text-xl w-full text-center"><span class="text-cDarkBlue mr-2">Remember your password?</span><a href=""><span class="text-cLightBlue">Login Here</span></a></div>
             </form>
-
         </div>
+        
+
+    </div>
 
 
 

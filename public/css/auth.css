@@ -240,7 +240,7 @@ input[type=checkbox] {
 }
 /* END RADIO */
 
-form:not(.login){
+form.signup{
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -305,14 +305,69 @@ input::placeholder{
 }
 
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1279px) {
   .line{
     width: 200%;
 }
 }
 
-@media all and (max-width: 1024px) { }
+@media all and (max-width: 1023px) {
+  .main-container{
+    left:50%; top:50%; transform: translate(-50%, -50%);
+  
+    }
+}
 
-@media all and (max-width: 768px) { }
+@media all and (max-width: 767px) {
+  
+}
 
-@media all and (max-width: 480px) { }
+@media all and (max-width: 479px) {
+  .modal{
+    height: 400px;
+    width: 80vw;
+  }
+  .modal img{
+    height: 100px;
+  }
+  .main-container{
+    height: 90vh;
+  }
+  .line{
+    width: 180%;
+  }
+  .section{
+    padding: 0 20px;
+  }
+
+.text-sm{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.text-base{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-lg{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-xl{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-2xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-3xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+}
+
+@media all and (max-width: 350px) {
+  .line{
+    width: 150%;
+}
+}
