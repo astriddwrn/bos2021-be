@@ -38,7 +38,8 @@ class User extends Authenticatable
         'lnt_course',
         'payment_pic',
         'is_reregistered',
-        'is_esport'
+        'is_esport',
+        'personal_email'
     ];
 
     // ref: https://stackoverflow.com/a/24441480/5832341
