@@ -94,6 +94,11 @@
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
+                        <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Personal Email</div>
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="personal_email" id="personal_email" placeholder="example@email.com">
+                        <span class="msg-error"></span>
+                    </div>
+                    <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LINE ID</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('line_id') border-error @enderror" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
                         <span class="msg-error"></span>
