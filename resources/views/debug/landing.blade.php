@@ -28,7 +28,7 @@
             ease-in-out
             rounded-md xl:rounded-lg
             font-semibold text-sm sm:text-lg md:text-xl
-            py-1.5 px-12" href="{{url('/register')}}">Register Now!</a>
+            py-1.5 px-12 sm:px-24" href="{{url('/register')}}">Register Now!</a>
         </div>
         <img class="stars absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-stars.svg')}}" alt="">
         <img class="starstablet absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-starstablet.svg')}}" alt="">
