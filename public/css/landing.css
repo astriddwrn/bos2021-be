@@ -481,19 +481,19 @@ html {
 }
 .carousel-event .slide{
     left:0;
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 5;
 
 }
 .carousel-event .slide-right{
     transform: translate(100%, 0);
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 4;
 
 }
 .carousel-event .slide-left{
     transform: translate(-100%, 0);
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 4;
 
 }
@@ -735,10 +735,6 @@ html {
     .footer-sec .got-question{
         width: 100%;
     }
-
-    
-
-    
 
 }
 
