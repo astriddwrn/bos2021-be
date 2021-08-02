@@ -764,6 +764,7 @@ html {
 
     .faq .ques .top .arrow {
       margin: 0px 0px 0px 0.5rem;
+      width: 1.5rem;
     }
 
     .faq .ques .bot {
