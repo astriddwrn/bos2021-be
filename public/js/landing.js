@@ -54,6 +54,144 @@ $(document).ready(() => {
 
 });
 
+/* About */
+$(document).ready(() => {
+
+    var indexBehind = 2;
+    var indexMiddle = 0;
+    var indexLeft = 4;
+    var indexRight = 1;
+
+    function setSlidesNext() {
+        $(".about .glass")
+            .eq(indexBehind)
+            .addClass("behindJoin")
+            .removeClass("leftJoin");
+
+        $(".about .glass")
+            .eq(indexMiddle)
+            .addClass("activeJoin")
+            .removeClass("rightJoin");
+        $(".about .glass")
+            .eq(indexLeft)
+            .addClass("leftJoin")
+            .removeClass("activeJoin");
+        $(".about .glass")
+            .eq(indexRight)
+            .addClass("backJoin")
+            .addClass("rightJoin");
+
+        setTimeout(function () {
+            $(".behindJoin").animate(
+                {
+                    opacity: 0,
+                },
+                300,
+                function () {
+                    $(this).removeClass("behindJoin");
+                }
+            );
+
+            $(".about .glass").each(function () {
+                $(this).removeClass("backJoin");
+            });
+        }, 700);
+    }
+
+    function setSlidesPrev() {
+        $(".about .glass")
+            .eq(indexBehind)
+            .addClass("behindJoin")
+            .removeClass("rightJoin");
+
+        $(".about .glass")
+            .eq(indexMiddle)
+            .addClass("activeJoin")
+            .removeClass("leftJoin");
+        $(".about .glass")
+            .eq(indexRight)
+            .addClass("rightJoin")
+            .removeClass("activeJoin");
+        $(".about .glass")
+            .eq(indexLeft)
+            .addClass("backJoin")
+            .addClass("leftJoin");
+
+        setTimeout(function () {
+            $(".behindJoin").animate(
+                {
+                    opacity: 0,
+                },
+                300,
+                function () {
+                    $(this).removeClass("behindJoin");
+                }
+            );
+
+            $(".about .glass").each(function () {
+                $(this).removeClass("backJoin");
+            });
+        }, 700);
+    }
+
+    function setDots() {
+        $(".about .dots").removeClass("activeJoinDots");
+        $(".about .dots").eq(indexMiddle).addClass("activeJoinDots");
+    }
+
+    $(".about .glass").eq(indexMiddle).addClass("activeJoin");
+    $(".about .glass").eq(indexLeft).addClass("leftJoin");
+    $(".about .glass").eq(indexRight).addClass("rightJoin");
+    $(".about .dots").eq(indexMiddle).addClass("activeJoinDots");
+
+    // next
+    $(".about .next").click(function () {
+        // return;
+        indexBehind = indexLeft;
+        indexMiddle += 1;
+        indexLeft += 1;
+        indexRight += 1;
+
+        if (indexMiddle > 4) {
+            indexMiddle = 0;
+        }
+        if (indexLeft > 4) {
+            indexLeft = 0;
+        }
+        if (indexRight > 4) {
+            indexRight = 0;
+        }
+
+        $(setSlidesNext());
+
+        $(setSlidesNext());
+
+        $(setDots());
+    });
+
+    // prev
+    $(".about .prev").click(function () {
+        indexBehind = indexRight;
+        indexMiddle -= 1;
+        indexLeft -= 1;
+        indexRight -= 1;
+
+        if (indexMiddle < 0) {
+            indexMiddle = 4;
+        }
+        if (indexLeft < 0) {
+            indexLeft = 4;
+        }
+        if (indexRight < 0) {
+            indexRight = 4;
+        }
+
+        $(setSlidesPrev());
+
+        $(setDots());
+    });
+});
+
 /* Fun Fact */
 $(".shadow-bsFf").hover(
     function () {

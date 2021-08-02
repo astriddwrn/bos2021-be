@@ -15,7 +15,7 @@
 </head>
 <body class="bg-cWhite text-cBlackHome">
     {{-- Landing --}}
-    <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite">
+    <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite overflow-hidden">
         <div class="landing-content w-full flex flex-col justify-content items-center z-10 mb-20">
             <h1 class="font-extrabold text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl">We Are BNCC</h1>
             <h3 class="font-semibold text-center text-xs sm:text-lg md:text-xl lg:text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
@@ -48,7 +48,7 @@
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#ourcoursesgi">Courses</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#ourcourses">Courses</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#bos-events">Ongoing Events</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
@@ -70,10 +70,10 @@
     </div>
 
     {{-- About Us --}}
-    <div id="about" class="about w-full font-sans py-32 px-12 sm:px-48">
+    <div id="about" class="about w-full font-sans py-32 px-12 sm:px-36">
         <h1 class="font-extrabold text-cDarkBlue mb-14 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">About Us</h1>
         <div class="w-full flex flex-col lg:flex-row items-center">
-            <div class="w-full lg:w-1/2 leading-7">
+            <div class="w-full lg:w-8/12 leading-7">
                 <p class="">
                     BNCC (Bina Nusantara Computer Club) is one of the <strong>best technology-based organizations</strong> at Binus University.
                     Since our establishment in 1989, BNCC has been <strong>educating society</strong> through our courses, innovative events,
@@ -84,6 +84,53 @@
                     We warmly <strong>invite you to join our family</strong> here at BNCC, where we can have fun and achieve success together!
                 </p>
             </div>
+
+            <div class="carousel-cont">
+                <div class="main-container">
+                    <div class="prev-container">
+                        <div class="prev">
+                            <img src="{{ asset('Asset/Image/landing/about-btn1.svg')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-wrapper">
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel1.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel2.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel3.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel4.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel5.svg')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-container">
+                        <div class="next">
+                            <img src="{{ asset('Asset/Image/landing/about-btn2.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dots-container">
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -154,7 +201,7 @@
         <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
             <div class="w-full flex flex-row flex-wrap justify-around lg:justify-center items-center mb-12">
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-networking.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Networking</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -163,7 +210,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-hardskills.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Hard Skills</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -173,7 +220,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 ease-in-out flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-softskills.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Soft Skills</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -183,7 +230,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-sat.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">SAT Points</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -192,7 +239,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-experience.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Experience</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -201,7 +248,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-networking.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Tech Insights</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -837,7 +884,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    BNCC (Bina Nusantara Computer Club) is the best computer-based organization in
+                    <strong>BNCC (Bina Nusantara Computer Club</strong> is <strong>the best computer-based organization</strong> in
                     Binus University that has already reached its 32nd year. This organization has built a strong
                     foundation and experiences in educating people about computers, technology business, and organizational skills.
                     For further information, you can access the following <a class="font-bold underline" href="https://bncc.net/"> link</a>.
@@ -866,7 +913,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    BNCC is open to all Binusians. Even though you are not from School of
+                    BNCC is <strong>open to all Binusians</strong>. Even though you are not from School of
                     Computer Science or School of Information Systems, you can still become a member of BNCC.
                 </div>
             </div>
@@ -894,7 +941,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    The learning schedule is flexible, where members can choose a schedule that they can follow weekly so that it will not
+                    The learning schedule is <strong>flexible</strong>, where members can choose a schedule that they can follow weekly so that it will not
                     clash with the lecture schedule.
                 </div>
             </div>
@@ -931,7 +978,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    The learning will take place online using a video conferencing platform or Discord voice channel.
+                    The learning will take place online using a <strong>video conferencing platform</strong> or <strong>Discord voice channel</strong>.
                 </div>
             </div>
 
