@@ -29,7 +29,7 @@
                 <div class="h-10 lg-hidden"></div>
                 <form action="" style="overflow:hidden; max-height:630px; max-width: 550px" class="w-11/12 resetPass-form sm:px-14 px-5 py-10 rounded-xl flex flex-col items-center  justify-center bg-cWhite " method="POST" style="overflow: hidden;">
                     @csrf
-                    <a href="#"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
+                    <a href="/"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
                     <div class="text-center text-3xl font-bold text-cDarkBlue">Reset Your Password</div>
 

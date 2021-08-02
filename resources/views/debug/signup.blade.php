@@ -33,7 +33,7 @@
             <form class="w-full relative signup" action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
-                    <a href="#"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
+                    <a href="/"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
                     <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between xl:px-16 sm:px-10 px-4 max-w-96">
                         <div class="flex flex-col items-center w-11 text-center">
                             <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
