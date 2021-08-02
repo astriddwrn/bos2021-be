@@ -118,7 +118,7 @@
     </style>
 </head>
 <body class="bg-cWhite">
-    
+
 
     {{-- Sponsor --}}
 
@@ -200,31 +200,31 @@
         </div>
 
         <div class="flex flex-row justify-evenly width-full mt-10">
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 say-pic-active mb-2" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <span>Kevin</span>
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <span>Clario</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <span>Benedic</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <span>Felicia</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <span>Yesaya</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">   
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
                 <span>Rafi</span>
             </div>
@@ -266,7 +266,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic6.svg')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br> 
+                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
                     <span style="color: #BDC1F0; ">Virtual Conference</span>
                 </div>
             </div>
@@ -274,7 +274,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic7.svg')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br> 
+                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
                     <span style="color: #FFAAA5; ">Developer Workshop</span>
                 </div>
             </div>
@@ -282,7 +282,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic8.svg')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br> 
+                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
                     <span style="color: #85E4F1; ">Hackathon</span>
                 </div>
             </div>
@@ -310,7 +310,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic13.svg')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Corporate Social</span> <br> 
+                    <span class="sm:text-3xl text-xl">Corporate Social</span> <br>
                     <span style="">Responsibility (CSR)</span>
                 </div>
             </div>
@@ -319,9 +319,9 @@
                 <img  class="absolute w-full rounded-xl z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic14.svg')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Meet Up</div>
             </div>
-            
+
             <div class="cursor-pointer h-full sm:w-28 w-16 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img class="sm:w-6 w-3" src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
-            <div class="cursor-pointer h-full sm:w-28 w-16 z-20 right-0 absolute arrow-cont next flex flex-row justify-center items-center"><img class="sm:w-6 w-3" style="transform: rotate(-180deg);" src="{{ asset('Asset/Image/landing/event-arrow-next.svg')}}" alt=""></div>       
+            <div class="cursor-pointer h-full sm:w-28 w-16 z-20 right-0 absolute arrow-cont next flex flex-row justify-center items-center"><img class="sm:w-6 w-3" style="transform: rotate(-180deg);" src="{{ asset('Asset/Image/landing/event-arrow-next.svg')}}" alt=""></div>
         </div>
         <div class="w-full flex flex-row mt-10 justify-center dot-cont-event px-5">
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg on"></div>
@@ -338,9 +338,9 @@
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-                
+
             </div>
-        
+
     </div>
 
     <div id="footer" class="footer footer-sec w-full font-sans relative bg-bgSpace">
@@ -402,7 +402,7 @@
 
 </div>
 
-    
+
 
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
@@ -421,7 +421,7 @@
 
 
             // Event JS
-          
+
 
         });
 

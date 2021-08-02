@@ -1,0 +1,595 @@
+@import url(base.css);
+div {
+    border: 1px solid rgba(255, 0, 0, 1)
+}
+
+.arrow,
+a,
+.top {
+    cursor: pointer;
+}
+
+html {
+    /* scroll-behavior: smooth; */
+}
+/* Landing */
+
+#navbar{
+  transition: all 0.5s;
+}
+
+.scrollUp{
+    transform: translateY(-100%);
+}
+
+.change-bg {
+    color: #37C8EE ;
+    background: #FBFBFB;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+.addFilter{
+    filter: brightness(0) saturate(100%) invert(64%) sepia(90%) saturate(617%) hue-rotate(157deg) brightness(97%) contrast(92%);
+}
+
+.btnReg {
+    transition: 0.3s;
+}
+
+.arrowLan {
+    animation: float-from-top 2s ease-in-out infinite;
+}
+
+@keyframes float-from-top {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ff */
+.ff-img {
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+/* why bncc */
+.card-why {
+    width: 20rem;
+    height: 27rem;
+}
+
+/* Our courses */
+.ocBtn {
+  transition: 0.3s;
+  fill: #B5B7B8;
+}
+
+.ocBtn:hover {
+    cursor: pointer;
+    fill: #37C8EE;
+    transition: 0.3s;
+}
+
+.ocBtn-active {
+    fill: #FBFBFB;
+}
+
+.ocBox-active {
+    background-color: #37C8EE;
+}
+
+.ocBtn-active:hover {
+    fill: #FBFBFB !important;
+}
+
+.ocBigBox {
+    min-height: 25rem;
+}
+
+.ocCon {
+    display: none;
+    opacity: 0;
+}
+
+.ocCon-active {
+    display: flex;
+    animation: fade-in 1000ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* FAQ */
+.top {
+    border: 2px solid #DADEDF;
+    border-radius: 24px;
+    transition: 0.3s;
+}
+
+.top-active {
+    border-radius: 24px 24px 0px 0px;
+    transition: 0.3s;
+}
+
+.arrow {
+    transition: 0.3s;
+}
+
+.arrow-active {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+.bot {
+    display: none;
+    border-radius: 0px 0px 24px 24px;
+}
+
+/* Bose */
+.bose .card {
+    width: 30rem;
+    height: min-content;
+    margin: 2rem 1rem;
+}
+
+/* Say */
+.say-pic-active{
+    box-shadow:5px 14px 13px #CDCDCD;
+    transition: all .5s ease-in-out;
+}
+
+.say-card{
+    opacity: 0;
+}
+
+.say-card-visible{
+    opacity: 1 !important;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Footer */
+.footer-sec{
+    height:900px;
+}
+
+.footer-content{
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.footer-sec .got-question{
+    width: 450px;
+}
+
+.footer-sec .social img{
+    width: 50px;
+    height: 50px;
+}
+
+.footer-sec .social a {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+}
+
+.footer-sec .social a:hover{
+    cursor: pointer;
+    box-shadow:0 0 10px .5px  #FBFBFB;
+    transition: 0.3s;
+}
+
+/* Carousel Event */
+/* Event CSS */
+.carousel-event .layer{
+    background: linear-gradient(179.23deg, rgba(0, 0, 0, 0) 46.65%, rgba(0, 0, 0, 0.54) 101.2%);
+}
+.carousel-event .arrow-cont.prev{
+    background: linear-gradient(88.13deg, rgba(0, 0, 0, 0.3) -2.23%, rgba(0, 0, 0, 0) 91.21%);
+    transition: all .5s ease-in-out;
+
+}
+.carousel-event .arrow-cont.prev:hover{
+    background: linear-gradient(88.13deg, rgba(255, 255, 255, 0.4) -2.23%, rgba(255, 255, 255, 0) 96.08%);
+    transition: all .5s ease-in-out;
+
+}
+.carousel-event .arrow-cont.next{
+    background: linear-gradient(88.13deg, rgba(0, 0, 0, 0.3) -2.23%, rgba(0, 0, 0, 0) 91.21%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transition: all .5s ease-in-out;
+
+}
+.carousel-event .arrow-cont.next:hover{
+    background: linear-gradient(88.13deg, rgba(255, 255, 255, 0.4) -2.23%, rgba(255, 255, 255, 0) 96.08%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transition: all .5s ease-in-out;
+}
+.carousel-event .slide{
+    left:0;
+    transition: all 1s linear;
+    z-index: 5;
+
+}
+.carousel-event .slide-right{
+    transform: translate(100%, 0);
+    transition: all 1s linear;
+    z-index: 4;
+
+}
+.carousel-event .slide-left{
+    transform: translate(-100%, 0);
+    transition: all 1s linear;
+    z-index: 4;
+
+}
+.carousel-event .slide-behind{
+    left:0;
+    z-index: -1 !important;
+}
+.dot-cont-event div{
+    background: #CDD8DD;
+    transition: all 1s ease-in-out;
+}
+.dot-cont-event .on{
+    background: #0054A5 !important;
+    transition: all 1s ease-in-out;
+}
+
+
+@media all and (max-width: 1279px) {
+    #navbar {
+        padding: 0 3rem;
+        /* width: 90%; */
+    }
+
+
+    /* Fun fact */
+    .ff .pr-12,
+    .ff .pr-24 {
+        padding: 0rem;
+    }
+
+    .ff .ml-16 {
+        margin: 0rem;
+    }
+
+    .about,
+    .vc,
+    .ff,
+    .why,
+    .oc,
+    .oe,
+    .bose,
+    .what,
+    .faq,
+    .sponsor {
+        padding: 0rem 3rem;
+    }
+  }
+
+@media all and (max-width: 1023px) {
+    #navbar {
+        padding: 0 0rem;
+        width: 100%;
+    }
+    .change-bg{
+        color: white !important;
+    }
+    .addFilter.profile{
+        filter: none;
+    }
+    .menu-cont{
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        background-color: rgba(0, 84, 165, 1);
+        width: 300px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translate(200%, 0);
+        padding: 50px 30px;
+        transition: transform .5s ease-in-out;
+        z-index: 999999;
+    }
+
+    .menu-cont.active{
+        transform: translate(0, 0);
+        right: 0;
+    }
+
+    .font-extrabold {
+        font-size: 3rem;
+    }
+
+    /* vc */
+    .vc .video {
+        height: 24rem;
+    }
+
+    /* Our Courses */
+    .oc {
+        padding: 0rem 3rem;
+    }
+
+    .oc .btnCont .ocBox {
+        padding: 0.5rem;
+    }
+
+        .oc .oc-tags {
+            width: 7rem;
+            margin: 0rem 0.2rem;
+        }
+
+        /* Footer */
+    .footer-content {
+        top: 10rem;
+    }
+    .footer-sec .got-question{
+        width: 25rem;
+    }
+
+    .footer .socmed-cont {
+        width: 12rem;
+    }
+
+    .footer .socmed-cont .text-2xl {
+        width: 100px;
+    }
+
+
+}
+
+@media all and (max-width: 767px) {
+.font-extrabold {
+    font-size: 2.2rem;
+}
+
+.about,
+.vc,
+.ff,
+.why,
+.oc,
+.oe,
+.bose,
+.what,
+.faq,
+.sponsor {
+    padding: 0rem 0rem;
+}
+/* vc */
+.vc .video {
+    height: 18rem;
+}
+
+
+/* Our Courses */
+.ocBigBox {
+    padding: 3rem 0rem;
+}
+
+.ocBigBox .ocCon .bg-cBabyBlue {
+    margin: 0rem 0.2rem;
+}
+
+.oc .oc-tags-cont {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.oc .oc-tags {
+    width: 7rem;
+    margin: 0rem 1rem;
+}
+
+/* Bose */
+.bose .card {
+    width: 100%;
+}
+
+/* Footer */
+.footer-sec .got-question{
+    width: 10rem;
+}
+
+.footer .socmed-cont {
+    padding: 0.5rem;
+}
+
+.footer .gotaq-cont {
+    padding: 0.5rem;
+    width: 4rem;
+}
+}
+
+@media all and (max-width: 479px) {
+.menu-cont{
+    width: 250px;
+}
+
+
+/* vc */
+.vc .video {
+    height: 14rem;
+}
+
+/* why */
+.card-why {
+    max-width: 12rem;
+    height: 20rem;
+    margin: 0.8rem 0rem;
+    padding: 2rem 0rem;
+}
+
+/* oc */
+.oc .ocBigBox {
+    min-height: 27rem;
+}
+.oc .ocCon {
+    padding: 1rem 0rem;
+}
+
+.oc .ocCon .text-3xl {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.oc .ocCon .px-16{
+    padding: 0rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+.oc .ocBigBox .w-36 {
+    width: max-content;
+    font-size: 0.8rem;
+    margin: 0rem 0.2rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.oc .btnCont {
+    min-height: 4rem;
+}
+
+.oc .btnCont .ocBox {
+    padding: 0.5rem;
+}
+
+.oc .btnCont .ocBox .ocBtn{
+    width: 40px;
+}
+
+.oc .oc-text {
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.bose .card {
+    width: 100%;
+    height: min-content;
+}
+
+/* ff */
+.ff .boxCont .font-regular  {
+    font-size: 0.8rem;
+}
+.ff .shadow-bsFf {
+    padding: 0.5rem;
+    margin: 0rem 0.2rem 0rem 0rem;
+    width: 4rem;
+}
+
+.ff-img {
+    width: 4rem;
+}
+
+/* Say */
+.say-card img{
+    width: 80px;
+    height: 80px;
+}
+.say-card .text-sm{
+    font-size: .7rem;
+    line-height: .9rem;
+}
+.say-btn{
+    font-size: .6rem;
+    font-weight: 600;
+}
+.say-btn img{
+    width: 30px;
+    height: 30px;
+}
+.say-card-cont{
+    height: 130px;
+}
+.say-card-cont .title{
+    font-size: .8rem;
+}
+.say-title{
+    /* font-size: 1.2rem; */
+}
+.text-base{
+    font-size: .8rem;
+    line-height: 1.2rem;
+}
+
+.text-sm{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  .text-base{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .text-lg{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .text-xl{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  .text-2xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .text-3xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .text-4xl{
+      font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .say-card img{
+      width: 80px;
+      height: 80px;
+  }
+  .say-card .text-sm{
+      font-size: .7rem;
+      line-height: .9rem;
+  }
+  .say-btn{
+      font-size: .6rem;
+      font-weight: 600;
+  }
+  .say-btn img{
+      width: 30px;
+      height: 30px;
+  }
+  .say-card-cont{
+      height: 130px;
+  }
+  .say-card-cont .title{
+      font-size: .8rem;
+  }
+  .say-title{
+      /* font-size: 1.2rem; */
+  }
+  .text-base{
+      font-size: .8rem;
+      line-height: 1.2rem;
+  }
+  .question-faq{
+      font-weight: 600;
+  }
+}

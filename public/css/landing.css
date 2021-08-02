@@ -13,9 +13,8 @@ html {
     /* scroll-behavior: smooth; */
 }
 /* Landing */
-
 #navbar{
-  transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .scrollUp{
@@ -268,7 +267,6 @@ html {
         /* width: 90%; */
     }
 
-
     .menu-icon{
         display: block;
     }
@@ -281,54 +279,6 @@ html {
     .menu-off{
     right: -100% !important;
     transition: all .5s ease-in-out;
-    }
-
-    .bose .card {
-        width: 27rem;
-    }
-    /* Fun fact */
-    .ff .pr-12,
-    .ff .pr-24 {
-        padding: 0rem;
-    }
-
-    .ff .ml-16 {
-        margin: 0rem;
-    }
-
-    .about,
-    .vc,
-    .ff,
-    .why,
-    .oc,
-    .oe,
-    .bose,
-    .what,
-    .faq,
-    .sponsor {
-        padding: 0rem 3rem;
-    }
-
-    .about {
-        padding: 3rem 3rem;
-    }
-  }
-
-@media all and (max-width: 1023px) {
-    /* Landing */
-    .landing .stars {
-        display: none;
-    }
-
-    .landing .stars-tab {
-        display: block;
-    }
-
-    .landing .arrow {
-        width: 2rem;
-    }
-    .landing .arrowcont {
-        bottom: 0.4rem;
     }
 
     #navbar {
@@ -363,8 +313,112 @@ html {
         right: 0;
     }
 
-    .font-extrabold {
-        font-size: 3rem;
+    .bose .card {
+        width: 27rem;
+    }
+    /* Fun fact */
+    .ff .pr-12,
+    .ff .pr-24 {
+        padding: 0rem;
+    }
+
+    .ff .ml-16 {
+        margin: 0rem;
+    }
+
+    .about,
+    .vc,
+    .ff,
+    .why,
+    .oc,
+    .oe,
+    .bose,
+    .what,
+    .faq,
+    .sponsor {
+        padding: 0rem 3rem;
+    }
+
+    .about {
+        padding: 3rem 3rem;
+    }
+  }
+
+@media all and (max-width: 1023px) {
+    #navbar {
+        padding: 0 0rem;
+        width: 100%;
+    }
+    .change-bg{
+        color: white !important;
+    }
+    .addFilter.profile{
+        filter: none;
+    }
+    .menu-cont{
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        background-color: rgba(0, 84, 165, 1);
+        width: 300px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translate(200%, 0);
+        padding: 50px 30px;
+        transition: transform .5s ease-in-out;
+        z-index: 999999;
+    }
+
+    /* why */
+    .card-why {
+        max-width: 18rem;
+        height: 24rem;
+        padding: 3rem 0.8rem;
+        margin: 0.5rem 0.2rem;
+    }
+
+    .card-why img {
+        width: 7rem;
+    }
+
+    .card-why h2 {
+        font-size: 1.2rem;
+        padding: 0.5rem 0rem;
+    }
+
+    .card-why .text-base {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        padding: 0rem 0.5rem;
+    }
+
+    .menu-cont.active{
+        transform: translate(0, 0);
+        right: 0;
+    }
+
+
+    /* Landing */
+    .landing .stars {
+        display: none;
+    }
+
+    .landing .stars-tab {
+        display: block;
+    }
+
+    .landing .arrow {
+        width: 2rem;
+    }
+    .landing .arrowcont {
+        bottom: 0.4rem;
+    }
+
+    .navbar-desk {
+        display: none;
     }
 
     /* vc */
@@ -445,9 +499,12 @@ html {
         width: 100px;
     }
 
-};
+}
 
 @media all and (max-width: 767px) {
+    .menu-cont{
+        width: 250px;
+    }
     /* ff */
     .ff .boxCont .w-32 {
         width: 6rem;
@@ -525,6 +582,39 @@ html {
         padding: 1rem;
     }
 
+    /* Say */
+    .say-card img{
+        width: 80px;
+        height: 80px;
+    }
+    .say-card .text-sm{
+        font-size: .7rem;
+        line-height: .9rem;
+    }
+    .say-btn{
+        font-size: .6rem;
+        font-weight: 600;
+    }
+    .say-btn img{
+        width: 30px;
+        height: 30px;
+    }
+    .say-card-cont{
+        height: 130px;
+    }
+    .say-card-cont .title{
+        font-size: .8rem;
+    }
+    .say-title{
+        /* font-size: 1.2rem; */
+    }
+    
+    .what .text-base{
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
+
+
     /* Faq */
     .faq .ques .top {
         padding: 1.5rem 2rem;
@@ -556,6 +646,10 @@ html {
 }
 
 @media all and (max-width: 479px) {
+    .menu-cont{
+        width: 250px;
+    }
+
     /* Landing */
     .landing .stars-mobile {
         display: block;
@@ -571,9 +665,6 @@ html {
     }
     .landing .arrowcont {
         bottom: 0.1rem;
-    }
-    .menu-cont{
-        width: 250px;
     }
 
     /* vc */
@@ -715,8 +806,8 @@ html {
         line-height: 1.5rem;
     }
 
-    /* Say */
-    .say-card img{
+     /* Say */
+     .say-card img{
         width: 80px;
         height: 80px;
     }
@@ -741,70 +832,10 @@ html {
     .say-title{
         /* font-size: 1.2rem; */
     }
-    .text-base{
+    .say .text-base,
+    .oe .text-base{
         font-size: .8rem;
         line-height: 1.2rem;
     }
 
-    .text-sm{
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-  .text-base{
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  .text-lg{
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-  .text-xl{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-  .text-2xl{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-  .text-3xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-  .text-4xl{
-      font-size: 1.7rem;
-    line-height: 2rem;
-  }
-
-  .say-card img{
-      width: 80px;
-      height: 80px;
-  }
-  .say-card .text-sm{
-      font-size: .7rem;
-      line-height: .9rem;
-  }
-  .say-btn{
-      font-size: .6rem;
-      font-weight: 600;
-  }
-  .say-btn img{
-      width: 30px;
-      height: 30px;
-  }
-  .say-card-cont{
-      height: 130px;
-  }
-  .say-card-cont .title{
-      font-size: .8rem;
-  }
-  .say-title{
-      /* font-size: 1.2rem; */
-  }
-  .text-base{
-      font-size: .8rem;
-      line-height: 1.2rem;
-  }
-  .question-faq{
-      font-weight: 600;
-  }
 }

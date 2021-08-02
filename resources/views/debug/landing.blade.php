@@ -60,14 +60,12 @@
                         <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
                             <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
                         </a>
-                         @endif
-
+                        @endif
+                        
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
 
                     </div>
                     <img class="lg:hidden block w-8 mx-5 burger " src="{{('Asset/Image/landing/navbar-burger.svg')}}" alt="">
-
-
                 </div>
             </div>
         </div>
@@ -75,7 +73,7 @@
 
     {{-- About Us --}}
     <div id="about" class="about w-full font-sans py-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-cDarkBlue mb-14 text-3xl sm:text-4xl md:text-5xl lg:text-7xl">About Us</h1>
+        <h1 class="font-extrabold text-cDarkBlue mb-14 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">About Us</h1>
         <div class="w-full flex flex-col lg:flex-row items-center">
             <div class="w-full lg:w-1/2 leading-7">
                 <p class="">
@@ -93,7 +91,7 @@
 
     {{-- Company Video --}}
     <div id="vc" class="vc w-full font-sans my-32 px-12 sm:px-72">
-        <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14">Company Video</h1>
+        <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-14">Company Video</h1>
         <div class="w-full flex flex-col lg:flex-row justify-center items-center">
             <iframe
             class="rounded-2xl w-full video shadow-bsVideo"
@@ -105,11 +103,11 @@
             allowfullscreen>
             </iframe>
         </div>
-    </div> -->
+    </div>
 
     {{-- Fun Fact --}}
     <div id="ff" class="ff w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Fun facts about BNCC!</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-14 text-center">Fun facts about BNCC!</h1>
         <div class="w-full flex flex-col justify-center items-center ml-16">
             <div>
                 <div class="boxCont w-full flex flex-row justify-around sm:justify-center items-center mb-8">
@@ -155,7 +153,7 @@
 
     {{-- Why BNCC? --}}
     <div id="why" class="why w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-8 text-center">Why BNCC?</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
             <div class="w-full flex flex-row flex-wrap justify-around lg:justify-center items-center mb-12">
                 <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
@@ -220,7 +218,7 @@
 
      {{-- Our Courses --}}
      <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Our Courses</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
                 <div class="ocBox ocBox-active bg-cWhite rounded-lg shadow-bsOc p-4">
@@ -538,10 +536,10 @@
                 </p>
             </div>
         </div>
-    </div> -->
+    </div>
 
     {{-- Our Event --}}
-    <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
+    <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5 text-base ">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
         <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
@@ -595,14 +593,10 @@
                     <span style="color: #85E4F1; ">Hackathon</span>
                 </div>
             </div>
-            </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic13.svg')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Corporate Social</span> <br>
-                    <span style="">Responsibility (CSR)</span>
-                </div>
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.svg')}}" alt="">
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Design</div>
             </div>
 
             <div class="cursor-pointer h-full sm:w-28 w-16 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img class="sm:w-6 w-3" src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
@@ -618,8 +612,8 @@
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
-
             </div>
+
     </div>
 
     {{-- BOS Events --}}
@@ -757,11 +751,11 @@
     </div>
 
     {{-- What They Say? --}}
-    <div class="w-full font-sans my-32 xl:px-72 lg:px-40 px-10">
+    <div id="what" class="what w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC?</h1>
         <div class="relative say-card-cont sm:h-56 h-44">
             <div class="flex flex-row items-center say-card say-card-visible absolute h-full">
-                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <div>
                     <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Kevin Bryan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
@@ -775,28 +769,28 @@
                 </div>
             </div>
             <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <div>
                     <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Benedic Matthew Halim</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pengalaman dan koneksi yang didapatkan sangat berharga dan tidak dapat dinilai dengan apapun.”</div>
                 </div>
             </div>
             <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
+                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <div>
                     <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Felisha Kwan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Bagiku BNCC adalah wadah untuk menyalurkan aspirasi dan mengembangkan diri.”</div>
                 </div>
             </div>
             <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <div>
                     <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Yesaya Kevin</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Buat aku BNCC itu bagaikan sebuah batu loncatan untuk keluar dari zona nyamanku, dan saranku bagi kalian yang ingin berkembang juga, kalian wajib banget nih join BNCC!”</div>
                 </div>
             </div>
             <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-62 lg:h-62 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
                 <div>
                     <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Muhammad Rafi W P</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Di BNCC aku belajar time management yang baik dan kita selalu dituntut untuk tetap profesional karena bisa dikatakan BNCC sudah layaknya sebuah perusahaan.”</div>
@@ -840,24 +834,25 @@
     <div id="faq" class="faq w-full font-sans my-32 px-72">
         <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
-            <div class="w-full flex flex-col">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">What is BNCC Expo?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="ques w-full flex flex-col">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What is BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
-                    BNCC (Bina Nusantara Computer Club) is the <strong>best computer-based organization</strong> in Binus University that has already reached its 32nd year. This organization has built a
-                    strong foundation and experiences in educating people about computers, technology,
-                    business, and organizational skills. For further information, you can access the following link.
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    BNCC (Bina Nusantara Computer Club) is the best computer-based organization in
+                    Binus University that has already reached its 32nd year. This organization has built a strong
+                    foundation and experiences in educating people about computers, technology business, and organizational skills.
+                    For further information, you can access the following <a class="font-bold underline" href="https://bncc.net/"> link</a>.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">What are the benefits offered by BNCC?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What are the benefits offered by BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
                     At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
                     you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
                     technology industry, soft skills such as public speaking, time management, and many
@@ -865,48 +860,63 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">
-                        Do I have to come from the School of Computer Science or
-                        School of Information Systems to join BNCC?
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">
+                        Do I have to come from the School of
+                        Computer Science or School of Information Systems to join BNCC?
                     </h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
-                    BNCC is <strong>open to all</strong> Binusians. Even though you are not from School of Computer
-                    Science or School of Information Systems, you can still become a member of BNCC.
-                </div>
-            </div>
-
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">How is the learning schedule at LnT?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
-                </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
-                    The learning schedule is <strong>flexible</strong>, where members can choose a schedule that they
-                    can follow weekly so that it will not clash with the lecture schedule.
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    BNCC is open to all Binusians. Even though you are not from School of
+                    Computer Science or School of Information Systems, you can still become a member of BNCC.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">How to join BNCC?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">What materials are available at LnT classes in BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    LnT is divided into 4 regions, namely Kemanggisan, Alam Sutera, Bandung, and Malang regions.
+                    Presented below are each region's LnT materials.
+                    <br>
+                    <li><strong>LnT Kemanggisan:</strong> Mobile Application Development, Java Programming, Back-End Development,
+                        Front-End Development, and UI/UX Design.</li>
+                    <li><strong>LnT Alam Sutera:</strong> Java Programming, Front-End Development, UI/UX Design, and C Programming.</li>
+                    <li><strong>LnT Bandung & Malang:</strong> Mobile Application Development, Java Programming, Back-End Development,
+                        UI/UX Design, and Game Development.</li>
                 </div>
             </div>
 
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">Where can I get the latest info about BNCC Expo?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">How is the learning schedule at LnT?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    The learning schedule is flexible, where members can choose a schedule that they can follow weekly so that it will not
+                    clash with the lecture schedule.
+                </div>
+            </div>
+
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">How to join BNCC?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+                </div>
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    To become a BNCC member, you can directly register yourself on
+                    <a class="font-bold underline" href="{{url('/login')}}">this</a> website.
+                </div>
+            </div>
+
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">Where can I get the latest info about BNCC Expo?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
                     The latest information regarding BNCC Expo can be obtained
@@ -918,29 +928,24 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">How is the LnT learning process during the pandemic?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">How is the LnT learning process during the pandemic?</h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    The learning will take place online using a video conferencing platform or Discord voice channel.
                 </div>
             </div>
 
-            <div class="w-full flex flex-col sm:mt-12 mt-8">
-                <div class="top w-full flex flex-row justify-between md:py-8 py-5 md:px-16 sm:px-10 px-5">
-                    <h1 class="text-2xl text-cDarkBlue font-bold question-faq">If I have further questions, who should I contact?</h1>
-                    <img class="arrow ml-5 sm:w-7 w-5" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
+            <div class="ques w-full flex flex-col mt-12">
+                <div class="top w-full flex flex-row justify-between py-8 px-16">
+                    <h1 class="text-2xl text-cDarkBlue font-bold">If I have further questions, who should I contact ? </h1>
+                    <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
-                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 md:py-8 md:px-20 py-5 px-12">
-                    At BNCC, LnT offers courses and workshops to enhance your <strong>hard skills</strong>. In addition,
-                    you can also gain <strong>organizational experience</strong>, <strong>networking</strong> with people in the
-                    technology industry, soft skills such as public speaking, time management, and many
-                    more.
+                <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
+                    If you still have further questions, you can reach out to the contact persons listed
+                    <a class="font-bold underline" href="#footer">below</a> for more information.
                 </div>
             </div>
 
@@ -948,7 +953,7 @@
     </div>
 
     {{-- Sponsor --}}
-    <div class="w-full font-sans my-32 xl:px-72 lg:px-40 px-10">
+    <div id="sponsor" class="sponsor w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-4xl mb-14 text-center">Our Sponsors</h1>
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center">
             <span class=" sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Gold Sponsor</span>
