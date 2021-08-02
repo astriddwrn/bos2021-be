@@ -193,14 +193,15 @@ selectFunc("bncc-select-als");
         }else if(x.is('#personal_email') && !pattern2.test(x.val())){
                 x.addClass("border-error");
                 x.siblings('.msg-error').text("Please input a valid email address.");
-            
+
         }
     }
 
     function password(x){
         var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-        if(x.is('#password') && !pattern.test(x.val())){
+        // if(x.is('#password') && !pattern.test(x.val())){
+        if(x.is('#password') && !(x.val().length >= 8 && /[a-z]/.test(x.val()) && /[A-Z]/.test(x.val()) && /\d/.test(x.val()) ) ){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number");
         }
@@ -235,7 +236,7 @@ selectFunc("bncc-select-als");
             if(sec.hasClass("account-sec")){
                 // $('.success').toggleClass('is-visible');
                     $('form').submit();
-                
+
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
