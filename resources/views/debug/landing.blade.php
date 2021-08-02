@@ -585,8 +585,8 @@
 
     {{-- Our Event --}}
     <div class="w-full event-sec font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
-        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
-        <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-10">Our Events</h1>
+        <div class="text-base md:mb-14 mb-10">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
         <div style="max-width: 800px; margin: 0 auto;" class="relative w-full carousel-event rounded-xl md:h-80 sm:h-60 h-52 overflow-hidden">
             <div class="w-full h-full slide absolute">
