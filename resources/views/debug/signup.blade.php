@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="schedules" content="{{ $schedules->toJson() }}">
     <title>Register | BNCC Launching</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
+    <meta name="title" content="BNCC Launching">
+    <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -17,20 +20,20 @@
         @endforeach
     -->
 
-    <div class="pop-up fixed success w-screen h-screen z-30">
+    <!-- <div class="pop-up fixed success w-screen h-screen z-30">
         <div class="fixed z-20 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
-            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">
+            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Registration Success!</div>
         </div>
-    </div>
+    </div> -->
 
     <div class="flex flex-row font-sans h-full w-full">
         <div  class="main-container lg:static absolute lg:w-5/12 sm:w-8/12 w-11/12 lg:h-screen h-5/6 flex flex-col items-center z-10 bg-cWhite lg:rounded-none rounded-2xl " >
             <form class="w-full relative signup" action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
-                    <a href="#"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
+                    <a href="#"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
                     <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between xl:px-16 sm:px-10 px-4 max-w-96">
                         <div class="flex flex-col items-center w-11 text-center">
                             <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
@@ -259,15 +262,15 @@
                     <div class="mt-11 relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Password</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" id="password" name="password" placeholder="Example123">
-                        <img class="absolute x-30 top-12 mt-1 right-3 eye-open" src="{{asset('./Asset/Image/auth/eye-open.svg')}}" alt="">
-                        <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="">
+                        <img class="absolute x-30 top-12 mt-1 right-3 eye-open" src="{{asset('./Asset/Image/auth/eye-open.svg')}}" alt="BNCC Launching">
+                        <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="BNCC Launching">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11 relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Confirm Password</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" name="password_confirmation" id="confirm" placeholder="Example123">
-                        <img class="absolute x-30 top-12 mt-1 right-3 eye-open" src="{{asset('./Asset/Image/auth/eye-open.svg')}}" alt="">
-                        <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="">
+                        <img class="absolute x-30 top-12 mt-1 right-3 eye-open" src="{{asset('./Asset/Image/auth/eye-open.svg')}}" alt="BNCC Launching">
+                        <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="BNCC Launching">
                         <span class="msg-error"></span>
                     </div>
                     <label class="mt-11 main">I certify that the information I have provided is true and accurate
@@ -290,8 +293,8 @@
             </form>
         </div>
         <div class="lg:w-7/12 w-full h-screen bg-bgSpace overflow-hidden fixed right-0" >
-            <img class="stars absolute z-1 w-screen h-screen" src="{{url('./Asset/Image/auth/bg-stars.svg')}}" alt="">
-            <img class="lg:block hidden rocket absolute z-2" src="{{url('./Asset/Image/auth/rocket.svg')}}" alt="">
+            <img class="stars absolute z-1 w-screen h-screen" src="{{url('./Asset/Image/auth/bg-stars.svg')}}" alt="BNCC Launching">
+            <img class="lg:block hidden rocket absolute z-2" src="{{url('./Asset/Image/auth/rocket.svg')}}" alt="BNCC Launching">
         </div>
     </div>
 
