@@ -335,9 +335,9 @@ selectFunc("bncc-select-als");
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
 
-        $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
-        $fMLG = ["Batch 1", "Batch 2", "Batch 3"];
-        $fBDG = ["Batch 1", "Batch 2", "Batch 3"];
+        $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4", "Batch 5"];
+        $fMLG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
+        $fBDG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
 
         let a = $cKMG;
         let b = $mKMG;
