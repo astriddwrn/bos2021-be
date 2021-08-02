@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
 <body class="text-base">
+    <!--
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    -->
 
     <div class="pop-up fixed success w-screen h-screen z-30">
         <div class="fixed z-20 overlay w-screen h-screen bg-cBlack opacity-50"></div>
@@ -54,7 +59,7 @@
                 <div class="personal-sec w-full section absolute xl:px-24 px-10 ">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Name</div>
-                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe">
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe" value="{{ old('fullName') }}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
@@ -70,33 +75,39 @@
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Date of Birth</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" id="birthDate" name="birthDate" placeholder="dd/mm/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" id="birthDate" name="birthDate" placeholder="dd/mm/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Place of Birth</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Domicile City</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Address</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon...">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LINE ID</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="line_id" id="line_id" placeholder="e.g. line_id">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('line_id') border-error @enderror" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
                         <span class="msg-error"></span>
+                        @error('line_id')
+                        <span class="msg-error">LINE ID has already been taken</span>
+                        @enderror
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">WhatsApp Number</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('whatsapp') border-error @enderror" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX" value="{{ old('whatsapp') }}">
                         <span class="msg-error"></span>
+                        @error('whatsapp')
+                            <span class="msg-error">This number has already been taken</span>
+                        @enderror
                     </div>
 
                     <div>
@@ -110,8 +121,11 @@
                 <div class="student-sec w-full section absolute right-section  xl:px-24 px-10">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
-                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="number" name="nim" id="nim" placeholder="25XXXXXXXX">
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('nim') border-error @enderror" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
                         <span class="msg-error"></span>
+                        @error('nim')
+                        <span class="msg-error">NIM has already been taken</span>
+                        @enderror
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Campus Area</div>
@@ -231,8 +245,11 @@
                 <div class="account-sec w-full section absolute right-section xl:px-24 px-10">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
-                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="email" id="email" placeholder="example@binus.ac.id">
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('email') border-error @enderror" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">
                         <span class="msg-error"></span>
+                        @error('email')
+                        <span class="msg-error">This email has already been taken</span>
+                        @enderror
                     </div>
                     <div class="mt-11 relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Password</div>

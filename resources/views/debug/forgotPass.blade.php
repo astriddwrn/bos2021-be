@@ -47,10 +47,10 @@
                 <div class="w-full">
                     <div class="text-center btn-continue btn-login text-cWhite font-bold text-xl rounded p-2 bg-cLightBlue w-100 mt-8 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn ">Send Instructions</div>
                 </div>
-                <div class="info text-xl w-full text-center"><span class="text-cDarkBlue mr-2">Remember your password?</span><a href=""><span class="text-cLightBlue">Login Here</span></a></div>
+                <div class="info text-xl w-full text-center"><span class="text-cDarkBlue mr-2">Remember your password?</span><a href="{{url('/login')}}"><span class="text-cLightBlue">Login Here</span></a></div>
             </form>
         </div>
-        
+
 
     </div>
 
