@@ -39,7 +39,7 @@ class CreateUsersTable extends Migration
             $table->integer('status')->nullable();
             $table->integer('is_reregistered')->default(0);
 
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('email_verified_at')->nullable()->useCurrent();
             $table->rememberToken();
             $table->timestamps();
         });
