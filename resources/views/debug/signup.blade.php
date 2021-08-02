@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="schedules" content="{{ $schedules->toJson() }}">
-    <title>Document</title>
+    <title>Register | BNCC Launching</title>
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -75,7 +75,7 @@
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Date of Birth</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" id="birthDate" name="birthDate" placeholder="dd/mm/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Personal Email</div>
-                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="personal_email" id="personal_email" placeholder="example@email.com">
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
                         <span class="msg-error"></span>
                     </div>
                     <div class="mt-11">
