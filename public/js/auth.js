@@ -301,7 +301,7 @@ selectFunc("bncc-select-als");
             'Interactive Design & Technology'
 
         ];
-        $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil EngineeringmCommunication - Marketing Communication',
+        $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
               'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
            'Cyber Security', 'Data Science','English Literature', 'Game Application and Technology','Global Business Marketing', 'Hotel Management (Diploma Program)',
            'Industrial Engineering','Information Systems','Information Systems','Information Systems & Accounting','Information Systems & Management',
