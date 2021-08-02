@@ -48,9 +48,9 @@
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#oc">Courses</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#ourcoursesgi">Courses</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#bose">Ongoing Events</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#bos-events">Ongoing Events</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#faq">FAQ</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
@@ -215,7 +215,7 @@
     </div>
 
      {{-- Our Courses --}}
-     <div id="oc" class="oc w-full font-sans my-32 px-36 sm:px-72">
+     <div id="ourcourses" class="oc w-full font-sans my-32 px-36 sm:px-72">
         <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
@@ -615,7 +615,7 @@
     </div>
 
     {{-- BOS Events --}}
-    <div id="bose" class="bose w-full font-sans my-32 px-12 sm:px-48">
+    <div id="bos-events" class="bose w-full font-sans my-32 px-12 sm:px-48">
         <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl mb-14">BNCC Opening Season Events</h1>
         <div class="w-full flex flex-col md:flex-row flex-wrap justify-center items-center">
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
