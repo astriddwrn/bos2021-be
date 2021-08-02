@@ -58,7 +58,7 @@
                         <a class="loginbtn border-2 rounded-3xl navlink hover:bg-cWhite hover:text-cDarkBlue duration-300 font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
                         @else
                         <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
-                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
+                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">{{Auth::user()->fullName}}
                         </a>
                          @endif
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
