@@ -15,7 +15,7 @@
 <body class="text-base">
     @error('email')
     <div class="fixed top-0 w-screen z-50 flex flex-row justify-between p-4 failed-notif">
-        <h6 class="text-cWhite sm:text-md text-sm">Message Fail</h6>
+        <h6 class="text-cWhite sm:text-md text-sm">{{$message}}</h6>
         <img class="w-4 ml-4 close cursor-pointer" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
     </div>
     @enderror
@@ -32,7 +32,7 @@
                     <a href="#"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
 
                     <div class="text-center text-3xl font-bold text-cDarkBlue">Reset Your Password</div>
-                    
+
                     <div class="mt-5 w-full relative">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Password</div>
                             <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="password" id="password" name="password" placeholder="Example123">
@@ -56,9 +56,9 @@
                 <div class="h-10 lg-hidden"></div>
             </div>
         </div>
-    
-        
-        
+
+
+
 
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{url('./js/auth.js')}}"></script>
