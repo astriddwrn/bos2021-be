@@ -233,10 +233,9 @@ selectFunc("bncc-select-als");
         console.log(sec.find('.msg-error').text());
         if(!sec.find('.msg-error').text()){
             if(sec.hasClass("account-sec")){
-                $('.success').toggleClass('is-visible');
-                setTimeout(function(){
+                // $('.success').toggleClass('is-visible');
                     $('form').submit();
-                }, 1500);
+                
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
