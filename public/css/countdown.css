@@ -67,3 +67,22 @@ label{
         transform: translateY(-10px);
     }
 }
+
+@media (max-width: 639px) {
+    .main-container {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+@media (max-width: 427px) {
+    .main-container {
+        position: absolute;
+        /* top: 50%; */
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
