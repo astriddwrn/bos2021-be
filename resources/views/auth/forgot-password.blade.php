@@ -31,7 +31,7 @@
             <div class="h-10 lg-hidden"></div>
             <form action="{{ route('password.email') }}" class="w-11/12 forgotPass-form sm:px-14 px-5 py-10 flex flex-col justify-center items-center rounded-xl bg-cWhite" method="POST" style="overflow: hidden; max-height:630px; max-width: 550px">
                 @csrf
-                <a href="#"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
+                <a href="/"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
 
                 <!-- SEND EMAIL PERTAMA -->
                 @if (!Session::get('status'))

@@ -31,7 +31,7 @@
             <div class="h-10 lg:hidden"></div>
             <div class="">
                 <form action="{{route('login')}}" class="w-full login flex flex-col items-center bg-cWhite lg:rounded-none rounded-2xl" method="POST">
-                    <a href="#"><img class="lg:mt-20 mt-10 sm:w-56 w-44 " src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
+                    <a href="/"><img class="lg:mt-20 mt-10 sm:w-56 w-44 " src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
 
                     @csrf
                     <div class="login-sec w-96 section xl:px-0 px-10 ">

@@ -1005,7 +1005,7 @@
                 <img class="sm:h-52 h-28 m-5" src="{{ asset('Asset/Image/landing/sponsor-gold.svg')}}" alt="">
             </div>
         </div>
-        <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
+        <!-- <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
             <span class="sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Silver Sponsor</span>
             <div class="sm:p-5 p-0 flex flex-row justify-around w-full flex-wrap">
                 <img class="sm:h-20 h-12 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver1.svg')}}" alt="">
@@ -1023,7 +1023,7 @@
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze6.svg')}}" alt="">
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze7.svg')}}" alt="">
             </div>
-        </div>
+        </div> -->
     </div>
 
     {{-- Footer --}}
