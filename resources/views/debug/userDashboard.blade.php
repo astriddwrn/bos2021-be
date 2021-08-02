@@ -125,7 +125,7 @@
                             @endforeach
                         </div>
 
-                        @if ($diff_change_schedule->invert)
+                        {{-- @if ($diff_change_schedule->invert)
                         <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Change Your Schedule</div>
                             <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
@@ -151,7 +151,7 @@
                             </div>
                             <div class="btn schedule-btn xl:w-full sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn cursor-pointer">Submit</div>
                         </form>
-                        @endif
+                        @endif --}}
 
                         <div class="contact card rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
