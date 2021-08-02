@@ -1027,60 +1027,137 @@
     </div>
 
     {{-- Footer --}}
-    <div id="footer" class="footer footer-sec w-full font-sans relative bg-bgSpace">
+    <div id="footer" class=" text-base footer footer-sec w-full font-sans relative bg-bgSpace">
 
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
 
         <div class="flex flex-row footer-content absolute z-10 text-cWhite ">
-            <div class="gotaq-cont p-12 border-r-4">
-                <div class="text-3xl font-medium text-cWhite tracking-wide got-question">Got a question? Contact us!</div>
-                <div class="flex flex-row justify-around text-lg mt-3">
-                    <div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+            <div class="gotaq-cont flex flex-col items-center">
+                <div class="socmed-cont lg:w-80 w-96">
+                    <div class="h-full flex flex-col justify-end">
+                        <div class="text-2xl font-medium w-full text-center">Check our Social Media:</div>
+                        <div class="w-full flex flex-row justify-between mt-3 social">
+                            <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
+                            <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
+                            <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
+                            <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
+                            <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="socmed-cont p-12">
-                <div class="h-full flex flex-col justify-end">
-                    <div class="text-2xl font-medium w-80">Check our Social Media:</div>
-                    <div class="w-full flex flex-row justify-between mt-3 social">
-                        <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
-                        <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
+                <div class="text-xl font-medium text-cWhite tracking-wide got-question mt-10 text-center">Got a question? Contact us!</div>
+                <div class="md:flex-row flex flex-col contact-cont">
+                    <div class="flex-col flex md:w-7/12 w-full">
+                        <div class="card flex flex-col  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Kemanggisan</div>
+                            <div class="flex flex-row">
+                                <div class="mr-10 ">
+                                    <div class="flex flex-row items-center">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
+                                    </div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flex flex-col  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Alam Sutera</div>
+                            <div class="flex flex-row">
+
+                                <div class="mr-10">
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Nikita
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 087886316523
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Nikitafelicia
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Jeta
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 087871447555
+                                    </div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="mlg-bdg md:flex-col flex-row flex md:w-5/12 w-full md:ml-5">
+                        <div class="card flex flex-col md:w-full w-6/12  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl md:mr-0 mr-5">
+                            <div class="font-bold text-cWhite text-xl mb-5">Malang</div>
+                            <div class="flex flex-row">
+
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Novelia
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 082301020777
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> agatha.s_
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card flex flex-col md:w-full w-6/12 text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Bandung</div>
+                            <div class="flex flex-row">
+
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Rhenal
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 0818235657
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Add by Phone
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
-        <div class="w-full bottom-0 absolute p-10">
+        <div class="w-full bottom-0 absolute sm:p-10 p-5">
             <div class="flex flex-row justify-between items-end pb-5 border-b-4 border-cWhite">
-                <a class="" href="https://bncc.net/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
-                <a class="" href="https://www.gojek.com/en-id/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
+                <a  href="https://bncc.net/" target = "_blank"><img class="sm:w-40 w-32" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
+                <a  href="https://www.gojek.com/en-id/" target = "_blank"><img class="sm:w-56 w-32"src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
             </div>
-            <div class="flex flex-row justify-between items-end mt-5 text-cWhite">
+            <div class="mt-5 text-cWhite">
                 <div>All Right Reserved BNCC 2021 © Bina Nusantara Computer Club</div>
-                <div>Privacy Policy & Terms of Service</div>
+                <!-- <div>Privacy Policy & Terms of Service</div> -->
             </div>
         </div>
 

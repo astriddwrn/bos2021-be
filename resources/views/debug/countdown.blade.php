@@ -17,8 +17,7 @@
 
 </head>
 <body class="font-sans">
-
-
+    
     <div class="w-screen h-screen bg-bgSpace relative overflow-hidden">
 
         <div class="main-container w-full h-full flex flex-col sm:justify-center items-center relative z-10">

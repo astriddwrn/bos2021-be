@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 
+    setTimeout(function(){
+       $('.section').removeClass('hidden'); 
+    }, 1000);
 
 
 function selectFunc(z){
