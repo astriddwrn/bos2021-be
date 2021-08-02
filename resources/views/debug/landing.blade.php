@@ -750,77 +750,77 @@
     {{-- What They Say? --}}
     <div id="what" class="what w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC?</h1>
-        <div class="relative say-card-cont sm:h-56 h-44">
-            <div class="flex flex-row items-center say-card say-card-visible absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+        <div class="relative say-card-cont sm:h-56 h-80">
+            <div class="flex sm:flex-row flex-col items-center say-card say-card-visible absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Kevin Bryan</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center sm:text-left text-center">Kevin Bryan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Clario Johan</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Clario Johan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Menurutku kesempatan join BNCC itu it’s now or never, apakah kalian mau ambil kesempatan yang akan berguna bagi masa depan kalian atau tidak, jadi langsung aja yah daftar BNCC, see you in BNCC!”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Benedic Matthew Halim</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Benedic Matthew Halim</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pengalaman dan koneksi yang didapatkan sangat berharga dan tidak dapat dinilai dengan apapun.”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Felisha Kwan</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Felisha Kwan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Bagiku BNCC adalah wadah untuk menyalurkan aspirasi dan mengembangkan diri.”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Yesaya Kevin</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Yesaya Kevin</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Buat aku BNCC itu bagaikan sebuah batu loncatan untuk keluar dari zona nyamanku, dan saranku bagi kalian yang ingin berkembang juga, kalian wajib banget nih join BNCC!”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Muhammad Rafi W P</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Muhammad Rafi W P</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Di BNCC aku belajar time management yang baik dan kita selalu dituntut untuk tetap profesional karena bisa dikatakan BNCC sudah layaknya sebuah perusahaan.”</div>
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-row justify-evenly width-full mt-10">
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+        <div class="flex flex-row justify-evenly width-full mt-10 say-button-cont">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 say-pic-active mb-2" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <span>Kevin</span>
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <span>Clario</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <span>Benedic</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <span>Felicia</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <span>Yesaya</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
                 <span>Rafi</span>
             </div>

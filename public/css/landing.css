@@ -760,31 +760,12 @@ html {
     }
 
      /* Say */
-     .say-card img{
-        width: 80px;
-        height: 80px;
-    }
-    .say-card .text-sm{
-        font-size: .7rem;
-        line-height: .9rem;
-    }
-    .say-btn{
-        font-size: .6rem;
-        font-weight: 600;
-    }
-    .say-btn img{
-        width: 30px;
-        height: 30px;
-    }
-    .say-card-cont{
-        height: 130px;
-    }
-    .say-card-cont .title{
-        font-size: .8rem;
-    }
-    .say-title{
-        /* font-size: 1.2rem; */
-    }
+     .say-button-cont{
+         width: 300px;
+         margin: 0 auto;
+         flex-wrap: wrap;
+         padding-top: 50px;
+     }
 
     /* footer */
     .footer .social img, .footer .social .w-12{
