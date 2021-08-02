@@ -8,7 +8,10 @@
     <meta name="user" content="{{ $user->toJson() }}">
 
 
-    <title>User Dashboard</title>
+    <title>User Dashboard | BNCC Launching</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
+    <meta name="title" content="BNCC Launching">
+    <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}">
@@ -19,28 +22,28 @@
     <div class="pop-up fixed success-reregistration w-screen h-screen z-30">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
-            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">
+            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Registration Success!</div>
         </div>
     </div>
     <div class="pop-up fixed success-schedule w-screen h-screen z-30">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
-            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">
+            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Your Schedule has been Updated Successfully!</div>
         </div>
     </div>
     <div class="pop-up fixed success-payment w-screen h-screen z-30">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
-            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="">
+            <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Payment Submission Success!</div>
         </div>
     </div>
     <div class="pop-up fixed loggingout w-screen h-screen z-30">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
-            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/loggingout.svg') }}" alt="">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/loggingout.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Are you sure you want to log out?</div>
             <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
                 <div class="text-center modal-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
@@ -54,40 +57,40 @@
 
     <div class="flex flex-row w-screen">
         <div class="menu-cont menu-off xl:w-3/12 sm:w-80 w-60 h-screen flex flex-col items-center fixed xl:left-0 right-0 xl:flex z-10 bg-cWhite shadow-bsBtn">
-            <img class="xl:hidden absolute left-5 top-3 arrow-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/arrow-icon.svg')}}" alt="">
-            <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="">
+            <img class="xl:hidden absolute left-5 top-3 arrow-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/arrow-icon.svg')}}" alt="BNCC Launching">
+            <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="BNCC Launching">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
             <div class="text-xl font-semibold mt-1">
                 {{($user->fullName)}}
             </div>
             <div class="mt-7 text-lg menu-list w-52">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
-                    <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="">
-                    <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
+                    <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="BNCC Launching">
+                    <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="BNCC Launching">
                     Schedule</div>
                 @if (!$diff_payment->invert)
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
-                    <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="">
-                    <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="">
+                    <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="BNCC Launching">
+                    <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
                     Payment</div>
                 @endif
                 @if (!$diff_reregis->invert)
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
-                    <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="">
-                    <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="">
+                    <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
+                    <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
                     Re-Registration</div>
                 @endif
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-profile cursor-pointer">
-                    <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-profile-off.svg')}}" alt="">
-                    <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="">Profile</div>
+                    <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-profile-off.svg')}}" alt="BNCC Launching">
+                    <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="BNCC Launching">Profile</div>
             </div>
             <div class="absolute return-list bottom-10 text-lg w-52">
                 <div class="mt-5 flex flex-row items-center font-semibold text-md cursor-pointer">
-                    <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="">
-                    <!-- <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt=""> -->
+                    <img class="mr-4  w-9" src="{{ asset('Asset/Image/userDashboard/menu-home-off.svg')}}" alt="BNCC Launching">
+                    <!-- <img class="mr-4  w-9 hidden " src="{{ asset('Asset/Image/userDashboard/menu-home-on.svg')}}" alt="BNCC Launching"> -->
                     <a href="{{url('/')}}">Return to Home</a></div>
                 <div class="mt-7 logout flex flex-row items-center font-semibold text-md text-cLightBlue cursor-pointer">
-                    <img class="mr-3 px-2" src="{{ asset('Asset/Image/userDashboard/menu-logout.svg')}}" alt="">Log out</div>
+                    <img class="mr-3 px-2" src="{{ asset('Asset/Image/userDashboard/menu-logout.svg')}}" alt="BNCC Launching">Log out</div>
             </div>
         </div>
 
@@ -95,8 +98,8 @@
             <div class="section schedule-sec bg-cLightGray h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Schedule</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
-                    <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <!-- SEBELUM REREGIST -->
                 @if ($user->is_reregistered==0)
@@ -107,10 +110,10 @@
                             <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
                             @foreach ($schedules as $schedule)
                             <div class="mt-2">
-                                <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="">
+                                <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="BNCC Launching">
                                 {{$schedule->formatting_date()}}
                                 </div>
-                                <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="">
+                                <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="BNCC Launching">
                                     {{$schedule->start_date()}} - {{$schedule->end_date()}} (GMT +07.00)
                                 </div>
                             </div>
@@ -158,19 +161,19 @@
                             <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                             <div class="xl:w-full sm:w-96 w-full flex sm:flex-row flex-col sm:justify-around mt-2">
                                 <div class="flex flex-col sm:items-center">
-                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
                                     <div class="sm:text-center font-bold my-2 font-lg">Astrid</div>
                                     <div>
-                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081287422520</div>
-                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081287422520</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">astriddwrn</div>
                                     </div>
                                 </div>
                                 <div class="flex flex-col sm:items-center sm:mt-0 mt-3">
-                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
                                     <div class="sm:text-center font-bold my-2 font-lg">Samuel</div>
                                     <div>
-                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081251442125</div>
-                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081251442125</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +185,7 @@
                 @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
-                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
                         <div class="font-medium mt-3">Thank you for registering! You are now registered as a member of BNCC.</div>
                     </div>
@@ -194,8 +197,8 @@
             <div class="section payment-sec bg-cLightGray h-full hidden">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Payment</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
-                    <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <!-- SEBELUM UPLOAD PAYMENT -->
                 @if ($user->payment_pic==NULL)
@@ -231,7 +234,7 @@
                                 <div class="bg-cLightGray font-sans rounded p-2 flex flex-row justify-between overflow-hidden">
                                     <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your Payment Proof Here </span>
                                 </div>
-                                <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
+                                <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="BNCC Launching">
                                 <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="payment_pic" id="payment-upload" accept="image/png, image/jpeg, image/jpg">
                                 <div class="file-constraint">Your payment receipt must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
@@ -246,7 +249,7 @@
                 @if ($user->payment_pic!=NULL && $user->status==NULL && $user->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" main-container absolute md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
-                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold mt-10">Your Payment is Being Verified</div>
                         <div class="font-medium mt-3">Thank you for registering, your payment receipt is now being validated by our crew. Your payment will be validated no later than 1 x 24 hours.</div>
                     </div>
@@ -260,7 +263,7 @@
                 @if ($user->payment_pic!=NULL && $user->status==1 && $user->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
-                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/verify-payment-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold mt-10">Payment Success</div>
                         <div class="font-medium mt-3">Thank you for registering, your payment has been verified successfully! Now, you can continue to the Re-Registration step.</div>
                     </div>
@@ -272,22 +275,22 @@
                 @if ($user->payment_pic!=NULL && $user->status==2 && $user->is_reregistered==0)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
-                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold xs:mt-10 mt-5">Oops! There’s an Error in Verifying Your Payment</div>
                         <div class="font-medium mt-3">Ask for our contact person’s help below to assist you with your payment verification.</div>
                         <div class="reject-contact-cont w-100 flex flex-row justify-around mt-5 w-96 bg-cWhite rounded-xl xs:p-5 p-3">
                             <div class="flex flex-col items-center">
                                 <div class="text-center font-bold mb-2 font-lg">Astrid</div>
                                 <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081287422520</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081287422520</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">astriddwrn</div>
                                 </div>
                             </div>
                             <div class="flex flex-col items-center">
                                 <div class="text-center font-bold mb-2 font-lg">Samuel</div>
                                 <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081251442125</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081251442125</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
                                 </div>
                             </div>
                         </div>
@@ -301,7 +304,7 @@
                 @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
-                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
                         <div class="font-medium mt-3">Thank you for registering! You are now registered as a member of BNCC.</div>
                     </div>
@@ -313,8 +316,8 @@
             <div class="section reregistration-sec  hidden bg-cLightGray  h-full">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Re-Registration</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
-                    <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
 
                 <!-- SEBELUM MEREKA REGIS -->
@@ -376,7 +379,7 @@
                                     <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
                                         <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your KTP or Binusan Card Here</span>
                                     </div>
-                                    <img class="absolute top-2 right-3 " src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
+                                    <img class="absolute top-2 right-3 " src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="BNCC Launching">
                                     <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="ktp-upload" id="ktp-upload" accept="image/png, image/jpeg, image/jpg" >
                                     <div class="file-constraint">Your KTP or Binusian Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                                 </div>
@@ -387,7 +390,7 @@
                                     <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
                                         <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your FYP Card Here</span>
                                     </div>
-                                    <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="">
+                                    <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="BNCC Launching">
                                     <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="fyp-upload" id="fyp-upload" accept="image/png, image/jpeg, image/jpg" >
                                     <div class="file-constraint">Your FYP Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                                 </div>
@@ -403,7 +406,7 @@
                 @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
-                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="">
+                        <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/registered-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold mt-10">You Have Been Registered Successfully</div>
                         <div class="font-medium mt-3">Thank you for registering! You are now registered as a member of BNCC.</div>
                     </div>
@@ -415,8 +418,8 @@
             <div class="section profile-sec hidden bg-cLightGray  h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Profile</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="">
-                    <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <div class="grid-cont-profile main-container">
                     <div class="card1 personal bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
@@ -511,19 +514,19 @@
                         <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                         <div class="w-full flex lg:flex-row flex-col lg:justify-around mt-2">
                             <div class="flex flex-col lg:items-center">
-                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
                                 <div class="lg:text-center font-bold my-2 font-lg">Astrid</div>
                                 <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081287422520</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">astriddwrn</div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081287422520</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">astriddwrn</div>
                                 </div>
                             </div>
                             <div class="flex flex-col lg:items-center mt-3 lg:mt-0">
-                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
                                 <div class="lg:text-center font-bold my-2 font-lg">Samuel</div>
                                 <div>
-                                    <div class="flex flex-row items-center font-base"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="">081251442125</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="">ssam223</div>
+                                    <div class="flex flex-row items-center font-base"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081251442125</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
                                 </div>
                             </div>
 
