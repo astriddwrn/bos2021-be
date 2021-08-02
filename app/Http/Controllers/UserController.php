@@ -47,7 +47,7 @@ class UserController extends Controller
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
                 $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
 
-                return view('debug.userDashboard', compact('user','schedules','birthDate',
+                return view('userDashboard', compact('user','schedules','birthDate',
                                                         'diff_payment', 'diff_reregis',
                                                         'diff_change_schedule', 'schedules_from_region'));
                 break;
@@ -91,7 +91,7 @@ class UserController extends Controller
         if(!$diff->invert)
             return redirect('/dashboard');
         else
-            return view('debug.countdown', compact('countdown'));
+            return view('countdown', compact('countdown'));
 
     }
 

@@ -1032,7 +1032,8 @@ html {
     .bose .card h2 {
         font-size: 1.2rem;
     }
-    .bose .card .font-bold + .text-cBlackHome {
+    .bose .card .font-bold + .text-cBlackHome,
+    .bose .card .font-semibold + .text-cBlackHome {
         font-size: 0.8rem;
     }
     .bose-cc {

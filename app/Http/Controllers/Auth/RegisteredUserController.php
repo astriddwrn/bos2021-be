@@ -31,7 +31,7 @@ class RegisteredUserController extends Controller
                 $schedules->push($schedule);
         }
 
-        return view('debug.signup', compact('schedules'));
+        return view('auth.signup', compact('schedules'));
     }
 
     /**
