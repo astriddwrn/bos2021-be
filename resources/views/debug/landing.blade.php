@@ -381,7 +381,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="ocBigBox bg-cLighterGray shadow-bsOcBig rounded-2xl my-16 sm:mx-8 p-12 relative">
+            <div class="ocBigBox bg-cLighterGray shadow-bsOcBig rounded-2xl my-8 sm:my-16 sm:mx-8 p-12 relative">
                 <div id="oc-java" class="ocCon ocCon-active w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Java Programming</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-java.svg')}}" alt="">
@@ -537,7 +537,7 @@
     </div>
 
     {{-- Our Event --}}
-    <!-- <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
+    <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
         <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
@@ -611,7 +611,7 @@
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
             </div>
-    </div> -->
+    </div>
 
     {{-- BOS Events --}}
     <div id="bos-events" class="bose w-full font-sans my-32 px-12 sm:px-48">

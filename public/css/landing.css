@@ -1,7 +1,7 @@
 @import url(base.css);
-div {
+/* div {
     border: 1px solid rgba(255, 0, 0, 1)
-}
+} */
 
 html {
     scroll-behavior: smooth;
@@ -289,11 +289,8 @@ html {
     .ff,
     .why,
     .oc,
-    .oe,
     .bose,
-    .what,
-    .faq,
-    .sponsor {
+    .faq {
         padding: 0rem 3rem;
     }
 
@@ -508,16 +505,13 @@ html {
     .ff,
     .why,
     .oc,
-    .oe,
     .bose,
-    .what,
-    .faq,
-    .sponsor {
-        padding: 0rem 0rem;
+    .faq {
+        padding: 0rem 1rem;
     }
 
     .about {
-        padding: 3rem 0rem;
+        padding: 3rem 1rem;
     }
 
     /* vc */
@@ -538,6 +532,10 @@ html {
     .oc .oc-tags {
         width: 7rem;
         margin: 0rem 1rem;
+    }
+
+    .oc .btnCont .ocBox {
+        margin: 0.3rem 0.5rem;
     }
 
     /* Bose */
@@ -699,12 +697,12 @@ html {
 
     .oc .btnCont {
         min-height: 4rem;
-        justify-content: center;
         padding: 0rem 2rem;
     }
 
     .oc .btnCont .ocBox {
         padding: 0.5rem;
+        margin: 0.2rem 0.4rem;
     }
 
     .oc .btnCont .ocBox .ocBtn{
@@ -732,7 +730,7 @@ html {
 
     /* Bose */
     .bose .card {
-        width: 18rem;
+        width: 16rem;
         padding: 1rem;
         margin: 0.8rem 0rem;
     }
@@ -762,6 +760,10 @@ html {
     .faq .ques .top h1 {
         font-size: 1rem;
         line-height: 1.4rem;
+    }
+
+    .faq .ques .top .arrow {
+      margin: 0px 0px 0px 0.5rem;
     }
 
     .faq .ques .bot {
