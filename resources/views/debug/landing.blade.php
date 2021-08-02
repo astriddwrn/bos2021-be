@@ -537,7 +537,7 @@
     </div>
 
     {{-- Our Event --}}
-    <div id="oe" class="oe w-full md:h-screen font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5 text-base ">
+    <!-- <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
         <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
@@ -611,8 +611,7 @@
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
                 <div class="h-2 w-6 sm:mr-5 mr-2 rounded-lg"></div>
             </div>
-
-    </div>
+    </div> -->
 
     {{-- BOS Events --}}
     <div id="bos-events" class="bose w-full font-sans my-32 px-12 sm:px-48">

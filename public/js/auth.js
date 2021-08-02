@@ -185,10 +185,15 @@ selectFunc("bncc-select-als");
 
     function email(x){
         var pattern = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?binus\.ac.id$/g;
+        var pattern2 = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
 
         if(x.is('#email') && !pattern.test(x.val())){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Please input a valid binusian email address.");
+        }else if(x.is('#personal_email') && !pattern2.test(x.val())){
+                x.addClass("border-error");
+                x.siblings('.msg-error').text("Please input a valid email address.");
+            
         }
     }
 
