@@ -38,7 +38,7 @@
         {{-- Navbar --}}
         <div id="navbar" class="w-full fixed top-0 h-24 z-50 lg:px-48 px-0">
             <div class="w-full  flex flex-row h-full justify-between items-center py-8">
-                <a class="w-32 flex items-center relative lg:ml-0 ml-5">
+                <a href="/" class="w-32 flex items-center relative lg:ml-0 ml-5">
                     <img id="logo-up" class="absolute w-32" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
                     <img id="logo-down" class="absolute w-32 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
                 </a>
