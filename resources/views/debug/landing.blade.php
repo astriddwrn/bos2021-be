@@ -60,10 +60,8 @@
                         <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
                             <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
                         </a>
-                        @endif
-
+                         @endif
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-
                     </div>
                     <img class="lg:hidden block w-8 mx-5 burger " src="{{ asset('Asset/Image/landing/navbar-burger.svg')}}" alt="">
                 </div>
@@ -539,7 +537,7 @@
     </div>
 
     {{-- Our Event --}}
-    <div class="w-full h-screen font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5 text-base ">
+    <div id="oe" class="oe w-full md:h-screen font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5 text-base ">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
         <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 

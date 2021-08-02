@@ -1,12 +1,12 @@
 @import url(base.css);
-/* div {
+div {
     border: 1px solid rgba(255, 0, 0, 1)
-} */
+}
 
 html {
     scroll-behavior: smooth;
 }
-""
+
 .arrow,
 a,
 .top {
@@ -266,25 +266,43 @@ html {
 }
 
 @media all and (max-width: 1279px) {
-    .navbar-desk {
+    #navbar {
         padding: 0 3rem;
         /* width: 90%; */
     }
 
-    .menu-icon{
-        display: block;
+    .bose .card {
+        width: 27rem;
     }
-    .logo-icon{
-    display: none;
-    }
-    .menu-cont{
-    transition: all .5s ease-in-out;
-    }
-    .menu-off{
-    right: -100% !important;
-    transition: all .5s ease-in-out;
+    /* Fun fact */
+    .ff .pr-12,
+    .ff .pr-24 {
+        padding: 0rem;
     }
 
+    .ff .ml-16 {
+        margin: 0rem;
+    }
+
+    .about,
+    .vc,
+    .ff,
+    .why,
+    .oc,
+    .oe,
+    .bose,
+    .what,
+    .faq,
+    .sponsor {
+        padding: 0rem 3rem;
+    }
+
+    .about {
+        padding: 3rem 3rem;
+    }
+}
+
+@media all and (max-width: 1023px) {
     #navbar {
         padding: 0 0rem;
         width: 100%;
@@ -317,63 +335,8 @@ html {
         right: 0;
     }
 
-    .bose .card {
-        width: 27rem;
-    }
-    /* Fun fact */
-    .ff .pr-12,
-    .ff .pr-24 {
-        padding: 0rem;
-    }
-
-    .ff .ml-16 {
-        margin: 0rem;
-    }
-
-    .about,
-    .vc,
-    .ff,
-    .why,
-    .oc,
-    .oe,
-    .bose,
-    .what,
-    .faq,
-    .sponsor {
-        padding: 0rem 3rem;
-    }
-
-    .about {
-        padding: 3rem 3rem;
-    }
-  }
-
-@media all and (max-width: 1023px) {
-    #navbar {
-        padding: 0 0rem;
-        width: 100%;
-    }
-    .change-bg{
-        color: white !important;
-    }
-    .addFilter.profile{
-        filter: none;
-    }
-    .menu-cont{
-        height: 120vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-start;
-        background-color: rgba(0, 84, 165, 1);
-        width: 300px;
-        position: fixed;
-        top: 0;
-        right: 0;
-        transform: translate(200%, 0);
-        padding: 50px 30px;
-        transition: transform .5s ease-in-out;
-        z-index: 999999;
+    #navbar .font-extrabold {
+        font-size: 3rem;
     }
 
     /* why */
@@ -506,9 +469,6 @@ html {
 }
 
 @media all and (max-width: 767px) {
-    .menu-cont{
-        width: 250px;
-    }
     /* ff */
     .ff .boxCont .w-32 {
         width: 6rem;
@@ -836,10 +796,48 @@ html {
     .say-title{
         /* font-size: 1.2rem; */
     }
+
+    .say .text-sm,
+    #navbar .text-sm,
+    .oe .text-sm {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
     .say .text-base,
-    .oe .text-base{
-        font-size: .8rem;
-        line-height: 1.2rem;
+    #navbar .text-base,
+    .oe .text-base {
+        font-size: .875rem;
+        line-height: 1.25rem;
+    }
+    .say .text-lg,
+    #navbar .text-lg,
+    .oe .text-lg {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .say .text-xl,
+    #navbar .text-xl,
+    .oe .text-xl  {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+    .say .text-2xl,
+    #navbar .text-2xl,
+    .oe .text-2xl{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    .say .text-3xl,
+    #navbar .text-3xl,
+    .oe .text-3xl{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .say .text-4xl,
+    #navbar .text-4xl,
+    .oe .text-4xl{
+        font-size: 1.7rem;
+        line-height: 2rem;
     }
 
 }

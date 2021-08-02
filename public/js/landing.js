@@ -3,7 +3,7 @@ let scrollPrevPosition = $(window).scrollTop();
 $(document).ready(() => {
     $(window).scroll(() => {
         let currPosition = $(window).scrollTop();
-        const mediaQuery = window.matchMedia("(min-width: 768px)");
+        /* const mediaQuery = window.matchMedia("(min-width: 768px)"); */
 
             /* if (scrollPrevPosition > currPosition) {
                 $("#navbar").removeClass("scroll-down");
