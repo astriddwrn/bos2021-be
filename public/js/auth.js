@@ -197,15 +197,15 @@ selectFunc("bncc-select-als");
         }else if(x.is('#personal_email') && !pattern2.test(x.val())){
                 x.addClass("border-error");
                 x.siblings('.msg-error').text("Please input a valid email address.");
-
+            
         }
     }
 
     function password(x){
         var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-        // if(x.is('#password') && !pattern.test(x.val())){
-        if(x.is('#password') && !(x.val().length >= 8 && /[a-z]/.test(x.val()) && /[A-Z]/.test(x.val()) && /\d/.test(x.val()) ) ){
+ // if(x.is('#password') && !pattern.test(x.val())){
+    if(x.is('#password') && !(x.val().length >= 8 && /[a-z]/.test(x.val()) && /[A-Z]/.test(x.val()) && /\d/.test(x.val()) ) ){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number");
         }
@@ -240,7 +240,7 @@ selectFunc("bncc-select-als");
             if(sec.hasClass("account-sec")){
                 // $('.success').toggleClass('is-visible');
                     $('form').submit();
-
+                
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
@@ -283,37 +283,51 @@ selectFunc("bncc-select-als");
 
 
     function changeCampus(x, y, z ,cmps){
-        $mBDG = ["Visual Communication Design", "Interior Design", "Creativepreneurship", "Computer Science"];
-        $mMLG = ["Interior Design", "Visual Communication Design", "Entrepreneurship", "Public Relations", "Communication", "Computer Science"];
-        $mKMG = ["Accounting", "Architecture",
+        $mBDG = ['Computer Science',
+            'Creativepreneurship',
+            'Interior Design',
+            'Visual Communication Design',
+            'Digital Business Innovation',
+            'Interactive Design & Technology'
+            ];
+        $mMLG = [
+            'Communication',
+            'Computer Science',
+            'Entrepreneurship - Business Creation',
+            'Interior Design',
+            'Public Relations',
+            'Visual Communication Design',
+            'Digital Business Innovation',
+            'Interactive Design & Technology'
 
-        "Business Analytics", "Business Creation", "Business Infromation Technology",  "Business Law", "Business Management",
+        ];
+        $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil EngineeringmCommunication - Marketing Communication',
+              'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
+           'Cyber Security', 'Data Science','English Literature', 'Game Application and Technology','Global Business Marketing', 'Hotel Management (Diploma Program)',
+           'Industrial Engineering','Information Systems','Information Systems','Information Systems & Accounting','Information Systems & Management',
+           'Interior Design','International Relations','Japanese Literature','Law - Business Law','Management','Master of Information Systems Management',
+           'Master of Information Technology','Mobile Application and Technology','Primary Teacher Education','Program Profesi Insinyur (Professional Program)',
+           'Psychology','Taxation','Tourism','Visual Communication Design - Animation','Visual Communication Design - Creative Advertising','Visual Communication Design - New Media'
+        ];
+        $mALS = ['Accounting',
+            'Automotive and Robotics Engineering (International Program)',
+            'Business Creation',
+            'Chinese Literature',
+            'Communication - Marketing Communication',
+             'Communication - Mass Communication',
+           'Computer Science',
+           'Film',
+            'Finance',
+            'Food Technology',
+            'Global Business Marketing',
+            'Information Systems',
+            'International Business Management',
+            'Management',
+            'Master of Management',
+            'Product Design Engineering (International Program)',
+            'Visual Communication Design - Animation',
+            'Visual Communication Design - New Media'
 
-        "Chinese", "Civil Engineering", "Corporate Information System", "Computer Engineering",
-        "Computer Science", "Computer Science & Mathematics", "Computer Science & Statistics", "Cyber Security",
-
-        "Data Science", "DKV Animation", "DKV Creative Advertising", "DKV New Media",
-
-        "English",
-
-        "Film", "Finance", "Food Technology",
-
-        "Game Application and Technology", "Global Business Marketing",
-
-        "Hotel Management (D4)",
-
-        "Industrial Engineering", "Information Systems",
-        "Information Systems Accounting and Auditing", "Interior Design",
-        "International Business Management", "International Relations","Information Systems and Accounting", "Information Systems and Management",
-
-        "Japanese",
-
-        "Management", "Marketing Communication", "Master of Information Systems","Master of Management", "Master of Computer Science",
-        "Mass Communication", "Mobile Application and Technology",
-
-        "Primary Teacher Education", "Psychology",
-
-        "Tourism"
         ];
 
         $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
@@ -331,7 +345,7 @@ selectFunc("bncc-select-als");
         let d;
         if(cmps=='ALS'){
             a = $cALS;
-            b = $mKMG;
+            b = $mALS;
             c = $fKMG;
             d = $('.schedule-als')
         }
