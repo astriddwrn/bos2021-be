@@ -126,7 +126,7 @@
 
                 </div>
 
-                <div class="student-sec w-full section absolute right-section  xl:px-24 px-10">
+                <div class="student-sec w-full section absolute right-section  xl:px-24 px-10 hidden">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('nim') border-error @enderror" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
@@ -177,7 +177,7 @@
 
                 </div>
 
-                <div class="bncc-sec w-full section absolute right-section xl:px-24 px-10">
+                <div class="bncc-sec w-full section absolute right-section xl:px-24 px-10 hidden">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LnT Course</div>
                         <div class="custom-select lnt-select w-full">
@@ -250,7 +250,7 @@
 
                 </div>
 
-                <div class="account-sec w-full section absolute right-section xl:px-24 px-10">
+                <div class="account-sec w-full section absolute right-section xl:px-24 px-10 hidden">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('email') border-error @enderror" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">

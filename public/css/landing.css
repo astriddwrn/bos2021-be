@@ -177,17 +177,21 @@ html {
 
 /* Footer */
 .footer-sec{
-    height:900px;
+    height:1400px;
 }
 
 .footer-content{
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, 0%);
 }
 
 .footer-sec .got-question{
     width: 450px;
+}
+
+.footer-sec .contact-cont{
+    width: 800px;
 }
 
 .footer-sec .social img{
@@ -299,7 +303,7 @@ html {
     }
 }
 
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1023.5px) {
     #navbar {
         padding: 0 0rem;
         width: 100%;
@@ -448,20 +452,26 @@ html {
     }
 
     /* Footer */
-    .footer-content {
-        top: 10rem;
+    .footer-sec {
+        height: 1250px;
     }
+    .footer-content{
+        top: 20%;
+    }
+   .gotaq-cont{
+       width: 100%;
+       padding: 0 10px;
+   }
+   .footer-sec .contact-cont{
+       width: 100%;
+   }
     .footer-sec .got-question{
-        width: 25rem;
+        width: 100%;
     }
 
-    .footer .socmed-cont {
-        width: 12rem;
-    }
+    
 
-    .footer .socmed-cont .text-2xl {
-        width: 100px;
-    }
+    
 
 }
 
@@ -568,18 +578,19 @@ html {
     }
 
     /* Footer */
-    .footer-sec .got-question{
-        width: 10rem;
+    .footer-sec .contact-cont{
+        max-width: 500px;
+        
     }
-
-    .footer .socmed-cont {
-        padding: 0.5rem;
+    .footer-sec{
+        height: 1400px;
+        /* width: 90vw; */
     }
-
-    .footer .gotaq-cont {
-        padding: 0.5rem;
-        width: 4rem;
+    .footer-content{
+        top: 13%;
+        width: 90vw;
     }
+    
 }
 
 @media all and (max-width: 479px) {
@@ -775,45 +786,84 @@ html {
         /* font-size: 1.2rem; */
     }
 
+    /* footer */
+    .footer .social img, .footer .social .w-12{
+        width: 40px;
+        height:40px;
+    }
+    .footer-sec{
+        height: 1500px;
+    }
+    .footer .card{
+        /* padding: 15px 10px !important; */
+    }
+    .footer .card div:not(.font-bold){
+        font-size: .7rem !important;
+    }
+    .footer .card .mr-10{
+        /* margin-right: 10px; */
+    }
+    .footer .card img{
+        width: 20px;
+        margin-right: 10px;
+    }
+    .footer .socmed-cont{
+        width:100% !important;
+    }
+    .footer .mlg-bdg{
+        flex-direction: column;
+    }
+    .footer .mlg-bdg div{
+        width:100%;
+        margin: inherit 0;
+    }
+
     .say .text-sm,
     #navbar .text-sm,
-    .oe .text-sm {
+    .oe .text-sm,
+    .footer .text-sm{
         font-size: 0.75rem;
         line-height: 1rem;
     }
     .say .text-base,
     #navbar .text-base,
-    .oe .text-base {
+    .oe .text-base,
+    .footer .text-base{
         font-size: .875rem;
         line-height: 1.25rem;
     }
     .say .text-lg,
     #navbar .text-lg,
-    .oe .text-lg {
+    .oe .text-lg,
+    .footer .text-lg{
         font-size: 1rem;
         line-height: 1.5rem;
     }
     .say .text-xl,
     #navbar .text-xl,
-    .oe .text-xl  {
+    .oe .text-xl  ,
+    .footer .text-xl{
         font-size: 1.125rem;
         line-height: 1.75rem;
     }
     .say .text-2xl,
     #navbar .text-2xl,
-    .oe .text-2xl{
+    .oe .text-2xl,
+    .footer .text-2xl{
         font-size: 1.25rem;
         line-height: 1.75rem;
     }
     .say .text-3xl,
     #navbar .text-3xl,
-    .oe .text-3xl{
+    .oe .text-3xl,
+    .footer .text-3xl{
         font-size: 1.5rem;
         line-height: 2rem;
     }
     .say .text-4xl,
     #navbar .text-4xl,
-    .oe .text-4xl{
+    .oe .text-4xl,
+    .footer .text-4xl{
         font-size: 1.7rem;
         line-height: 2rem;
     }

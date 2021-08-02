@@ -19,28 +19,28 @@
 
 </head>
 <body class="text-base">
-    <div class="pop-up fixed success-reregistration w-screen h-screen z-30">
+    <div class="pop-up fixed success-reregistration w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Registration Success!</div>
         </div>
     </div>
-    <div class="pop-up fixed success-schedule w-screen h-screen z-30">
+    <div class="pop-up fixed success-schedule w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Your Schedule has been Updated Successfully!</div>
         </div>
     </div>
-    <div class="pop-up fixed success-payment w-screen h-screen z-30">
+    <div class="pop-up fixed success-payment w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Payment Submission Success!</div>
         </div>
     </div>
-    <div class="pop-up fixed loggingout w-screen h-screen z-30">
+    <div class="pop-up fixed loggingout w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/userDashboard/loggingout.svg') }}" alt="BNCC Launching">

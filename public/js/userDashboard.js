@@ -26,6 +26,10 @@ $(document).ready(function(){
         $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
     }
 
+    setTimeout(function(){
+        $('.pop-up').removeClass('hidden'); 
+     }, 1000);
+
     
     function selectFunc(z){
         var x, i, j, l, ll, selElmnt, a, b, c;
