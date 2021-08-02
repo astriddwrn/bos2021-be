@@ -32,7 +32,8 @@ class UserSeeder extends Seeder
             'nim' => 'admin',
             'role' => 2,
             'schedule' => [1,2,3],
-            'batch' => 'admin'
+            'batch' => 'admin',
+            'personal_email' => 'scac@binus.edu',
         ]);
 
         User::create([
@@ -46,13 +47,14 @@ class UserSeeder extends Seeder
             'address' => 'admin',
             'campus' => 'admin',
             'major' => 'admin',
-            'whatsapp' => 'admin',
-            'line_id' => 'admin',
+            'whatsapp' => 'admin1',
+            'line_id' => 'admin1',
             'lnt_course' => 'admin',
-            'nim' => 'admin',
+            'nim' => 'admin1',
             'role' => 2,
             'schedule' => [1,2,3],
-            'batch' => 'admin'
+            'batch' => 'admin',
+            'personal_email' => 'kmg@bncc.net'
         ]);
 
         User::create([
@@ -66,13 +68,14 @@ class UserSeeder extends Seeder
             'address' => 'admin',
             'campus' => 'admin',
             'major' => 'admin',
-            'whatsapp' => 'admin',
-            'line_id' => 'admin',
+            'whatsapp' => 'admin2',
+            'line_id' => 'admin2',
             'lnt_course' => 'admin',
-            'nim' => 'admin',
+            'nim' => 'admin2',
             'role' => 3,
             'schedule' => [1,2,3],
-            'batch' => 'admin'
+            'batch' => 'admin',
+            'personal_email' => 'als@bncc.net'
         ]);
 
         User::create([
@@ -86,13 +89,14 @@ class UserSeeder extends Seeder
             'address' => 'admin',
             'campus' => 'admin',
             'major' => 'admin',
-            'whatsapp' => 'admin',
-            'line_id' => 'admin',
+            'whatsapp' => 'admin3',
+            'line_id' => 'admin3',
             'lnt_course' => 'admin',
-            'nim' => 'admin',
+            'nim' => 'admin3',
             'role' => 4,
             'schedule' => [1,2,3],
-            'batch' => 'admin'
+            'batch' => 'admin',
+            'personal_email' => 'bdg@bncc.net'
         ]);
 
         User::create([
@@ -106,13 +110,14 @@ class UserSeeder extends Seeder
             'address' => 'admin',
             'campus' => 'admin',
             'major' => 'admin',
-            'whatsapp' => 'admin',
-            'line_id' => 'admin',
+            'whatsapp' => 'admin4',
+            'line_id' => 'admin4',
             'lnt_course' => 'admin',
-            'nim' => 'admin',
+            'nim' => 'admin4',
             'role' => 5,
             'schedule' => [1,2,3],
-            'batch' => 'admin'
+            'batch' => 'admin',
+            'personal_email' => 'mlg@bncc.net'
         ]);
     }
 }
