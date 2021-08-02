@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forgot Password | BNCC Launching</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
+    <meta name="title" content="BNCC Launching">
+    <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -19,7 +22,7 @@
     @enderror
 
     <div class="bg-bgSpace w-full h-screen fixed">
-        <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="">
+        <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="BNCC Launching">
     </div>
 
     <div class="absolute flex flex-col items-center justify-center absolute " style="left:50%; top:0%; transform: translate(-50%, -50%); max-height:630px; max-width: 550px" >
@@ -27,7 +30,7 @@
         <div>
             <form action="" class="rounded-xl bg-cWhite w-full forgotPass-form px-14 flex flex-col justify-center items-center " method="POST" style="overflow: hidden;">
                 @csrf
-                <a href="#"><img class="mb-10" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
+                <a href="#"><img class="mb-10" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
 
                 <!-- SEND EMAIL PERTAMA -->
                 <div class="text-center text-3xl font-bold text-cDarkBlue">Forgot your Password?</div>

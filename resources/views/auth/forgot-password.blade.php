@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forgot Password | BNCC Launching</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
+    <meta name="title" content="BNCC Launching">
+    <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
@@ -18,7 +21,7 @@
     @enderror
 
     <div class="bg-bgSpace w-screen h-full fixed overflow-hidden">
-        <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen h-full absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="">
+        <img style="left:50%; top:50%; transform: translate(-50%, -50%);" class="w-screen h-full absolute" src="{{ asset('Asset/Image/auth/bg-stars2.svg')}}" alt="BNCC Launching">
     </div>
 
     
@@ -28,7 +31,7 @@
             <div class="h-10 lg-hidden"></div>
             <form action="{{ route('password.email') }}" class="w-11/12 forgotPass-form sm:px-14 px-5 py-10 flex flex-col justify-center items-center rounded-xl bg-cWhite" method="POST" style="overflow: hidden; max-height:630px; max-width: 550px">
                 @csrf
-                <a href="#"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt=""></a>
+                <a href="#"><img class="mb-10 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
 
                 <!-- SEND EMAIL PERTAMA -->
                 @if (!Session::get('status'))

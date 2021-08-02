@@ -1,6 +1,6 @@
 @import url(base.css);
 div {
-    border: 1px solid rgba(255, 0, 0, 1)
+    /* border: 1px solid rgba(255, 0, 0, 1) */
 }
 
 html {
@@ -289,11 +289,8 @@ html {
     .ff,
     .why,
     .oc,
-    .oe,
     .bose,
-    .what,
-    .faq,
-    .sponsor {
+    .faq {
         padding: 0rem 3rem;
     }
 
@@ -508,16 +505,13 @@ html {
     .ff,
     .why,
     .oc,
-    .oe,
     .bose,
-    .what,
-    .faq,
-    .sponsor {
-        padding: 0rem 0rem;
+    .faq {
+        padding: 0rem 1rem;
     }
 
     .about {
-        padding: 3rem 0rem;
+        padding: 3rem 1rem;
     }
 
     /* vc */
@@ -540,38 +534,17 @@ html {
         margin: 0rem 1rem;
     }
 
+    .oc .btnCont .ocBox {
+        margin: 0.3rem 0.5rem;
+    }
+
     /* Bose */
     .bose .card {
         width: 25rem;
         padding: 1rem;
     }
 
-    /* Say */
-    .say-card img{
-        width: 80px;
-        height: 80px;
-    }
-    .say-card .text-sm{
-        font-size: .7rem;
-        line-height: .9rem;
-    }
-    .say-btn{
-        font-size: .6rem;
-        font-weight: 600;
-    }
-    .say-btn img{
-        width: 30px;
-        height: 30px;
-    }
-    .say-card-cont{
-        height: 130px;
-    }
-    .say-card-cont .title{
-        font-size: .8rem;
-    }
-    .say-title{
-        /* font-size: 1.2rem; */
-    }
+    
 
     .what .text-base{
         font-size: .8rem;
@@ -699,12 +672,12 @@ html {
 
     .oc .btnCont {
         min-height: 4rem;
-        justify-content: center;
         padding: 0rem 2rem;
     }
 
     .oc .btnCont .ocBox {
         padding: 0.5rem;
+        margin: 0.2rem 0.4rem;
     }
 
     .oc .btnCont .ocBox .ocBtn{
@@ -732,7 +705,7 @@ html {
 
     /* Bose */
     .bose .card {
-        width: 18rem;
+        width: 16rem;
         padding: 1rem;
         margin: 0.8rem 0rem;
     }
@@ -762,6 +735,11 @@ html {
     .faq .ques .top h1 {
         font-size: 1rem;
         line-height: 1.4rem;
+    }
+
+    .faq .ques .top .arrow {
+      margin: 0px 0px 0px 0.5rem;
+      width: 1.5rem;
     }
 
     .faq .ques .bot {
