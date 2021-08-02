@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
 </head>
 <body class="text-base">
+    <!--
+        @foreach ($errors->all() as $error)
+            {{ $error }}
+        @endforeach
+    -->
 
     <div class="pop-up fixed success w-screen h-screen z-30">
         <div class="fixed z-20 overlay w-screen h-screen bg-cBlack opacity-50"></div>
