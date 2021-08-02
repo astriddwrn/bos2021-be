@@ -14,12 +14,14 @@ $(document).ready(() => {
             } */
             if (currPosition > 700) {
                 $("#navbar").addClass("change-bg");
+                $(".loginbtn").addClass("nav-login");
                 $(".burger").addClass("addFilter");
                 $(".profile").addClass("addFilter");
                 $("#logo-down").css("display", "block")
                 $("#logo-up").css("display","none")
             } else {
                 $("#navbar").removeClass("change-bg");
+                $(".loginbtn").removeClass("nav-login");
                 $(".burger").removeClass("addFilter");
                 $(".profile").removeClass("addFilter");
                 $("#logo-up").css("display", "block")

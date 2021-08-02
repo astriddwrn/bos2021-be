@@ -10,7 +10,7 @@
     <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
 
     <!-- style -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?time=202108021700') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 <body class="bg-cWhite text-cBlackHome">
@@ -22,7 +22,7 @@
             <h5 class="font-medium text-xs sm:text-lg md:text-xl lg:text-2xl mb-4">Want to be a part of BNCC?</h5>
             <a class="btnReg
             bg-cLntBlue
-            hover:bg-cDarkerLightBlue
+            hover:bg-cToscaBlue
             transition
             duration-300
             ease-in-out
@@ -46,16 +46,16 @@
                     <div class="menu-cont w-full  flex flex-row justify-end items-center">
                         <img class="lg:hidden block w-7 mb-5 menu-close" src="{{ asset('Asset/Image/landing/navbar-close.svg')}}" alt="">
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3 hover:text-cLntBlue duration-300" href="#about">About</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#ourcourses">Courses</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3 hover:text-cLntBlue duration-300" href="#ourcourses">Courses</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#bos-events">Ongoing Events</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3 hover:text-cLntBlue duration-300" href="#bos-events">Ongoing Events</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#faq">FAQ</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3 hover:text-cLntBlue duration-300" href="#faq">FAQ</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         @if (!Auth::check())
-                        <a class="border-2 rounded-3xl navlink font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
+                        <a class="loginbtn border-2 rounded-3xl navlink hover:bg-cWhite hover:text-cDarkBlue duration-300 font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
                         @else
                         <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
                             <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
@@ -116,7 +116,7 @@
                     </div>
                     <div class="next-container">
                         <div class="next">
-                            <img src="{{ asset('Asset/Image/landing/about-btn2.svg')}}" alt="">
+                            <img class="transform rotate-180" src="{{ asset('Asset/Image/landing/about-btn1.svg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                         <img src="{{url('./Asset/Image/landing/ff-product.svg')}}" alt="" class="w-24 ff-img">
                     </div>
                     <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-12">
-                        BNCC has a software house (FAVESOLUTION) and online media (Filemagz)!
+                        BNCC has a software house (FAVE Solution) and online media (Filemagz)!
                     </div>
                 </div>
 
@@ -261,7 +261,7 @@
         <h1 class="font-bold text-cBlackHome text-2xl lg:text-4xl text-center mt-8 sm:mt-14">And many more!</h1>
     </div>
 
-     {{-- Our Courses --}}
+    {{-- Our Courses --}}
      <div id="ourcourses" class="oc w-full font-sans my-32 px-36 sm:px-72">
         <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
@@ -662,14 +662,14 @@
 
     {{-- BOS Events --}}
     <div id="bos-events" class="bose w-full font-sans my-32 px-12 sm:px-48">
-        <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl mb-14">BNCC Opening Season Events</h1>
+        <h1 class="font-extrabold text-center text-cDarkBlue text-3xl sm:text-4xl md:text-5xl mb-14 leading-10">BNCC Opening Season Events</h1>
         <div class="w-full flex flex-col md:flex-row flex-wrap justify-center items-center">
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl mb-4">BNCC Expo</h2>
                 <p class="text-cBlackHome mb-4">
                     A session to introduce BNCC to everyone who comes and satisfies their curiosity.
                 </p>
-                <p class="bose-cs text-cLntBlue mb-4 cursor-pointer">
+                <p class="bose-cs text-cLntBlue mb-4 cursor-pointer mb-10">
                     Click here to see schedule
                 </p>
                 <div class="bose-cc mb-4 hidden">
@@ -708,18 +708,20 @@
                         August 2 - 28, 2021
                         <br>
                         05.00 - 10.00 PM
-                    <div class="bose-ch text-cLntBlue mb-4 cursor-pointer">
+                    <div class="bose-ch text-cLntBlue mb-4 cursor-pointer mb-4">
                         Click here to hide schedule
                     </div>
                 </div>
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
-                href="">Join Now</a>
+                href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
+                BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&
+                tenantId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a>
             </div>
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Twibbon Challenge</h2>
-                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Ends in August DD, 2021</h5>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">To be Announced</h5>
                 <p class="text-cBlackHome mb-4">
                     Show to the world that you are going to be a part of BNCC family and get your chance to win valuable prizes!
                 </p>
@@ -745,7 +747,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: Front-End Development</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 26, 2021</h5>
-                <p class="text-cBlackHome mb-4">
+                <p class="text-cBlackHome mb-10">
                     An online workshop that will teach you the fundamentals of how to design and build a website.
                 </p>
                 <a class="w-full flex flex-row justify-center items-center
@@ -783,7 +785,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
-                <p class="text-cBlackHome mb-4">
+                <p class="text-cBlackHome mb-10">
                     Sessions to welcome new members and discover more about BNCC.
                 </p>
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
@@ -876,7 +878,7 @@
 
     {{-- FAQ --}}
     <div id="faq" class="faq w-full font-sans my-32 px-72">
-        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-7xl mb-14 text-center">Frequently Asked Questions</h1>
+        <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl mb-14 text-center leading-9">Frequently Asked Questions</h1>
         <div class="w-full flex flex-col justify-center items-center">
             <div class="ques w-full flex flex-col">
                 <div class="top w-full flex flex-row justify-between py-8 px-16">
@@ -1122,7 +1124,7 @@
                                         <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> agatha.s_
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="card flex flex-col md:w-full w-6/12 text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
@@ -1140,15 +1142,15 @@
                                         <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Add by Phone
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            
+
         </div>
         <div class="w-full bottom-0 absolute sm:p-10 p-5">
             <div class="flex flex-row justify-between items-end pb-5 border-b-4 border-cWhite">

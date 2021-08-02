@@ -25,6 +25,7 @@ module.exports = {
             cBabyBlue: '#CCE4F9',
             cLighterBlue: '#3371AD',
             cLntBlue: '#37C8EE',
+            cToscaBlue: '#00AAD6',
         },
         backgroundImage: {
             'bgSpace': "linear-gradient(195.99deg, #0C131B -57.79%, #0054A5 49.18%, #CDD8DD 151.55%)",
@@ -41,7 +42,8 @@ module.exports = {
              'bsWhyhv': "0px 0px 40px rgba(55, 200, 238, 0.4)",
              'bsOc': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
              'bsOcBig': "4px 16px 20px 8px rgba(205, 205, 205, 0.3)",
-             'bsVideo': "4px 12px 28px 6px rgba(119, 119, 119, 0.3)"
+             'bsVideo': "4px 12px 28px 6px rgba(119, 119, 119, 0.3)",
+             'bsNavlink': "0px 0px 18px rgba(104, 224, 255, 0.8)"
          },
         extend: {
             fontFamily: {

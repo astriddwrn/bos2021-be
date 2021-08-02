@@ -31,6 +31,11 @@ html {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.16);
 }
 
+.nav-login:hover {
+    background-color: #37C8EE;
+    color: #FBFBFB;
+}
+
 .addFilter{
     filter: brightness(0) saturate(100%) invert(64%) sepia(90%) saturate(617%) hue-rotate(157deg) brightness(97%) contrast(92%);
 }
@@ -263,6 +268,12 @@ html {
     height: 50px;
     position: relative;
     cursor: pointer;
+    filter: none;
+}
+
+.about .next:hover,
+.about .prev:hover {
+    filter: invert(64%) sepia(99%) saturate(560%) hue-rotate(157deg) brightness(96%) contrast(94%);
 }
 
 .about .next-container {
@@ -396,7 +407,7 @@ html {
 
 /* Bose */
 .bose .card {
-    width: 32rem;
+    width: 31rem;
     height: min-content;
     margin: 1rem 0.5rem;
 }
@@ -736,9 +747,9 @@ html {
         width: 100%;
     }
 
-    
 
-    
+
+
 
 }
 
@@ -847,7 +858,7 @@ html {
     /* Footer */
     .footer-sec .contact-cont{
         max-width: 500px;
-        
+
     }
     .footer-sec{
         height: 1400px;
@@ -857,7 +868,7 @@ html {
         top: 13%;
         width: 90vw;
     }
-    
+
 }
 
 @media all and (max-width: 479px) {
