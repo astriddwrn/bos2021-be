@@ -58,7 +58,7 @@
                         <a class="loginbtn border-2 rounded-3xl navlink hover:bg-cWhite hover:text-cDarkBlue duration-300 font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
                         @else
                         <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
-                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">{{Auth::user()->fullName}}
+                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
                         </a>
                          @endif
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
@@ -585,8 +585,8 @@
 
     {{-- Our Event --}}
     <div class="w-full event-sec font-sans my-32 xl:px-72 lg:px-40 px-10 text-base ">
-        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-10">Our Events</h1>
-        <div class="text-base md:mb-14 mb-10">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl text-3xl md:mb-14 mb-5">Our Events</h1>
+        <div class="text-base md:mb-14 mb-5">Here are some of our event highlights. Through events, we improve our knowledge, try new experiences, and build a sense of belonging in the BNCC family. More exciting events are on the way!</div>
 
         <div style="max-width: 800px; margin: 0 auto;" class="relative w-full carousel-event rounded-xl md:h-80 sm:h-60 h-52 overflow-hidden">
             <div class="w-full h-full slide absolute">
@@ -674,15 +674,30 @@
                 </p>
                 <div class="bose-cc mb-4 hidden">
                     <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Schedule</h5>
-                    1st Batch: August 7, 2021 at 2.00 - 3.00 PM WIB
+                    1st Batch: August 7, 2021 at 2.00 PM - 3.00 PM WIB
                     <br>
-                    2nd Batch: August 14, 2021 at 2.00 - 3.00 PM WIB
+                    <strong>Region</strong>: Kemanggisan, Alam Sutera, dan Bandung
                     <br>
-                    3rd Batch: August 21, 2021 at 2.00 - 3.00 PM WIB
                     <br>
-                    4th Batch: August 28, 2021 at 2.00 - 3.00 PM WIB
-
-                    <div class="bose-ch text-cLntBlue mb-4 cursor-pointer">
+                    2nd Batch: August 14, 2021 at 2.00 PM - 3.00 PM WIB
+                    <br>
+                    <strong>Region</strong>: Kemanggisan, Alam Sutera, dan Bandung
+                    <br>
+                    <br>
+                    3rd Batch: August 21, 2021 at 2.00 PM - 3.00 PM WIB
+                    <br>
+                    <strong>Region</strong>: Kemanggisan, Alam Sutera, Bandung, dan Malang
+                    <br>
+                    <br>
+                    4th Batch: August 28, 2021 at 2.00 PM - 3.00 PM WIB
+                    <br>
+                    <strong>Region</strong>: Kemanggisan, Alam Sutera, Bandung, dan Malang
+                    <br>
+                    <br>
+                    5th Batch: September 11, 2021 at 2.00 PM - 3.00 PM WIB
+                    <br>
+                    <strong>Region</strong>: Malang
+                    <div class="bose-ch text-cLntBlue my-4 cursor-pointer">
                         Click here to hide schedule
                     </div>
                 </div>
@@ -786,7 +801,8 @@
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
                 <p class="text-cBlackHome mb-11 leading-7">
-                    Sessions to welcome new members and discover more about BNCC.
+                    Sessions where you can earn sharing sessions with our seniors,
+                    learn more about BNCC and the procedures to be a proud BNCC member!
                 </p>
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
