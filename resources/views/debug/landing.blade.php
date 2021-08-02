@@ -666,7 +666,7 @@
         <div class="w-full flex flex-col md:flex-row flex-wrap justify-center items-center">
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl mb-4">BNCC Expo</h2>
-                <p class="text-cBlackHome mb-4">
+                <p class="text-cBlackHome mb-4 leading-7">
                     A session to introduce BNCC to everyone who comes and satisfies their curiosity.
                 </p>
                 <p class="bose-cs text-cLntBlue mb-4 cursor-pointer mb-10">
@@ -695,7 +695,7 @@
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl mb-4">LIVE Session QnA</h2>
-                <p class="text-cBlackHome mb-4">
+                <p class="text-cBlackHome mb-4 leading-7">
                     A live session where attendees can ask BNCC colleagues any questions they have regarding the organization.
                 </p>
                 <p class="bose-cs text-cLntBlue mb-4 cursor-pointer">
@@ -722,7 +722,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Twibbon Challenge</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">To be Announced</h5>
-                <p class="text-cBlackHome mb-4">
+                <p class="text-cBlackHome mb-4 leading-7">
                     Show to the world that you are going to be a part of BNCC family and get your chance to win valuable prizes!
                 </p>
                 <a class="w-full flex flex-row justify-center items-center
@@ -747,7 +747,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: Front-End Development</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 26, 2021</h5>
-                <p class="text-cBlackHome mb-10">
+                <p class="text-cBlackHome mb-11 leading-7">
                     An online workshop that will teach you the fundamentals of how to design and build a website.
                 </p>
                 <a class="w-full flex flex-row justify-center items-center
@@ -766,7 +766,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: UI/UX Design</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 25, 2021</h5>
-                <p class="text-cBlackHome mb-4">
+                <p class="text-cBlackHome mb-4 leading-7">
                     A challenge encouraging you to help BNCC by sharing your unique photo for a chance to win a reward.
                 </p>
                 <a class="w-full flex flex-row justify-center items-center
@@ -785,7 +785,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
-                <p class="text-cBlackHome mb-10">
+                <p class="text-cBlackHome mb-11 leading-7">
                     Sessions to welcome new members and discover more about BNCC.
                 </p>
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
