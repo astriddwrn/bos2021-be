@@ -44,7 +44,7 @@
                 </a>
                 <div class="w-full text-right flex flex-row justify-end items-center ">
                     <div class="menu-cont w-full  flex flex-row justify-end items-center">
-                        <img class="lg:hidden block w-7 mb-5 menu-close" src="{{('Asset/Image/landing/navbar-close.svg')}}" alt="">
+                        <img class="lg:hidden block w-7 mb-5 menu-close" src="{{ asset('Asset/Image/landing/navbar-close.svg')}}" alt="">
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
@@ -61,11 +61,11 @@
                             <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
                         </a>
                         @endif
-                        
+
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
 
                     </div>
-                    <img class="lg:hidden block w-8 mx-5 burger " src="{{('Asset/Image/landing/navbar-burger.svg')}}" alt="">
+                    <img class="lg:hidden block w-8 mx-5 burger " src="{{ asset('Asset/Image/landing/navbar-burger.svg')}}" alt="">
                 </div>
             </div>
         </div>

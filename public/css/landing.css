@@ -3,6 +3,10 @@ div {
     border: 1px solid rgba(255, 0, 0, 1)
 }
 
+html {
+    scroll-behavior: smooth;
+}
+""
 .arrow,
 a,
 .top {
@@ -608,7 +612,7 @@ html {
     .say-title{
         /* font-size: 1.2rem; */
     }
-    
+
     .what .text-base{
         font-size: .8rem;
         line-height: 1.2rem;
