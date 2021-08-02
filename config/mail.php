@@ -92,7 +92,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'technoevent@bncc.net'),
+        'address' => env('MAIL_FROM_ADDRESS', 'launching@bncc.net'),
         'name' => env('MAIL_FROM_NAME', 'BNCC Launching'),
     ],
 
