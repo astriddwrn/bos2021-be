@@ -18,6 +18,10 @@ use App\Http\Controllers\NewsLetterController;
 */
 
 Route::get('/', function () {
+    return view('comingSoon');
+});
+
+Route::get('/landing', function () {
     return view('debug.landing');
 });
 
@@ -53,9 +57,9 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
-Route::prefix("/debug")->group(function(){
-    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
-    Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
-});
+// Route::prefix("/debug")->group(function(){
+//     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
+//     Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
+// });
 
 require __DIR__.'/auth.php';
