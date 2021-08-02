@@ -178,7 +178,7 @@
                         <img src="{{url('./Asset/Image/landing/ff-product.svg')}}" alt="" class="w-24 ff-img">
                     </div>
                     <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-12">
-                        BNCC has a software house (FAVE Solution) and online media (Filemagz)!
+                        BNCC has a software house (FAVE Solution) and an online media (Filemagz)!
                     </div>
                 </div>
 
@@ -187,8 +187,8 @@
                         <img src="{{url('./Asset/Image/landing/ff-schedule.svg')}}" alt="" class="w-20 ff-img">
                     </div>
                     <div class="w-4/6 font-regular text-xl text-cBlackHome leading-5 sm:leading-8 md:leading-9 pr-12">
-                        BNCC has organized many national events with more than 1,000 participants,
-                        including BNCC Techno Talk  1, BNCC Techno Talk 2, TechnoScape, and more!
+                        BNCC has organized many national events with a total more
+                        than 3,000 participants, including BNCC Techno Talk, BNCC Webinar Series, TechnoScape, and more!
                     </div>
                 </div>
 
