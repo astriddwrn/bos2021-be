@@ -12,13 +12,13 @@
 <body class="text-base">
     @error('email')
     <div class="fixed top-0 w-screen z-50 flex flex-row justify-between p-4 failed-notif">
-        <h6 class="text-cWhite sm:text-md text-sm">Message Fail</h6>
+        <h6 class="text-cWhite sm:text-md text-sm">{{ $message }}</h6>
         <img class="w-4 ml-4 close cursor-pointer" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
     </div>
     @enderror
     @error('password')
     <div class="fixed top-0 w-screen z-50 flex flex-row justify-between p-4 failed-notif">
-        <h6 class="text-cWhite sm:text-md text-sm">Message Fail</h6>
+        <h6 class="text-cWhite sm:text-md text-sm">{{ $message }}</h6>
         <img class="w-4 ml-4 close cursor-pointer" src="{{asset('Asset/Image/comingSoon/closeBtn.svg')}}" alt="BNCC Launching">
     </div>
     @enderror
@@ -53,8 +53,8 @@
                         <div class="info text-xl w-full text-center mb-10"><span class="text-cDarkBlue mr-2">Not registered yet?</span><a href="{{url('/register')}}"><span class="text-cLightBlue">Register here</span></a></div>
 
                     </div>
-                    
-                </form>                 
+
+                </form>
             <div class="h-10 lg-hidden"></div>
 
             </div>
