@@ -427,6 +427,10 @@ html {
     transition: opacity 1s ease-in-out;
 }
 
+.event-sec{
+    height: 600px;
+}
+
 /* Footer */
 .footer-sec{
     height:1400px;
