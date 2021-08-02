@@ -591,7 +591,7 @@
                     <span style="color: #85E4F1; ">Hackathon</span>
                 </div>
             </div>
-            <div class="w-full h-full slide slide-behind absolute">
+            <div class="w-full h-full slide slide-left absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.svg')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Design</div>
