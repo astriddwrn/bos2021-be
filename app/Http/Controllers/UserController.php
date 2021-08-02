@@ -77,7 +77,22 @@ class UserController extends Controller
                 break;
             }
         }
-}
+    }
+
+    public function changeSchedule(Request $request){
+        $now = Carbon::now('GMT+7');
+        $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
+        if(!$diff_change_schedule->invert) return back();
+
+        $request->validate([
+            'schedule-change' => 'required',
+        ]);
+
+        $user = $request->user();
+        $user->schedule = $request['schedule-change'];
+        $user->save();
+        return back();
+    }
 
     public function countdown(Request $request) {
         $user = $request->user();
