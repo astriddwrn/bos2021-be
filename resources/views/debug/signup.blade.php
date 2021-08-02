@@ -98,8 +98,11 @@
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Personal Email</div>
-                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
+                        <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('personal_email') border-error @enderror" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
                         <span class="msg-error"></span>
+                        @error('personal_email')
+                        <span class="msg-error">This email has already been taken</span>
+                        @enderror
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LINE ID</div>

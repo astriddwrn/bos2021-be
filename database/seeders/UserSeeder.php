@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'line_id' => 'admin',
             'lnt_course' => 'admin',
             'nim' => 'admin',
-            'role' => 2,
+            'role' => 1,
             'schedule' => [1,2,3],
             'batch' => 'admin',
             'personal_email' => 'scac@binus.edu',
