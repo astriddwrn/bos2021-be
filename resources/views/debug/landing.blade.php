@@ -886,8 +886,8 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    <strong>BNCC (Bina Nusantara Computer Club</strong> is <strong>the best computer-based organization</strong> in
-                    Binus University that has already reached its 32nd year. This organization has built a strong
+                    <strong>Bina Nusantara Computer Club (BNCC)</strong> is <strong>one of the best computer-based organizations</strong> at
+                    BINUS University that has already reached its 32nd year. This organization has built a strong
                     foundation and experiences in educating people about computers, technology business, and organizational skills.
                     For further information, you can access the following <a class="font-bold underline" href="https://bncc.net/"> link</a>.
                 </div>
