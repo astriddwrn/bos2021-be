@@ -741,7 +741,7 @@
                 </p>
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
-                href="">Register Now</a>
+                href="{{url('/register')}}">Register Now</a>
             </div>
 
         </div>

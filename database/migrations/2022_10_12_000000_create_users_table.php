@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
             $table->string('campus');
             $table->string('major');
             $table->string('batch');
-            $table->json('schedule');
+            $table->string('schedule');
             $table->string('is_esport')->nullable();
             $table->string('lnt_course');
             $table->integer('role')->default(0);
