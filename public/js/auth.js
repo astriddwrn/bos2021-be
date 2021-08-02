@@ -1,6 +1,9 @@
 
 $(document).ready(function(){
 
+    setTimeout(function(){
+       $('.section').removeClass('hidden'); 
+    }, 1000);
 
 
 function selectFunc(z){
@@ -185,7 +188,8 @@ selectFunc("bncc-select-als");
 
     function email(x){
         var pattern = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?binus\.ac.id$/g;
-        var pattern2 = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+        var pattern2 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 
         if(x.is('#email') && !pattern.test(x.val())){
             x.addClass("border-error");

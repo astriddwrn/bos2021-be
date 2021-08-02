@@ -15,7 +15,7 @@
 </head>
 <body class="bg-cWhite text-cBlackHome">
     {{-- Landing --}}
-    <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite">
+    <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-32 bg-bgSpace text-cWhite overflow-hidden">
         <div class="landing-content w-full flex flex-col justify-content items-center z-10 mb-20">
             <h1 class="font-extrabold text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl">We Are BNCC</h1>
             <h3 class="font-semibold text-center text-xs sm:text-lg md:text-xl lg:text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
@@ -48,7 +48,7 @@
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#about">About</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
-                        <a class="navlink font-semibold text-lg lg:mx-3" href="#ourcoursesgi">Courses</a>
+                        <a class="navlink font-semibold text-lg lg:mx-3" href="#ourcourses">Courses</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
                         <a class="navlink font-semibold text-lg lg:mx-3" href="#bos-events">Ongoing Events</a>
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
@@ -70,10 +70,10 @@
     </div>
 
     {{-- About Us --}}
-    <div id="about" class="about w-full font-sans py-32 px-12 sm:px-48">
+    <div id="about" class="about w-full font-sans py-32 px-12 sm:px-36">
         <h1 class="font-extrabold text-cDarkBlue mb-14 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">About Us</h1>
         <div class="w-full flex flex-col lg:flex-row items-center">
-            <div class="w-full lg:w-1/2 leading-7">
+            <div class="w-full lg:w-8/12 leading-7">
                 <p class="">
                     BNCC (Bina Nusantara Computer Club) is one of the <strong>best technology-based organizations</strong> at Binus University.
                     Since our establishment in 1989, BNCC has been <strong>educating society</strong> through our courses, innovative events,
@@ -84,6 +84,53 @@
                     We warmly <strong>invite you to join our family</strong> here at BNCC, where we can have fun and achieve success together!
                 </p>
             </div>
+
+            <div class="carousel-cont">
+                <div class="main-container">
+                    <div class="prev-container">
+                        <div class="prev">
+                            <img src="{{ asset('Asset/Image/landing/about-btn1.svg')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="carousel-wrapper">
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel1.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel2.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel3.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel4.svg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="glass basic-transition">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel5.svg')}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="next-container">
+                        <div class="next">
+                            <img src="{{ asset('Asset/Image/landing/about-btn2.svg')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dots-container">
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                    <div class="dots"> </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -154,7 +201,7 @@
         <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 text-center">Why BNCC?</h1>
         <div class="w-full flex flex-col flex-wrap justify-between items-center">
             <div class="w-full flex flex-row flex-wrap justify-around lg:justify-center items-center mb-12">
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-networking.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Networking</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -163,7 +210,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-hardskills.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Hard Skills</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -173,7 +220,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 ease-in-out flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-softskills.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Soft Skills</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -183,7 +230,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-sat.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">SAT Points</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -192,7 +239,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-experience.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Experience</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -201,7 +248,7 @@
                     </p>
                 </div>
 
-                <div class="card-why w-min bg-cWhite shadow-bsWhy flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
+                <div class="card-why w-min bg-cWhite shadow-bsWhy hover:shadow-bsWhyhv duration-300 flex flex-col flex-shrink-0 items-center rounded-3xl py-16 mt-12 mx-4">
                     <img src="{{url('./Asset/Image/landing/why-networking.svg')}}" alt="" class="w-24">
                     <h2 class="font-bold text-xl py-3">Tech Insights</h2>
                     <p class="text-base text-center leading-7 px-5">
@@ -750,77 +797,77 @@
     {{-- What They Say? --}}
     <div id="what" class="what w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
         <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC?</h1>
-        <div class="relative say-card-cont sm:h-56 h-44">
-            <div class="flex flex-row items-center say-card say-card-visible absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
+        <div class="relative say-card-cont sm:h-56 h-80">
+            <div class="flex sm:flex-row flex-col items-center say-card say-card-visible absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Kevin Bryan</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center sm:text-left text-center">Kevin Bryan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pesanku untuk Binusian 2025, langsung aja daftar BNCC karena journey di BNCC itu benar-benar seru banget dan pelajaran yang akan kalian dapatkan pasti bakal sangat berguna di perkuliahan maupun masa yang akan datang.”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Clario Johan</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Clario Johan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Menurutku kesempatan join BNCC itu it’s now or never, apakah kalian mau ambil kesempatan yang akan berguna bagi masa depan kalian atau tidak, jadi langsung aja yah daftar BNCC, see you in BNCC!”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Benedic Matthew Halim</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Benedic Matthew Halim</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Pengalaman dan koneksi yang didapatkan sangat berharga dan tidak dapat dinilai dengan apapun.”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Felisha Kwan</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Felisha Kwan</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Bagiku BNCC adalah wadah untuk menyalurkan aspirasi dan mengembangkan diri.”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Yesaya Kevin</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Yesaya Kevin</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Buat aku BNCC itu bagaikan sebuah batu loncatan untuk keluar dari zona nyamanku, dan saranku bagi kalian yang ingin berkembang juga, kalian wajib banget nih join BNCC!”</div>
                 </div>
             </div>
-            <div class="flex flex-row items-center say-card absolute h-full">
-                <img class="rounded-full lg:w-52 lg:h-52 sm:w-40 sm:h-40 h-24 w-24 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
+            <div class="flex sm:flex-row flex-col items-center say-card absolute h-full">
+                <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
                 <div>
-                    <div class="sm:text-2xl text-xl font-bold sm:my-3 my-0 title h-full">Muhammad Rafi W P</div>
+                    <div class="sm:text-2xl text-xl font-bold my-3 title sm:text-left text-center">Muhammad Rafi W P</div>
                     <div class="w-full font-medium sm:text-base text-sm sm:leading-7">“Di BNCC aku belajar time management yang baik dan kita selalu dituntut untuk tetap profesional karena bisa dikatakan BNCC sudah layaknya sebuah perusahaan.”</div>
                 </div>
             </div>
         </div>
 
-        <div class="flex flex-row justify-evenly width-full mt-10">
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+        <div class="flex flex-row justify-evenly width-full mt-10 say-button-cont">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 say-pic-active mb-2" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
                 <span>Kevin</span>
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person2.png')}}" alt="">
                 <span>Clario</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person3.png')}}" alt="">
                 <span>Benedic</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person6.png')}}" alt="">
                 <span>Felicia</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person4.png')}}" alt="">
                 <span>Yesaya</span>
 
             </div>
-            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center">
+            <div class="text-center font-bold cursor-pointer say-btn flex flex-col items-center sm:w-28 w-20 mb-5">
                 <img class="rounded-full md:w-20 md:h-20 w-14 h-14 mb-2" src="{{ asset('Asset/Image/landing/say-person5.png')}}" alt="">
                 <span>Rafi</span>
             </div>
@@ -837,7 +884,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    BNCC (Bina Nusantara Computer Club) is the best computer-based organization in
+                    <strong>BNCC (Bina Nusantara Computer Club</strong> is <strong>the best computer-based organization</strong> in
                     Binus University that has already reached its 32nd year. This organization has built a strong
                     foundation and experiences in educating people about computers, technology business, and organizational skills.
                     For further information, you can access the following <a class="font-bold underline" href="https://bncc.net/"> link</a>.
@@ -866,7 +913,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    BNCC is open to all Binusians. Even though you are not from School of
+                    BNCC is <strong>open to all Binusians</strong>. Even though you are not from School of
                     Computer Science or School of Information Systems, you can still become a member of BNCC.
                 </div>
             </div>
@@ -894,7 +941,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    The learning schedule is flexible, where members can choose a schedule that they can follow weekly so that it will not
+                    The learning schedule is <strong>flexible</strong>, where members can choose a schedule that they can follow weekly so that it will not
                     clash with the lecture schedule.
                 </div>
             </div>
@@ -931,7 +978,7 @@
                     <img class="arrow" src="{{url('./Asset/Image/landing/faq-arrow.svg')}}" alt="">
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
-                    The learning will take place online using a video conferencing platform or Discord voice channel.
+                    The learning will take place online using a <strong>video conferencing platform</strong> or <strong>Discord voice channel</strong>.
                 </div>
             </div>
 
@@ -958,7 +1005,7 @@
                 <img class="sm:h-52 h-28 m-5" src="{{ asset('Asset/Image/landing/sponsor-gold.svg')}}" alt="">
             </div>
         </div>
-        <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
+        <!-- <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
             <span class="sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Silver Sponsor</span>
             <div class="sm:p-5 p-0 flex flex-row justify-around w-full flex-wrap">
                 <img class="sm:h-20 h-12 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver1.svg')}}" alt="">
@@ -976,64 +1023,141 @@
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze6.svg')}}" alt="">
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze7.svg')}}" alt="">
             </div>
-        </div>
+        </div> -->
     </div>
 
     {{-- Footer --}}
-    <div id="footer" class="footer footer-sec w-full font-sans relative bg-bgSpace">
+    <div id="footer" class=" text-base footer footer-sec w-full font-sans relative bg-bgSpace">
 
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
 
         <div class="flex flex-row footer-content absolute z-10 text-cWhite ">
-            <div class="gotaq-cont p-12 border-r-4">
-                <div class="text-3xl font-medium text-cWhite tracking-wide got-question">Got a question? Contact us!</div>
-                <div class="flex flex-row justify-around text-lg mt-3">
-                    <div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
-                        </div>
-                        <div class="flex flex-row items-center  mt-3">
-                            <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+            <div class="gotaq-cont flex flex-col items-center">
+                <div class="socmed-cont lg:w-80 w-96">
+                    <div class="h-full flex flex-col justify-end">
+                        <div class="text-2xl font-medium w-full text-center">Check our Social Media:</div>
+                        <div class="w-full flex flex-row justify-between mt-3 social">
+                            <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
+                            <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
+                            <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
+                            <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
+                            <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="socmed-cont p-12">
-                <div class="h-full flex flex-col justify-end">
-                    <div class="text-2xl font-medium w-80">Check our Social Media:</div>
-                    <div class="w-full flex flex-row justify-between mt-3 social">
-                        <a class="w-12" href="https://www.instagram.com/bnccbinus/" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/instagram.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://www.linkedin.com/company/bina-nusantara-computer-club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/linkedin.svg')}}" alt="BNCC Launching" ></a>
-                        <a class="w-12" href="https://www.youtube.com/channel/UC0BND4Aekeg90GQ1_ZX79Yw" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/youtube.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://twitter.com/BNCC_Binus" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/twitter.svg')}}" alt="BNCC Launching"></a>
-                        <a class="w-12" href="https://www.facebook.com/bina.nusantara.computer.club" target = "_blank"><img class="" src="{{asset('Asset/Image/comingSoon/facebook.svg')}}" alt="BNCC Launching" ></a>
+                <div class="text-xl font-medium text-cWhite tracking-wide got-question mt-10 text-center">Got a question? Contact us!</div>
+                <div class="md:flex-row flex flex-col contact-cont">
+                    <div class="flex-col flex md:w-7/12 w-full">
+                        <div class="card flex flex-col  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Kemanggisan</div>
+                            <div class="flex flex-row">
+                                <div class="mr-10 ">
+                                    <div class="flex flex-row items-center">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081287422520
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> astriddwrn
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Samuel
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 081251442125
+                                    </div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card flex flex-col  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Alam Sutera</div>
+                            <div class="flex flex-row">
+
+                                <div class="mr-10">
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Nikita
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 087886316523
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Nikitafelicia
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Jeta
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 087871447555
+                                    </div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="mlg-bdg md:flex-col flex-row flex md:w-5/12 w-full md:ml-5">
+                        <div class="card flex flex-col md:w-full w-6/12  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl md:mr-0 mr-5">
+                            <div class="font-bold text-cWhite text-xl mb-5">Malang</div>
+                            <div class="flex flex-row">
+
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Novelia
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 082301020777
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> agatha.s_
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card flex flex-col md:w-full w-6/12 text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Bandung</div>
+                            <div class="flex flex-row">
+
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Rhenal
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 0818235657
+                                    </div>
+                                    <div class="flex flex-row items-center  ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Add by Phone
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
-        <div class="w-full bottom-0 absolute p-10">
+        <div class="w-full bottom-0 absolute sm:p-10 p-5">
             <div class="flex flex-row justify-between items-end pb-5 border-b-4 border-cWhite">
-                <a class="" href="https://bncc.net/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
-                <a class="" href="https://www.gojek.com/en-id/" target = "_blank"><img class="" src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
+                <a  href="https://bncc.net/" target = "_blank"><img class="sm:w-40 w-32" src="{{asset('Asset/Image/landing/footer-logo-bncc.svg')}}" alt="BNCC Launching" ></a>
+                <a  href="https://www.gojek.com/en-id/" target = "_blank"><img class="sm:w-56 w-32"src="{{asset('Asset/Image/landing/footer-logo-gojek.svg')}}" alt="BNCC Launching" ></a>
             </div>
-            <div class="flex flex-row justify-between items-end mt-5 text-cWhite">
+            <div class="mt-5 text-cWhite">
                 <div>All Right Reserved BNCC 2021 © Bina Nusantara Computer Club</div>
-                <div>Privacy Policy & Terms of Service</div>
+                <!-- <div>Privacy Policy & Terms of Service</div> -->
             </div>
         </div>
 

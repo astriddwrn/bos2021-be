@@ -57,6 +57,247 @@ html {
     }
 }
 
+/* About */
+.about .text-orange {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.about .glass img {
+    width: 11.5rem;
+}
+
+.about .glass div:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.about .carousel-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 38rem;
+}
+
+.about .carousel-wrapper {
+    width: 400px;
+    height: 320px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.about .main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+.about .glass {
+    opacity: 0;
+    position: absolute;
+    z-index: -3;
+    width: 180px;
+    height: 245px;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: var(--white);
+    text-align: center;
+
+    border-radius: 20px;
+    background: #E5E7E9;
+    background-position: center;
+    backdrop-filter: blur(40px);
+    outline: none;
+    overflow: hidden;
+    border: var(--glass-border);
+    /* border-radius: 32px; */
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.invisibleJoin {
+    display: none !important;
+}
+
+.leftJoin {
+    opacity: 1 !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-125%, -50%) !important;
+    /* z-index: -1 !important; */
+
+    transition-property: width, height, transform, filter, font-size;
+    -moz-transition-property: width, height, transform, filter, font-size;
+    -webkit-transition-property: width, height, transform, filter, font-size;
+    -o-transition-property: width, height, transform, filter, font-size;
+
+    transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+}
+
+.rightJoin {
+    opacity: 1 !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(25%, -50%) !important;
+
+    transition-property: width, height, transform, filter, font-size;
+    -moz-transition-property: width, height, transform, filter, font-size;
+    -webkit-transition-property: width, height, transform, filter, font-size;
+    -o-transition-property: width, height, transform, filter, font-size;
+
+    transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+}
+
+.behindJoin {
+    opacity: 0 !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: -5 !important;
+
+    transition-property: width, height, transform, filter, font-size;
+    -moz-transition-property: width, height, transform, filter, font-size;
+    -webkit-transition-property: width, height, transform, filter, font-size;
+    -o-transition-property: width, height, transform, filter, font-size;
+
+    transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+}
+
+.activeJoin {
+    opacity: 1 !important;
+    z-index: 5 !important;
+    /* width: 350px !important;
+	height: 550px !important; */
+    border-radius: 20px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1.3) !important;
+
+    transition-property: width, height, transform, filter, font-size;
+    -moz-transition-property: width, height, transform, filter, font-size;
+    -webkit-transition-property: width, height, transform, filter, font-size;
+    -o-transition-property: width, height, transform, filter, font-size;
+
+    transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+}
+
+.basic-transition {
+    transition-property: width, height, transform, filter, font-size, opacity;
+    -moz-transition-property: width, height, transform, filter, font-size,
+        opacity;
+    -webkit-transition-property: width, height, transform, filter, font-size,
+        opacity;
+    -o-transition-property: width, height, transform, filter, font-size, opacity;
+
+    transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+}
+
+.activeJoin img {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+}
+
+.activeJoin .title {
+    /* font-size: 1.5rem !important; */
+}
+
+.activeJoin .text {
+    /* font-size: 1rem !important; */
+}
+
+.backJoin {
+    z-index: -10 !important;
+}
+
+.about .next,
+.about .prev {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.about .next-container {
+    height: fit-content;
+    margin: auto 0;
+    margin-left: 5vw;
+}
+
+.about .prev-container {
+    height: fit-content;
+    margin: auto 0;
+    margin-right: 5vw;
+}
+
+.about .dots-container {
+    margin: 0 auto;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+
+.about .dots {
+    width: 40px;
+    border: 3px solid #CDD8DD;
+    border-radius: 5px;
+}
+
+.activeJoinDots {
+    height: 10px;
+    background: #0054A5;
+    border-radius: 5px;
+}
+
 /* ff */
 .ff-img {
     filter: grayscale(100%);
@@ -177,17 +418,21 @@ html {
 
 /* Footer */
 .footer-sec{
-    height:900px;
+    height:1400px;
 }
 
 .footer-content{
-    top: 45%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, 0%);
 }
 
 .footer-sec .got-question{
     width: 450px;
+}
+
+.footer-sec .contact-cont{
+    width: 800px;
 }
 
 .footer-sec .social img{
@@ -236,19 +481,19 @@ html {
 }
 .carousel-event .slide{
     left:0;
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 5;
 
 }
 .carousel-event .slide-right{
     transform: translate(100%, 0);
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 4;
 
 }
 .carousel-event .slide-left{
     transform: translate(-100%, 0);
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 4;
 
 }
@@ -299,7 +544,7 @@ html {
     }
 }
 
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1023.5px) {
     #navbar {
         padding: 0 0rem;
         width: 100%;
@@ -336,6 +581,32 @@ html {
         font-size: 3rem;
     }
 
+    /* About */
+    .about .glass img {
+        width: 8rem;
+    }
+    .about .carousel-cont {
+        width: 25rem;
+        margin-top: 1rem;
+    }
+
+    .about .carousel-wrapper {
+        width: 350px;
+        height: 320px;
+    }
+
+    .about .main-container {
+        padding: 0rem;
+    }
+
+    .about .glass {
+        width: 120px;
+        height: 160px;
+    }
+
+    .about .dots-container {
+        margin-top: 0rem;
+    }
     /* why */
     .card-why {
         max-width: 18rem;
@@ -448,19 +719,21 @@ html {
     }
 
     /* Footer */
-    .footer-content {
-        top: 10rem;
+    .footer-sec {
+        height: 1250px;
     }
+    .footer-content{
+        top: 20%;
+    }
+   .gotaq-cont{
+       width: 100%;
+       padding: 0 10px;
+   }
+   .footer-sec .contact-cont{
+       width: 100%;
+   }
     .footer-sec .got-question{
-        width: 25rem;
-    }
-
-    .footer .socmed-cont {
-        width: 12rem;
-    }
-
-    .footer .socmed-cont .text-2xl {
-        width: 100px;
+        width: 100%;
     }
 
 }
@@ -544,7 +817,7 @@ html {
         padding: 1rem;
     }
 
-    
+
 
     .what .text-base{
         font-size: .8rem;
@@ -568,18 +841,19 @@ html {
     }
 
     /* Footer */
-    .footer-sec .got-question{
-        width: 10rem;
+    .footer-sec .contact-cont{
+        max-width: 500px;
+        
     }
-
-    .footer .socmed-cont {
-        padding: 0.5rem;
+    .footer-sec{
+        height: 1400px;
+        /* width: 90vw; */
     }
-
-    .footer .gotaq-cont {
-        padding: 0.5rem;
-        width: 4rem;
+    .footer-content{
+        top: 13%;
+        width: 90vw;
     }
+    
 }
 
 @media all and (max-width: 479px) {
@@ -604,6 +878,36 @@ html {
         bottom: 0.1rem;
     }
 
+    /* About */
+    .about .glass img {
+        width: 6rem;
+    }
+    .about .carousel-cont {
+        width: 18rem;
+        margin-top: 1rem;
+    }
+
+    .about .carousel-wrapper {
+        height: 250px;
+    }
+
+    .about .main-container {
+        padding: 0rem;
+    }
+
+    .about .glass {
+        width: 95px;
+        height: 125px;
+    }
+
+    .about .next,
+    .about .prev {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        cursor: pointer;
+    }
+
     /* vc */
     .vc .video {
         height: 14rem;
@@ -619,9 +923,9 @@ html {
 
     /* why */
     .card-why {
-        max-width: 9.2rem;
+        max-width: 8.6rem;
         height: 14rem;
-        margin: 0.4rem 0.2rem;
+        margin: 0.2rem 0.2rem;
         padding: 1rem 0rem;
         border-radius: 12px;
     }
@@ -672,12 +976,12 @@ html {
 
     .oc .btnCont {
         min-height: 4rem;
-        padding: 0rem 2rem;
+        padding: 0rem;
     }
 
     .oc .btnCont .ocBox {
         padding: 0.5rem;
-        margin: 0.2rem 0.4rem;
+        margin: 0.2rem 0.2rem;
     }
 
     .oc .btnCont .ocBox .ocBtn{
@@ -749,71 +1053,91 @@ html {
     }
 
      /* Say */
-     .say-card img{
-        width: 80px;
-        height: 80px;
+     .say-button-cont{
+         width: 300px;
+         margin: 0 auto;
+         flex-wrap: wrap;
+         padding-top: 50px;
+     }
+
+    /* footer */
+    .footer .social img, .footer .social .w-12{
+        width: 40px;
+        height:40px;
     }
-    .say-card .text-sm{
-        font-size: .7rem;
-        line-height: .9rem;
+    .footer-sec{
+        height: 1500px;
     }
-    .say-btn{
-        font-size: .6rem;
-        font-weight: 600;
+    .footer .card{
+        /* padding: 15px 10px !important; */
     }
-    .say-btn img{
-        width: 30px;
-        height: 30px;
+    .footer .card div:not(.font-bold){
+        font-size: .7rem !important;
     }
-    .say-card-cont{
-        height: 130px;
+    .footer .card .mr-10{
+        /* margin-right: 10px; */
     }
-    .say-card-cont .title{
-        font-size: .8rem;
+    .footer .card img{
+        width: 20px;
+        margin-right: 10px;
     }
-    .say-title{
-        /* font-size: 1.2rem; */
+    .footer .socmed-cont{
+        width:100% !important;
+    }
+    .footer .mlg-bdg{
+        flex-direction: column;
+    }
+    .footer .mlg-bdg div{
+        width:100%;
+        margin: inherit 0;
     }
 
     .say .text-sm,
     #navbar .text-sm,
-    .oe .text-sm {
+    .oe .text-sm,
+    .footer .text-sm{
         font-size: 0.75rem;
         line-height: 1rem;
     }
     .say .text-base,
     #navbar .text-base,
-    .oe .text-base {
+    .oe .text-base,
+    .footer .text-base{
         font-size: .875rem;
         line-height: 1.25rem;
     }
     .say .text-lg,
     #navbar .text-lg,
-    .oe .text-lg {
+    .oe .text-lg,
+    .footer .text-lg{
         font-size: 1rem;
         line-height: 1.5rem;
     }
     .say .text-xl,
     #navbar .text-xl,
-    .oe .text-xl  {
+    .oe .text-xl  ,
+    .footer .text-xl{
         font-size: 1.125rem;
         line-height: 1.75rem;
     }
     .say .text-2xl,
     #navbar .text-2xl,
-    .oe .text-2xl{
+    .oe .text-2xl,
+    .footer .text-2xl{
         font-size: 1.25rem;
         line-height: 1.75rem;
     }
     .say .text-3xl,
     #navbar .text-3xl,
-    .oe .text-3xl{
+    .oe .text-3xl,
+    .footer .text-3xl{
         font-size: 1.5rem;
         line-height: 2rem;
     }
     .say .text-4xl,
     #navbar .text-4xl,
-    .oe .text-4xl{
+    .oe .text-4xl,
+    .footer .text-4xl{
         font-size: 1.7rem;
         line-height: 2rem;
     }

@@ -33,7 +33,7 @@
             <form class="w-full relative signup" action="{{ route('register') }}" method="POST">
                 @csrf
                 <div class="flex flex-col items-center w-full">
-                    <a href="#"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
+                    <a href="/"><img class="mt-20 sm:w-56 w-44" src="{{url('./Asset/Image/auth/logo.svg')}}" alt="BNCC Launching"></a>
                     <div class="w-full px-5 progress-bar flex flex-row mt-11  justify-between xl:px-16 sm:px-10 px-4 max-w-96">
                         <div class="flex flex-col items-center w-11 text-center">
                             <span class="dot active-dot bg-cDarkerGray rounded-full h-10 w-10 text-center align-middle inline-block leading-10 text-cWhite">1</span>
@@ -126,7 +126,7 @@
 
                 </div>
 
-                <div class="student-sec w-full section absolute right-section  xl:px-24 px-10">
+                <div class="student-sec w-full section absolute right-section  xl:px-24 px-10 hidden">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('nim') border-error @enderror" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
@@ -177,7 +177,7 @@
 
                 </div>
 
-                <div class="bncc-sec w-full section absolute right-section xl:px-24 px-10">
+                <div class="bncc-sec w-full section absolute right-section xl:px-24 px-10 hidden">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LnT Course</div>
                         <div class="custom-select lnt-select w-full">
@@ -250,7 +250,7 @@
 
                 </div>
 
-                <div class="account-sec w-full section absolute right-section xl:px-24 px-10">
+                <div class="account-sec w-full section absolute right-section xl:px-24 px-10 hidden">
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('email') border-error @enderror" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">

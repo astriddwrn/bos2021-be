@@ -38,6 +38,7 @@ module.exports = {
              'bsFf': "5px 14px 15px 8px rgba(205, 205, 205, 0.25)",
              'bsFfhv': "6px 12px 24px rgba(165, 165, 165, 0.4)",
              'bsWhy': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
+             'bsWhyhv': "0px 0px 40px rgba(55, 200, 238, 0.4)",
              'bsOc': "4px 8px 20px 8px rgba(157, 157, 157, 0.3)",
              'bsOcBig': "4px 16px 20px 8px rgba(205, 205, 205, 0.3)",
              'bsVideo': "4px 12px 28px 6px rgba(119, 119, 119, 0.3)"

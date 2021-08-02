@@ -6,7 +6,7 @@ $(document).ready(function(){
     var schedule =  json2;
     for (const [key, val] of Object.entries(schedule)){
         if(campus == 'MLG' || campus == 'BDG'){
-            $('.schedule-checkbox').append('<label class=" main text-sm w-full">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+            $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
         }
         if(campus == 'KMG' || campus == 'ALS'){
             $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
@@ -25,6 +25,10 @@ $(document).ready(function(){
         $('.schedule-select-cont').removeClass('hidden');
         $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
     }
+
+    setTimeout(function(){
+        $('.pop-up').removeClass('hidden'); 
+     }, 1000);
 
     
     function selectFunc(z){

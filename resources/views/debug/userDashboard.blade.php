@@ -19,28 +19,28 @@
 
 </head>
 <body class="text-base">
-    <div class="pop-up fixed success-reregistration w-screen h-screen z-30">
+    <div class="pop-up fixed success-reregistration w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Registration Success!</div>
         </div>
     </div>
-    <div class="pop-up fixed success-schedule w-screen h-screen z-30">
+    <div class="pop-up fixed success-schedule w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Your Schedule has been Updated Successfully!</div>
         </div>
     </div>
-    <div class="pop-up fixed success-payment w-screen h-screen z-30">
+    <div class="pop-up fixed success-payment w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/auth/success-icon.svg') }}" alt="BNCC Launching">
             <div class="mt-7 font-medium text-2xl">Payment Submission Success!</div>
         </div>
     </div>
-    <div class="pop-up fixed loggingout w-screen h-screen z-30">
+    <div class="pop-up fixed loggingout w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/userDashboard/loggingout.svg') }}" alt="BNCC Launching">
@@ -98,7 +98,7 @@
             <div class="section schedule-sec bg-cLightGray h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Schedule</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <!-- SEBELUM REREGIST -->
@@ -197,7 +197,7 @@
             <div class="section payment-sec bg-cLightGray h-full hidden">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Payment</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <!-- SEBELUM UPLOAD PAYMENT -->
@@ -316,7 +316,7 @@
             <div class="section reregistration-sec  hidden bg-cLightGray  h-full">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Re-Registration</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
 
@@ -418,45 +418,47 @@
             <div class="section profile-sec hidden bg-cLightGray  h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Profile</span>
-                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/userDashboard/logo.svg')}}" alt="BNCC Launching">
+                    <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <div class="grid-cont-profile main-container">
                     <div class="card1 personal bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly ">
                         <div class="text-2xl font-bold text-cDarkBlue">Personal Info</div>
-                        <div><div class="">Name</div>
-                        <div class="flex flex-row items-center text-lg font-semibold"></div>
-                        {{($user->fullName)}}
-                    </div>
-                        <div><div class="">Gender</div>
+                        <div>
+                            <div class="mt-3">Name</div>
+                            <div class="flex flex-row items-center text-lg font-semibold">
+                            {{($user->fullName)}}
+                            </div>
+                        </div>
+                        <div><div class="mt-3">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->gender)}}
                         </div></div>
-                        <div> <div class="">Date of Birth</div>
+                        <div> <div class="mt-3">Date of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{$birthDate}}
                         </div></div>
-                        <div><div class="">Place of Birth</div>
+                        <div><div class="mt-3">Place of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->placeBirth)}}
                         </div></div>
-                        <div><div class="">Domicile City</div>
+                        <div><div class="mt-3">Domicile City</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->domicile)}}
                         </div></div>
-                        <div> <div class="">Full Address</div>
+                        <div> <div class="mt-3">Full Address</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->address)}}
                         </div></div>
-                        <div><div class="">LINE ID</div>
+                        <div><div class="mt-3">LINE ID</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->line_id)}}
                         </div></div>
-                        <div><div class="">WhatsApp Number</div>
+                        <div><div class="mt-3">WhatsApp Number</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->whatsapp)}}
                         </div></div>
-                        <div> <div class="">Binusian Email</div>
+                        <div> <div class="mt-3">Binusian Email</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->email)}}
                         </div></div>
@@ -465,19 +467,19 @@
 
                     <div class="card student bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">Student Credentials</div>
-                        <div><div class="">Name</div>
+                        <div><div class="mt-3">Name</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->fullName)}}
                         </div></div>
-                        <div> <div class="">Gender</div>
+                        <div> <div class="mt-3">Gender</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->gender)}}
                         </div></div>
-                        <div><div class="">Date of Birth</div>
+                        <div><div class="mt-3">Date of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{$birthDate}}
                         </div></div>
-                        <div><div class="">Place of Birth</div>
+                        <div><div class="mt-3">Place of Birth</div>
                         <div class="flex flex-row items-center text-lg font-semibold">
                             {{($user->placeBirth)}}
                         </div></div>
@@ -486,7 +488,7 @@
                     <div class="card bncc bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">BNCC Registration</div>
                         <div>
-                            <div class="">BNCC Launching Schedule</div>
+                            <div class="mt-5">BNCC Launching Schedule</div>
                             @foreach ($schedules as $schedule)
                             <div class="flex flex-row items-center text-lg font-semibold">
                                 {{$schedule->formatting_date()}} <br>{{$schedule->start_date()}} - {{$schedule->end_date()}} (GMT +07.00)
@@ -494,7 +496,7 @@
                             @endforeach
                         </div>
                         <div>
-                            <div class="">LnT Course</div>
+                            <div class="mt-5">LnT Course</div>
                             @if ($user->campus=="KMG")
                                 <div class="flex flex-row items-center text-lg font-semibold">
                                     {{($user->lnt_course)}}
