@@ -17,12 +17,12 @@ use App\Http\Controllers\NewsLetterController;
 |
 */
 
-Route::get('/', function () {
-    return view('comingSoon');
-});
+// Route::get('/', function () {
+//     return view('comingSoon');
+// });
 
-Route::get('/landing', function () {
-    return view('debug.landing');
+Route::get('/', function () {
+    return view('landing');
 });
 
 Route::middleware(["auth"])->group(function(){
