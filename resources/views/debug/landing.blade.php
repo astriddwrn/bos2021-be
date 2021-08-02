@@ -94,23 +94,23 @@
                     </div>
                     <div class="carousel-wrapper">
                         <div class="glass basic-transition">
-                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel1.svg')}}" alt="">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel1.png')}}" alt="">
                             </div>
                         </div>
                         <div class="glass basic-transition">
-                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel2.svg')}}" alt="">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel2.png')}}" alt="">
                             </div>
                         </div>
                         <div class="glass basic-transition">
-                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel3.svg')}}" alt="">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel3.png')}}" alt="">
                             </div>
                         </div>
                         <div class="glass basic-transition">
-                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel4.svg')}}" alt="">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel4.png')}}" alt="">
                             </div>
                         </div>
                         <div class="glass basic-transition">
-                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel5.svg')}}" alt="">
+                            <div class="image"><img src="{{ asset('Asset/Image/landing/about-carousel5.png')}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -591,32 +591,32 @@
         <div style="max-width: 800px; margin: 0 auto;" class="relative w-full carousel-event rounded-xl md:h-80 sm:h-60 h-52 overflow-hidden">
             <div class="w-full h-full slide absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic1.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic1.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Company Visit</div>
             </div>
             <div class="w-full h-full slide slide-right absolute">
                 <div class="w-full h-full layer absolute z-20 "></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic2.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic2.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Techno Talk</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic3.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic3.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Webinar Series</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic4.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic4.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">LnT Webinar</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic5.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic5.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">BNCC Birthday Party</div>
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic6.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic6.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
                     <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
                     <span style="color: #BDC1F0; ">Virtual Conference</span>
@@ -624,7 +624,7 @@
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic7.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic7.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
                     <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
                     <span style="color: #FFAAA5; ">Developer Workshop</span>
@@ -632,7 +632,7 @@
             </div>
             <div class="w-full h-full slide slide-behind absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic8.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic8.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
                     <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
                     <span style="color: #85E4F1; ">Hackathon</span>
@@ -640,7 +640,7 @@
             </div>
             <div class="w-full h-full slide slide-left absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
-                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.svg')}}" alt="">
+                <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Design</div>
             </div>
 
