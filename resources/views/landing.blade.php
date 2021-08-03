@@ -971,7 +971,7 @@
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
                     To become a BNCC member, you can directly register yourself on
-                    <a class="font-bold underline" href="{{url('/login')}}">this</a> website.
+                    <a class="font-bold underline" href="{{url('/register')}}">this</a> website.
                 </div>
             </div>
 
