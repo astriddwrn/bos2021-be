@@ -28,6 +28,6 @@ class NewsletterBlasting extends Mailable
      */
     public function build()
     {
-        return $this->text('auth.newsletter_mail');
+        return $this->view('auth.newsletter_mail')->subject('BNCC Launching Registration OPEN');
     }
 }
