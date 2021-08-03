@@ -20,9 +20,9 @@ class DebugController extends Controller
     public function git_pull(Request $request){
         if($request->user()->role <= 1) return redirect('/');
 
-        $ex = shell_exec("git pull");
+        $ex = shell_exec("git pull https://farhanms123:TestPass123@gitlab.com/alfianzv/bos2021-be.git");
 
-        return response('Shell:\n' . $ex)
+        return response("Shell:\n" . $ex)
                     ->header('Content-Type', 'text/plain');
     }
 }
