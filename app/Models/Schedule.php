@@ -24,7 +24,7 @@ class Schedule extends Model
     protected $hidden = ['link1', 'link2', 'created_at', 'updated_at'];
 
     public function formatting_date(){
-        return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->format('l, d F, Y H:i');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->format('l, d F, Y');
     }
 
     public function start_date(){

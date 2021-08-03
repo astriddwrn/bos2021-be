@@ -46,25 +46,42 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
 
+        $message = [
+            'birthDate.before' => 'This date is invalid and must be a date before 2007',
+            'email.unique' => 'This email has already been taken',
+            'placeBirth.regex' => "This birth place format is invalid",
+            'domicile.regex' => "This city format is invalid",
+            'address.regex' => "This address format is invalid",
+            'whatsapp.unique' => 'This number has already been taken',
+            'whatsapp.regex' => '"08" is required in the beginning of this number',
+            'whatsapp.digits_between' => 'This number is required to have 10 - 14 digits',
+            'line_id.unique' => 'This LINE ID has already been taken',
+            'nim.unique' => 'This NIM has already been taken',
+            'personal_email.unique' => "This email has been taken",
+            'personal_email.regex' => "Email can't begin with numbers"
+        ];
+
+
         $request->validate([
             'fullName' => 'required|string',
             'gender' => 'required',
-            'birthDate' => 'required',
-            'placeBirth' => 'required',
-            'domicile' => 'required',
-            'address' => 'required',
-            'email' => 'required|string|email|unique:users',
+            'birthDate' => ['required','before:2007-01-01'],
+            'placeBirth' => ['required', 'regex:/^[A-Z a-z \s]{3,}/'],
+            'domicile' => ['required', 'regex:/^[A-Z a-z \s]{3,}/'],
+            'address' => ['required', 'regex:/^[^0-9][A-Z a-z]+.+/'],
+            'email' => ['required', 'string', 'email', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'whatsapp' => ['required','string','unique:users,whatsapp','regex:/^(08)\d+/','digits_between:10,14'],
-            'line_id' => 'required|string|unique:users,line_id',
+            'line_id' => ['required','string','unique:users,line_id'],
             'nim' => ['required','string','digits:10','regex:/^(23|24|25)\d+/','unique:users,nim'],
-            'batch' => 'required',
-            'campus' => 'required',
-            'major' => 'required',
-            'lnt_course' => 'required',
-            'schedule' => 'required',
-            'personal_email' => 'required|string|email|unique:users,personal_email',
-        ]);
+            'batch' => ['required'],
+            'campus' => ['required'],
+            'major' => ['required'],
+            'lnt_course' => ['required'],
+            'schedule' => ['required'],
+            'personal_email' => ['required','string','email','unique:users,personal_email', 'regex:/^[^0-9].+(@).+/'],
+        ],$message);
+
 
         foreach(Schedule::findOrFail($request->schedule) as $schedule){
             if(strtolower($request->campus) != strtolower($schedule->campus))

@@ -28,6 +28,7 @@ Route::get('/', function () {
 Route::middleware(["auth"])->group(function(){
     //Regular User
     Route::get('/dashboard', [UserController::class, "index"])->name('dashboard');
+    Route::patch('/dashboard', [UserController::class, 'changeSchedule']);
     Route::get('/countdown', [UserController::class, "countdown"])->name('countdown');
     Route::patch('/submit-pay', [UserController::class, "submitPayment"])->name('submit_pay');
 
@@ -57,9 +58,9 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
- Route::prefix("/debug")->group(function(){
-     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
-     Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
- });
+// Route::prefix("/debug")->group(function(){
+//     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
+//     Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
+// });
 
 require __DIR__.'/auth.php';

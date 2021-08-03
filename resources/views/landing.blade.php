@@ -58,7 +58,7 @@
                         <a class="loginbtn border-2 rounded-3xl navlink hover:bg-cWhite hover:text-cDarkBlue duration-300 font-semibold text-lg py-1.5 px-12 ml-6" href="{{url('/login')}}">Login</a>
                         @else
                         <a class="navlink font-semibold text-lg lg:mx-3 flex flex-row" href="{{route('dashboard')}}">
-                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">Nama
+                            <img class="mr-3 w-6 profile" src="{{ asset('Asset/Image/landing/navbar-profile.svg')}}" alt="">{!! \Illuminate\Support\Str::words(Auth::user()->fullName, 2,'')  !!}
                         </a>
                          @endif
                         <hr class="lg:hidden border-cWhite my-7 border w-full">
@@ -814,7 +814,7 @@
 
     {{-- What They Say? --}}
     <div id="what" class="what w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
-        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC?</h1>
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC</h1>
         <div class="relative say-card-cont sm:h-56 h-80">
             <div class="flex sm:flex-row flex-col items-center say-card say-card-visible absolute h-full">
                 <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
@@ -971,7 +971,7 @@
                 </div>
                 <div class="bot bg-cGray w-full text-cBlackHome font-medium text-lg leading-8 py-8 px-20">
                     To become a BNCC member, you can directly register yourself on
-                    <a class="font-bold underline" href="{{url('/login')}}">this</a> website.
+                    <a class="font-bold underline" href="{{url('/register')}}">this</a> website.
                 </div>
             </div>
 

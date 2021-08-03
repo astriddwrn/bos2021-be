@@ -78,47 +78,71 @@
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Date of Birth</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
-                        <span class="msg-error"></span>
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('birthDate') border-error @enderror" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
+                        <span class="msg-error">
+                            @error('birthDate')
+                                {{$message}}
+                            @enderror
+                        </span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Place of Birth</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
-                        <span class="msg-error"></span>
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('placeBirth') border-error @enderror" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
+                        <span class="msg-error">
+                        @error('placeBirth')
+                            {{$message}}
+                        @enderror
+                        </span>
+
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Domicile City</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
-                        <span class="msg-error"></span>
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('domicile') border-error @enderror" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
+                        <span class="msg-error">
+                            @error('domicile')
+                                {{$message}}
+                            @enderror
+                        </span>
+
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Full Address</div>
-                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
-                        <span class="msg-error"></span>
+                        <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('address') border-error @enderror" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
+                        <span class="msg-error">
+                            @error('address')
+                                {{$message}}
+                            @enderror
+                        </span>
+
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Personal Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('personal_email') border-error @enderror" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
-                        <span class="msg-error"></span>
-                        @error('personal_email')
-                        <span class="msg-error">This email has already been taken</span>
-                        @enderror
+                        <span class="msg-error">
+                            @error('personal_email')
+                                {{$message}}
+                            @enderror
+                        </span>
+
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">LINE ID</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('line_id') border-error @enderror" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
-                        <span class="msg-error"></span>
-                        @error('line_id')
-                        <span class="msg-error">LINE ID has already been taken</span>
-                        @enderror
+                        <span class="msg-error">
+                            @error('line_id')
+                                {{$message}}
+                            @enderror
+                        </span>
+
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">WhatsApp Number</div>
                         <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('whatsapp') border-error @enderror" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX" value="{{ old('whatsapp') }}">
-                        <span class="msg-error"></span>
-                        @error('whatsapp')
-                            <span class="msg-error">This number has already been taken</span>
-                        @enderror
+                        <span class="msg-error">
+                            @error('whatsapp')
+                                {{$message}}
+                            @enderror
+                        </span>
                     </div>
 
                     <div>
@@ -133,10 +157,11 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">NIM / Student ID</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('nim') border-error @enderror" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
-                        <span class="msg-error"></span>
-                        @error('nim')
-                        <span class="msg-error">NIM has already been taken</span>
-                        @enderror
+                        <span class="msg-error">
+                            @error('nim')
+                                {{$message}}
+                            @enderror
+                        </span>
                     </div>
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Campus Area</div>
@@ -257,10 +282,12 @@
                     <div class="mt-11">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Binusian Email</div>
                         <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('email') border-error @enderror" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">
-                        <span class="msg-error"></span>
-                        @error('email')
-                        <span class="msg-error">This email has already been taken</span>
-                        @enderror
+                        <span class="msg-error">
+                            @error('email')
+                                {{$message}}
+                            @enderror
+                        </span>
+
                     </div>
                     <div class="mt-11 relative">
                         <div class="text-cDarkBlue font-sans font-medium w-100 text-2xl">Password</div>

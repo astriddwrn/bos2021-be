@@ -42,10 +42,10 @@ class UserController extends Controller
 
                 $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
 
-                $diff_reregis = ((new \DateTime('2021-08-31 14:52:00'))->diff(new \DateTime($now)));
+                $diff_reregis = ((new \DateTime('2021-09-07 13:00:00'))->diff(new \DateTime($now)));
 
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
-                $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
+                $diff_change_schedule = ((new \DateTime($schedules[0]->date))->diff(new \DateTime($now)));
 
                 return view('userDashboard', compact('user','schedules','birthDate',
                                                         'diff_payment', 'diff_reregis',
@@ -77,7 +77,22 @@ class UserController extends Controller
                 break;
             }
         }
-}
+    }
+
+    public function changeSchedule(Request $request){
+        $now = Carbon::now('GMT+7');
+        $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
+        if(!$diff_change_schedule->invert) return back();
+
+        $request->validate([
+            'schedule-change' => 'required',
+        ]);
+
+        $user = $request->user();
+        $user->schedule = $request['schedule-change'];
+        $user->save();
+        return back();
+    }
 
     public function countdown(Request $request) {
         $user = $request->user();

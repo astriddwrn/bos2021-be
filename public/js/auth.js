@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
     setTimeout(function(){
-       $('.section').removeClass('hidden'); 
+       $('.section').removeClass('hidden');
     }, 1000);
 
 
@@ -197,7 +197,7 @@ selectFunc("bncc-select-als");
         }else if(x.is('#personal_email') && !pattern2.test(x.val())){
                 x.addClass("border-error");
                 x.siblings('.msg-error').text("Please input a valid email address.");
-            
+
         }
     }
 
@@ -240,7 +240,7 @@ selectFunc("bncc-select-als");
             if(sec.hasClass("account-sec")){
                 // $('.success').toggleClass('is-visible');
                     $('form').submit();
-                
+
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
@@ -304,7 +304,7 @@ selectFunc("bncc-select-als");
         $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
               'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
            'Cyber Security', 'Data Science','English Literature', 'Game Application and Technology','Global Business Marketing', 'Hotel Management (Diploma Program)',
-           'Industrial Engineering','Information Systems','Information Systems','Information Systems & Accounting','Information Systems & Management',
+           'Industrial Engineering','Information Systems','Information Systems & Accounting','Information Systems & Management',
            'Interior Design','International Relations','Japanese Literature','Law - Business Law','Management','Master of Information Systems Management',
            'Master of Information Technology','Mobile Application and Technology','Primary Teacher Education','Program Profesi Insinyur (Professional Program)',
            'Psychology','Taxation','Tourism','Visual Communication Design - Animation','Visual Communication Design - Creative Advertising','Visual Communication Design - New Media'
