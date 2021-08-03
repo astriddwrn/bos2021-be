@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
     setTimeout(function(){
-       $('.section').removeClass('hidden'); 
+       $('.section').removeClass('hidden');
     }, 1000);
 
 
@@ -197,7 +197,7 @@ selectFunc("bncc-select-als");
         }else if(x.is('#personal_email') && !pattern2.test(x.val())){
                 x.addClass("border-error");
                 x.siblings('.msg-error').text("Please input a valid email address.");
-            
+
         }
     }
 
@@ -240,7 +240,7 @@ selectFunc("bncc-select-als");
             if(sec.hasClass("account-sec")){
                 // $('.success').toggleClass('is-visible');
                     $('form').submit();
-                
+
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){

@@ -61,7 +61,7 @@
             <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="BNCC Launching">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
             <div class="text-xl font-semibold mt-1">
-                {{($user->fullName)}}
+                {!! \Illuminate\Support\Str::words($user->fullName, 2,'')  !!}
             </div>
             <div class="mt-7 text-lg menu-list w-52">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
@@ -128,8 +128,11 @@
                             @endforeach
                         </div>
 
-                        {{-- @if ($diff_change_schedule->invert)
-                        <form id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
+                        @if ($diff_change_schedule->invert)
+                        <form action="{{ route('dashboard') }}" method="POST" enctype="application/x-www-form-urlencoded" id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
+                            @csrf
+                            @method('PATCH')
+
                             <div class="text-2xl font-bold text-cDarkBlue">Change Your Schedule</div>
                             <div class="text-md font-medium">Unable to attend your previous schedule? Feel free to book for new schedule!</div>
                             <div>
@@ -154,7 +157,7 @@
                             </div>
                             <div class="btn schedule-btn xl:w-full sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn cursor-pointer">Submit</div>
                         </form>
-                        @endif --}}
+                        @endif
 
                         <div class="contact card rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
@@ -206,7 +209,7 @@
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
                             <div class="text-2xl font-bold text-cDarkBlue my-3">
-                                Hi, {{($user->fullName)}}!
+                                Hi, {!! \Illuminate\Support\Str::words($user->fullName, 2,'')  !!}!
                             </div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
