@@ -61,7 +61,7 @@
             <img class="w-28 h-28 rounded-full mt-10 cursor-pointer" src="{{ asset('Asset/Image/userDashboard/profile.svg')}}" alt="BNCC Launching">
             <div class="text-sm font-medium mt-3">Welcome Back,</div>
             <div class="text-xl font-semibold mt-1">
-                {{($user->fullName)}}
+                {!! \Illuminate\Support\Str::words($user->fullName, 2,'')  !!}
             </div>
             <div class="mt-7 text-lg menu-list w-52">
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
@@ -209,7 +209,7 @@
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
                             <div class="text-2xl font-bold text-cDarkBlue my-3">
-                                Hi, {{($user->fullName)}}!
+                                Hi, {!! \Illuminate\Support\Str::words($user->fullName, 2,'')  !!}!
                             </div>
                             <div class="text-lg font-medium">Welcome to BNCC! Thank you for attending BNCC Launching. <br><br>Don’t forget to complete the re-registration procedure on time so that you could be a part of BNCC Family</div>
                         </div>
