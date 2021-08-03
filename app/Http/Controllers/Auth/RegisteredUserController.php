@@ -49,15 +49,16 @@ class RegisteredUserController extends Controller
         $message = [
             'birthDate.before' => 'This date is invalid and must be a date before 2007',
             'email.unique' => 'This email has already been taken',
-            'placeBirth.regex' => "This format is invalid",
-            'domicile.regex' => "This format is invalid",
+            'placeBirth.regex' => "This birth place format is invalid",
+            'domicile.regex' => "This city format is invalid",
+            'address.regex' => "This address format is invalid",
             'whatsapp.unique' => 'This number has already been taken',
             'whatsapp.regex' => '"08" is required in the beginning of this number',
             'whatsapp.digits_between' => 'This number is required to have 10 - 14 digits',
             'line_id.unique' => 'This LINE ID has already been taken',
             'nim.unique' => 'This NIM has already been taken',
             'personal_email.unique' => "This email has been taken",
-            'personal_email.regex' => "Email can't start with numbers"
+            'personal_email.regex' => "Email can't begin with numbers"
         ];
 
 

@@ -814,7 +814,7 @@
 
     {{-- What They Say? --}}
     <div id="what" class="what w-full font-sans my-32 xl:px-72 lg:px-40 sm:px-10 px-5">
-        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC?</h1>
+        <h1 class="font-extrabold text-cDarkBlue sm:text-5xl sm:mb-14 text-3xl mb-5 sm:text-left text-center w-full say-title">What they say about BNCC</h1>
         <div class="relative say-card-cont sm:h-56 h-80">
             <div class="flex sm:flex-row flex-col items-center say-card say-card-visible absolute h-full">
                 <img class="rounded-full lg:w-52 lg:h-52 w-40 h-40 lg:mx-7 mr-3" src="{{ asset('Asset/Image/landing/say-person1.png')}}" alt="">
