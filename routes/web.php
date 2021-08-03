@@ -35,7 +35,8 @@ Route::middleware(["auth"])->group(function(){
     //Re-registration
     Route::post('/reregister', 'App\Http\Controllers\MemberController@create')->name('reregister');
 
-
+    // git pull function
+    Route::get('/debug/git_pull', [App\Http\Controllers\DebugController::class, "git_pull"]);
 });
 
 Route::middleware(["auth", 'admin'])->group(function() {
@@ -58,9 +59,9 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
-// Route::prefix("/debug")->group(function(){
-//     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
-//     Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
-// });
+Route::prefix("/debug")->group(function(){
+    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
+    Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
+});
 
 require __DIR__.'/auth.php';
