@@ -22,7 +22,7 @@ class DebugController extends Controller
 
         $ex = shell_exec("git pull");
 
-        return response($ex)
+        return response('Shell:\n' . $ex)
                     ->header('Content-Type', 'text/plain');
     }
 }
