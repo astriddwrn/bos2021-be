@@ -800,7 +800,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
-                <p class="text-cBlackHome mb-11 leading-7">
+                <p class="text-cBlackHome mb-4 leading-7">
                     Sessions where you can earn sharing sessions with our seniors,
                     learn more about BNCC and the procedures to be a proud BNCC member!
                 </p>
