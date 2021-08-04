@@ -95,7 +95,7 @@
 
 
                 </table>
-                <div>{{$als->onEachSide(-2)->links()}}</div>
+                <div>{{$als->onEachSide(0)->links()}}</div>
 
             </div>
 
