@@ -447,7 +447,7 @@ html {
 }
 
 .footer-sec .contact-cont{
-    width: 800px;
+    width: 850px;
 }
 
 .footer-sec .social img{
@@ -879,7 +879,7 @@ html {
 
     }
     .footer-sec{
-        height: 1400px;
+        height: 1600px;
         /* width: 90vw; */
     }
     .footer-content{
@@ -1103,7 +1103,7 @@ html {
         height:40px;
     }
     .footer-sec{
-        height: 1500px;
+        height: 1550px;
     }
     .footer .card{
         /* padding: 15px 10px !important; */
@@ -1120,13 +1120,6 @@ html {
     }
     .footer .socmed-cont{
         width:100% !important;
-    }
-    .footer .mlg-bdg{
-        flex-direction: column;
-    }
-    .footer .mlg-bdg div{
-        width:100%;
-        margin: inherit 0;
     }
 
     .say .text-sm,

@@ -619,7 +619,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic6.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
+                    <span class="sm:text-3xl text-xl">TechnoScape</span> <br>
                     <span style="color: #BDC1F0; ">Virtual Conference</span>
                 </div>
             </div>
@@ -627,7 +627,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic7.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
+                    <span class="sm:text-3xl text-xl">TechnoScape</span> <br>
                     <span style="color: #FFAAA5; ">Developer Workshop</span>
                 </div>
             </div>
@@ -635,7 +635,7 @@
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic8.png')}}" alt="">
                 <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">
-                    <span class="sm:text-3xl text-xl">Technoscape:</span> <br>
+                    <span class="sm:text-3xl text-xl">TechnoScape</span> <br>
                     <span style="color: #85E4F1; ">Hackathon</span>
                 </div>
             </div>
@@ -782,7 +782,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: UI/UX Design</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 25, 2021</h5>
-                <p class="text-cBlackHome mb-10 sm:mb-4 lg:mb-10 xl:mb-4 leading-7">
+                <p class="text-cBlackHome mb-10 sm:mb-4 lg:mb-10 xl:mb-11 leading-7">
                     A challenge encouraging you to help BNCC by sharing your unique photo for a chance to win a reward.
                 </p>
                 {{-- <a class="w-full flex flex-row justify-center items-center
@@ -802,7 +802,7 @@
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
                 <p class="text-cBlackHome mb-4 leading-7">
-                    Sessions where you can earn sharing sessions with our seniors,
+                    Sessions where you can earn sharing sessions with our seniors or fun workshops,
                     learn more about BNCC and the procedures to be a proud BNCC member!
                 </p>
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
@@ -1051,7 +1051,7 @@
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud1.svg')}}" alt="">
         <img class="w-screen absolute" src="{{ asset('Asset/Image/landing/footer-cloud2.svg')}}" alt="">
 
-        <div class="flex flex-row footer-content absolute z-10 text-cWhite ">
+        <div class="flex flex-row footer-content absolute z-10 text-cWhite">
             <div class="gotaq-cont flex flex-col items-center">
                 <div class="socmed-cont lg:w-80 w-96">
                     <div class="h-full flex flex-col justify-end">
@@ -1067,10 +1067,11 @@
                 </div>
                 <div class="text-xl font-medium text-cWhite tracking-wide got-question mt-10 text-center">Got a question? Contact us!</div>
                 <div class="md:flex-row flex flex-col contact-cont">
+
                     <div class="flex-col flex md:w-7/12 w-full">
-                        <div class="card flex flex-col  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                        <div class="card flex flex-col  text-lg mt-5 p-7 lg:p-5 border-4 border-cWhite rounded-xl">
                             <div class="font-bold text-cWhite text-xl mb-5">Kemanggisan</div>
-                            <div class="flex flex-row">
+                            <div class="flex flex-row text-base lg:text-lg">
                                 <div class="mr-10 ">
                                     <div class="flex flex-row items-center">
                                         <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Astrid
@@ -1095,9 +1096,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card flex flex-col  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
+                        <div class="card flex flex-col text-lg mt-5 pb-7 md:pb-10 p-7 lg:pb-5 lg:p-5 border-4 border-cWhite rounded-xl">
                             <div class="font-bold text-cWhite text-xl mb-5">Alam Sutera</div>
-                            <div class="flex flex-row">
+                            <div class="flex flex-row text-base pb-3 lg:pb-0 lg:text-lg">
 
                                 <div class="mr-10">
                                     <div class="flex flex-row items-center ">
@@ -1125,10 +1126,10 @@
                         </div>
                     </div>
 
-                    <div class="mlg-bdg md:flex-col flex-row flex md:w-5/12 w-full md:ml-5">
-                        <div class="card flex flex-col md:w-full w-6/12  text-lg mt-5 p-5 border-4 border-cWhite rounded-xl md:mr-0 mr-5">
+                    <div class="mlg-bdg flex-col flex md:w-7/12 w-full md:ml-5">
+                        <div class="card flex flex-col  text-lg mt-5 p-7 lg:p-5 border-4 border-cWhite rounded-xl">
                             <div class="font-bold text-cWhite text-xl mb-5">Malang</div>
-                            <div class="flex flex-row">
+                            <div class="flex flex-row text-base lg:text-lg">
 
                                 <div>
                                     <div class="flex flex-row items-center ">
@@ -1144,11 +1145,12 @@
 
                             </div>
                         </div>
-                        <div class="card flex flex-col md:w-full w-6/12 text-lg mt-5 p-5 border-4 border-cWhite rounded-xl">
-                            <div class="font-bold text-cWhite text-xl mb-5">Bandung</div>
-                            <div class="flex flex-row">
 
-                                <div>
+                        <div class="card flex flex-col text-lg mt-5 p-7 lg:p-5 border-4 border-cWhite rounded-xl">
+                            <div class="font-bold text-cWhite text-xl mb-5">Bandung</div>
+                            <div class="flex flex-row text-base lg:text-lg">
+
+                                <div class="mr-10">
                                     <div class="flex flex-row items-center ">
                                         <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Rhenal
                                     </div>
@@ -1156,12 +1158,23 @@
                                         <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 0818235657
                                     </div>
                                     <div class="flex flex-row items-center  ">
-                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Add by Phone
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Add By Phone
                                     </div>
                                 </div>
-
+                                <div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-user.svg')}}" alt=""> Fajar
+                                    </div>
+                                    <div class="flex flex-row items-center  my-4">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 082114365818
+                                    </div>
+                                    <div class="flex flex-row items-center ">
+                                        <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> fajarhamka21
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>

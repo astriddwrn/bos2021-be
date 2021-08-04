@@ -94,14 +94,14 @@
                 <!-- isi nya -->
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
                     <span class="text-2xl">BNCC Bandung Admin</span>
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
+                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
                     </button>
                 </div>
 
                 {{-- Table --}}
-                <table>
+                <table class="px-8">
                 <thead>
                     <tr>
                       <th >No</th>
@@ -183,55 +183,37 @@
 
 
                 <!-- isi nya -->
-                <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                        Download Participant Data
+                <div class="w-100 flex flex-row justify-start items-center py-12 px-8 font-bold text-cDarkBlue">
+                    <button id="" class="w-28 btnRegion rounded-3xl text-xl font-medium py-1 px-4 mx-2">
+                        KMG
+                    </button>
+                    <button class="w-28 btnRegion rounded-3xl text-xl font-medium py-1 px-4 mx-2">
+                        AS
+                    </button>
+                    <button class="w-28 btnRegion rounded-3xl text-xl font-medium py-1 px-4 mx-2">
+                        BDG
+                    </button>
+                    <button class="w-28 btnRegion rounded-3xl text-xl font-medium py-1 px-4 mx-2">
+                        MLG
                     </button>
                 </div>
 
+
                 {{-- Table --}}
-                <table>
-                <thead>
-                    <tr>
-                        <th >No</th>
-                        <th >Time Stamp</th>
-                        <th >Status</th>
-                        <th >Full Name</th>
-                        <th >LnT Course</th>
-                        <th >View Payment</th>
-                        <th >Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
+                <table class="px-8">
+                    <thead>
                         <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Verified</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >Java Programming</td>
-                            <td>
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex flex-row justify-center">
-                                    <button class="p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                    <button class="p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                    </button>
-                                </div>
-
-                            </td>
+                          <th >No</th>
+                          <th >Time Stamp</th>
+                          <th >Status</th>
+                          <th >Full Name</th>
+                          <th >LnT Course</th>
+                          <th >View Payment</th>
+                          <th >Actions</th>
                         </tr>
-
-                        <tr>
+                      </thead>
+                      <tbody>
+                            <tr>
                             <td >No</td>
                             <td >Time Stamp</td>
                             <td >Status</td>
@@ -239,95 +221,33 @@
                             <td >LnT Course</td>
                             <td >View Payment</td>
                             <td >Actions</td>
-                        </tr>
+                            </tr>
 
-                    </tbody>
-                </table>
+                            <tr>
+                            <td >No</td>
+                            <td >Time Stamp</td>
+                            <td >Status</td>
+                            <td >Full Name</td>
+                            <td >LnT Course</td>
+                            <td >View Payment</td>
+                            <td >Actions</td>
+                            </tr>
+                      </tbody>
+                    </table>
+
             </div>
 
-            <div class="section reregistration-sec bg-cLightGray h-full hidden">
+            <div class="section reregistration-sec  hidden bg-cLightGray  h-full">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Re-Registration</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
 
-                <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                        Download Participant Data
-                    </button>
-                </div>
 
                 <!-- isi nya -->
-                <table>
-                    <thead>
-                        <tr>
-                          <th >No</th>
-                          <th >Time Stamp</th>
-                          <th >Full Name</th>
-                          <th >BNCC ID</th>
-                          <th >LinkedIn</th>
-                          <th >GitHub</th>
-                          <th >LnT Course</th>
-                          <th >KTP</th>
-                          <th >FYP Card</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >BNCC20123</td>
-                            <td >https://linkedin.com/..</td>
-                            <td >https://github.com..</td>
-                            <td >UI/UX Design</td>
-                            <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >BNCC20123</td>
-                            <td >https://linkedin.com/..</td>
-                            <td >https://github.com..</td>
-                            <td >UI/UX Design</td>
-                            <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                          </tr>
-
-                      </tbody>
-                    </table>
-
             </div>
+
 
 
         </div>
