@@ -37,7 +37,7 @@ class UserController extends Controller
                 }
                 else if($user->campus == 'MLG')
                 {
-                    $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(115);
+                    $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(135);
                 }
 
                 $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
