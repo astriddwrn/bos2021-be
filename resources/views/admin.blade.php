@@ -90,8 +90,9 @@
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
-
+                {{-- <livewire:paginate-users /> --}}
                 <!-- isi nya -->
+
                 <table>
                     @foreach ($als as $user)
                     <tr>
@@ -113,7 +114,7 @@
 
 
                 </table>
-                <div>{{$als->links('pagination::tailwind')}}</div>
+                <div>{{$als->links()}}</div>
 
             </div>
             </div>
@@ -127,28 +128,7 @@
 
 
                 <!-- isi nya -->
-                <table>
-                    @foreach ($kmg as $user)
-                    <tr>
-                        <td>{{($user->fullName)}}</td>
-                        <td>{{($user->nim)}}</td>
-                        <td>{{($user->campus)}}</td>
-                        <td>{{($user->major)}}</td>
-                        <td>{{($user->whatsapp)}}</td>
-                        <td>{{($user->line_id)}}</td>
-                        <td>{{($user->lnt_course)}}</td>
-                        <td>
-                            <form action="{{route('download_payment', $user->id)}}"method="GET">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-primary" style="width:100%">Download</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
 
-
-                </table>
-                <div>{{$kmg->links('pagination::tailwind')}}</div>
             </div>
 
             <div class="section reregistration-sec  hidden bg-cLightGray  h-full">

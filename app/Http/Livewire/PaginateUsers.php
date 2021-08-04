@@ -15,11 +15,11 @@ class PaginateUsers extends Component
 
         // $users = User::all();
         // dd(User::paginate(10)->links());
-        return view('admin', [
+        return view('livewire.paginate-users', [
             'kmg' => User::where('campus', '=', 'KMG')->orderBy('id','desc')->paginate(10),
             'als' => User::where('campus', '=', 'ALS')->orderBy('id','desc')->paginate(10),
             'bdg' => User::where('campus', '=', 'BDG')->paginate(10),
             'mlg' => User::where('campus', '=', 'MLG')->paginate(10),
-        ]);
+        ])->layout('layouts.app');
     }
 }

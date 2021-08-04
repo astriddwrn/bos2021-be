@@ -1,3 +1,4 @@
+@livewireStyles
 <div>
     @if ($paginator->hasPages())
         <nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
@@ -112,3 +113,4 @@
         </nav>
     @endif
 </div>
+@livewireScripts
