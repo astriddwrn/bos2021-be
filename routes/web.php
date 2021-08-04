@@ -36,7 +36,7 @@ Route::middleware(["auth"])->group(function(){
     Route::post('/reregister', 'App\Http\Controllers\MemberController@create')->name('reregister');
 
     // git pull function
-    Route::get('/debug/git_pull', [App\Http\Controllers\DebugController::class, "git_pull"]);
+    // Route::get('/debug/git_pull', [App\Http\Controllers\DebugController::class, "git_pull"]);
 });
 
 Route::middleware(["auth", 'admin'])->group(function() {
