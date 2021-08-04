@@ -39,6 +39,36 @@
             <div class="mt-7 font-medium text-2xl">Payment Submission Success!</div>
         </div>
     </div>
+    <div class="pop-up fixed verify-user w-screen h-screen z-30 hidden">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
+            <div class="mt-7 font-medium text-2xl">Are you sure you want to verify this participant’s payment?
+                Participant’s name: Doni Santoso</div>
+            <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
+                <div class="text-center verify-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
+                <form action="{{-- {{route('verify')}} --}}" method="POST" >
+                    @csrf
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pop-up fixed reject-user w-screen h-screen z-30 hidden">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
+            <div class="mt-7 font-medium text-2xl">Are you sure you want to reject this participant’s payment?
+                Participant’s name: Doni Santoso</div>
+            <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
+                <div class="text-center reject-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
+                <form action="{{-- {{route('reject')}} --}}" method="POST" >
+                    @csrf
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Reject</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="pop-up fixed loggingout w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
@@ -220,11 +250,11 @@
                             </td>
                             <td>
                                 <div class="flex flex-row justify-center">
-                                    <button class="p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                    <button class="p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
                                         <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                    </button>
+                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                     </button>
                                 </div>
 
@@ -232,13 +262,29 @@
                         </tr>
 
                         <tr>
-                            <td >No</td>
-                            <td >Time Stamp</td>
-                            <td >Status</td>
-                            <td >Full Name</td>
-                            <td >LnT Course</td>
-                            <td >View Payment</td>
-                            <td >Actions</td>
+                            <td >1.</td>
+                            <td >10-04-19 12:00:17</td>
+                            <td >Verified</td>
+                            <td >Jeon Jung Kook</td>
+                            <td >Java Programming</td>
+                            <td>
+                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
+                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex flex-row justify-center">
+                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                    </button>
+                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                    </button>
+                                </div>
+
+                            </td>
                         </tr>
 
                     </tbody>

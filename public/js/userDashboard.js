@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-    
-    
+
+
 
     setTimeout(function(){
-        $('.pop-up').removeClass('hidden'); 
+        $('.pop-up').removeClass('hidden');
      }, 1000);
 
-    
+
     function selectFunc(z){
         var x, i, j, l, ll, selElmnt, a, b, c;
         /*look for any elements with the class "custom-select":*/
@@ -52,10 +52,10 @@ $(document).ready(function(){
                 }
                 }
                 h.click();
-                
+
             });
             b.appendChild(c);
-           
+
         }
         x[i].appendChild(b);
         a.addEventListener("click", function(e) {
@@ -67,14 +67,14 @@ $(document).ready(function(){
             this.classList.toggle("select-arrow-active");
             });
         }
-        
-        
+
+
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
         var e = document.getElementById(z);
     }
-    
+
     function closeAllSelect(elmnt) {
         /*a function that will close all select boxes in the document,
         except the current select box:*/
@@ -94,16 +94,16 @@ $(document).ready(function(){
             if (arrNo.indexOf(i)) {
             x[i].classList.add("select-hide");
             }
-            
+
         }
         if($(elmnt).parent().find(":selected").val() !=0){
             $(elmnt).parent().removeClass("border-error");
             $(elmnt).parent().siblings('.msg-error').empty();
         }
-        
-    
+
+
     }
-    
+
     selectFunc("lnt-select");
     selectFunc("schedule-select");
 
@@ -132,10 +132,10 @@ $(document).ready(function(){
         else{
             x.removeClass("border-error");
             x.siblings('.msg-error').empty();
-            if(x.is('#bnccid')){ 
+            if(x.is('#bnccid')){
                 bnccidVal(x);
             }
-            if(x.is('#linkedinUrl')){ 
+            if(x.is('#linkedinUrl')){
                 linkedinVal(x);
             }
             if(x.is('#githubUrl')){
@@ -228,7 +228,7 @@ $(document).ready(function(){
                     $('.schedule-checkbox').next().empty();
                 }
             }
-           
+
         }
         a.each(function() {
             checkValidationInput($(this));
@@ -252,6 +252,20 @@ $(document).ready(function(){
      });
      $(".modal-back").click(function() {
         $('.loggingout').toggleClass('is-visible');
+     });
+
+     $(".verifyBtn").click(function() {
+        $('.verify-user').toggleClass('is-visible');
+     });
+     $(".rejectBtn").click(function() {
+        $('.reject-user').toggleClass('is-visible');
+     });
+
+     $(".verify-back").click(function() {
+        $('.verify-user').toggleClass('is-visible');
+     });
+     $(".reject-back").click(function() {
+        $('.reject-user').toggleClass('is-visible');
      });
 
      // menus
@@ -294,11 +308,11 @@ $(document).ready(function(){
            }
             return;
         }
-        
+
         $(".menu-cont").toggleClass('menu-off');
-        
+
     });
 
-    
+
 
 });

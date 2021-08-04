@@ -4,7 +4,7 @@
     display: grid;
     grid-gap: 2rem;
     padding: 2rem;
-    grid-template-areas: 
+    grid-template-areas:
     'one one'
     'two three';
     /* grid-template-rows: 280px 280px; */
@@ -29,7 +29,7 @@
     display: grid;
     grid-gap: 2rem;
     padding: 2rem;
-    grid-template-areas: 
+    grid-template-areas:
     'one three'
     'one four'
     'two .';
@@ -59,7 +59,7 @@
     display: grid;
     grid-gap: 2rem;
     padding: 2rem;
-    grid-template-areas: 
+    grid-template-areas:
     'one two'
     'one three';
     grid-template-rows: 280px 280px;
@@ -109,7 +109,7 @@
     border-color: #25B8DE transparent transparent transparent;
     border-radius: 5px;
   }
-  
+
   /*point the arrow upwards when the select box is open (active):*/
   .select-selected.select-arrow-active:after {
     border-color: transparent transparent #25B8DE transparent;
@@ -153,7 +153,7 @@
 .select-hide {
     display: none;
   }
-  
+
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
     color: #6d6d6d;
@@ -231,22 +231,22 @@ input::placeholder{
     left: 50%;
     transform: translate(-50%, -60%);
     transition:  all .3s linear;
-    
+
   }
-  
+
   .pop-up{
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s linear;
 
   }
-  
+
   .is-visible {
     visibility: visible;
     opacity: 1;
     transition: opacity .3s linear;
   }
-  
+
   .is-visible .modal{
     transition:  all .3s linear;
     transform: translate(-50%, -50%);
@@ -271,7 +271,7 @@ input::placeholder{
     right: -100% !important;
     transition: all .5s ease-in-out;
   }
-  
+
 }
 /* lg */
 @media all and (max-width: 1023px) {
@@ -290,7 +290,7 @@ input::placeholder{
     display: grid;
     grid-gap: 2rem;
     padding: 2rem;
-    grid-template-areas: 
+    grid-template-areas:
     'one three'
     'one three'
     'one four'
