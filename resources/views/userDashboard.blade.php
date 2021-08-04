@@ -9,6 +9,7 @@
 
 
     <title>User Dashboard | BNCC Launching</title>
+    <link rel="image_src" href="{{ asset('Asset/Image/auth/logo-png')}}" />
     <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
     <meta name="title" content="BNCC Launching">
     <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
