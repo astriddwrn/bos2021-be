@@ -26,10 +26,12 @@ class AdminController extends Controller
 
 
     public function index(Request $request){
-        $datas = User::where('campus', '!=', 'admin')->paginate(10);
+        // $datas = User::where('campus', '!=', 'admin')->paginate(10);
         // $user = User::find(4)->schedule;
         // dd($user->date);
-        return view('admin', compact('datas'));
+        $users = User::all();
+        dd($users->links);
+        return view('admin');
     }
 
     public function download(Request $request, $id) {

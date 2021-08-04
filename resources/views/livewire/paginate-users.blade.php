@@ -1,23 +1,5 @@
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <title>Admin Dashboard | BNCC Launching</title>
-    <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
-    <meta name="title" content="BNCC Launching">
-    <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}">
-    <link href = {{ asset("bootstrap/css/bootstrap.css") }} rel="stylesheet" />
-    @livewireStyles
-</head>
-<body class="text-base">
-
+<div>
     <div class="pop-up fixed success-reregistration w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 lg:w-6/12 w-96 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center px-20 text-center">
@@ -90,9 +72,8 @@
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
-                {{-- <livewire:paginate-users /> --}}
-                <!-- isi nya -->
 
+                <!-- isi nya -->
                 <table>
                     @foreach ($als as $user)
                     <tr>
@@ -114,9 +95,8 @@
 
 
                 </table>
-                <div>{{$als->links()}}</div>
+                <div>{{$als->onEachSide(0)->links()}}</div>
 
-            </div>
             </div>
 
             <div class="section payment-sec bg-cLightGray h-full hidden">
@@ -128,7 +108,6 @@
 
 
                 <!-- isi nya -->
-
             </div>
 
             <div class="section reregistration-sec  hidden bg-cLightGray  h-full">
@@ -150,8 +129,4 @@
 
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('js/userDashboard.js')}}"></script>
-    @livewireScripts
-</body>
-</html>
-
-
+</div>

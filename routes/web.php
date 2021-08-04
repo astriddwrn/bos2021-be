@@ -40,7 +40,8 @@ Route::middleware(["auth"])->group(function(){
 });
 
 Route::middleware(["auth", 'admin'])->group(function() {
-    Route::get('/admin', [AdminController::class, "index"])->name('admin');
+    // Route::get('/admin', [AdminController::class, "index"])->name('admin');
+    Route::get('/admin', \App\Http\Livewire\PaginateUsers::class);
     Route::get('/download/payment/{id}', [AdminController::class, "download"])->name('download_payment');
     Route::get('/admin/downl/alsexlsx', [AdminController::class, "downloadALS"])->name('download_ALS');
     Route::get('/admin/downl/kmgexlsx', [AdminController::class, "downloadKMG"])->name('download_KMG');
