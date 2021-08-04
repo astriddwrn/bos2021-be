@@ -1,7 +1,7 @@
 @import url(base.css);
-div {
-    /* border: 1px solid rgba(255, 0, 0, 1) */
-}
+/* div {
+    border: 1px solid rgba(255, 0, 0, 1)
+} */
 
 html {
     scroll-behavior: smooth;
@@ -317,7 +317,7 @@ html {
 
 /* why bncc */
 .card-why {
-    width: 20rem;
+    width: 18rem;
     height: 27rem;
 }
 
@@ -407,7 +407,7 @@ html {
 
 /* Bose */
 .bose .card {
-    width: 31rem;
+    width: 29rem;
     height: min-content;
     margin: 1rem 0.5rem;
 }
@@ -531,6 +531,25 @@ html {
         /* width: 90%; */
     }
 
+    /* About */
+    .about .carousel-cont {
+        width: 32rem;
+        margin-top: 1rem;
+    }
+
+    .about .carousel-wrapper {
+        width: 550px;
+        height: 320px;
+    }
+
+    .about .main-container {
+    }
+
+    /* Why */
+    .card-why {
+        width: 17rem;
+    }
+    /* Bose */
     .bose .card {
         width: 27rem;
     }
@@ -549,8 +568,7 @@ html {
     .ff,
     .why,
     .oc,
-    .bose,
-    .faq {
+    .bose {
         padding: 0rem 3rem;
     }
 
@@ -894,6 +912,9 @@ html {
     }
 
     /* About */
+    .about .w-full p {
+        font-size: 0.8rem;
+    }
     .about .glass img {
         width: 6rem;
     }
@@ -938,9 +959,9 @@ html {
 
     /* why */
     .card-why {
-        max-width: 8.6rem;
+        max-width: 8.2rem;
         height: 14rem;
-        margin: 0.2rem 0.2rem;
+        margin: 0.2rem 0.1rem;
         padding: 1rem 0rem;
         border-radius: 12px;
     }
@@ -1004,7 +1025,7 @@ html {
     }
 
     .oc .oc-text {
-        padding: 1rem;
+        padding: 0rem;
         font-size: 0.8rem;
     }
 
@@ -1070,7 +1091,7 @@ html {
 
      /* Say */
      .say-button-cont{
-         width: 300px;
+         width: 280px;
          margin: 0 auto;
          flex-wrap: wrap;
          padding-top: 50px;
