@@ -164,6 +164,50 @@
                             <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
                             <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                             <div class="xl:w-full sm:w-96 w-full flex sm:flex-row flex-col sm:justify-around mt-2">
+                                @if($user->campus == 'MLG')
+                                <div class="flex flex-col sm:items-center">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Novelia</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082301020777</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">agatha.s_</div>
+                                    </div>
+                                </div>
+                                @elseif($user->campus == 'ALS')
+                                <div class="flex flex-col sm:items-center">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Nikita</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">087886316523</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Nikitafelicia</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:items-center sm:mt-0 mt-3">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Jeta</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">087871447555</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
+                                    </div>
+                                </div>
+                                @elseif($user->campus == 'BDG')
+                                <div class="flex flex-col sm:items-center">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Rhenal</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">0818235657</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Add by phone</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:items-center sm:mt-0 mt-3">
+                                    <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                    <div class="sm:text-center font-bold my-2 font-lg">Fajar</div>
+                                    <div>
+                                        <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082114365818</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">fajarhamka21</div>
+                                    </div>
+                                </div>
+                                @else
                                 <div class="flex flex-col sm:items-center">
                                     <img class="w-12 sm:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
                                     <div class="sm:text-center font-bold my-2 font-lg">Astrid</div>
@@ -180,6 +224,7 @@
                                         <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -549,6 +594,39 @@
     </div>
 
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function(){
+            const json1 = JSON.parse($("meta[name=user]").attr("content"));
+            const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
+
+            const campus = json1.campus;
+            var schedule =  json2;
+            for (const [key, val] of Object.entries(schedule)){
+                if(campus == 'MLG' || campus == 'BDG'){
+                    $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+                }
+                if(campus == 'KMG' || campus == 'ALS'){
+                    $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
+                }
+            }
+
+            $('.schedule-input').each(function(){
+                $(this).addClass('hidden');
+                $(this).find('.msg-error').empty();
+                $(this).find('select').removeAttr('name');
+            });
+            if(campus == 'MLG' || campus == 'BDG'){
+                $('.schedule-checkbox-cont').removeClass('hidden');
+            }
+            else{
+                $('.schedule-select-cont').removeClass('hidden');
+                $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
+    }
+        });
+
+    </script>
+
     <script src="{{ asset('js/userDashboard.js')}}"></script>
 
 </body>
