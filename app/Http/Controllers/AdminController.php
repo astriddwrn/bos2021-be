@@ -15,7 +15,10 @@ use App\Exports\MemberALSExport;
 use App\Exports\MemberBDGExport;
 use App\Exports\MemberKMGExport;
 use App\Exports\MemberMLGExport;
-
+use App\Exports\PaymentALSExport;
+use App\Exports\PaymentKMGExport;
+use App\Exports\PaymentBDGExport;
+use App\Exports\PaymentMLGExport;
 
 class AdminController extends Controller
 {
@@ -26,9 +29,6 @@ class AdminController extends Controller
 
 
     public function index(Request $request){
-        // $datas = User::where('campus', '!=', 'admin')->paginate(10);
-        // $user = User::find(4)->schedule;
-        // dd($user->date);
 
         return view('admin');
     }
@@ -76,5 +76,25 @@ class AdminController extends Controller
     public function downloadMemberMLG()
     {
         return Excel::download(new MemberMLGExport, 'mlg_registered_members.xlsx');
+    }
+
+    public function downloadPaymentALS()
+    {
+        return Excel::download(new PaymentALSExport, 'als_payment_members.xlsx');
+    }
+
+    public function downloadPaymentKMG()
+    {
+        return Excel::download(new PaymentKMGExport, 'kmg_payment_members.xlsx');
+    }
+
+    public function downloadPaymentBDG()
+    {
+        return Excel::download(new PaymentBDGExport, 'bdg_payment_members.xlsx');
+    }
+
+    public function downloadPaymentMLG()
+    {
+        return Excel::download(new PaymentMLGExport, 'mlg_payment_members.xlsx');
     }
 }

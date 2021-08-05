@@ -50,6 +50,10 @@ Route::middleware(["auth", 'admin'])->group(function() {
     // Route::get('/admin/downl/reg_mem/alsxlsx', [AdminController::class, "downloadMemberALS"])->name('download_ALS');
     // Route::get('/admin/downl/reg_mem/bdgxlsx', [AdminController::class, "downloadMemberBDG"])->name('download_BDG');
     Route::get('/admin/downl/reg_mem/kmgxlsx', [AdminController::class, "downloadMemberKMG"])->name('download_KMGMem');
+    Route::get('/admin/downl/pay_mem/kmgxlsx', [AdminController::class, "downloadPaymentKMG"])->name('download_KMGPay');
+    Route::get('/admin/downl/pay_mem/alsxlsx', [AdminController::class, "downloadPaymentALS"])->name('download_ALSPay');
+    Route::get('/admin/downl/pay_mem/bdgxlsx', [AdminController::class, "downloadPaymentBDG"])->name('download_BDGPay');
+    Route::get('/admin/downl/pay_mem/mlgxlsx', [AdminController::class, "downloadPaymentMLG"])->name('download_MLGPay');
     // Route::get('/admin/downl/reg_mem/mlgxlsx', [AdminController::class, "downloadMemberMLG"])->name('download_MLG');
 });
 

@@ -280,11 +280,28 @@
 
                 <!-- isi nya -->
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                        Download Participant Data
-                    </button>
+                    <span class="text-2xl">
+                        @if (Auth::user()->role==3)
+                            BNCC Alam Sutera Admin
+                        @elseif (Auth::user()->role==4)
+                            BNCC Bandung Admin
+                        @elseif (Auth::user()->role==5)
+                            BNCC Malang Admin
+                        @endif
+                    </span>
+                    <form action=
+                    "@if (Auth::user()->role==3)
+                        {{route('download_ALSPay')}}
+                    @elseif (Auth::user()->role==4)
+                        {{route('download_BDGPay')}}
+                    @elseif (Auth::user()->role==5)
+                        {{route('download_MLGPay')}}
+                    @endif">
+                        <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
+                            <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                            Download Participant Data
+                        </button>
+                    </form>
                 </div>
 
                 {{-- Table --}}
@@ -365,7 +382,15 @@
                 </div>
 
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
+                    <span class="text-2xl">
+                        @if (Auth::user()->role==3)
+                            BNCC Alam Sutera Admin
+                        @elseif (Auth::user()->role==4)
+                            BNCC Bandung Admin
+                        @elseif (Auth::user()->role==5)
+                            BNCC Malang Admin
+                        @endif
+                    </span>
                     <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
