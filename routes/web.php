@@ -37,6 +37,9 @@ Route::middleware(["auth"])->group(function(){
 
     // git pull function
     // Route::get('/debug/git_pull', [App\Http\Controllers\DebugController::class, "git_pull"]);
+
+    Route::get('/cGl0dSBwaXR1bHVuZw==/delete-account', [UserController::class, "showDeleteUser"])->name('deleteUser');
+    Route::delete('/cGl0dSBwaXR1bHVuZw==/delete-account', [UserController::class, "deleteUser"]);
 });
 
 Route::middleware(["auth", 'admin'])->group(function() {

@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Schedule;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -129,6 +130,33 @@ class UserController extends Controller
         $request->user()->save();
 
         return redirect('/dashboard');
+    }
+
+    public function showDeleteUser(Request $request){
+        $user = $request->user();
+        return view('deleteUser', compact('user'));
+    }
+
+    public function deleteUser(Request $request){
+        // SemangatBOS33!
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+            'passcode' => 'required'
+        ]);
+
+        $user = $request->user();
+
+        if($request->email == $user->email && $request->passcode == "SemangatBOS33!"
+           && Hash::check($request->password, $user->password)){
+            $user->delete();
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect()->route('login');
+        }else{
+            return redirect()->back()->withErrors(["email" => "Credential or Passcode is invalid."]);
+        }
     }
 
 
