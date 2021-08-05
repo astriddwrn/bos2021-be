@@ -47,10 +47,10 @@ Route::middleware(["auth", 'admin'])->group(function() {
     Route::get('/admin/downl/kmgexlsx', [AdminController::class, "downloadKMG"])->name('download_KMG');
     Route::get('/admin/downl/bdgexlsx', [AdminController::class, "downloadBDG"])->name('download_BDG');
     Route::get('/admin/downl/mlgexlsx', [AdminController::class, "downloadMLG"])->name('download_MLG');
-    Route::get('/admin/downl/reg_mem/alsxlsx', [AdminController::class, "downloadMemberALS"])->name('download_ALS');
-    Route::get('/admin/downl/reg_mem/bdgxlsx', [AdminController::class, "downloadMemberBDG"])->name('download_BDG');
-    Route::get('/admin/downl/reg_mem/kmgxlsx', [AdminController::class, "downloadMemberKMG"])->name('download_KMG');
-    Route::get('/admin/downl/reg_mem/mlgxlsx', [AdminController::class, "downloadMemberMLG"])->name('download_MLG');
+    // Route::get('/admin/downl/reg_mem/alsxlsx', [AdminController::class, "downloadMemberALS"])->name('download_ALS');
+    // Route::get('/admin/downl/reg_mem/bdgxlsx', [AdminController::class, "downloadMemberBDG"])->name('download_BDG');
+    Route::get('/admin/downl/reg_mem/kmgxlsx', [AdminController::class, "downloadMemberKMG"])->name('download_KMGMem');
+    // Route::get('/admin/downl/reg_mem/mlgxlsx', [AdminController::class, "downloadMemberMLG"])->name('download_MLG');
 });
 
 Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsletter');

@@ -54,7 +54,7 @@ class UserController extends Controller
             }
             case 1: {
 
-                return redirect('/admin');
+                return redirect('/superadmin');
                 break;
             }
             case 2: {
@@ -64,16 +64,16 @@ class UserController extends Controller
             }
             case 3: {
 
-                return redirect('/superadmin-malang');
+                return redirect('/admin');
                 break;
             }
             case 4: {
-
+                return redirect('/admin');
                 break;
             }
 
             case 5: {
-
+                return redirect('/admin');
                 break;
             }
         }

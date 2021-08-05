@@ -20,6 +20,7 @@ class PaginateUsers extends Component
             'als' => User::where('campus', '=', 'ALS')->orderBy('id','desc')->paginate(10),
             'bdg' => User::where('campus', '=', 'BDG')->paginate(10),
             'mlg' => User::where('campus', '=', 'MLG')->paginate(10),
+            'no' => 0
         ])->layout('layouts.app');
     }
 }

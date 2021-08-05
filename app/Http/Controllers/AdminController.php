@@ -29,8 +29,7 @@ class AdminController extends Controller
         // $datas = User::where('campus', '!=', 'admin')->paginate(10);
         // $user = User::find(4)->schedule;
         // dd($user->date);
-        $users = User::all();
-        dd($users->links);
+
         return view('admin');
     }
 
