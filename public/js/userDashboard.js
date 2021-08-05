@@ -26,7 +26,7 @@ $(document).ready(function(){
             else{
                 $('.schedule-select-cont').removeClass('hidden');
                 $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
-    }
+            }
 
 
     setTimeout(function(){
