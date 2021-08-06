@@ -8,6 +8,7 @@ use App\Models\Member;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Schedule;
+use App\Exports\AllUsersExport;
 use App\Exports\BDGExport;
 use App\Exports\MLGExport;
 use App\Exports\KMGExport;
@@ -53,6 +54,10 @@ class AdminController extends Controller
     public function downloadFYP(Request $request, $id) {
         $member  = Member::findOrFail($id);
         return response()->download(public_path('fyp/' . $member['fyp-upload']));
+    }
+
+    public function downloadAllUsers(){
+        return Excel::download(new AllUsersExport, 'all_members.xlsx');
     }
 
     public function downloadKMG()
