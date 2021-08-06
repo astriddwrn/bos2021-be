@@ -39,7 +39,7 @@ class Schedule extends Model
         else if($this->campus == "bdg")
             return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(115)->format('H:i');
         else if($this->campus == "mlg")
-            return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(115)->format('H:i');
+            return Carbon::createFromFormat('Y-m-d H:i:s', $this->date)->addMinutes(135)->format('H:i');
     }
 
     public function users() {
