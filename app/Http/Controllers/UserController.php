@@ -60,7 +60,7 @@ class UserController extends Controller
             }
             case 2: {
 
-                return redirect('/superadmin');
+                return view('/superadmin');
                 break;
             }
             case 3: {

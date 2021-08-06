@@ -34,6 +34,11 @@ class AdminController extends Controller
         return view('admin');
     }
 
+    public function display(){
+
+        return view('debug.superAdminDashboard');
+    }
+
     public function downloadPayment(Request $request, $id) {
         $user  = User::findOrFail($id);
         // return Storage::download('/payment_pic/'.$user->payment_pic);

@@ -398,25 +398,31 @@
                                         <option class="off" value="0">Select Your Course</option>
                                         <!-- ALS -->
 
+                                        @if ($user->campus=='ALS')
                                         <option value="Front-End Development">Front-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
                                         <option value="C Programming">C Programming</option>
                                         <option value="Java Programming">Java Programming</option>
+                                        @endif
 
                                         <!-- BDG & MLG-->
 
+                                        @if ($user->campus=='BDG'||$user->campus=='MLG')
                                         <option value="Back-End Development">Back-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
                                         <option value="C Programming">C Programming</option>
                                         <option value="Mobile Application Development">Mobile Application Development</option>
                                         <option value="Game Development">Game Development</option>
+                                        @endif
 
                                         <!-- KMG -->
 
+                                        @if ($user->campus=='KMG')
                                         <option value="Back-End Development">Back-End Development</option>
                                         <option value="Front-End Development">Front-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
                                         <option value="Java Programming">Java Programming</option>
+                                        @endif
 
                                     </select>
                                 </div>
