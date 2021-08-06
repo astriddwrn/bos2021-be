@@ -52,6 +52,7 @@ Route::middleware(["auth", 'admin'])->group(function() {
     Route::get('/download/ktp/{id}', [AdminController::class, "downloadKTP"])->name('download_ktp');
     Route::get('/download/fyp/{id}', [AdminController::class, "downloadFYP"])->name('download_fyp');
 
+    // Route::get('/admin/downl/allexlsx', [AdminController::class, "downloadAllUsers"])->name('download_all');
     Route::get('/admin/downl/alsexlsx', [AdminController::class, "downloadALS"])->name('download_ALS');
     Route::get('/admin/downl/kmgexlsx', [AdminController::class, "downloadKMG"])->name('download_KMG');
     Route::get('/admin/downl/bdgexlsx', [AdminController::class, "downloadBDG"])->name('download_BDG');
