@@ -129,7 +129,7 @@
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
-                    Re-Registration</div>
+                    Re-Registered</div>
 
 
             </div>
@@ -235,10 +235,6 @@
                 <!-- isi nya -->
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
                     <span class="text-2xl">BNCC Bandung Admin</span> {{-- Ganti per Region --}}
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                        Download Participant Data
-                    </button>
                 </div>
 
                 {{-- Table --}}
@@ -302,7 +298,7 @@
 
             <div class="section reregistration-sec bg-cLightGray h-full hidden">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
-                    <span>Re-Registration</span>
+                    <span>Re-Registered Members</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
