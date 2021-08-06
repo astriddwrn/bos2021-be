@@ -75,7 +75,7 @@
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
                     Payment</div>
                 @endif
-                @if (!$diff_reregis->invert)
+                @if (!$diff_reregis->invert && $user->status==1 && $user->campus=='KMG')
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
@@ -388,7 +388,7 @@
                             </div>
                             <div class="mt-5">
                                 <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">GitHub URL</div>
-                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lh my-1 border-0" type="text" name="githubUrl" id="githubUrl" placeholder="e.g. https://www.github.com/jungkook/">
+                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lh my-1 border-0" type="text" name="githubUrl" id="githubUrl" placeholder="e.g. https://github.com/jungkook/">
                                 <span class="msg-error"></span>
                             </div>
                             <div class="mt-5">

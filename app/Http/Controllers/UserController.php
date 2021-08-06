@@ -43,7 +43,7 @@ class UserController extends Controller
 
                 $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
 
-                $diff_reregis = ((new \DateTime('2021-09-07 13:00:00'))->diff(new \DateTime($now)));
+                $diff_reregis = ((new \DateTime('2021-07-07 13:00:00'))->diff(new \DateTime($now)));
 
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
                 $diff_change_schedule = ((new \DateTime($schedules[0]->date))->diff(new \DateTime($now)));
