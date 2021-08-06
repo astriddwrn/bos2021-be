@@ -35,7 +35,8 @@ class AdminController extends Controller
 
     public function download(Request $request, $id) {
         $user  = User::findOrFail($id);
-        return Storage::download('/payment_pic/'.$user->payment_pic);
+        // return Storage::download('/payment_pic/'.$user->payment_pic);
+        return response()->download(public_path('/payment_pic/'.$user->payment_pic));
     }
 
     public function downloadKMG()
