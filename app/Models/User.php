@@ -58,9 +58,10 @@ class User extends Authenticatable
         return Schedule::find($this->schedule);
     }
 
-    public function member() {
-        return $this->belongsTo('App\Models\Member');
-    }
+    // public function member() {
+    //     return $this->belongsTo('App\Models\Member');
+    // }
+
     /**
      * The attributes that should be hidden for arrays.
      *

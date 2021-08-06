@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Member;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Schedule;
@@ -33,10 +34,20 @@ class AdminController extends Controller
         return view('admin');
     }
 
-    public function download(Request $request, $id) {
+    public function downloadPayment(Request $request, $id) {
         $user  = User::findOrFail($id);
         // return Storage::download('/payment_pic/'.$user->payment_pic);
-        return response()->download(public_path('/payment_pic/'.$user->payment_pic));
+        return response()->download(public_path('payment_pic/' . $user->payment_pic));
+    }
+
+    public function downloadKTP(Request $request, $id) {
+        $member  = Member::findOrFail($id);
+        return response()->download(public_path('ktp/' . $member['ktp-upload']));
+    }
+
+    public function downloadFYP(Request $request, $id) {
+        $member  = Member::findOrFail($id);
+        return response()->download(public_path('fyp/' . $member['fyp-upload']));
     }
 
     public function downloadKMG()
