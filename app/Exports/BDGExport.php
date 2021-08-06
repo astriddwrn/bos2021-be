@@ -17,6 +17,8 @@ class BDGExport implements FromCollection, WithHeadings
     {
         return [
             'Nama',
+            'Personal Email',
+            'Email BINUS',
             'NIM',
             'Kampus',
             'Jurusan',
@@ -27,13 +29,14 @@ class BDGExport implements FromCollection, WithHeadings
             'Domisili',
             'Tempat lahir',
             'Tanggal lahir',
-            'Batch FYP'
+            'Batch FYP',
+            'Course LnT'
         ];
     }
 
     public function collection()
     {
-        return User::select('fullName', 'nim', 'campus', 'major', 'whatsapp', 'line_id', 'gender', 'address', 'domicile', 'placeBirth', 'birthDate', 'batch')->where('campus','=','BDG')->get();
+        return User::select('fullName', 'personal_email','email','nim', 'campus', 'major', 'whatsapp', 'line_id', 'gender', 'address', 'domicile', 'placeBirth', 'birthDate', 'batch','lnt_course')->where('campus','=','BDG')->get();
     }
 
 }
