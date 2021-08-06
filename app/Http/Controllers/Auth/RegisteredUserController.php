@@ -73,7 +73,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'whatsapp' => ['required','string','unique:users,whatsapp','regex:/^(08)\d+/','digits_between:10,14'],
             'line_id' => ['required','string','unique:users,line_id'],
-            'nim' => ['required','string','digits:10','regex:/^(23|24|25)\d+/','unique:users,nim'],
+            'nim' => ['required','string','digits:10','regex:/^(21|22|23|24|25)\d+/','unique:users,nim'],
             'batch' => ['required'],
             'campus' => ['required'],
             'major' => ['required'],
