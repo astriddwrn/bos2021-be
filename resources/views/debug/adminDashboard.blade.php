@@ -69,6 +69,36 @@
             </div>
         </div>
     </div>
+    <div class="pop-up fixed delete-user w-screen h-screen z-30 hidden">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
+            <div class="mt-7 font-medium text-2xl">Are you sure you want to delete this user?
+                User’s name: Doni Santoso</div>
+            <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
+                <div class="text-center delete-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Cancel</div>
+                <form action="{{-- {{route('reject')}} --}}" method="POST" >
+                    @csrf
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cReddeny w-100 mb-5 hover:bg-cDarkerReddeny transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pop-up fixed edit-user w-screen h-screen z-30 hidden">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
+            <div class="mt-7 font-medium text-2xl">Are you sure you want to edit this user?
+                User’s name: Doni Santoso</div>
+            <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
+                <div class="text-center edit-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Cancel</div>
+                <form action="{{-- {{route('reject')}} --}}" method="POST" >
+                    @csrf
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="pop-up fixed loggingout w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
@@ -123,7 +153,7 @@
 
                 <!-- isi nya -->
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
+                    <span class="text-2xl">BNCC Bandung Admin</span> {{-- Ganti per Region --}}
                     <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
@@ -135,7 +165,8 @@
                 <thead>
                     <tr>
                       <th >No</th>
-                      <th >Status</th>
+                      <th >Actions </th>
+                      <th >Time Stamp </th>
                       <th >Name</th>
                       <th >Gender</th>
                       <th >DOB</th>
@@ -152,13 +183,23 @@
                       <th >Batch</th>
                       <th >Schedule</th>
                       <th >LnT Course</th>
-                      <th >E-Sport Community</th>
+                      <th >E-Sport Community</th> {{-- NOTES BANDUNG ONLY --}}
                     </tr>
                   </thead>
                   <tbody>
                       <tr>
-                        <td >No</td>
-                        <td >Status</td>
+                        <td >1</td>
+                        <td >
+                            <div class="w-24 flex flex-row justify-center">
+                                <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                    <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
+                                </button>
+                                <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                    <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                </button>
+                            </div>
+                        </td>
+                        <td > 10-04-19 12:00:17 </td>
                         <td >Naruto yes tiga delapan</td>
                         <td >Gender</td>
                         <td >DOB</td>
@@ -178,27 +219,6 @@
                         <td >E-Sport Community</td>
                       </tr>
 
-                      <tr>
-                        <td >No</td>
-                        <td >Status</td>
-                        <td >Naruto yes tiga delapan</td>
-                        <td >Gender</td>
-                        <td >DOB</td>
-                        <td >POB</td>
-                        <td >City</td>
-                        <td >Adress</td>
-                        <td >P. Email</td>
-                        <td >B. Email</td>
-                        <td >LINE ID</td>
-                        <td >WA</td>
-                        <td >NIM</td>
-                        <td >Campus</td>
-                        <td >Major</td>
-                        <td >Batch</td>
-                        <td >Schedule</td>
-                        <td >LnT Course</td>
-                        <td >E-Sport Community</td>
-                      </tr>
                   </tbody>
                 </table>
 
@@ -214,7 +234,7 @@
 
                 <!-- isi nya -->
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
+                    <span class="text-2xl">BNCC Bandung Admin</span> {{-- Ganti per Region --}}
                     <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
@@ -226,65 +246,54 @@
                 <thead>
                     <tr>
                         <th >No</th>
+                        <th >Actions</th>
                         <th >Time Stamp</th>
                         <th >Status</th>
                         <th >Full Name</th>
                         <th >LnT Course</th>
-                        <th >View Payment</th>
-                        <th >Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td >1.</td>
+                            <td>
+                                <div class="flex flex-row justify-around">
+                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                    </button>
+                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                    </button>
+                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                    </button>
+                                </div>
+                            </td>
                             <td >10-04-19 12:00:17</td>
                             <td >Verified</td>
                             <td >Jeon Jung Kook</td>
                             <td >Java Programming</td>
-                            <td>
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex flex-row justify-center">
-                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                    </button>
-                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                </div>
-
-                            </td>
                         </tr>
 
                         <tr>
-                            <td >1.</td>
+                            <td >2.</td>
+                            <td>
+                                <div class="flex flex-row justify-around">
+                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                    </button>
+                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                    </button>
+                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                    </button>
+                                </div>
+                            </td>
                             <td >10-04-19 12:00:17</td>
                             <td >Verified</td>
                             <td >Jeon Jung Kook</td>
                             <td >Java Programming</td>
-                            <td>
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="flex flex-row justify-center">
-                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                    </button>
-                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                </div>
-
-                            </td>
                         </tr>
 
                     </tbody>
@@ -299,7 +308,7 @@
                 </div>
 
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">BNCC Bandung Admin</span>
+                    <span class="text-2xl">BNCC Bandung Admin</span> {{-- Ganti per Region --}}
                     <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
@@ -311,7 +320,8 @@
                     <thead>
                         <tr>
                           <th >No</th>
-                          <th >Time Stamp</th>
+                          <th >Actions </th>
+                          <th >Time Stamp </th>
                           <th >Full Name</th>
                           <th >BNCC ID</th>
                           <th >LinkedIn</th>
@@ -323,31 +333,17 @@
                       </thead>
                       <tbody>
                           <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >BNCC20123</td>
-                            <td >https://linkedin.com/..</td>
-                            <td >https://github.com..</td>
-                            <td >UI/UX Design</td>
+                            <td >1</td>
                             <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                <div class="w-24 flex flex-row justify-center">
+                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
+                                    </button>
+                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                     </button>
                                 </div>
                             </td>
-                            <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td >1.</td>
                             <td >10-04-19 12:00:17</td>
                             <td >Jeon Jung Kook</td>
                             <td >BNCC20123</td>
@@ -375,13 +371,12 @@
 
             </div>
 
-
         </div>
 
     </div>
 
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/userDashboard.js')}}"></script>
+    <script src="{{ asset('js/adminDashboard.js')}}"></script>
 
 </body>
 </html>

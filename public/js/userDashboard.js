@@ -278,20 +278,6 @@ $(document).ready(function(){
         $('.loggingout').toggleClass('is-visible');
      });
 
-     $(".verifyBtn").click(function() {
-        $('.verify-user').toggleClass('is-visible');
-     });
-     $(".rejectBtn").click(function() {
-        $('.reject-user').toggleClass('is-visible');
-     });
-
-     $(".verify-back").click(function() {
-        $('.verify-user').toggleClass('is-visible');
-     });
-     $(".reject-back").click(function() {
-        $('.reject-user').toggleClass('is-visible');
-     });
-
      // menus
      $(".menu-list div").click(function() {
         $('.on').each(function() {
