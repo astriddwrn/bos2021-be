@@ -114,4 +114,5 @@ class AdminController extends Controller
     {
         return Excel::download(new PaymentMLGExport, 'mlg_payment_members.xlsx');
     }
+
 }

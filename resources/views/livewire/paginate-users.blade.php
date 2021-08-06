@@ -318,60 +318,145 @@
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Verified</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >Java Programming</td>
-                            <td>
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
+
+                            @if (Auth::user()->role==3)
+                            @foreach ($als as $user)
+                            <tr>
+                                @if ($user->payment_pic!=NULL)
+                                <td >{{++$no}}</td>
+                                <td >{{$user->updated_at}}</td>
+                                <td >
+                                    @if ($user->status==1)
+                                        Verified
+                                    @else
+                                        Unverified
+                                    @endif
+                                </td>
+                                <td >{{$user->fullName}}</td>
+                                <td >{{$user->lnt_course}}</td>
+                                <td>
+                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
+                                        <form action="{{route('download_payment', $user->id)}}">
+                                            <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="flex flex-row justify-center">
+                                        <form wire:submit="verify({{$user->id}})">
+                                            <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                            </button>
+                                        </form>
+                                        <form wire:submit="reject({{$user->id}})">
+                                            <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </td>
+                                @endif
+                            </tr>
+                            @endforeach
+
+                            @elseif (Auth::user()->role==4)
+                                @foreach ($bdg as $user)
+                                <tr>
+                                @if ($user->payment_pic!=NULL)
+                                <td >{{++$no}}</td>
+                                <td >{{$user->updated_at}}</td>
+                                <td >
+                                    @if ($user->status==1)
+                                        Verified
+                                    @else
+                                        Unverified
+                                    @endif
+                                </td>
+                                <td >{{$user->fullName}}</td>
+                                <td >{{$user->lnt_course}}</td>
+                                <td>
+                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
+                                        <form action="{{route('download_payment', $user->id)}}">
+                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
+                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                        </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
                                 <div class="flex flex-row justify-center">
-                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                    </button>
-                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
+                                    <form wire:submit="verify({{$user->id}})">
+                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
+                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                        </button>
+                                    </form>
+                                    <form wire:submit="reject({{$user->id}})">
+                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                        </button>
+                                    </form>
                                 </div>
 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Verified</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >Java Programming</td>
-                            <td>
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td>
+                                </td>
+                                @endif
+                                </tr>
+                            @endforeach
+                            @elseif (Auth::user()->role==5)
+                                @foreach ($mlg as $user)
+                                <tr>
+                                @if ($user->payment_pic!=NULL)
+                                <td >{{++$no}}</td>
+                                <td >{{$user->updated_at}}</td>
+                                <td >
+                                    @if ($user->status==1)
+                                        Verified
+                                    @else
+                                        Unverified
+                                    @endif
+                                </td>
+                                <td >{{$user->fullName}}</td>
+                                <td >{{$user->lnt_course}}</td>
+                                <td>
+                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
+                                        <form action="{{route('download_payment', $user->id)}}">
+                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
+                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                        </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
                                 <div class="flex flex-row justify-center">
-                                    <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                    </button>
-                                    <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
+                                    <form wire:submit="verify({{$user->id}})">
+                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
+                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                        </button>
+                                    </form>
+                                    <form wire:submit="reject({{$user->id}})">
+                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                        </button>
+                                    </form>
                                 </div>
 
-                            </td>
-                        </tr>
+                                </td>
+                                @endif
+                                </tr>
+                                @endforeach
+                            @endif
 
                     </tbody>
                 </table>
+                @if (Auth::user()->role==3)
+                    {{$als->onEachSide(0)->links()}}
+                @elseif (Auth::user()->role==4)
+                    {{$bdg->onEachSide(0)->links()}}
+                @elseif (Auth::user()->role==5)
+                    {{$mlg->onEachSide(0)->links()}}
+                @endif
             </div>
 
             <div class="section reregistration-sec bg-cLightGray h-full hidden">
