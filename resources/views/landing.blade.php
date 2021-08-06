@@ -800,7 +800,7 @@
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">BNCC Launching</h2>
-                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 2, 2021</h5>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 31 - September 18, 2021</h5>
                 <p class="text-cBlackHome mb-4 leading-7">
                     Sessions where you can earn sharing sessions with our seniors or fun workshops,
                     learn more about BNCC and the procedures to be a proud BNCC member!
@@ -1096,7 +1096,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="card flex flex-col text-lg mt-5 pb-7 md:pb-10 p-7 lg:pb-5 lg:p-5 border-4 border-cWhite rounded-xl">
                         <div class="font-bold text-cWhite text-xl mb-5">Alam Sutera</div>
                         <div class="flex flex-row text-base pb-3 lg:pb-0 lg:text-lg">
