@@ -14,7 +14,6 @@ $(document).ready(function(){
                     $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
                 }
             }
-
             $('.schedule-input').each(function(){
                 $(this).addClass('hidden');
                 $(this).find('.msg-error').empty();
