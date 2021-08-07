@@ -89,22 +89,26 @@ let btnKmg = $('.btnKMG');
 let btnAs = $('.btnAS');
 let btnBdg = $('.btnBDG');
 let btnMlg = $('.btnMLG');
+let btnAllReg = $('.btnAllReg');
 
 let tblKmg = $('.tblKMG');
 let tblAs = $('.tblAS');
 let tblBdg = $('.tblBDG');
 let tblMlg = $('.tblMLG');
+let tblAllReg = $('.tblAllReg');
 
 const removeactiveElements = () => {
     $(btnKmg).removeClass("btnRegion-active");
     $(btnAs).removeClass("btnRegion-active");
     $(btnBdg).removeClass("btnRegion-active");
     $(btnMlg).removeClass("btnRegion-active");
+    $(btnAllReg).removeClass("btnRegion-active");
 
     $(tblKmg).removeClass("tbl-active");
     $(tblAs).removeClass("tbl-active");
     $(tblBdg).removeClass("tbl-active");
     $(tblMlg).removeClass("tbl-active");
+    $(tblAllReg).removeClass("tbl-active");
     console.log("activated");
 }
 
@@ -125,6 +129,9 @@ const addactiveElements = (btn) => {
         else if ($(btn).hasClass("btnMLG")) {
             $(tblMlg).addClass("tbl-active");
         }
+        else if ($(btn).hasClass("btnAllReg")) {
+            $(tblAllReg).addClass("tbl-active");
+        }
     });
 }
 
@@ -132,3 +139,4 @@ addactiveElements(btnKmg);
 addactiveElements(btnAs);
 addactiveElements(btnBdg);
 addactiveElements(btnMlg);
+addactiveElements(btnAllReg);
