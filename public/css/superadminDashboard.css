@@ -32,7 +32,7 @@ table tr:nth-child(even) {
 }
 
 .btnRegion {
-    width: 9rem;
+    width: 7rem;
     color: #0054A5;
     border: 1px solid #0054A5;
     padding: 0.2rem 0rem;
@@ -41,6 +41,7 @@ table tr:nth-child(even) {
     text-align: center;
     margin-right: 0.5rem;
     cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .btnRegion-active {
