@@ -21,6 +21,6 @@ class AllUsersExport implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return User2::all();
+        return User2::where('role','=', 0)->get();
     }
 }
