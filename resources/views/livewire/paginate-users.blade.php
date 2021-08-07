@@ -1,4 +1,3 @@
-
 <div>
     <div class="pop-up fixed success-reregistration w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
@@ -21,7 +20,7 @@
             <div class="mt-7 font-medium text-2xl">Payment Submission Success!</div>
         </div>
     </div>
-    <div class="pop-up fixed verify-user w-screen h-screen z-30 hidden">
+    {{-- <div class="pop-up fixed verify-user w-screen h-screen z-30 hidden">
         <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
         <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
             <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
@@ -29,8 +28,7 @@
                 Participant’s name: Doni Santoso</div>
             <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
                 <div class="text-center verify-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
-                <form action="{{-- {{route('verify')}} --}}" method="POST" >
-                    @csrf
+                <form wire:submit="verify({{$user->id}})>
                     <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Verify</button>
                 </form>
             </div>
@@ -44,9 +42,38 @@
                 Participant’s name: Doni Santoso</div>
             <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
                 <div class="text-center reject-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Go Back</div>
+                <form wire:submit="reject({{$user->id}})">
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Reject</button>
+                </form>
+            </div>
+        </div>
+    </div> --}}
+    <div class="pop-up fixed delete-user w-screen h-screen z-30 hidden">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
+            <div class="mt-7 font-medium text-2xl">Are you sure you want to delete this user?
+                User’s name: Doni Santoso</div>
+            <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
+                <div class="text-center delete-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Cancel</div>
                 <form action="{{-- {{route('reject')}} --}}" method="POST" >
                     @csrf
-                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Reject</button>
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cReddeny w-100 mb-5 hover:bg-cDarkerReddeny transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pop-up fixed edit-user w-screen h-screen z-30 hidden">
+        <div class="fixed z-10 overlay w-screen h-screen bg-cBlack opacity-50"></div>
+        <div class="modal fixed z-20 xl:w-6/12 lg:w-8/12 w-11/12 h-3/6 bg-cWhite rounded-xl flex flex-col justify-center items-center sm:px-20 px-5 text-center">
+            <img class="w-30" src="{{ asset('Asset/Image/userDashboard/acceptsquare.svg') }}" alt="BNCC Launching">
+            <div class="mt-7 font-medium text-2xl">Are you sure you want to edit this user?
+                User’s name: Doni Santoso</div>
+            <div class="flex flex-row justify-evenly w-full mt-8 button-cont">
+                <div class="text-center edit-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Cancel</div>
+                <form action="{{-- {{route('reject')}} --}}" method="POST" >
+                    @csrf
+                    <button class="text-center modal-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Edit</button>
                 </form>
             </div>
         </div>
@@ -81,7 +108,7 @@
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
-                    Re-Registration</div>
+                    Re-Registered</div>
 
 
             </div>
@@ -113,7 +140,7 @@
                         @elseif (Auth::user()->role==5)
                             BNCC Malang Admin
                         @endif
-                    </span>
+                    </span> {{-- Ganti per Region --}}
                     <form action=
                     "@if (Auth::user()->role==3)
                         {{route('download_ALS')}}
@@ -134,7 +161,8 @@
                 <thead>
                     <tr>
                       <th >No</th>
-                      <th >Status</th>
+                      <th >Actions </th>
+                      <th >Time Stamp </th>
                       <th >Name</th>
                       <th >Gender</th>
                       <th >DOB</th>
@@ -153,112 +181,125 @@
                       <th >LnT Course</th>
                       @if (Auth::user()->role==4)
                         <th >E-Sport Community</th>
-                      @endif
+                      @endif                            {{-- NOTES BANDUNG ONLY --}}
                     </tr>
                   </thead>
                   <tbody>
-                    @if (Auth::user()->role==3)
-                    @foreach ($als as $user)
-                    <tr>
-                        <td >{{++$no}}</td>
-                        <td >
-                            @if ($user->status==1)
-                                Verified
-                            @else
-                                Unverified
-                            @endif
-                        </td>
-                        <td >{{$user->fullName}}</td>
-                        <td >{{$user->gender}}</td>
-                        <td >{{$user->birthDate}}</td>
-                        <td >{{$user->placeBirth}}</td>
-                        <td >{{$user->domicile}}</td>
-                        <td >{{$user->address}}</td>
-                        <td >{{$user->personal_email}}</td>
-                        <td >{{$user->email}}</td>
-                        <td >{{$user->line_id}}</td>
-                        <td >{{$user->whatsapp}}</td>
-                        <td >{{$user->nim}}</td>
-                        <td >{{$user->campus}}</td>
-                        <td >{{$user->major}}</td>
-                        <td >{{$user->batch}}</td>
-                        <td >
-                            @foreach ($user->schedules() as $schedule)
-                                {{$schedule->date}};
-                            @endforeach
+                      @if (Auth::user()->role==3)
+                        @foreach ($als as $user)
+                        <tr>
+                            <td >{{++$no}}</td>
+                            <td >
+                                <div class="w-24 flex flex-row justify-center">
+                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
+                                    </button>
+                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                    </button>
+                                </div>
                             </td>
-                        <td >{{$user->lnt_course}}</td>
-                      </tr>
-                    @endforeach
-                    @elseif (Auth::user()->role==4)
-                    @foreach ($bdg as $user)
-                    <tr>
-                        <td >{{++$no}}</td>
-                        <td >
-                            @if ($user->status==1)
-                                Verified
-                            @else
-                                Unverified
-                            @endif
-                        </td>
-                        <td >{{$user->fullName}}</td>
-                        <td >{{$user->gender}}</td>
-                        <td >{{$user->birthDate}}</td>
-                        <td >{{$user->placeBirth}}</td>
-                        <td >{{$user->domicile}}</td>
-                        <td >{{$user->address}}</td>
-                        <td >{{$user->personal_email}}</td>
-                        <td >{{$user->email}}</td>
-                        <td >{{$user->line_id}}</td>
-                        <td >{{$user->whatsapp}}</td>
-                        <td >{{$user->nim}}</td>
-                        <td >{{$user->campus}}</td>
-                        <td >{{$user->major}}</td>
-                        <td >{{$user->batch}}</td>
-                        <td >
-                        @foreach ($user->schedules() as $schedule)
-                            {{$schedule->date}};
-                        @endforeach
-                        </td>
-                        <td >{{$user->lnt_course}}</td>
-                        <td >{{$user->is_esport}}</td>
-                      </tr>
-                    @endforeach
-                    @elseif (Auth::user()->role==5)
-                    @foreach ($mlg as $user)
-                    <tr>
-                        <td >{{+$no}}</td>
-                        <td >
-                            @if ($user->status==1)
-                                Verified
-                            @else
-                                Unverified
-                            @endif
-                        </td>
-                        <td >{{$user->fullName}}</td>
-                        <td >{{$user->gender}}</td>
-                        <td >{{$user->birthDate}}</td>
-                        <td >{{$user->placeBirth}}</td>
-                        <td >{{$user->domicile}}</td>
-                        <td >{{$user->address}}</td>
-                        <td >{{$user->personal_email}}</td>
-                        <td >{{$user->email}}</td>
-                        <td >{{$user->line_id}}</td>
-                        <td >{{$user->whatsapp}}</td>
-                        <td >{{$user->nim}}</td>
-                        <td >{{$user->campus}}</td>
-                        <td >{{$user->major}}</td>
-                        <td >{{$user->batch}}</td>
-                        <td >
-                            @foreach ($user->schedules() as $schedule)
-                                {{$schedule->date}};
-                            @endforeach
-                        </td>
-                        <td >{{$user->lnt_course}}</td>
-                      </tr>
-                    @endforeach
-                    @endif
+                            <td > {{$user->email_verified_at}} </td>
+                            <td >{{$user->fullName}}</td>
+                            <td >{{$user->gender}}</td>
+                            <td >{{$user->birthDate}}</td>
+                            <td >{{$user->placeBirth}}</td>
+                            <td >{{$user->domicile}}</td>
+                            <td >{{$user->address}}</td>
+                            <td >{{$user->personal_email}}</td>
+                            <td >{{$user->email}}</td>
+                            <td >{{$user->line_id}}</td>
+                            <td >{{$user->whatsapp}}</td>
+                            <td >{{$user->nim}}</td>
+                            <td >{{$user->campus}}</td>
+                            <td >{{$user->major}}</td>
+                            <td >{{$user->batch}}</td>
+                            <td >
+                                @foreach ($user->schedules() as $schedule)
+                                    {{$schedule->date}};
+                                @endforeach
+                            </td>
+                            <td >{{$user->lnt_course}}</td>
 
+                        </tr>
+                        @endforeach
+                      @elseif (Auth::user()->role==4)
+                        @foreach ($bdg as $user)
+                        <tr>
+                            <td >{{++$no}}</td>
+                            <td >
+                                <div class="w-24 flex flex-row justify-center">
+                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
+                                    </button>
+                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                            <td > {{$user->email_verified_at}} </td>
+                            <td >{{$user->fullName}}</td>
+                            <td >{{$user->gender}}</td>
+                            <td >{{$user->birthDate}}</td>
+                            <td >{{$user->placeBirth}}</td>
+                            <td >{{$user->domicile}}</td>
+                            <td >{{$user->address}}</td>
+                            <td >{{$user->personal_email}}</td>
+                            <td >{{$user->email}}</td>
+                            <td >{{$user->line_id}}</td>
+                            <td >{{$user->whatsapp}}</td>
+                            <td >{{$user->nim}}</td>
+                            <td >{{$user->campus}}</td>
+                            <td >{{$user->major}}</td>
+                            <td >{{$user->batch}}</td>
+                            <td >
+                                @foreach ($user->schedules() as $schedule)
+                                    {{$schedule->date}};
+                                @endforeach
+                            </td>
+                            <td >{{$user->lnt_course}}</td>
+                            <td >{{$user->is_esport}}</td>
+                        </tr>
+                        @endforeach
+
+                        @elseif (Auth::user()->role==5)
+                        @foreach ($mlg as $user)
+                        <tr>
+                            <td >{{++$no}}</td>
+                            <td >
+                                <div class="w-24 flex flex-row justify-center">
+                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
+                                    </button>
+                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                    </button>
+                                </div>
+                            </td>
+                            <td > {{$user->email_verified_at}} </td>
+                            <td >{{$user->fullName}}</td>
+                            <td >{{$user->gender}}</td>
+                            <td >{{$user->birthDate}}</td>
+                            <td >{{$user->placeBirth}}</td>
+                            <td >{{$user->domicile}}</td>
+                            <td >{{$user->address}}</td>
+                            <td >{{$user->personal_email}}</td>
+                            <td >{{$user->email}}</td>
+                            <td >{{$user->line_id}}</td>
+                            <td >{{$user->whatsapp}}</td>
+                            <td >{{$user->nim}}</td>
+                            <td >{{$user->campus}}</td>
+                            <td >{{$user->major}}</td>
+                            <td >{{$user->batch}}</td>
+                            <td >
+                                @foreach ($user->schedules() as $schedule)
+                                    {{$schedule->date}};
+                                @endforeach
+                            </td>
+                            <td >{{$user->lnt_course}}</td>
+                        </tr>
+                        @endforeach
+                      @endif
                   </tbody>
                 </table>
                 @if (Auth::user()->role==3)
@@ -288,20 +329,7 @@
                         @elseif (Auth::user()->role==5)
                             BNCC Malang Admin
                         @endif
-                    </span>
-                    <form action=
-                    "@if (Auth::user()->role==3)
-                        {{route('download_ALSPay')}}
-                    @elseif (Auth::user()->role==4)
-                        {{route('download_BDGPay')}}
-                    @elseif (Auth::user()->role==5)
-                        {{route('download_MLGPay')}}
-                    @endif">
-                        <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                            <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                            Download Participant Data
-                        </button>
-                    </form>
+                    </span> {{-- Ganti per Region --}}
                 </div>
 
                 {{-- Table --}}
@@ -309,21 +337,40 @@
                 <thead>
                     <tr>
                         <th >No</th>
+                        <th >Actions</th>
                         <th >Time Stamp</th>
                         <th >Status</th>
                         <th >Full Name</th>
                         <th >LnT Course</th>
-                        <th >View Payment</th>
-                        <th >Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-
-                            @if (Auth::user()->role==3)
-                            @foreach ($als as $user)
+                        @if (Auth::user()->role==3)
+                            @foreach ($als_pay as $user)
                             <tr>
-                                @if ($user->payment_pic!=NULL)
                                 <td >{{++$no}}</td>
+                                <td>
+                                    <div class="flex flex-row justify-around">
+                                        <form action="{{route('download_payment', $user->id)}}">
+                                            <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                            </button>
+                                        </form>
+
+                                        <form wire:submit.prevent="verify({{$user->id}})">
+                                            <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                            </button>
+                                        </form>
+
+                                        <form wire:submit.prevent="reject({{$user->id}})">
+                                            <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                        </form>
+
+
+                                    </div>
+                                </td>
                                 <td >{{$user->updated_at}}</td>
                                 <td >
                                     @if ($user->status==1)
@@ -334,39 +381,66 @@
                                 </td>
                                 <td >{{$user->fullName}}</td>
                                 <td >{{$user->lnt_course}}</td>
+                            </tr>
+                            @endforeach
+                        @elseif (Auth::user()->role==4)
+                            @foreach ($bdg_pay as $user)
+                            <tr>
+                                <td >{{++$no}}</td>
                                 <td>
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
+                                    <div class="flex flex-row justify-around">
                                         <form action="{{route('download_payment', $user->id)}}">
-                                            <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
+                                            <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                                             </button>
                                         </form>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex flex-row justify-center">
                                         <form wire:submit="verify({{$user->id}})">
-                                            <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
+                                            <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
                                             </button>
                                         </form>
                                         <form wire:submit="reject({{$user->id}})">
-                                            <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
+                                            <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                             </button>
                                         </form>
                                     </div>
-
                                 </td>
-                                @endif
+                                <td >{{$user->updated_at}}</td>
+                                <td >
+                                    @if ($user->status==1)
+                                        Verified
+                                    @else
+                                        Unverified
+                                    @endif
+                                </td>
+                                <td >{{$user->fullName}}</td>
+                                <td >{{$user->lnt_course}}</td>
                             </tr>
                             @endforeach
-
-                            @elseif (Auth::user()->role==4)
-                                @foreach ($bdg as $user)
-                                <tr>
-                                @if ($user->payment_pic!=NULL)
+                        @elseif (Auth::user()->role==5)
+                            @foreach ($mlg_pay as $user)
+                            <tr>
                                 <td >{{++$no}}</td>
+                                <td>
+                                    <div class="flex flex-row justify-around">
+                                        <form action="{{route('download_payment', $user->id)}}">
+                                            <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                            </button>
+                                        </form>
+                                        <form wire:submit="verify({{$user->id}})">
+                                            <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
+                                            </button>
+                                        </form>
+                                        <form wire:submit="reject({{$user->id}})">
+                                            <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                                <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
                                 <td >{{$user->updated_at}}</td>
                                 <td >
                                     @if ($user->status==1)
@@ -377,105 +451,29 @@
                                 </td>
                                 <td >{{$user->fullName}}</td>
                                 <td >{{$user->lnt_course}}</td>
-                                <td>
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <form action="{{route('download_payment', $user->id)}}">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        </form>
-                                    </div>
-                                </td>
-                                <td>
-                                <div class="flex flex-row justify-center">
-                                    <form wire:submit="verify({{$user->id}})">
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                    </form>
-                                    <form wire:submit="reject({{$user->id}})">
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </form>
-                                </div>
-
-                                </td>
-                                @endif
-                                </tr>
+                            </tr>
                             @endforeach
-                            @elseif (Auth::user()->role==5)
-                                @foreach ($mlg as $user)
-                                <tr>
-                                @if ($user->payment_pic!=NULL)
-                                <td >{{++$no}}</td>
-                                <td >{{$user->updated_at}}</td>
-                                <td >
-                                    @if ($user->status==1)
-                                        Verified
-                                    @else
-                                        Unverified
-                                    @endif
-                                </td>
-                                <td >{{$user->fullName}}</td>
-                                <td >{{$user->lnt_course}}</td>
-                                <td>
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <form action="{{route('download_payment', $user->id)}}">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        </form>
-                                    </div>
-                                </td>
-                                <td>
-                                <div class="flex flex-row justify-center">
-                                    <form wire:submit="verify({{$user->id}})">
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-1 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                    </form>
-                                    <form wire:submit="reject({{$user->id}})">
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md ml-1 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </form>
-                                </div>
-
-                                </td>
-                                @endif
-                                </tr>
-                                @endforeach
-                            @endif
-
+                        @endif
                     </tbody>
                 </table>
                 @if (Auth::user()->role==3)
-                    {{$als->onEachSide(0)->links()}}
+                    {{$als_pay->onEachSide(0)->links()}}
                 @elseif (Auth::user()->role==4)
-                    {{$bdg->onEachSide(0)->links()}}
+                    {{$bdg_pay->onEachSide(0)->links()}}
                 @elseif (Auth::user()->role==5)
-                    {{$mlg->onEachSide(0)->links()}}
+                    {{$mlg_pay->onEachSide(0)->links()}}
                 @endif
             </div>
 
             <div class="section reregistration-sec bg-cLightGray h-full hidden">
                 <div class="w-100  bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
-                    <span>Re-Registration</span>
+                    <span>Re-Registered Members</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
 
                 <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">
-                        @if (Auth::user()->role==3)
-                            BNCC Alam Sutera Admin
-                        @elseif (Auth::user()->role==4)
-                            BNCC Bandung Admin
-                        @elseif (Auth::user()->role==5)
-                            BNCC Malang Admin
-                        @endif
-                    </span>
+                    <span class="text-2xl">BNCC Bandung Admin</span> {{-- Ganti per Region --}}
                     <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
@@ -487,7 +485,8 @@
                     <thead>
                         <tr>
                           <th >No</th>
-                          <th >Time Stamp</th>
+                          <th >Actions </th>
+                          <th >Time Stamp </th>
                           <th >Full Name</th>
                           <th >BNCC ID</th>
                           <th >LinkedIn</th>
@@ -499,31 +498,17 @@
                       </thead>
                       <tbody>
                           <tr>
-                            <td >1.</td>
-                            <td >10-04-19 12:00:17</td>
-                            <td >Jeon Jung Kook</td>
-                            <td >BNCC20123</td>
-                            <td >https://linkedin.com/..</td>
-                            <td >https://github.com..</td>
-                            <td >UI/UX Design</td>
+                            <td >1</td>
                             <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                                <div class="w-24 flex flex-row justify-center">
+                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
+                                    </button>
+                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                     </button>
                                 </div>
                             </td>
-                            <td >
-                                <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                    <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                        <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td >1.</td>
                             <td >10-04-19 12:00:17</td>
                             <td >Jeon Jung Kook</td>
                             <td >BNCC20123</td>
@@ -551,11 +536,10 @@
 
             </div>
 
-
         </div>
 
     </div>
 
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/userDashboard.js')}}"></script>
+    <script src="{{ asset('js/adminDashboard.js')}}"></script>
 </div>
