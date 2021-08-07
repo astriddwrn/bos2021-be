@@ -24,24 +24,29 @@ class PaginateUsers extends Component
         }
         else if($request->user()->role==3||$request->user()->role==4||$request->user()->role==5){
             return view('livewire.paginate-users', [
-                'kmg' => User::where('campus', '=', 'KMG')->orderBy('id','desc')->paginate(10),
                 'als' => User::where('campus', '=', 'ALS')->orderBy('id','desc')->paginate(10),
                 'bdg' => User::where('campus', '=', 'BDG')->orderBy('id','desc')->paginate(10),
                 'mlg' => User::where('campus', '=', 'MLG')->orderBy('id','desc')->paginate(10),
+                'als_pay' => User::where('campus', '=', 'ALS')->where('payment_pic','!=',NULL)->orderBy('id','desc')->paginate(10),
+                'bdg_pay' => User::where('campus', '=', 'BDG')->where('payment_pic','!=',NULL)->orderBy('id','desc')->paginate(10),
+                'mlg_pay' => User::where('campus', '=', 'MLG')->where('payment_pic','!=',NULL)->orderBy('id','desc')->paginate(10),
                 'no' => 0
             ])->layout('layouts.app');
         }
     }
 
+    public User $user;
     public function reject($id) {
         $user  = User::findOrFail($id);
         $user->status = 2;
         $user->save();
+        $this->emit('regeneratedCodes');
     }
 
     public function verify($id) {
         $user  = User::findOrFail($id);
         $user->status = 1;
         $user->save();
+        $this->emit('regeneratedCodes');
     }
 }
