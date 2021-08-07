@@ -76,7 +76,7 @@
                                         </button>
                                     </div> --}}
                                 </td>
-                                <td>{{$user['email_verified_at'] ?? ''}}</td>
+                                <td>{!!$user['email_verified_at'] ?? ''!!}</td>
                                 <td>{{$user['fullName'] ?? ''}}</td>
                                 <td>{{$user['gender'] ?? ''}}</td>
                                 <td>{{$user['birthDate'] ?? ''}}</td>

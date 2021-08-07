@@ -27,13 +27,14 @@ class UsersTable extends Component
             else $this->_region = $this->region;
         }else $this->_region = '%%';
 
-        $users = User2::where('campus', 'like', $this->_region);
+        $users = User2::where('campus', 'like', $this->_region)->where('role', 0);
         $this->total = $users->count();
         $this->page_total = ceil($this->total / $this->limit);
+        if($this->page < 1 || $this->page > $this->page_total) $this->page = 1;
         $this->skip = ($this->page - 1) * $this->limit;
 
         return view('livewire.users-table', [
-            'users' => $users->orderBy('id','desc')->limit($this->limit)
+            'users' => $users->orderBy('id','asc')->limit($this->limit)
                         ->skip($this->skip)->get()
         ]);
     }

@@ -115,7 +115,7 @@
     </div>
 
     <div class="flex flex-row w-screen">
-        <div class="menu-cont menu-off xl:w-3/12 sm:w-80 w-60 h-screen flex flex-col items-center fixed xl:left-0 right-0 xl:flex z-10 bg-cWhite shadow-bsBtn">
+        <div class="menu-cont menu-off xl:w-1/5 sm:w-80 w-60 h-screen flex flex-col items-center fixed xl:left-0 right-0 xl:flex z-10 bg-cWhite shadow-bsBtn">
             <div class="mt-10 text-lg menu-list w-52">
 
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-participant cursor-pointer">
@@ -142,7 +142,7 @@
             </div>
         </div>
 
-        <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
+        <div class="xl:w-4/5 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
 
             {{-- PARTICIPANT --}}
             <div class="section participant-sec bg-cLightGray h-full">
