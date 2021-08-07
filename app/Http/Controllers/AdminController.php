@@ -35,9 +35,9 @@ class AdminController extends Controller
         return view('admin');
     }
 
-    public function display(){
+    public function showSuperAdmin(){
 
-        return view('debug.superAdminDashboard');
+        return view('superAdminDashboard');
     }
 
     public function downloadPayment(Request $request, $id) {

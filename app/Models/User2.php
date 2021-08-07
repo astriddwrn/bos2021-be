@@ -33,7 +33,7 @@ class User2 extends Authenticatable
             $schedules[$i] = Schedule::find($id)->text;
         }
 
-        return json_encode($schedules);
+        return $schedules;
     }
 
     public function getEmailVerifiedAtAttribute($date){

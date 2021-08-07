@@ -104,11 +104,11 @@ const removeactiveElements = () => {
     $(btnMlg).removeClass("btnRegion-active");
     $(btnAllReg).removeClass("btnRegion-active");
 
-    $(tblKmg).removeClass("tbl-active");
-    $(tblAs).removeClass("tbl-active");
-    $(tblBdg).removeClass("tbl-active");
-    $(tblMlg).removeClass("tbl-active");
-    $(tblAllReg).removeClass("tbl-active");
+    // $(tblKmg).removeClass("tbl-active");
+    // $(tblAs).removeClass("tbl-active");
+    // $(tblBdg).removeClass("tbl-active");
+    // $(tblMlg).removeClass("tbl-active");
+    // $(tblAllReg).removeClass("tbl-active");
     console.log("activated");
 }
 
