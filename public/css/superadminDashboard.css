@@ -1,0 +1,58 @@
+@import url(base.css);
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+table th {
+    color: #FBFBFB;
+    padding: 2rem 1rem;
+    font-weight: 600;
+    background-color: #0054A5;
+    border-right: 2px solid #E5E7E9;
+}
+
+table td {
+    color: #383530;
+    border-right: 2px solid #E5E7E9;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    min-width: 6rem;
+}
+
+table tr:nth-child(odd) {
+    background-color: #CCE4F9;
+}
+
+table tr:nth-child(even) {
+    background-color: #FBFBFB;
+
+}
+
+.btnRegion {
+    width: 7rem;
+    color: #0054A5;
+    border: 1px solid #0054A5;
+    padding: 0.2rem 0rem;
+    border-radius: 32px;
+    background-color: none;
+    text-align: center;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.btnRegion-active {
+    color: #FBFBFB;
+    background-color: #0054A5;
+}
+
+.tbl {
+    display: none;
+}
+
+.tbl-active {
+    display: block;
+}
+
