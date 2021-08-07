@@ -352,6 +352,6 @@
             }
         })
     </script>
-    <script src="{{url('./js/auth.js')}}?t=202108070932"></script>
+    <script src="{{url('./js/auth.js')}}?t=202108070936"></script>
 </body>
 </html>
