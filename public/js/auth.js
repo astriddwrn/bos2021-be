@@ -181,7 +181,7 @@ selectFunc("bncc-select-als");
         // var pattern = /^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$/g;
         var pattern = /^(08)\d+/g;
 
-        if(x.is('#whatsapp') && !pattern.test(x.val()) && x.val().length < 8 && x.val().length > 15){
+        if(x.is('#whatsapp') && (!pattern.test(x.val()) || x.val().length < 8 || x.val().length > 15)){
             x.addClass("border-error");
             x.siblings('.msg-error').text("please input a valid phone number.");
         }
