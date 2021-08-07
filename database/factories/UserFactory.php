@@ -24,14 +24,14 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'fullName' => Str::random(10),
+            'fullName' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'password' => Hash::make('TestPass123'),
             'whatsapp' => '08' . rand(1000, 9999) . rand(1000, 9999),
             'line_id' => Str::random(8),
             'personal_email' => $this->faker->unique()->safeEmail(),
             'nim' => '25' . rand(1000, 9999) . rand(1000, 9999),
-            'campus' => 'ALS',
+            'campus' => ['KMG', 'ALS', 'BDG', 'MLG'][rand(0, 3)],
             'major' => 'None',
             'lnt_course' => Str::random(8),
             'schedule' => [2, 4, 5],
@@ -40,7 +40,8 @@ class UserFactory extends Factory
             'birthDate' => now(),
             'placeBirth' => 'None',
             'domicile' => 'None',
-            'address' => 'None'
+            'address' => 'None',
+            'payment_pic' => ['HHxpCr8lBB_2581608534_1628235782.png', null][rand(0, 1)]
         ];
     }
 

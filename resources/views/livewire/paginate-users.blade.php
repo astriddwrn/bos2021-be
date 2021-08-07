@@ -141,7 +141,7 @@
                             BNCC Malang Admin
                         @endif
                     </span> {{-- Ganti per Region --}}
-                    <form action=
+                    {{-- <form action=
                     "@if (Auth::user()->role==3)
                         {{route('download_ALS')}}
                     @elseif (Auth::user()->role==4)
@@ -153,7 +153,17 @@
                             <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                             Download Participant Data
                         </button>
-                    </form>
+                    </form> --}}
+                    <a href="@if (Auth::user()->role==3)
+                        {{route('download_ALS')}}
+                    @elseif (Auth::user()->role==4)
+                        {{route('download_BDG')}}
+                    @elseif (Auth::user()->role==5)
+                        {{route('download_MLG')}}
+                    @endif" type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
+                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
+                        Download Participant Data
+                    </a>
                 </div>
 
                 {{-- Table --}}
@@ -186,9 +196,9 @@
                   </thead>
                   <tbody>
                       @if (Auth::user()->role==3)
-                        @foreach ($als as $user)
+                        @foreach ($als as $i=>$user)
                         <tr>
-                            <td >{{++$no}}</td>
+                            <td >{{$i+1}}</td>
                             <td >
                                 <div class="w-24 flex flex-row justify-center">
                                     <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
@@ -224,9 +234,9 @@
                         </tr>
                         @endforeach
                       @elseif (Auth::user()->role==4)
-                        @foreach ($bdg as $user)
+                        @foreach ($bdg as $i=>$user)
                         <tr>
-                            <td >{{++$no}}</td>
+                            <td >{{$i+1}}</td>
                             <td >
                                 <div class="w-24 flex flex-row justify-center">
                                     <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
@@ -254,7 +264,7 @@
                             <td >{{$user->batch}}</td>
                             <td >
                                 @foreach ($user->schedules() as $schedule)
-                                    {{$schedule->date}};
+                                    {{$schedule->text}}; <br />
                                 @endforeach
                             </td>
                             <td >{{$user->lnt_course}}</td>
@@ -293,7 +303,7 @@
                             <td >{{$user->batch}}</td>
                             <td >
                                 @foreach ($user->schedules() as $schedule)
-                                    {{$schedule->date}};
+                                    {{$schedule->text}}; <br />
                                 @endforeach
                             </td>
                             <td >{{$user->lnt_course}}</td>
@@ -358,14 +368,15 @@
                                         </form>
 
                                         <form wire:submit.prevent="verify({{$user->id}})">
-                                            <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
+                                            <button wire:click="verify({{$user->id}})" class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
                                             </button>
                                         </form>
 
                                         <form wire:submit.prevent="reject({{$user->id}})">
-                                            <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                            <button wire:click="reject({{$user->id}})" class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
+                                            </button>
                                         </form>
 
 
@@ -394,12 +405,12 @@
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                                             </button>
                                         </form>
-                                        <form wire:submit="verify({{$user->id}})">
+                                        <form wire:submit.prevent="verify({{$user->id}})">
                                             <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
                                             </button>
                                         </form>
-                                        <form wire:submit="reject({{$user->id}})">
+                                        <form wire:submit.prevent="reject({{$user->id}})">
                                             <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                             </button>

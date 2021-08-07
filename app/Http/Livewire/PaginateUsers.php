@@ -35,16 +35,15 @@ class PaginateUsers extends Component
         }
     }
 
-    public User $user;
-    public function reject($id) {
-        $user  = User::findOrFail($id);
+    public function reject(User $user) {
+        // $user  = User::findOrFail($id);
         $user->status = 2;
         $user->save();
         $this->emit('regeneratedCodes');
     }
 
-    public function verify($id) {
-        $user  = User::findOrFail($id);
+    public function verify(User $user) {
+        // $user  = User::findOrFail($id);
         $user->status = 1;
         $user->save();
         $this->emit('regeneratedCodes');
