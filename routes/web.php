@@ -45,8 +45,8 @@ Route::middleware(["auth"])->group(function(){
 Route::middleware(["auth", 'admin'])->group(function() {
 
     // Route::get('/admin', [AdminController::class, "index"])->name('admin');
-    Route::get('/admin', \App\Http\Livewire\PaginateUsers::class);
-    Route::get('/superadmin', [AdminController::class, "showSuperAdmin"])->name('superadmin');
+    // Route::get('/admin', \App\Http\Livewire\PaginateUsers::class);
+    Route::get('/admin', [AdminController::class, "showSuperAdmin"])->name('superadmin');
 
     Route::get('/download/payment/{id}', [AdminController::class, "downloadPayment"])->name('download_payment');
     Route::get('/download/ktp/{id}', [AdminController::class, "downloadKTP"])->name('download_ktp');
