@@ -35,9 +35,9 @@ class AdminController extends Controller
         return view('admin');
     }
 
-    public function showSuperAdmin(){
-
-        return view('superAdminDashboard');
+    public function showSuperAdmin(Request $request){
+        $user = $request->user();
+        return view('superAdminDashboard', compact('user'));
     }
 
     public function downloadPayment(Request $request, $id) {

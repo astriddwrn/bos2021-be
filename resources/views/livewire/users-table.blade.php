@@ -1,5 +1,6 @@
             <div>
                 <div class="w-100 flex flex-row justify-between items-center py-4 px-8 font-bold text-cDarkBlue">
+                    @if(!$lock_region)
                     <span class="text-2xl">
                         <button wire:click="$set('region', 'ALL')" class="btnAllReg btnRegion @if($region == 'ALL') btnRegion-active @endif">
                             All Region
@@ -17,6 +18,7 @@
                             MLG
                         </button>
                     </span>
+                    @endif
                     <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data

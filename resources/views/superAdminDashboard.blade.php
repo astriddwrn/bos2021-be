@@ -153,7 +153,15 @@
                 </div>
 
                 <!-- isi nya -->
-                @livewire('users-table')
+                @if(in_array($user->role, [1, 2]))
+                    @livewire('users-table')
+                @elseif($user->role == 3)
+                    @livewire('users-table', ['region'=>'ALS', 'lock_region' => true])
+                @elseif($user->role == 4)
+                    @livewire('users-table', ['region'=>'BDG', 'lock_region' => true])
+                @elseif($user->role == 5)
+                    @livewire('users-table', ['region'=>'MLG', 'lock_region' => true])
+                @endif
 
                 {{-- CLOSED SECTION PARTICIPANTS --}}
             </div>

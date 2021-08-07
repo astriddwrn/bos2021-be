@@ -60,7 +60,7 @@ class UserController extends Controller
             }
             case 2: {
 
-                return view('/superadmin');
+                return view('superAdminDashboard', compact('user'));
                 break;
             }
             case 3: {
