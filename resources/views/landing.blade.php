@@ -783,7 +783,7 @@
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: UI/UX Design</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 25, 2021</h5>
                 <p class="text-cBlackHome mb-10 sm:mb-4 lg:mb-10 xl:mb-11 leading-7">
-                    A challenge encouraging you to help BNCC by sharing your unique photo for a chance to win a reward.
+                    An online workshop that will teach you the fundamentals of UI/UX design from scratch.
                 </p>
                 {{-- <a class="w-full flex flex-row justify-center items-center
                 bg-cBluishGray

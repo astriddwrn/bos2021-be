@@ -9,7 +9,7 @@ class UsersTable extends Component
 {
     public $lock_region = false;
     public $region = 'ALL';
-    public $_region = '%%';
+    protected $_region = '%%';
 
     public $limit = 10;
     public $page = 1;
@@ -19,7 +19,10 @@ class UsersTable extends Component
 
     public function render()
     {
-        if(in_array($this->region, ['ALL', 'KMG', 'ALS', 'BDG', 'MLG'])){
+        if($this->lock_region){
+            if($this->_region == '%%') $this->region = 'ALL';
+            else $this->region = $this->_region;
+        }else if(in_array($this->region, ['ALL', 'KMG', 'ALS', 'BDG', 'MLG'])){
             if($this->region == "ALL") $this->_region = '%%';
             else $this->_region = $this->region;
         }else $this->_region = '%%';
