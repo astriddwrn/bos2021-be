@@ -59,22 +59,21 @@ class UserController extends Controller
                 break;
             }
             case 2: {
-
-                return view('superAdminDashboard', compact('user'));
+                return redirect('/superadmin');
                 break;
             }
             case 3: {
 
-                return redirect('/admin');
+                return redirect('/superadmin');
                 break;
             }
             case 4: {
-                return redirect('/admin');
+                return redirect('/superadmin');
                 break;
             }
 
             case 5: {
-                return redirect('/admin');
+                return redirect('/superadmin');
                 break;
             }
         }
