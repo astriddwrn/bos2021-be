@@ -1243,7 +1243,7 @@
                             <div class="custom-select major-select w-full">
                                 <select id="major-select" name="major">
                                     <option class="off" value="0">Select your major</option>
-
+                                    <option value="dummy" selected="selected">Dummy</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -1253,6 +1253,7 @@
                             <div class="custom-select fyp-select w-full">
                                 <select id="fyp-select" name="batch">
                                     <option class="off" value="0">Select your batch</option>
+                                    <option value="dummy" selected="selected">Dummy</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -1262,6 +1263,7 @@
                             <div class="custom-select lnt-select w-full">
                                 <select id="lnt-select" name="lnt_course">
                                     <option class="off" value="0">Select your course</option>
+                                    <option value="dummy" selected="selected">Dummy</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>

@@ -182,7 +182,6 @@
                         <div class="custom-select major-select w-full">
                             <select id="major-select" name="major">
                                 <option class="off" value="0">Select your major</option>
-
                             </select>
                         </div>
                         <span class="msg-error"></span>

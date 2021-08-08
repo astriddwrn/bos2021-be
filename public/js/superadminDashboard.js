@@ -417,7 +417,7 @@ selectFunc("bncc-select-als");
     });
 
 
-    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),'ALS', 'Accounting', 'Batch 1', 'Java Programming', '');
+    // changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),'ALS', 'Accounting', 'Batch 1', 'Java Programming', '');
 
 
     function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl){
