@@ -75,8 +75,8 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
  Route::prefix("/debug")->group(function(){
-    // Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
-    // Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
+     Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
+     Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
  });
 
 require __DIR__.'/auth.php';

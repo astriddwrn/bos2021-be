@@ -1,46 +1,42 @@
+setTimeout(function(){
+    $('.pop-up').removeClass('hidden');
+}, 1000);
 
-    setTimeout(function(){
-        $('.pop-up').removeClass('hidden');
-     }, 1000);
 
+$(".logout").click(function() {
+$('.loggingout').toggleClass('is-visible');
+});
 
-    $(".logout").click(function() {
-    $('.loggingout').toggleClass('is-visible');
-    });
+$(".modal-back").click(function() {
+$('.loggingout').toggleClass('is-visible');
+});
 
-    $(".modal-back").click(function() {
-    $('.loggingout').toggleClass('is-visible');
-    });
+let verifyBtn = $('.verifyBtn');
+let verifyBtnBack = $('.verify-back');
+let verifyModal = $('.verify-user');
 
-    $(".verifyBtn").click(function() {
-        $('.verify-user').toggleClass('is-visible');
-    });
-    $(".verify-back").click(function() {
-        $('.verify-user').toggleClass('is-visible');
-    });
+let rejectBtn = $('.rejectBtn');
+let rejectBtnBack = $('.reject-back');
+let rejectModal = $('.reject-user');
 
-    $(".rejectBtn").click(function() {
-        $('.reject-user').toggleClass('is-visible');
-    });
-    $(".reject-back").click(function() {
-        $('.reject-user').toggleClass('is-visible');
-    });
+let deleteBtn = $('.deleteBtn');
+let deleteBtnBack = $('.delete-back');
+let deleteModal = $('.delete-user');
 
-    $(".deleteBtn").click(function() {
-        $('.delete-user').toggleClass('is-visible');
+const showhideModal = (btn, btnback, modal) => {
+    $(btn).click(function () {
+        $(modal).toggleClass('is-visible');
     });
-    $(".delete-back").click(function() {
-        $('.delete-user').toggleClass('is-visible');
+    $(btnback).click(function () {
+        $(modal).toggleClass('is-visible');
     });
+}
 
-    $(".editBtn").click(function() {
-        $('.edit-user').toggleClass('is-visible');
-    });
-    $(".edit-back").click(function() {
-        $('.edit-user').toggleClass('is-visible');
-    });
+showhideModal(verifyBtn, verifyBtnBack, verifyModal);
+showhideModal(rejectBtn, rejectBtnBack, rejectModal);
+showhideModal(deleteBtn, deleteBtnBack, deleteModal);
 
-   $(".menu-list div").click(function() {
+$(".menu-list div").click(function() {
     $('.on').each(function() {
         if(!$(this).hasClass('hidden')){
             $(this).parent().find('img').toggleClass("hidden");
@@ -140,3 +136,37 @@ addactiveElements(btnAs);
 addactiveElements(btnBdg);
 addactiveElements(btnMlg);
 addactiveElements(btnAllReg);
+
+let btnEditParticipant = $('.editBtnParticipant');
+let btnEditReregis = $('.editBtnReregis');
+
+let btnCancelEditPart = $('.cancel-editPart');
+let btnCancelEditReregis = $('.cancel-editReregis');
+
+let participantSec = $('.participant-sec');
+let reregisSec = $('.reregistration-sec');
+
+let editformParticipant = $('.editdata-participantsec')
+let editformReregis = $('.editdata-reregistrationsec')
+
+const showEditForm = (btn, editform) => {
+    $(btn).click(function () {
+        $(this).closest('.section').hide();
+        $(editform).show();
+    });
+}
+
+showEditForm(btnEditParticipant, editformParticipant);
+showEditForm(btnEditReregis, editformReregis);
+
+const closeEditForm = (btn, editform, sec) => {
+    $(btn).click(function () {
+        $(editform).hide();
+        $(sec).show();
+    });
+}
+
+closeEditForm(btnCancelEditPart, editformParticipant, participantSec);
+closeEditForm(btnCancelEditReregis, editformReregis, reregisSec);
+
+
