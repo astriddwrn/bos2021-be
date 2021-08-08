@@ -864,7 +864,7 @@
                                 <td >1</td>
                                 <td >
                                     <div class="w-24 flex flex-row justify-center">
-                                        <button class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <button data-id="pokemon" class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                                         </button>
                                         <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
@@ -1136,7 +1136,7 @@
                 {{-- Isi nya --}}
                 <form id="form-editdata-participant" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
                     <div class="xl:w-10/12 sm:w-8/12 w-full">
-                        <input type="hidden" name="id" value="passed">
+                        <input id="data-part" type="hidden" name="id">
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Full Name</div>
                             <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 border-0" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe" value="{{ old('fullName') }}">
@@ -1341,7 +1341,7 @@
                 {{-- Isi nya --}}
                 <form id="form-editdata-reregis" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
                     <div>
-                        <input type="hidden" name="id" value="passed">
+                        <input id="data-reregis" type="hidden" name="id">
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
                             <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC21xxx">
