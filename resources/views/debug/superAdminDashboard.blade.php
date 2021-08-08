@@ -1137,7 +1137,7 @@
                 </div>
 
                 {{-- Isi nya --}}
-                <form wire:init id="form-editdata-participant" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
+                <form id="form-editdata-participant" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
                     <div class="xl:w-10/12 sm:w-8/12 w-full">
                         <input id="data-part" type="hidden" name="id">
                         <div class="mt-5">

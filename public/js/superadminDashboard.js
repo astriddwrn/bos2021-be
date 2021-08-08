@@ -304,7 +304,6 @@ function closeAllSelect(elmnt) {
         }
     }
     function multiple(x){
-        console.log(x);
         let a = false;
         x.find('label input').each(function() {
             if($(this).is(':checked')){
@@ -387,54 +386,47 @@ function closeAllSelect(elmnt) {
 
 
 
-    // $('.editBtnParticipant').click(function(){
-        // document.addEventListener("DOMContentLoaded", () => {
+    $('.editBtnParticipant').click(function(){
+        const json = JSON.parse($("meta[name=schedules]").attr("content"));
+        var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
+        var outputALS =  json.filter(schedule => schedule.campus == "als");
+        var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
+        var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
+        for (const [key, val] of Object.entries(outputKMG)) {
+            $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
+        }
+        for (const [key, val] of Object.entries(outputALS)) {
+            $('#bncc-select-als').append(new Option(`${val.text}`, `${val.id}`));
+        }
+        for (const [key, val] of Object.entries(outputMLG)) {
+            $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+        }
+        for (const [key, val] of Object.entries(outputBDG)) {
+            $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+        }
+        Livewire.hook('message.processed', (message, component) => {
+            if(component.fingerprint.name != 'edit-participant-meta-data') return null;
+            var userData = JSON.parse($("meta[name=user]").attr("content"));
+            
+            $('#fullName').val(userData.fullName);
+            $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
+            selectFunc("gender-select");
+            $('#birthDate').val(userData.birthDate);
+            $('#placeBirth').val(userData.placeBirth);
+            $('#domicile').val(userData.domicile);
+            $('#address').val(userData.address);
+            $('#email').val(userData.email);
+            $('#personal_email').val(userData.personal_email);
+            $('#line_id').val(userData.line_id);
+            $('#whatsapp').val(userData.whatsapp);
+            $('#nim').val(userData.nim);
+            $('.campus-select option[value='+'"' +userData.campus+ '"').attr('selected', 'selected');
+            selectFunc("campus-select");
 
+            changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
 
-                const json = JSON.parse($("meta[name=schedules]").attr("content"));
-                var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
-                var outputALS =  json.filter(schedule => schedule.campus == "als");
-                var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
-                var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
-                console.log(outputKMG);
-                for (const [key, val] of Object.entries(outputKMG)) {
-                    $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
-                }
-                for (const [key, val] of Object.entries(outputALS)) {
-                    $('#bncc-select-als').append(new Option(`${val.text}`, `${val.id}`));
-                }
-                for (const [key, val] of Object.entries(outputMLG)) {
-                    $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-                }
-                for (const [key, val] of Object.entries(outputBDG)) {
-                    $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-                }
-            Livewire.hook('element.updated', (el, component) => {
-                // setTimeout(function(){
-                    if(component.fingerprint.name != 'edit-participant-meta-data') return null;
-                    var userData = JSON.parse($("meta[name=user]").attr("content"));
-
-                    $('#fullName').val(userData.fullName);
-                    $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
-                    selectFunc("gender-select");
-                    $('#birthDate').val(userData.birthDate);
-                    $('#placeBirth').val(userData.placeBirth);
-                    $('#domicile').val(userData.domicile);
-                    $('#address').val(userData.address);
-                    $('#email').val(userData.email);
-                    $('#personal_email').val(userData.personal_email);
-                    $('#line_id').val(userData.line_id);
-                    $('#whatsapp').val(userData.whatsapp);
-                    $('#nim').val(userData.nim);
-                    $('.campus-select option[value='+'"' +userData.campus+ '"').attr('selected', 'selected');
-                    selectFunc("campus-select");
-
-                    // changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
-                // }, 1000);
-
-            });
-        // });
-    // });
+        });
+    });
 
 
 
@@ -590,7 +582,6 @@ function closeAllSelect(elmnt) {
         }
         else{
             for(let i=0; i<bl.length; i++ ){
-                console.log(bl[i]);
                 d.find('input[value='+'"' +bl[i]+ '"]').prop('checked', true);
             }
         }
@@ -680,7 +671,7 @@ function closeAllSelect(elmnt) {
      }, 1000);
 
     selectFunc("relnt-select");
-    selectFunc("schedule-select");
+    // selectFunc("schedule-select");
 
     $('input:file').change(function() {
         var file = $(this)[0].files[0].name;
