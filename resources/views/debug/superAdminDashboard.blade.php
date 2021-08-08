@@ -1127,6 +1127,11 @@
 
             {{-- EDIT DATA PARTICIPANT--}}
             <div class="section editdata-participantsec bg-cLightGray h-full hidden">
+                <div>
+                    <meta name="user" content="{}">
+                    <input type="number" name="id" class="data-part" >
+                </div>
+
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Edit Data Participant</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
@@ -1243,7 +1248,6 @@
                             <div class="custom-select major-select w-full">
                                 <select id="major-select" name="major">
                                     <option class="off" value="0">Select your major</option>
-                                    <option value="dummy" selected="selected">Dummy</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -1253,7 +1257,6 @@
                             <div class="custom-select fyp-select w-full">
                                 <select id="fyp-select" name="batch">
                                     <option class="off" value="0">Select your batch</option>
-                                    <option value="dummy" selected="selected">Dummy</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -1263,7 +1266,6 @@
                             <div class="custom-select lnt-select w-full">
                                 <select id="lnt-select" name="lnt_course">
                                     <option class="off" value="0">Select your course</option>
-                                    <option value="dummy" selected="selected">Dummy</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>

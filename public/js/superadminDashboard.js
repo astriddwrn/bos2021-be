@@ -142,7 +142,7 @@ addactiveElements(btnAllReg);
 let btnEditParticipant = $('.editBtnParticipant');
 let btnEditReregis = $('.editBtnReregis');
 
-let inputAttrPart = $('#data-part');
+let inputAttrPart = $('.data-part');
 let inputAttrReregis    = $('#data-reregis');
 
 let btnCancelEditPart = $('.cancel-editPart');
@@ -216,7 +216,6 @@ function selectFunc(z){
     a.setAttribute("class", "select-selected");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
-   
         x[0].appendChild(a).style.color = "black";
     /*for each element, create a new DIV that will contain the option list:*/
     b = document.createElement("DIV");
@@ -297,9 +296,8 @@ function closeAllSelect(elmnt) {
     }
 }
 
-    $('.campus-select option[value="KMG"]').attr('selected', 'selected');
+$('.campus-select option[value="KMG"]').attr('selected', 'selected');
   
-
 selectFunc("gender-select");
 selectFunc("test-select");
 selectFunc("nim-select");
@@ -417,7 +415,7 @@ selectFunc("bncc-select-als");
     });
 
 
-    // changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),'ALS', 'Accounting', 'Batch 1', 'Java Programming', '');
+    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),'ALS', 'Accounting', 'Batch 1', 'Java Programming', '');
 
 
     function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl){
@@ -575,9 +573,7 @@ selectFunc("bncc-select-als");
                 $('.campus-select').siblings('.msg-error').text("Please fill out this field first.");
             }
         }
-
         if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
-
             cmps = select.find(":selected").val();
             changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps, '', '', '', '');
 
