@@ -7,6 +7,8 @@ use App\Models\User2;
 
 class UsersTable extends Component
 {
+    public $auth;
+
     public $lock_region = false;
     public $region = "ALL";
     public $_region = '%%';

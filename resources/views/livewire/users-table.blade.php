@@ -67,15 +67,15 @@
                             <tr>
                                 <td>{{($limit * ($page - 1))+ $i + 1}}</td>
                                 <td>
-                                    @if($user->role >= 1)
-                                    {{-- <div class="w-24 flex flex-row justify-center">
-                                        <button data-id="{{$user['id']}}" class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                    @if($auth->role >= 2)
+                                    <div class="w-24 flex flex-row justify-center">
+                                        <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                                         </button>
                                         <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                         </button>
-                                    </div> --}}
+                                    </div>
                                     @endif
                                 </td>
                                 @php
