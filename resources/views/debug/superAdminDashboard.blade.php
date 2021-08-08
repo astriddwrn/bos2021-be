@@ -1137,12 +1137,12 @@
                 </div>
 
                 {{-- Isi nya --}}
-                <form id="form-editdata-participant" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
+                <form wire:init id="form-editdata-participant" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
                     <div class="xl:w-10/12 sm:w-8/12 w-full">
                         <input id="data-part" type="hidden" name="id">
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Full Name</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 border-0" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe" value="{{ old('fullName') }}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe" value="">
                             <span class="msg-error"></span>
                         </div>
                         <div class="mt-5">
@@ -1150,15 +1150,15 @@
                             <div class="custom-select gender-select w-full">
                                 <select id="custom-select gender-select" name="gender">
                                     <option class="off" value="0">Select your gender</option>
-                                    <option value="female">Female</option>
-                                    <option value="male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Date of Birth</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('birthDate') border-error @enderror border-0" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('birthDate') border-error @enderror border-0" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
                             <span class="msg-error">
                                 @error('birthDate')
                                     {{$message}}
@@ -1167,7 +1167,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Place of Birth</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('placeBirth') border-error @enderror border-0" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1  @error('placeBirth') border-error @enderror border-0" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
                             <span class="msg-error">
                                 @error('placeBirth')
                                     {{$message}}
@@ -1176,7 +1176,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Domicile City</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('domicile') border-error @enderror border-0" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('domicile') border-error @enderror border-0" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
                             <span class="msg-error">
                                 @error('domicile')
                                     {{$message}}
@@ -1185,16 +1185,24 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Full Address</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('address') border-error @enderror border-0" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('address') border-error @enderror border-0" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
                             <span class="msg-error">
                                 @error('address')
                                     {{$message}}
                                 @enderror
                             </span>
                         </div>
+                        <div class="mt-11">
+                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Binusian Email</div>
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('email') border-error @enderror border-0" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">
+                            <span class="msg-error"></span>
+                            @error('email')
+                            <span class="msg-error">This email has already been taken</span>
+                            @enderror
+                        </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Personal Email</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('personal_email') border-error @enderror border-0" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('personal_email') border-error @enderror border-0" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
                             <span class="msg-error">
                                 @error('personal_email')
                                     {{$message}}
@@ -1203,7 +1211,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LINE ID</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('line_id') border-error @enderror border-0" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('line_id') border-error @enderror border-0" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
                             <span class="msg-error">
                                 @error('line_id')
                                     {{$message}}
@@ -1212,7 +1220,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">WhatsApp Number</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('whatsapp') border-error @enderror border-0" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX" value="{{ old('whatsapp') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('whatsapp') border-error @enderror border-0" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX" value="{{ old('whatsapp') }}">
                             <span class="msg-error">
                                 @error('whatsapp')
                                     {{$message}}
@@ -1221,7 +1229,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">NIM / Student ID</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('nim') border-error @enderror border-0" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1  @error('nim') border-error @enderror border-0" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
                             <span class="msg-error">
                                 @error('nim')
                                     {{$message}}
@@ -1287,9 +1295,6 @@
                                     </select>
                                 </div>
                                 <span class="msg-error"></span>
-                                <div class="mt-8">
-                                    Note: If you can't attend the BNCC Launching schedule according to your selected course, you are still required to choose one of the available BNCC Launching schedules.
-                                </div>
                             </span>
                             <!-- Bandung -->
                             <span class="schedule-bdg schedule hidden">
@@ -1301,7 +1306,7 @@
                                 <div class="mt-5 text-cDarkBlue font-sans font-medium w-100 text-xl mb-4">Do You Want to Join Our E-Sport Community?</div>
                                 <div class="flex">
                                     <span class="radio">
-                                        <input type="radio" id="radio-1" class="radio-input" value="yes" checked/>
+                                        <input type="radio" id="radio-1" class="radio-input" value="yes"/>
                                         <label for="radio-1"></label>
                                         <span class="text-xl ml-3">Yes</span>
                                     </span>
@@ -1324,7 +1329,7 @@
 
                         <div class="flex flex-row justify-between">
                             <div {{-- onClick="window.location.reload();" --}} class="cancel-editPart text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Cancel Edit</div>
-                            <button class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Submit Edit</button>
+                            <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Submit Edit</div>
                         </div>
                     </div>
                 </form>
@@ -1422,10 +1427,10 @@
         </div>
     </div>
 
+    @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('js/superadminDashboard.js')}}"></script>
-    @livewireScripts
-
+    
 </body>
 </html>
 

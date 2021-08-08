@@ -183,27 +183,6 @@ closeEditForm(btnCancelEditReregis, editformReregis, reregisSec);
 
 /* PARTIICIPANTS EDIT */
 
-// $(document).ready(function(){
-//     const json = JSON.parse($("meta[name=schedules]").attr("content"));
-//     var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
-//     var outputALS =  json.filter(schedule => schedule.campus == "als");
-//     var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
-//     var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
-//     // console.log(outputKMG);
-//     for (const [key, val] of Object.entries(outputKMG)) {
-//         $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
-//     }
-//     for (const [key, val] of Object.entries(outputALS)) {
-//         $('#bncc-select-als').append(new Option(`${val.text}`, `${val.id}`));
-//     }
-//     for (const [key, val] of Object.entries(outputMLG)) {
-//         $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-//     }
-//     for (const [key, val] of Object.entries(outputBDG)) {
-//         $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-//     }
-// })
-
 function selectFunc(z){
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
@@ -296,18 +275,6 @@ function closeAllSelect(elmnt) {
         $(elmnt).parent().siblings('.msg-error').empty();
     }
 }
-
-$('.campus-select option[value="KMG"]').attr('selected', 'selected');
-
-selectFunc("gender-select");
-selectFunc("test-select");
-selectFunc("nim-select");
-selectFunc("campus-select");
-selectFunc("major-select");
-selectFunc("fyp-select");
-selectFunc("lnt-select");
-selectFunc("bncc-select-kmg");
-selectFunc("bncc-select-als");
 
     // check empty
     function checkEmpty(x){
@@ -415,11 +382,61 @@ selectFunc("bncc-select-als");
         checkEmpty($(this));
     });
 
+    
+    
+       
 
-    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),'ALS', 'Accounting', 'Batch 1', 'Java Programming', '');
+
+    $('.editBtnParticipant').click(function(){
+        // document.addEventListener("DOMContentLoaded", () => {
+            // Livewire.hook('user_id.updated', (el, component) => {
+                const json = JSON.parse($("meta[name=schedules]").attr("content"));
+                var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
+                var outputALS =  json.filter(schedule => schedule.campus == "als");
+                var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
+                var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
+                console.log(outputKMG);
+                for (const [key, val] of Object.entries(outputKMG)) {
+                    $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
+                }
+                for (const [key, val] of Object.entries(outputALS)) {
+                    $('#bncc-select-als').append(new Option(`${val.text}`, `${val.id}`));
+                }
+                for (const [key, val] of Object.entries(outputMLG)) {
+                    $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+                }
+                for (const [key, val] of Object.entries(outputBDG)) {
+                    $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+                }
+                setTimeout(function(){
+                    var userData = JSON.parse($("meta[name=user]").attr("content"));
+            
+                    $('#fullName').val(userData.fullName);
+                    $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
+                    selectFunc("gender-select");
+                    $('#birthDate').val(userData.birthDate);
+                    $('#placeBirth').val(userData.placeBirth);
+                    $('#domicile').val(userData.domicile);
+                    $('#address').val(userData.address);
+                    $('#email').val(userData.email);
+                    $('#personal_email').val(userData.personal_email);
+                    $('#line_id').val(userData.line_id);
+                    $('#whatsapp').val(userData.whatsapp);
+                    $('#nim').val(userData.nim);
+                    $('.campus-select option[value='+'"' +userData.campus+ '"').attr('selected', 'selected');
+                    selectFunc("campus-select");
+            
+                    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
+                }, 1000);
+            
+            // });
+        // });
+    });
+
+    
 
 
-    function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl){
+    function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl, esport){
         $mBDG = ['Computer Science',
             'Creativepreneurship',
             'Interior Design',
@@ -560,8 +577,19 @@ selectFunc("bncc-select-als");
         d.removeClass('hidden');
         d.find('select').attr('name', 'schedule[]');
         if (cmps=='BDG'){
-
             d.find('.radio-input').attr('name', 'is_esport');
+            d.find('.radio-input[value='+'"' +esport+ '"]').prop('checked', true);
+        }
+        if (cmps == 'KMG' || cmps == 'ALS'){
+            d.find('select option[value='+'"' +bl[0]+ '"]').attr('selected', 'selected');
+            selectFunc("bncc-select-kmg");
+            selectFunc("bncc-select-als");
+        }
+        else{
+            for(let i=0; i<bl.length; i++ ){
+                console.log(bl[i]);
+                d.find('input[value='+'"' +bl[i]+ '"]').prop('checked', true);
+            }
         }
     }
 
@@ -608,10 +636,6 @@ selectFunc("bncc-select-als");
 
     $('.modal-back').click(function(){
         $('.confirmation').toggleClass('is-visible');
-    });
-
-    $('form').submit(function (evt) {
-        evt.preventDefault();
     });
 
 
