@@ -382,14 +382,15 @@ function closeAllSelect(elmnt) {
         checkEmpty($(this));
     });
 
-    
-    
-       
 
 
-    $('.editBtnParticipant').click(function(){
+
+
+
+    // $('.editBtnParticipant').click(function(){
         // document.addEventListener("DOMContentLoaded", () => {
-            // Livewire.hook('user_id.updated', (el, component) => {
+
+
                 const json = JSON.parse($("meta[name=schedules]").attr("content"));
                 var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
                 var outputALS =  json.filter(schedule => schedule.campus == "als");
@@ -408,9 +409,11 @@ function closeAllSelect(elmnt) {
                 for (const [key, val] of Object.entries(outputBDG)) {
                     $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
                 }
-                setTimeout(function(){
+            Livewire.hook('element.updated', (el, component) => {
+                // setTimeout(function(){
+                    if(component.fingerprint.name != 'edit-participant-meta-data') return null;
                     var userData = JSON.parse($("meta[name=user]").attr("content"));
-            
+
                     $('#fullName').val(userData.fullName);
                     $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
                     selectFunc("gender-select");
@@ -425,15 +428,15 @@ function closeAllSelect(elmnt) {
                     $('#nim').val(userData.nim);
                     $('.campus-select option[value='+'"' +userData.campus+ '"').attr('selected', 'selected');
                     selectFunc("campus-select");
-            
-                    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
-                }, 1000);
-            
-            // });
-        // });
-    });
 
-    
+                    // changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
+                // }, 1000);
+
+            });
+        // });
+    // });
+
+
 
 
     function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl, esport){

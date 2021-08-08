@@ -1430,7 +1430,19 @@
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('js/superadminDashboard.js')}}"></script>
-    
+
+    {{-- <script>
+        Livewire.hook('component.initialized', (component)               => { console.log(['component.initialized', component, this]); })
+        Livewire.hook('element.initialized',   (el, component)           => { console.log(['element.initialized', el, component, this]); })
+        Livewire.hook('element.updating',      (fromEl, toEl, component) => { console.log(['element.updating', fromEl, toEl, component, this]); })
+        Livewire.hook('element.updated',       (el, component)           => { console.log(['element.updated', el, component, this]); })
+        Livewire.hook('element.removed',       (el, component)           => { console.log(['element.removed', el, component, this]); })
+        Livewire.hook('message.sent',          (message, component)      => { console.log(['message.sent', message, component, this]); })
+        Livewire.hook('message.failed',        (message, component)      => { console.log(['message.failed', message, component, this]); })
+        Livewire.hook('message.received',      (message, component)      => { console.log(['message.received', message, component, this]); })
+        Livewire.hook('message.processed',     (message, component)      => { console.log(['message.processed', message, component, this]); })
+    </script> --}}
+
 </body>
 </html>
 
