@@ -1192,7 +1192,7 @@
                                 @enderror
                             </span>
                         </div>
-                        <div class="mt-11">
+                        <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Binusian Email</div>
                             <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('email') border-error @enderror border-0" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">
                             <span class="msg-error"></span>
@@ -1327,7 +1327,7 @@
                             </span>
                         </div>
 
-                        <div class="flex flex-row justify-between">
+                        <div class="flex flex-row justify-between mt-20 mb-14">
                             <div {{-- onClick="window.location.reload();" --}} class="cancel-editPart text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Cancel Edit</div>
                             <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Submit Edit</div>
                         </div>
@@ -1430,18 +1430,6 @@
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('js/superadminDashboard.js')}}"></script>
-
-    {{-- <script>
-        Livewire.hook('component.initialized', (component)               => { console.log(['component.initialized', component, this]); })
-        Livewire.hook('element.initialized',   (el, component)           => { console.log(['element.initialized', el, component, this]); })
-        Livewire.hook('element.updating',      (fromEl, toEl, component) => { console.log(['element.updating', fromEl, toEl, component, this]); })
-        Livewire.hook('element.updated',       (el, component)           => { console.log(['element.updated', el, component, this]); })
-        Livewire.hook('element.removed',       (el, component)           => { console.log(['element.removed', el, component, this]); })
-        Livewire.hook('message.sent',          (message, component)      => { console.log(['message.sent', message, component, this]); })
-        Livewire.hook('message.failed',        (message, component)      => { console.log(['message.failed', message, component, this]); })
-        Livewire.hook('message.received',      (message, component)      => { console.log(['message.received', message, component, this]); })
-        Livewire.hook('message.processed',     (message, component)      => { console.log(['message.processed', message, component, this]); })
-    </script> --}}
 
 </body>
 </html>
