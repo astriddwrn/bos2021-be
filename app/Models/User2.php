@@ -38,7 +38,7 @@ class User2 extends Authenticatable
 
     public function getEmailVerifiedAtAttribute($date){
         if($date == null) return "NULL";
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y<b\r />H:i:s');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format("l, d F, Y\n H:i:s");
     }
 
     public function getCreatedAtAttribute($date){

@@ -78,7 +78,12 @@
                                     </div> --}}
                                     @endif
                                 </td>
-                                <td>{!!$user['email_verified_at'] ?? ''!!}</td>
+                                @php
+                                    $eva = $user['email_verified_at'] ?? '';
+                                    $eva = explode("\n", $eva);
+                                    $eva = join("<br />", $eva);
+                                @endphp
+                                <td>{!!$eva!!}</td>
                                 <td>{{$user['fullName'] ?? ''}}</td>
                                 <td>{{$user['gender'] ?? ''}}</td>
                                 <td>{{$user['birthDate'] ?? ''}}</td>
