@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{-- <meta name="schedules" content="{{ $schedules->toJson() }}"> --}}
+    <meta name="schedules" content="{{ $schedules->toJson() }}">
 
     <title>Admin Dashboard | BNCC Launching</title>
     <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/superadminDashboard.css') }}">
 
+    @livewireStyles
 
 </head>
 <body class="text-base">
@@ -1127,10 +1128,7 @@
 
             {{-- EDIT DATA PARTICIPANT--}}
             <div class="section editdata-participantsec bg-cLightGray h-full hidden">
-                <div>
-                    <meta name="user" content="{}">
-                    <input type="number" name="id" class="data-part" >
-                </div>
+                @livewire('edit-participant-meta-data')
 
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Edit Data Participant</span>
@@ -1426,6 +1424,7 @@
 
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('js/superadminDashboard.js')}}"></script>
+    @livewireScripts
 
 </body>
 </html>

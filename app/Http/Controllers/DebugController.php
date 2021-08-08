@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Schedule;
+use App\Models\User;
+
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class DebugController extends Controller
 {
-    public function simpleView($view){
-        return view("debug.$view");
+    public function simpleView($view, Request $request){
+        $schedules = Schedule::all();
+
+        return view("debug.$view", compact('schedules'));
     }
 
     public function simpleResponse($view, Request $request){
