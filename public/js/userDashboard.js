@@ -2,30 +2,30 @@ $(document).ready(function(){
 
 
     const json1 = JSON.parse($("meta[name=user]").attr("content"));
-            const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
+    const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
 
-            const campus = json1.campus;
-            var schedule =  json2;
-            for (const [key, val] of Object.entries(schedule)){
-                if(campus == 'MLG' || campus == 'BDG'){
-                    $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-                }
-                if(campus == 'KMG' || campus == 'ALS'){
-                    $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
-                }
-            }
-            $('.schedule-input').each(function(){
-                $(this).addClass('hidden');
-                $(this).find('.msg-error').empty();
-                $(this).find('select').removeAttr('name');
-            });
-            if(campus == 'MLG' || campus == 'BDG'){
-                $('.schedule-checkbox-cont').removeClass('hidden');
-            }
-            else{
-                $('.schedule-select-cont').removeClass('hidden');
-                $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
-            }
+    const campus = json1.campus;
+    var schedule =  json2;
+    for (const [key, val] of Object.entries(schedule)){
+        if(campus == 'MLG' || campus == 'BDG'){
+            $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+        }
+        if(campus == 'KMG' || campus == 'ALS'){
+            $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
+        }
+    }
+    $('.schedule-input').each(function(){
+        $(this).addClass('hidden');
+        $(this).find('.msg-error').empty();
+        $(this).find('select').removeAttr('name');
+    });
+    if(campus == 'MLG' || campus == 'BDG'){
+        $('.schedule-checkbox-cont').removeClass('hidden');
+    }
+    else{
+        $('.schedule-select-cont').removeClass('hidden');
+        $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
+    }
 
 
     setTimeout(function(){

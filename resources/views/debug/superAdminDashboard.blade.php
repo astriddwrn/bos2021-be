@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    {{-- <meta name="schedules" content="{{ $schedules->toJson() }}"> --}}
 
     <title>Admin Dashboard | BNCC Launching</title>
     <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
@@ -1228,7 +1228,7 @@
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Campus Area</div>
                             <div class="custom-select campus-select w-full">
-                                <select id="custom-select campus-select" name="campus">
+                                <select id="campus-select" name="campus">
                                     <option class="off" value="0">Select your campus location</option>
                                     <option value="ALS">Alam Sutera</option>
                                     <option value="BDG">Bandung</option>
@@ -1359,8 +1359,8 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
-                            <div class="custom-select lnt-select w-full">
-                                <select id="lnt-select" name="lnt_course">
+                            <div class="custom-select relnt-select w-full">
+                                <select id="relnt-select" name="lnt_course">
                                     <option class="off" value="0">Select Your Course</option>
                                     <!-- ALS -->
                                     <option value="Front-End Development">Front-End Development</option>

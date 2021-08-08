@@ -182,6 +182,27 @@ closeEditForm(btnCancelEditReregis, editformReregis, reregisSec);
 
 /* PARTIICIPANTS EDIT */
 
+// $(document).ready(function(){
+//     const json = JSON.parse($("meta[name=schedules]").attr("content"));
+//     var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
+//     var outputALS =  json.filter(schedule => schedule.campus == "als");
+//     var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
+//     var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
+//     // console.log(outputKMG);
+//     for (const [key, val] of Object.entries(outputKMG)) {
+//         $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
+//     }
+//     for (const [key, val] of Object.entries(outputALS)) {
+//         $('#bncc-select-als').append(new Option(`${val.text}`, `${val.id}`));
+//     }
+//     for (const [key, val] of Object.entries(outputMLG)) {
+//         $('.schedule-mlg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+//     }
+//     for (const [key, val] of Object.entries(outputBDG)) {
+//         $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+//     }
+// })
+
 function selectFunc(z){
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
@@ -195,7 +216,8 @@ function selectFunc(z){
     a.setAttribute("class", "select-selected");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
-    x[0].appendChild(a).style.color = "rgba(32, 32, 32, 0.2)";
+   
+        x[0].appendChild(a).style.color = "black";
     /*for each element, create a new DIV that will contain the option list:*/
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
@@ -275,26 +297,18 @@ function closeAllSelect(elmnt) {
     }
 }
 
+    $('.campus-select option[value="KMG"]').attr('selected', 'selected');
+  
+
 selectFunc("gender-select");
 selectFunc("test-select");
 selectFunc("nim-select");
 selectFunc("campus-select");
 selectFunc("major-select");
 selectFunc("fyp-select");
+selectFunc("lnt-select");
 selectFunc("bncc-select-kmg");
 selectFunc("bncc-select-als");
-
-    $('.eye-open, .eye-close').click(function(){
-        x = $(this).siblings('input');
-        if (x.attr('type') === "password") {
-            x.attr('type', "text");
-            x.siblings(".eye-open, .eye-close").toggleClass("hidden");
-            } else {
-            x.attr('type', "password");
-            x.siblings(".eye-open, .eye-close").toggleClass("hidden");
-
-            }
-    });
 
     // check empty
     function checkEmpty(x){
@@ -312,8 +326,6 @@ selectFunc("bncc-select-als");
             minimumChar(x);
             phoneNumber(x);
             email(x);
-            password(x);
-            confirm(x);
         }
     }
     function checkbox(x){
@@ -378,25 +390,6 @@ selectFunc("bncc-select-als");
         }
     }
 
-    function password(x){
-        var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-
-    // if(x.is('#password') && !pattern.test(x.val())){
-    if(x.is('#password') && !(x.val().length >= 8 && /[a-z]/.test(x.val()) && /[A-Z]/.test(x.val()) && /\d/.test(x.val()) ) ){
-            x.addClass("border-error");
-            x.siblings('.msg-error').text("Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number");
-        }
-    }
-
-    function confirm(x){
-        var password = $("#password").val();
-        var confirmPassword = x.val();
-        if(x.is('#confirm') && password != confirmPassword){
-            x.addClass("border-error");
-            x.siblings('.msg-error').text("Confirm password does not match.");
-        }
-    }
-
     function lastValidation (sec, callback){
         sec.find("input").each(function(){
             checkEmpty($(this));
@@ -412,54 +405,22 @@ selectFunc("bncc-select-als");
     }
 
     function continueTransition(sec){
-        console.log(sec.find('.msg-error').text());
         if(!sec.find('.msg-error').text()){
-            if(sec.hasClass("account-sec")){
-                // $('.success').toggleClass('is-visible');
-                    $('form').submit();
-
-                return;
-            }
-            if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
-                $('form').submit();
-                return;
-
-            }
-            sec.addClass('left-section');
-            sec.next().removeClass('right-section');
-            $("form").animate({
-                scrollTop: 0
-            }, "slow");
-            $('html, body').animate({
-                scrollTop: 0
-            }, "slow");
-            prog++;
-            progressNext();
+            $('form').submit();
+            return;
         }
     }
 
-    let prog = 0;
-    function progressNext(){
-        $('.dot').eq(prog).addClass('active-dot');
-        $('.line').eq(prog-1).addClass('active-line');
-        $('.title').eq(prog).addClass('active-title');
-        heightChanges();
-    }
-
-    function progressPrev(){
-        $('.dot').eq(prog).removeClass('active-dot');
-        $('.line').eq(prog-1).removeClass('active-line');
-        $('.title').eq(prog).removeClass('active-title');
-        prog--;
-        heightChanges();
-    }
 
     $("input").blur(function(){
         checkEmpty($(this));
-    })
+    });
 
 
-    function changeCampus(x, y, z ,cmps){
+    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),'ALS', 'Accounting', 'Batch 1', 'Java Programming', '');
+
+
+    function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl){
         $mBDG = ['Computer Science',
             'Creativepreneurship',
             'Interior Design',
@@ -491,7 +452,7 @@ selectFunc("bncc-select-als");
             'Business Creation',
             'Chinese Literature',
             'Communication - Marketing Communication',
-                'Communication - Mass Communication',
+            'Communication - Mass Communication',
             'Computer Science',
             'Film',
             'Finance',
@@ -508,7 +469,7 @@ selectFunc("bncc-select-als");
         ];
 
         $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
-        $cBDG =  ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
 
@@ -555,6 +516,9 @@ selectFunc("bncc-select-als");
         }
         x.next().remove();
         x.remove();
+        if(major){
+            $('.major-select option[value='+'"' +major + '"').attr('selected', 'selected');
+        }
         selectFunc("major-select");
 
         $len = c.length;
@@ -567,6 +531,9 @@ selectFunc("bncc-select-als");
         }
         z.next().remove();
         z.remove();
+        if(fyp){
+            $('.fyp-select option[value='+'"' +fyp + '"').attr('selected', 'selected');
+        }
         selectFunc('fyp-select');
 
 
@@ -580,6 +547,9 @@ selectFunc("bncc-select-als");
         }
         y.next().remove();
         y.remove();
+        if(lnt){
+            $('.lnt-select option[value='+'"' +lnt + '"').attr('selected', 'selected');
+        }
         selectFunc('lnt-select');
 
         $('.schedule').each(function(){
@@ -609,7 +579,7 @@ selectFunc("bncc-select-als");
         if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
 
             cmps = select.find(":selected").val();
-            changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps);
+            changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps, '', '', '', '');
 
         }
     });
@@ -643,29 +613,10 @@ selectFunc("bncc-select-als");
         $('.confirmation').toggleClass('is-visible');
     });
 
-    // $('form').submit(function (evt) {
-    //     evt.preventDefault();
-    // });
+    $('form').submit(function (evt) {
+        evt.preventDefault();
+    });
 
-    // height
-    heightChanges();
-    function heightChanges(){
-        return;
-        if($('.personal-sec').hasClass('left-section')==false && !$('.personal-sec').hasClass('right-section')){
-        console.log($('.personal-sec').hasClass('hidden'));
-
-            $('form').css('height', '1650px');
-        }
-        else if($('.student-sec').hasClass('left-section')==false && !$('.student-sec').hasClass('right-section')){
-            $('form').css('height', '1050px');
-        }
-        else if($('.bncc-sec').hasClass('left-section')==false && !$('.bncc-sec').hasClass('right-section')){
-            $('form').css('height', '1100px');
-        }
-        else if($('.account-sec').hasClass('left-section')==false && !$('.account-sec').hasClass('right-section')){
-            $('form').css('height', '1500px');
-        }
-    }
 
 
     $(".close").click(function () {
@@ -673,38 +624,38 @@ selectFunc("bncc-select-als");
     });
 
     /* EDIT REREGIS */
-    const json1 = JSON.parse($("meta[name=user]").attr("content"));
-            const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
+    // const json1 = JSON.parse($("meta[name=user]").attr("content"));
+    //         const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
 
-            const campus = json1.campus;
-            var schedule =  json2;
-            for (const [key, val] of Object.entries(schedule)){
-                if(campus == 'MLG' || campus == 'BDG'){
-                    $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-                }
-                if(campus == 'KMG' || campus == 'ALS'){
-                    $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
-                }
-            }
-            $('.schedule-input').each(function(){
-                $(this).addClass('hidden');
-                $(this).find('.msg-error').empty();
-                $(this).find('select').removeAttr('name');
-            });
-            if(campus == 'MLG' || campus == 'BDG'){
-                $('.schedule-checkbox-cont').removeClass('hidden');
-            }
-            else{
-                $('.schedule-select-cont').removeClass('hidden');
-                $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
-            }
+    //         const campus = json1.campus;
+    //         var schedule =  json2;
+    //         for (const [key, val] of Object.entries(schedule)){
+    //             if(campus == 'MLG' || campus == 'BDG'){
+    //                 $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
+    //             }
+    //             if(campus == 'KMG' || campus == 'ALS'){
+    //                 $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
+    //             }
+    //         }
+    //         $('.schedule-input').each(function(){
+    //             $(this).addClass('hidden');
+    //             $(this).find('.msg-error').empty();
+    //             $(this).find('select').removeAttr('name');
+    //         });
+    //         if(campus == 'MLG' || campus == 'BDG'){
+    //             $('.schedule-checkbox-cont').removeClass('hidden');
+    //         }
+    //         else{
+    //             $('.schedule-select-cont').removeClass('hidden');
+    //             $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
+    //         }
 
 
     setTimeout(function(){
         $('.pop-up').removeClass('hidden');
      }, 1000);
 
-    selectFunc("lnt-select");
+    selectFunc("relnt-select");
     selectFunc("schedule-select");
 
     $('input:file').change(function() {
