@@ -159,6 +159,7 @@ const showEditForm = (btn, editform, inputAttr) => {
         $(this).closest('.section').hide();
         var x = $(btn).attr("data-id");
         $(inputAttr).val(x);
+        Livewire.emit('changeId', x);
         $(editform).show();
         $('.menu-cont').hide();
     });
@@ -297,7 +298,7 @@ function closeAllSelect(elmnt) {
 }
 
 $('.campus-select option[value="KMG"]').attr('selected', 'selected');
-  
+
 selectFunc("gender-select");
 selectFunc("test-select");
 selectFunc("nim-select");
