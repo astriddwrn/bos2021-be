@@ -22,6 +22,16 @@ class User2 extends Authenticatable
      */
     protected $table = 'users';
 
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
     // email_verified_at, created_at, updated_at
 
     public function getScheduleAttribute($schedule){
@@ -34,6 +44,11 @@ class User2 extends Authenticatable
         }
 
         return $schedules;
+    }
+
+    public function getIsEsportAttribute($is_esport){
+        if($is_esport == 'yes') return "Esport";
+        return '';
     }
 
     public function getEmailVerifiedAtAttribute($date){

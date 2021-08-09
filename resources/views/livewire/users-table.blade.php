@@ -1,38 +1,43 @@
             <div>
                 <div class="w-100 flex flex-row justify-between items-center py-4 px-8 font-bold text-cDarkBlue">
-                    @if(!$lock_region)
                     <span class="text-2xl">
+
+                        @if($auth->role <= 2)
                         <button wire:click="$set('region', 'ALL')" class="btnAllReg btnRegion @if($region == 'ALL') btnRegion-active @endif">
                             All Region
                         </button>
                         <button wire:click="$set('region', 'KMG')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
                             KMG
                         </button>
+                        @endif
+
+                        @if($auth->role <= 2 || $auth->role == 3)
                         <button wire:click="$set('region', 'ALS')" class="btnAS btnRegion @if($region == 'ALS') btnRegion-active @endif">
                             ALS
                         </button>
+                        @endif
+
+                        @if($auth->role <= 2 || $auth->role == 4)
                         <button wire:click="$set('region', 'BDG')" class="btnBDG btnRegion @if($region == 'BDG') btnRegion-active @endif">
                             BDG
                         </button>
+                        @endif
+
+                        @if($auth->role <= 2 || $auth->role == 5)
                         <button wire:click="$set('region', 'MLG')" class="btnMLG btnRegion @if($region == 'MLG') btnRegion-active @endif">
                             MLG
                         </button>
+                        @endif
                     </span>
-                    @endif
-                    <a href="@if ($region == 'ALL')
-                        {{route('download_all')}}
-                    @elseif ($region == 'KMG')
-                        {{route('download_KMG')}}
-                    @elseif ($region == 'ALS')
-                        {{route('download_ALS')}}
-                    @elseif ($region == 'BDG')
-                        {{route('download_BDG')}}
-                    @elseif ($region == 'MLG')
-                        {{route('download_MLG')}}
-                    @endif" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
+
+                    <a href="{{route('download_users',['region'=>$region])}}" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
                     </a>
+                </div>
+
+                <div class="flex flex-row-reverse mb-4">
+                    <div class="mr-4"><input type="text" wire:model="search" placeholder="Search something..."></div>
                 </div>
 
                 {{-- ALL REGION --}}
@@ -65,14 +70,18 @@
                         <tbody>
                             @foreach ($users as $i => $user)
                             <tr>
-                                <td>{{($limit * ($page - 1))+ $i + 1}}</td>
+                                <td>
+                                    {{($limit * ($page - 1))+ $i + 1}}<br />
+                                    {{$user['id']}}
+                                </td>
                                 <td>
                                     @if($auth->role >= 2)
                                     <div class="w-24 flex flex-row justify-center">
                                         <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                                         </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        {{-- <button data-id="{{$user['id']}}" class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200"> --}}
+                                        <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                         </button>
                                     </div>
@@ -84,7 +93,7 @@
                                     $eva = join("<br />", $eva);
                                 @endphp
                                 <td>{!!$eva!!}</td>
-                                <td>{{$user['fullName'] ?? ''}}</td>
+                                <td data-id="{{$user['id']}}" data-type="fullname">{{$user['fullName'] ?? ''}}</td>
                                 <td>{{$user['gender'] ?? ''}}</td>
                                 <td>{{$user['birthDate'] ?? ''}}</td>
                                 <td>{{$user['placeBirth'] ?? ''}}</td>
@@ -94,8 +103,8 @@
                                 <td>{{$user['email'] ?? ''}}</td>
                                 <td>{{$user['line_id'] ?? ''}}</td>
                                 <td>{{$user['whatsapp'] ?? ''}}</td>
-                                <td>{{$user['nim'] ?? ''}}</td>
-                                <td>{{$user['campus'] ?? ''}}</td>
+                                <td data-id="{{$user['id']}}" data-type="nim">{{$user['nim'] ?? ''}}</td>
+                                <td data-id="{{$user['id']}}" data-type="campus">{{$user['campus'] ?? ''}}</td>
                                 <td>{{$user['major'] ?? ''}}</td>
                                 <td>{{$user['batch'] ?? ''}}</td>
                                 <td>

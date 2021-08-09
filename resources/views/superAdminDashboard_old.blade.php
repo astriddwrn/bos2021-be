@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="schedules" content="{{ $schedules->toJson() }}">
+
 
     <title>Admin Dashboard | BNCC Launching</title>
     <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/superadminDashboard.css') }}">
-
     @livewireStyles
 
 </head>
@@ -101,21 +100,27 @@
     </div>
 
     <div class="flex flex-row w-screen">
-        <div class="menu-cont menu-off xl:w-3/12 sm:w-80 w-60 h-screen flex flex-col items-center fixed xl:left-0 right-0 xl:flex z-10 bg-cWhite shadow-bsBtn">
+        <div class="menu-cont menu-off xl:w-1/5 sm:w-80 w-60 h-screen flex flex-col items-center fixed xl:left-0 right-0 xl:flex z-10 bg-cWhite shadow-bsBtn">
             <div class="mt-10 text-lg menu-list w-52">
 
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-participant cursor-pointer">
                     <img class="mr-4 w-9 hidden off" src="{{ asset('Asset/Image/userDashboard/menu-profile-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="BNCC Launching">
                     Participants</div>
-                <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
+
+                @if($user->role >= 2)
+                {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
-                    Payment</div>
-                <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
+                    Payment</div> --}}
+                @endif
+
+                @if($user->role == 2)
+                {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
-                    Re-Registered</div>
+                    Re-Registered</div> --}}
+                @endif
 
             </div>
             <div class="absolute return-list bottom-10 text-lg w-52">
@@ -127,7 +132,7 @@
             </div>
         </div>
 
-        <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
+        <div class="xl:w-4/5 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
 
             {{-- PARTICIPANT --}}
             <div class="section participant-sec bg-cLightGray h-full">
@@ -138,341 +143,15 @@
                 </div>
 
                 <!-- isi nya -->
-                <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">
-                        <button class="btnAllReg btnRegion btnRegion-active">
-                            All Region
-                        </button>
-                        <button class="btnKMG btnRegion">
-                            KMG
-                        </button>
-                        <button class="btnAS btnRegion">
-                            AS
-                        </button>
-                        <button class="btnBDG btnRegion">
-                            BDG
-                        </button>
-                        <button class="btnMLG btnRegion">
-                            MLG
-                        </button>
-                    </span>
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                        Download Participant Data
-                    </button>
-                </div>
-
-                {{-- ALL REGION --}}
-                <div class="tblAllReg tbl tbl-active">
-                    <table>
-                        <thead>
-                            <tr>
-                            <th >No</th>
-                            <th >Actions </th>
-                            <th >Time Stamp </th>
-                            <th >Name</th>
-                            <th >Gender</th>
-                            <th >DOB</th>
-                            <th >POB</th>
-                            <th >City</th>
-                            <th >Adress</th>
-                            <th >P. Email</th>
-                            <th >B. Email</th>
-                            <th >LINE ID</th>
-                            <th >WA</th>
-                            <th >NIM</th>
-                            <th >Campus</th>
-                            <th >Major</th>
-                            <th >Batch</th>
-                            <th >Schedule</th>
-                            <th >LnT Course</th>
-                            <th>E-Sport Community</th> {{-- For Bandung --}}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td >1</td>
-                            <td >
-                                <div class="w-24 flex flex-row justify-center">
-                                    <button data-id="1"  class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                    </button>
-                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td > 10-04-19 12:00:17 </td>
-                            <td >This is All REgion</td>
-                            <td >Apache</td>
-                            <td >1945</td>
-                            <td >America</td>
-                            <td >Boston</td>
-                            <td >US Air Field</td>
-                            <td >apache@gmail.com</td>
-                            <td >apache.heli@binus.ac.id</td>
-                            <td >apacheaddme</td>
-                            <td >789374912442</td>
-                            <td >29383281421</td>
-                            <td >Binus Kemanggisan</td>
-                            <td >Psychology</td>
-                            <td >3</td>
-                            <td >Schedule</td>
-                            <td >LnT Course</td>
-                            <td>Yes</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION KEMANGGISAN --}}
-                <div class="tblKMG tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                            <th >No</th>
-                            <th >Actions </th>
-                            <th >Time Stamp </th>
-                            <th >Name</th>
-                            <th >Gender</th>
-                            <th >DOB</th>
-                            <th >POB</th>
-                            <th >City</th>
-                            <th >Adress</th>
-                            <th >P. Email</th>
-                            <th >B. Email</th>
-                            <th >LINE ID</th>
-                            <th >WA</th>
-                            <th >NIM</th>
-                            <th >Campus</th>
-                            <th >Major</th>
-                            <th >Batch</th>
-                            <th >Schedule</th>
-                            <th >LnT Course</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <td >1</td>
-                            <td >
-                                <div class="w-24 flex flex-row justify-center">
-                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                    </button>
-                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                </div>
-                            </td>
-                            <td > 10-04-19 12:00:17 </td>
-                            <td >Naruto yes tiga delapan</td>
-                            <td >Apache</td>
-                            <td >1945</td>
-                            <td >America</td>
-                            <td >Boston</td>
-                            <td >US Air Field</td>
-                            <td >apache@gmail.com</td>
-                            <td >apache.heli@binus.ac.id</td>
-                            <td >apacheaddme</td>
-                            <td >789374912442</td>
-                            <td >29383281421</td>
-                            <td >Binus Kemanggisan</td>
-                            <td >Psychology</td>
-                            <td >3</td>
-                            <td >Schedule</td>
-                            <td >LnT Course</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION ALSUT --}}
-                <div class="tblAS tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Name</th>
-                              <th >Gender</th>
-                              <th >DOB</th>
-                              <th >POB</th>
-                              <th >City</th>
-                              <th >Adress</th>
-                              <th >P. Email</th>
-                              <th >B. Email</th>
-                              <th >LINE ID</th>
-                              <th >WA</th>
-                              <th >NIM</th>
-                              <th >Campus</th>
-                              <th >Major</th>
-                              <th >Batch</th>
-                              <th >Schedule</th>
-                              <th >LnT Course</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                <div class="w-24 flex flex-row justify-center">
-                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                    </button>
-                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                </div>
-                                </td>
-                                <td > 10-04-19 12:00:17 </td>
-                                <td >Naruto yes tiga delapan</td>
-                                <td >Apache AS</td>
-                                <td >1945</td>
-                                <td >America</td>
-                                <td >Boston</td>
-                                <td >US Air Field</td>
-                                <td >apache@gmail.com</td>
-                                <td >apache.heli@binus.ac.id</td>
-                                <td >apacheaddme</td>
-                                <td >789374912442</td>
-                                <td >29383281421</td>
-                                <td >Binus AS</td>
-                                <td >Psychology</td>
-                                <td >3</td>
-                                <td >Schedule</td>
-                                <td >LnT Course</td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION BANDUNG --}}
-                <div class="tblBDG tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Name</th>
-                              <th >Gender</th>
-                              <th >DOB</th>
-                              <th >POB</th>
-                              <th >City</th>
-                              <th >Adress</th>
-                              <th >P. Email</th>
-                              <th >B. Email</th>
-                              <th >LINE ID</th>
-                              <th >WA</th>
-                              <th >NIM</th>
-                              <th >Campus</th>
-                              <th >Major</th>
-                              <th >Batch</th>
-                              <th >Schedule</th>
-                              <th >LnT Course</th>
-                              <th >E-Sport Community</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                <div class="w-24 flex flex-row justify-center">
-                                    <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                    </button>
-                                    <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                        <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                    </button>
-                                </div>
-                                </td>
-                                <td > 10-04-19 12:00:17 </td>
-                                <td >Naruto yes tiga delapan</td>
-                                <td >Apache BDG</td>
-                                <td >1945</td>
-                                <td >America</td>
-                                <td >Boston</td>
-                                <td >US Air Field</td>
-                                <td >apache@gmail.com</td>
-                                <td >apache.heli@binus.ac.id</td>
-                                <td >apacheaddme</td>
-                                <td >789374912442</td>
-                                <td >29383281421</td>
-                                <td >Binus BDG</td>
-                                <td >Psychology</td>
-                                <td >3</td>
-                                <td >Schedule</td>
-                                <td >LnT Course</td>
-                                <td >Yes</td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION MALANG --}}
-                <div class="tblMLG tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Name</th>
-                              <th >Gender</th>
-                              <th >DOB</th>
-                              <th >POB</th>
-                              <th >City</th>
-                              <th >Adress</th>
-                              <th >P. Email</th>
-                              <th >B. Email</th>
-                              <th >LINE ID</th>
-                              <th >WA</th>
-                              <th >NIM</th>
-                              <th >Campus</th>
-                              <th >Major</th>
-                              <th >Batch</th>
-                              <th >Schedule</th>
-                              <th >LnT Course</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td > 10-04-19 12:00:17 </td>
-                                <td >Naruto yes tiga delapan</td>
-                                <td >Apache MLG</td>
-                                <td >1945</td>
-                                <td >America</td>
-                                <td >Boston</td>
-                                <td >US Air Field</td>
-                                <td >apache@gmail.com</td>
-                                <td >apache.heli@binus.ac.id</td>
-                                <td >apacheaddme</td>
-                                <td >789374912442</td>
-                                <td >29383281421</td>
-                                <td >Binus MLG</td>
-                                <td >Psychology</td>
-                                <td >3</td>
-                                <td >Schedule</td>
-                                <td >LnT Course</td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
+                @if(in_array($user->role, [1, 2]))
+                    @livewire('users-table', ['auth' => $user])
+                @elseif($user->role == 3)
+                    @livewire('users-table', ['region'=>'ALS', 'lock_region' => true, 'auth' => $user])
+                @elseif($user->role == 4)
+                    @livewire('users-table', ['region'=>'BDG', 'lock_region' => true, 'auth' => $user])
+                @elseif($user->role == 5)
+                    @livewire('users-table', ['region'=>'MLG', 'lock_region' => true, 'auth' => $user])
+                @endif
 
                 {{-- CLOSED SECTION PARTICIPANTS --}}
             </div>
@@ -865,7 +544,7 @@
                                 <td >1</td>
                                 <td >
                                     <div class="w-24 flex flex-row justify-center">
-                                        <button data-id="pokemon" class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <button class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                                         </button>
                                         <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
@@ -1068,7 +747,7 @@
                 </div>
 
                 {{-- REGION MALANG --}}
-                <div class="tblMLG tbl">
+                <div class="tblMLG tbl overflow-visible">
                     <table>
                         <thead>
                             <tr>
@@ -1128,8 +807,6 @@
 
             {{-- EDIT DATA PARTICIPANT--}}
             <div class="section editdata-participantsec bg-cLightGray h-full hidden">
-                @livewire('edit-participant-meta-data')
-
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Edit Data Participant</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
@@ -1139,10 +816,10 @@
                 {{-- Isi nya --}}
                 <form id="form-editdata-participant" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
                     <div class="xl:w-10/12 sm:w-8/12 w-full">
-                        <input id="data-part" type="hidden" name="id">
+                        <input type="hidden" name="id" value="passed">
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Full Name</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe" value="">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 border-0" type="text" name="fullName" id="fullName" placeholder="e.g. John Doe" value="{{ old('fullName') }}">
                             <span class="msg-error"></span>
                         </div>
                         <div class="mt-5">
@@ -1150,15 +827,15 @@
                             <div class="custom-select gender-select w-full">
                                 <select id="custom-select gender-select" name="gender">
                                     <option class="off" value="0">Select your gender</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Date of Birth</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('birthDate') border-error @enderror border-0" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('birthDate') border-error @enderror border-0" type="text" id="birthDate" name="birthDate" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" min="1920-01-01" max="2020-01-01" value="{{ old('birthDate') }}">
                             <span class="msg-error">
                                 @error('birthDate')
                                     {{$message}}
@@ -1167,7 +844,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Place of Birth</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1  @error('placeBirth') border-error @enderror border-0" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('placeBirth') border-error @enderror border-0" type="text" name="placeBirth" id="placeBirth" placeholder="e.g. Jakarta" value="{{ old('placeBirth') }}">
                             <span class="msg-error">
                                 @error('placeBirth')
                                     {{$message}}
@@ -1176,7 +853,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Domicile City</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('domicile') border-error @enderror border-0" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('domicile') border-error @enderror border-0" type="text" name="domicile" id="domicile" placeholder="e.g. Jakarta" value="{{ old('domicile') }}">
                             <span class="msg-error">
                                 @error('domicile')
                                     {{$message}}
@@ -1185,7 +862,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Full Address</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('address') border-error @enderror border-0" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('address') border-error @enderror border-0" type="text" name="address" id="address" placeholder="e.g Jl. Kebon Jeruk Raya No. 27, Kebon..." value="{{ old('address') }}">
                             <span class="msg-error">
                                 @error('address')
                                     {{$message}}
@@ -1193,16 +870,8 @@
                             </span>
                         </div>
                         <div class="mt-5">
-                            <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Binusian Email</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('email') border-error @enderror border-0" type="email" name="email" id="email" placeholder="example@binus.ac.id" value="{{ old('email') }}">
-                            <span class="msg-error"></span>
-                            @error('email')
-                            <span class="msg-error">This email has already been taken</span>
-                            @enderror
-                        </div>
-                        <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Personal Email</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1 @error('personal_email') border-error @enderror border-0" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('personal_email') border-error @enderror border-0" type="email" name="personal_email" id="personal_email" placeholder="example@email.com" value="{{old('personal_email')}}">
                             <span class="msg-error">
                                 @error('personal_email')
                                     {{$message}}
@@ -1211,7 +880,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LINE ID</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('line_id') border-error @enderror border-0" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('line_id') border-error @enderror border-0" type="text" name="line_id" id="line_id" placeholder="e.g. line_id" value="{{ old('line_id') }}">
                             <span class="msg-error">
                                 @error('line_id')
                                     {{$message}}
@@ -1220,7 +889,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">WhatsApp Number</div>
-                            <input class=" w-full bg-cLightGray font-sans rounded p-2 my-1 @error('whatsapp') border-error @enderror border-0" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX" value="{{ old('whatsapp') }}">
+                            <input class=" w-full bg-cLightGray font-sans rounded p-2 text-xl my-1 @error('whatsapp') border-error @enderror border-0" type="number" name="whatsapp" id="whatsapp" placeholder="08XXXXXXXXXX" value="{{ old('whatsapp') }}">
                             <span class="msg-error">
                                 @error('whatsapp')
                                     {{$message}}
@@ -1229,7 +898,7 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">NIM / Student ID</div>
-                            <input class="w-full bg-cLightGray font-sans rounded p-2 my-1  @error('nim') border-error @enderror border-0" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
+                            <input class="w-full bg-cLightGray font-sans rounded p-2 text-xl my-1  @error('nim') border-error @enderror border-0" type="number" name="nim" id="nim" placeholder="25XXXXXXXX" value="{{ old('nim') }}">
                             <span class="msg-error">
                                 @error('nim')
                                     {{$message}}
@@ -1239,7 +908,7 @@
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">Campus Area</div>
                             <div class="custom-select campus-select w-full">
-                                <select id="campus-select" name="campus">
+                                <select id="custom-select campus-select" name="campus">
                                     <option class="off" value="0">Select your campus location</option>
                                     <option value="ALS">Alam Sutera</option>
                                     <option value="BDG">Bandung</option>
@@ -1254,6 +923,7 @@
                             <div class="custom-select major-select w-full">
                                 <select id="major-select" name="major">
                                     <option class="off" value="0">Select your major</option>
+
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -1295,6 +965,9 @@
                                     </select>
                                 </div>
                                 <span class="msg-error"></span>
+                                <div class="mt-8">
+                                    Note: If you can't attend the BNCC Launching schedule according to your selected course, you are still required to choose one of the available BNCC Launching schedules.
+                                </div>
                             </span>
                             <!-- Bandung -->
                             <span class="schedule-bdg schedule hidden">
@@ -1306,7 +979,7 @@
                                 <div class="mt-5 text-cDarkBlue font-sans font-medium w-100 text-xl mb-4">Do You Want to Join Our E-Sport Community?</div>
                                 <div class="flex">
                                     <span class="radio">
-                                        <input type="radio" id="radio-1" class="radio-input" value="yes"/>
+                                        <input type="radio" id="radio-1" class="radio-input" value="yes" checked/>
                                         <label for="radio-1"></label>
                                         <span class="text-xl ml-3">Yes</span>
                                     </span>
@@ -1327,9 +1000,9 @@
                             </span>
                         </div>
 
-                        <div class="flex flex-row justify-between mt-20 mb-14">
+                        <div class="flex flex-row justify-between">
                             <div {{-- onClick="window.location.reload();" --}} class="cancel-editPart text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Cancel Edit</div>
-                            <div class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Submit Edit</div>
+                            <button class="text-center btn-continue text-cWhite font-bold text-xl rounded-lg p-2 bg-cLightBlue w-100 mt-11 mb-5 hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Submit Edit</button>
                         </div>
                     </div>
                 </form>
@@ -1348,7 +1021,7 @@
                 {{-- Isi nya --}}
                 <form id="form-editdata-reregis" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
                     <div>
-                        <input id="data-reregis" type="hidden" name="id">
+                        <input type="hidden" name="id" value="passed">
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
                             <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC21xxx">
@@ -1366,8 +1039,8 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
-                            <div class="custom-select relnt-select w-full">
-                                <select id="relnt-select" name="lnt_course">
+                            <div class="custom-select lnt-select w-full">
+                                <select id="lnt-select" name="lnt_course">
                                     <option class="off" value="0">Select Your Course</option>
                                     <!-- ALS -->
                                     <option value="Front-End Development">Front-End Development</option>
@@ -1424,12 +1097,15 @@
 
                 {{-- CLOSED SECTION EDIT DATA REREGIS --}}
             </div>
+
         </div>
+
     </div>
 
-    @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ asset('js/superadminDashboard.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    @livewireScripts
 
 </body>
 </html>
