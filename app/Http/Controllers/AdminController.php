@@ -57,27 +57,31 @@ class AdminController extends Controller
     }
 
     public function downloadAllUsers(){
-        return Excel::download(new AllUsersExport, 'all_members.xlsx');
+        return Excel::download(new AllUsersExport('%%'), 'all_members.xlsx');
     }
 
     public function downloadKMG()
     {
-        return Excel::download(new KMGExport, 'kmg_members.xlsx');
+        return Excel::download(new AllUsersExport('KMG'), 'kmg_members.xlsx');
+        // return Excel::download(new KMGExport, 'kmg_members.xlsx');
     }
 
     public function downloadALS()
     {
-        return Excel::download(new ALSExport, 'als_members.xlsx');
+        return Excel::download(new AllUsersExport('ALS'), 'als_members.xlsx');
+        // return Excel::download(new ALSExport, 'als_members.xlsx');
     }
 
     public function downloadBDG()
     {
-        return Excel::download(new BDGExport, 'bdg_members.xlsx');
+        return Excel::download(new AllUsersExport('BDG'), 'bdg_members.xlsx');
+        // return Excel::download(new BDGExport, 'bdg_members.xlsx');
     }
 
     public function downloadMLG()
     {
-        return Excel::download(new MLGExport, 'mlg_members.xlsx');
+        return Excel::download(new AllUsersExport('MLG'), 'mlg_members.xlsx');
+        // return Excel::download(new MLGExport, 'mlg_members.xlsx');
     }
 
     public function downloadMemberALS()

@@ -109,17 +109,17 @@
                     Participants</div>
 
                 @if($user->role >= 2)
-                <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
+                {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
-                    Payment</div>
+                    Payment</div> --}}
                 @endif
 
                 @if($user->role == 2)
-                <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
+                {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
-                    Re-Registered</div>
+                    Re-Registered</div> --}}
                 @endif
 
             </div>

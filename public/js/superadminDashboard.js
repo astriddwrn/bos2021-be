@@ -553,14 +553,14 @@ $(document).ready(function () {
     }
 
 
-    $('.editBtnParticipant').click(function(){
-        
+    // $('.editBtnParticipant').click(function(){
+
         Livewire.hook('message.processed', (message, component) => {
             if(component.fingerprint.name != 'edit-participant-meta-data') return null;
             $('.select-selected').remove();
 
             var userData = JSON.parse($("meta[name=user]").attr("content"));
-            
+
             $('#fullName').val(userData.fullName);
             $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
             selectFunc("gender-select");
@@ -594,7 +594,7 @@ $(document).ready(function () {
                 }
                 if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
                     cmps = select.find(":selected").val();
-                    
+
                     changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps, '', '', '', '', '');
                 }
             });
@@ -615,11 +615,11 @@ $(document).ready(function () {
                 $(".failed-notif").css("display", "none");
             });
 
-    });
+    // });
 });
 
     /* EDIT REREGIS */
-  
+
 
 });
 
