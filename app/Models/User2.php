@@ -46,6 +46,11 @@ class User2 extends Authenticatable
         return $schedules;
     }
 
+    public function getIsEsportAttribute($is_esport){
+        if($is_esport == 'yes') return "Esport";
+        return '';
+    }
+
     public function getEmailVerifiedAtAttribute($date){
         if($date == null) return "NULL";
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format("l, d F, Y\n H:i:s");

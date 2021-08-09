@@ -47,6 +47,7 @@ Route::middleware(["auth", 'admin'])->group(function() {
     // Route::get('/admin', [AdminController::class, "index"])->name('admin');
     // Route::get('/admin', \App\Http\Livewire\PaginateUsers::class);
     Route::get('/admin', [AdminController::class, "showSuperAdmin"])->name('superadmin');
+    Route::post('/admin/update_participant', [AdminController::class, "updateParticipant"])->name('update.participant');
 
     Route::get('/download/payment/{id}', [AdminController::class, "downloadPayment"])->name('download_payment');
     Route::get('/download/ktp/{id}', [AdminController::class, "downloadKTP"])->name('download_ktp');
@@ -74,9 +75,9 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DON'T FORGET TO DISABLE BELOW GROUP WHEN THIS PROGRAM IS READY
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
- Route::prefix("/debug")->group(function(){
-    //  Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
-    //  Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
- });
+Route::prefix("/debug")->group(function(){
+    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
+    Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
+});
 
 require __DIR__.'/auth.php';

@@ -21,12 +21,42 @@ $(document).ready(function () {
     let rejectBtnBack = $('.reject-back');
     let rejectModal = $('.reject-user');
 
-    let deleteBtn = $('.deleteBtn');
-    let deleteBtnBack = $('.delete-back');
-    let deleteModal = $('.delete-user');
+    // let deleteBtn = $('.deleteBtn');
+    // let deleteBtnBack = $('.delete-back');
+    // let deleteModal = $('.delete-user');
+
+    let deleteParticipantBtn = $('.deleteParticipantBtn');
+    let deleteParticipantBtnBack = $('.deleteParticipant-back');
+    let deleteParticipantModal = $('.delete-participant');
+
+    var deleteId = null;
+    $('.submitDeleteParticipant').click(function(){
+        Livewire.emit('deleteParticipant', deleteId);
+        // console.log({ret});
+    });
+
+    function hookUsersTable(message, component){
+        deleteId = null;
+        $('#delete-name').text('');
+        $('#delete-nim').text('');
+        $('#delete-campus').text('');
+        $(deleteParticipantModal).toggleClass('is-visible');
+    }
+
+    function initDeleteModal(btn){
+        var id = btn.getAttribute('data-id');
+        deleteId = id;
+        $('#delete-name').text($(`td[data-id=${id}][data-type=fullname]`).text());
+        $('#delete-nim').text($(`td[data-id=${id}][data-type=nim]`).text());
+        $('#delete-campus').text($(`td[data-id=${id}][data-type=campus]`).text());
+    }
 
     const showhideModal = (btn, btnback, modal) => {
         $(btn).click(function () {
+            // console.log([this]);
+
+            if(deleteParticipantBtn == btn) initDeleteModal(this);
+
             $(modal).toggleClass('is-visible');
         });
         $(btnback).click(function () {
@@ -36,7 +66,8 @@ $(document).ready(function () {
 
     showhideModal(verifyBtn, verifyBtnBack, verifyModal);
     showhideModal(rejectBtn, rejectBtnBack, rejectModal);
-    showhideModal(deleteBtn, deleteBtnBack, deleteModal);
+    // showhideModal(deleteBtn, deleteBtnBack, deleteModal);
+    showhideModal(deleteParticipantBtn, deleteParticipantBtnBack, deleteParticipantModal);
 
     $(".menu-list div").click(function() {
         $('.on').each(function() {
@@ -156,8 +187,10 @@ $(document).ready(function () {
 
     const showEditForm = (btn, editform, inputAttr) => {
         $(btn).click(function () {
-            $(this).closest('.section').hide();
-            var x = $(btn).attr("data-id");
+            var $btn = $(this);
+            $btn.closest('.section').hide();
+            var x = $btn.attr("data-id");
+            // console.log({btn, editform, inputAttr, x});
             $(inputAttr).val(x);
             Livewire.emit('changeId', x);
             $(editform).show();
@@ -371,7 +404,7 @@ $(document).ready(function () {
 
     function continueTransition(sec){
         if(!sec.find('.msg-error').text()){
-            $('form').submit();
+            $('form#form-editdata-participant').submit();
             return;
         }
     }
@@ -555,71 +588,77 @@ $(document).ready(function () {
 
     // $('.editBtnParticipant').click(function(){
 
-        Livewire.hook('message.processed', (message, component) => {
-            if(component.fingerprint.name != 'edit-participant-meta-data') return null;
-            $('.select-selected').remove();
+    function hookEditParticipantMetaData(message, component){
+        $('.select-selected').remove();
 
-            var userData = JSON.parse($("meta[name=user]").attr("content"));
+        var userData = JSON.parse($("meta[name=user]").attr("content"));
 
-            $('#fullName').val(userData.fullName);
-            $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
-            selectFunc("gender-select");
-            $('#birthDate').val(userData.birthDate);
-            $('#placeBirth').val(userData.placeBirth);
-            $('#domicile').val(userData.domicile);
-            $('#address').val(userData.address);
-            $('#email').val(userData.email);
-            $('#personal_email').val(userData.personal_email);
-            $('#line_id').val(userData.line_id);
-            $('#whatsapp').val(userData.whatsapp);
-            $('#nim').val(userData.nim);
-            $('.campus-select option[value='+'"' +userData.campus+ '"').attr('selected', 'selected');
-            selectFunc("campus-select");
+        $('#fullName').val(userData.fullName);
+        $('.gender-select option[value='+'"' +userData.gender+ '"').attr('selected', 'selected');
+        selectFunc("gender-select");
+        $('#birthDate').val(userData.birthDate);
+        $('#placeBirth').val(userData.placeBirth);
+        $('#domicile').val(userData.domicile);
+        $('#address').val(userData.address);
+        $('#email').val(userData.email);
+        $('#personal_email').val(userData.personal_email);
+        $('#line_id').val(userData.line_id);
+        $('#whatsapp').val(userData.whatsapp);
+        $('#nim').val(userData.nim);
+        $('.campus-select option[value='+'"' +userData.campus+ '"').attr('selected', 'selected');
+        selectFunc("campus-select");
 
-            changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
+        changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),userData.campus, userData.major, userData.batch, userData.lnt_course, userData.schedule, userData.is_esport);
 
-            $("input").blur(function(){
-                checkEmpty($(this));
-            });
+        $("input").blur(function(){
+            checkEmpty($(this));
+        });
 
-            $('.select-selected').click(function(){
-                console.log('test');
-                let select = $(this).parent();
-                if((select).hasClass('major-select') || (select).hasClass('fyp-select')){
-                    if($('.campus-select').find(":selected").val()==0){
-                        closeAllSelect($(this));
-                        $('.campus-select').addClass("border-error");
-                        $('.campus-select').siblings('.msg-error').text("Please fill out this field first.");
-                    }
+        $('.select-selected').click(function(){
+            console.log('test');
+            let select = $(this).parent();
+            if((select).hasClass('major-select') || (select).hasClass('fyp-select')){
+                if($('.campus-select').find(":selected").val()==0){
+                    closeAllSelect($(this));
+                    $('.campus-select').addClass("border-error");
+                    $('.campus-select').siblings('.msg-error').text("Please fill out this field first.");
                 }
-                if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
-                    cmps = select.find(":selected").val();
+            }
+            if(select.hasClass('campus-select') && $('.campus-select').find(":selected").val()!=0){
+                cmps = select.find(":selected").val();
 
-                    changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps, '', '', '', '', '');
-                }
-            });
+                changeCampus($('.major-select').find('.select-selected'), $('.lnt-select').find('.select-selected'), $('.fyp-select').find('.select-selected'),cmps, '', '', '', '', '');
+            }
+        });
 
-            $('.select-items').click(function(){
-                console.log('test2');
-                x = $(this).parent();
-                x.removeClass("border-error");
-                x.siblings('.msg-error').empty();
-            });
+        $('.select-items').click(function(){
+            console.log('test2');
+            x = $(this).parent();
+            x.removeClass("border-error");
+            x.siblings('.msg-error').empty();
+        });
 
-            $(".btn-continue").click(function(){
-                let sec = $(this).parent().parent();
-                lastValidation(sec, continueTransition);
-            });
+        $(".btn-continue").click(function(){
+            let sec = $(this).parent().parent();
+            lastValidation(sec, continueTransition);
+        });
 
-            $(".close").click(function () {
-                $(".failed-notif").css("display", "none");
-            });
+        $(".close").click(function () {
+            $(".failed-notif").css("display", "none");
+        });
+    }
 
-    // });
-});
+    Livewire.hook('message.processed', (message, component) => {
+        console.log({message, component});
+
+        var lwName = component.fingerprint.name;
+        var ret = message.response.effects.returns;
+
+        if(lwName == 'edit-participant-meta-data' && ret && 'changeId' in ret) hookEditParticipantMetaData(message, component);
+        else if(lwName == 'users-table' && ret && 'deleteParticipant' in ret) hookUsersTable(message, component);
+        // else console.log({message, component});
+    });
 
     /* EDIT REREGIS */
-
-
 });
 

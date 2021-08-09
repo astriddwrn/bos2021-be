@@ -53,29 +53,31 @@ class UserController extends Controller
                                                         'diff_change_schedule', 'schedules_from_region'));
                 break;
             }
-            case 1: {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                return redirect('/admin');
+                break;
+            // case 2: {
+            //     return redirect('/admin');
+            //     break;
+            // }
+            // case 3: {
 
-                return redirect('/admin');
-                break;
-            }
-            case 2: {
-                return redirect('/admin');
-                break;
-            }
-            case 3: {
+            //     return redirect('/admin');
+            //     break;
+            // }
+            // case 4: {
+            //     return redirect('/admin');
+            //     break;
+            // }
 
-                return redirect('/admin');
-                break;
-            }
-            case 4: {
-                return redirect('/admin');
-                break;
-            }
-
-            case 5: {
-                return redirect('/admin');
-                break;
-            }
+            // case 5: {
+            //     return redirect('/admin');
+            //     break;
+            // }
         }
     }
 
