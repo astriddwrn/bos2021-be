@@ -140,33 +140,36 @@ class AdminController extends Controller
         return response()->download(public_path('fyp/' . $member['fyp-upload']));
     }
 
-    public function downloadAllUsers(){
-        return Excel::download(new AllUsersExport('%%'), 'all_members.xlsx');
+    public function downloadUsers($region){
+        if($region=='ALL')
+            return Excel::download(new AllUsersExport('%%'), 'all_members.xlsx');
+        else
+            return Excel::download(new AllUsersExport($region), $region.'_members.xlsx');
     }
 
-    public function downloadKMG()
-    {
-        return Excel::download(new AllUsersExport('KMG'), 'kmg_members.xlsx');
-        // return Excel::download(new KMGExport, 'kmg_members.xlsx');
-    }
+    // public function downloadAllUsers(){
+    //     return Excel::download(new AllUsersExport('%%'), 'all_members.xlsx');
+    // }
 
-    public function downloadALS()
-    {
-        return Excel::download(new AllUsersExport('ALS'), 'als_members.xlsx');
-        // return Excel::download(new ALSExport, 'als_members.xlsx');
-    }
+    // public function downloadKMG()
+    // {
+    //     return Excel::download(new AllUsersExport('KMG'), 'kmg_members.xlsx');
+    // }
 
-    public function downloadBDG()
-    {
-        return Excel::download(new AllUsersExport('BDG'), 'bdg_members.xlsx');
-        // return Excel::download(new BDGExport, 'bdg_members.xlsx');
-    }
+    // public function downloadALS()
+    // {
+    //     return Excel::download(new AllUsersExport('ALS'), 'als_members.xlsx');
+    // }
 
-    public function downloadMLG()
-    {
-        return Excel::download(new AllUsersExport('MLG'), 'mlg_members.xlsx');
-        // return Excel::download(new MLGExport, 'mlg_members.xlsx');
-    }
+    // public function downloadBDG()
+    // {
+    //     return Excel::download(new AllUsersExport('BDG'), 'bdg_members.xlsx');
+    // }
+
+    // public function downloadMLG()
+    // {
+    //     return Excel::download(new AllUsersExport('MLG'), 'mlg_members.xlsx');
+    // }
 
     public function downloadMemberALS()
     {
@@ -188,24 +191,24 @@ class AdminController extends Controller
         return Excel::download(new MemberMLGExport, 'mlg_registered_members.xlsx');
     }
 
-    public function downloadPaymentALS()
-    {
-        return Excel::download(new PaymentALSExport, 'als_payment_members.xlsx');
-    }
+    // public function downloadPaymentALS()
+    // {
+    //     return Excel::download(new PaymentALSExport, 'als_payment_members.xlsx');
+    // }
 
-    public function downloadPaymentKMG()
-    {
-        return Excel::download(new PaymentKMGExport, 'kmg_payment_members.xlsx');
-    }
+    // public function downloadPaymentKMG()
+    // {
+    //     return Excel::download(new PaymentKMGExport, 'kmg_payment_members.xlsx');
+    // }
 
-    public function downloadPaymentBDG()
-    {
-        return Excel::download(new PaymentBDGExport, 'bdg_payment_members.xlsx');
-    }
+    // public function downloadPaymentBDG()
+    // {
+    //     return Excel::download(new PaymentBDGExport, 'bdg_payment_members.xlsx');
+    // }
 
-    public function downloadPaymentMLG()
-    {
-        return Excel::download(new PaymentMLGExport, 'mlg_payment_members.xlsx');
-    }
+    // public function downloadPaymentMLG()
+    // {
+    //     return Excel::download(new PaymentMLGExport, 'mlg_payment_members.xlsx');
+    // }
 
 }

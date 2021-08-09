@@ -29,17 +29,8 @@
                         </button>
                         @endif
                     </span>
-                    <a href="@if ($region == 'ALL')
-                        {{route('download_all')}}
-                    @elseif ($region == 'KMG')
-                        {{route('download_KMG')}}
-                    @elseif ($region == 'ALS')
-                        {{route('download_ALS')}}
-                    @elseif ($region == 'BDG')
-                        {{route('download_BDG')}}
-                    @elseif ($region == 'MLG')
-                        {{route('download_MLG')}}
-                    @endif" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
+
+                    <a href="{{route('download_users',['region'=>$region])}}" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
                     </a>
