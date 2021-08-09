@@ -692,7 +692,7 @@
                     <br>
                     4th Batch: August 28, 2021 at 2.00 PM - 3.00 PM WIB
                     <br>
-                    <strong>Region</strong>: Kemanggisan, Alam Sutera, Bandung, dan Malang
+                    <strong>Region</strong>: Kemanggisan, Alam Sutera, dan Malang
                     <br>
                     <br>
                     5th Batch: September 11, 2021 at 2.00 PM - 3.00 PM WIB
