@@ -302,10 +302,15 @@ selectFunc("bncc-select-als");
             'Interactive Design & Technology'
 
         ];
-        $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
+        $mKMG = ["Accounting",'Architecture',
+        'Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
               'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
-           'Cyber Security', 'Data Science','English Literature', 'Game Application and Technology','Global Business Marketing', 'Hotel Management (Diploma Program)',
-           'Industrial Engineering','Information Systems','Information Systems & Accounting','Information Systems & Management',
+           'Cyber Security', 
+           'Data Science',
+           'English Literature', 
+           'Game Application and Technology','Global Business Marketing', 
+           'Hotel Management (Diploma Program)',
+           'Industrial Engineering','Information Systems','Information Systems & Accounting', 'Information Systems, Accounting, & Auditing', 'Information Systems & Management',
            'Interior Design','International Relations','Japanese Literature','Law - Business Law','Management','Master of Information Systems Management',
            'Master of Information Technology','Mobile Application and Technology','Primary Teacher Education','Program Profesi Insinyur (Professional Program)',
            'Psychology','Taxation','Tourism','Visual Communication Design - Animation','Visual Communication Design - Creative Advertising','Visual Communication Design - New Media'
