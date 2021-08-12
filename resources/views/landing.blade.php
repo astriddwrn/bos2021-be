@@ -1120,7 +1120,7 @@
                                     <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-phone.svg')}}" alt=""> 087871447555
                                 </div>
                                 <div class="flex flex-row items-center ">
-                                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> ssam223
+                                    <img class="w-6 mr-4" src="{{ asset('Asset/Image/landing/footer-icon-line.svg')}}" alt=""> Jetaaa1
                                 </div>
                             </div>
                         </div>
