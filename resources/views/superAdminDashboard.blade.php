@@ -858,8 +858,8 @@
                             <div class="custom-select gender-select w-full">
                                 <select id="custom-select gender-select" name="gender">
                                     <option class="off" value="0">Select your gender</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="male">Male</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
