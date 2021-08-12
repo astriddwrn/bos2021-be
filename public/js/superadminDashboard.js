@@ -138,7 +138,7 @@ $(document).ready(function () {
         // $(tblBdg).removeClass("tbl-active");
         // $(tblMlg).removeClass("tbl-active");
         // $(tblAllReg).removeClass("tbl-active");
-        console.log("activated");
+        // console.log("activated");
     }
 
 
@@ -615,7 +615,7 @@ $(document).ready(function () {
         });
 
         $('.select-selected').click(function(){
-            console.log('test');
+            // console.log('test');
             let select = $(this).parent();
             if((select).hasClass('major-select') || (select).hasClass('fyp-select')){
                 if($('.campus-select').find(":selected").val()==0){
@@ -632,7 +632,7 @@ $(document).ready(function () {
         });
 
         $('.select-items').click(function(){
-            console.log('test2');
+            // console.log('test2');
             x = $(this).parent();
             x.removeClass("border-error");
             x.siblings('.msg-error').empty();
@@ -649,7 +649,7 @@ $(document).ready(function () {
     }
 
     Livewire.hook('message.processed', (message, component) => {
-        console.log({message, component});
+        // console.log({message, component});
 
         var lwName = component.fingerprint.name;
         var ret = message.response.effects.returns;

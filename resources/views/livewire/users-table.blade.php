@@ -71,8 +71,8 @@
                             @foreach ($users as $i => $user)
                             <tr>
                                 <td>
-                                    {{($limit * ($page - 1))+ $i + 1}}<br />
-                                    {{$user['id']}}
+                                    {{($limit * ($page - 1))+ $i + 1}}{{-- <br />
+                                    {{$user['id']--}}
                                 </td>
                                 <td>
                                     @if($auth->role >= 2)

@@ -1137,7 +1137,7 @@
 
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/superadminDashboard.js')}}"></script>
+    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108121621"></script>
 
 </body>
 </html>
