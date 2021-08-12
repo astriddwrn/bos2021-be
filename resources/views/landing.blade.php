@@ -737,27 +737,27 @@
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Twibbon Challenge</h2>
-                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">To be Announced</h5>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Until September 3, 2021</h5>
                 <p class="text-cBlackHome mb-12 xl:mb-14 leading-7">
                     Show to the world that you are going to be a part of BNCC family and get your chance to win valuable prizes!
                 </p>
-                <a class="w-full flex flex-row justify-center items-center
+                {{-- <a class="w-full flex flex-row justify-center items-center
                 bg-cBluishGray
                 transition duration-300
                 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2
                 cursor-default">
                     Coming Soon
-                </a>
-                {{-- <a class="w-full flex flex-row justify-center items-center
+                </a> --}}
+                <a class="w-full flex flex-row justify-center items-center
                 bg-cLntBlue
                 hover:bg-cDarkerLightBlue
                 transition duration-300
                 ease-in-out text-center
-                text-cWhite font-semibold rounded py-2" href="">
-                <img class="w-6 mr-2" src="{{url('./Asset/Image/landing/bose-download.svg')}}" alt="">
-                    Download
-                </a> --}}
+                text-cWhite font-semibold rounded py-2" href="https://www.instagram.com/p/CSb0w94hgZU/?utm_source=ig_web_copy_link"
+                target="_blank">
+                    Join Now
+                </a>
             </div>
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
@@ -782,7 +782,7 @@
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Codesign: UI/UX Design</h2>
                 <h5 class="font-semibold text-cDarkBlue text-lg mb-4">August 25, 2021</h5>
-                <p class="text-cBlackHome mb-10 sm:mb-4 lg:mb-10 xl:mb-11 leading-7">
+                <p class="text-cBlackHome mb-4 sm:mb-4 md:mb-9 lg:mb-11 leading-7">
                     An online workshop that will teach you the fundamentals of UI/UX design from scratch.
                 </p>
                 {{-- <a class="w-full flex flex-row justify-center items-center
@@ -794,7 +794,7 @@
                     Coming Soon
                 </a> --}}
                 <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
-                text-cWhite font-semibold rounded py-2"
+                text-cWhite font-semibold rounded py-2 sm:mt-8 lg:mt-7"
                 href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a>
             </div>
 
