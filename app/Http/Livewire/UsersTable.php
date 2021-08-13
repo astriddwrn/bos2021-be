@@ -77,6 +77,8 @@ class UsersTable extends Component
                 ->orWhere('lnt_course', 'like', '%' . $this->search . '%');
 
                 foreach($schedules as $schedule){
+                    // $q->orWhere('schedule', 'LIKE', '%"' . $schedule->id . '"%');
+                    $q->orWhereJsonContains('schedule', (string) $schedule->id);
                     $q->orWhereJsonContains('schedule', $schedule->id);
                 }
             });

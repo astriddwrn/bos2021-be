@@ -43,11 +43,11 @@ class Schedule extends Model
     }
 
     public function users() {
-        return User::whereJsonContains('schedule', $this->id)->get();
+        return User::whereJsonContains('schedule', (string) $this->id)->get();
     }
 
     public function count_users() {
-        return User::whereJsonContains('schedule', $this->id)->count();
+        return User::whereJsonContains('schedule', (string) $this->id)->count();
     }
 }
 
