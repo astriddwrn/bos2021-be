@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\User2;
+use App\Models\Schedule;
 
 class UsersTable extends Component
 {
@@ -47,39 +48,38 @@ class UsersTable extends Component
 
     public function render()
     {
-        // if($this->lock_region){
-        //     if($this->region == "ALL") $this->_region = '%%';
-        //     else $this->_region = $this->region;
-        // }else if(in_array($this->region, ['ALL', 'KMG', 'ALS', 'BDG', 'MLG'])){
-        //     if($this->region == "ALL") $this->_region = '%%';
-        //     else $this->_region = $this->region;
-        // }else $this->_region = '%%';
-
         $this->checkRegion();
 
         $region = "";
         $region = $this->region;
         if($region == "ALL") $region = '%%';
 
+        $schedules = Schedule::select('id')
+            ->where('campus', 'like', $region)
+            ->where('text', 'like', '%' . $this->search . '%')->get();
+
         $users = User2::where('campus', 'like', $region)->where('role', 0)
-        ->where(function($q){
-            $q->where('fullName', 'like', '%' . $this->search . '%')
-              ->orWhere('email', 'like', '%' . $this->search . '%')
-              ->orWhere('gender', 'like', '%' . $this->search . '%')
-              ->orWhere('placeBirth', 'like', '%' . $this->search . '%')
-              ->orWhere('domicile', 'like', '%' . $this->search . '%')
-              ->orWhere('address', 'like', '%' . $this->search . '%')
-              ->orWhere('personal_email', 'like', '%' . $this->search . '%')
-              ->orWhere('whatsapp', 'like', '%' . $this->search . '%')
-              ->orWhere('line_id', 'like', '%' . $this->search . '%')
-              ->orWhere('nim', 'like', '%' . $this->search . '%')
-              ->orWhere('campus', 'like', '%' . $this->search . '%')
-              ->orWhere('major', 'like', '%' . $this->search . '%')
-              ->orWhere('batch', 'like', '%' . $this->search . '%')
-              ->orWhere('schedule', 'like', '%' . $this->search . '%')
-              ->orWhere('is_esport', 'like', '%' . $this->search . '%')
-              ->orWhere('lnt_course', 'like', '%' . $this->search . '%');
-        });
+            ->where(function($q) use ($schedules){
+                $q->where('fullName', 'like', '%' . $this->search . '%')
+                ->orWhere('email', 'like', '%' . $this->search . '%')
+                ->orWhere('gender', 'like', '%' . $this->search . '%')
+                ->orWhere('placeBirth', 'like', '%' . $this->search . '%')
+                ->orWhere('domicile', 'like', '%' . $this->search . '%')
+                ->orWhere('address', 'like', '%' . $this->search . '%')
+                ->orWhere('personal_email', 'like', '%' . $this->search . '%')
+                ->orWhere('whatsapp', 'like', '%' . $this->search . '%')
+                ->orWhere('line_id', 'like', '%' . $this->search . '%')
+                ->orWhere('nim', 'like', '%' . $this->search . '%')
+                ->orWhere('campus', 'like', '%' . $this->search . '%')
+                ->orWhere('major', 'like', '%' . $this->search . '%')
+                ->orWhere('batch', 'like', '%' . $this->search . '%')
+                ->orWhere('is_esport', 'like', '%' . $this->search . '%')
+                ->orWhere('lnt_course', 'like', '%' . $this->search . '%');
+
+                foreach($schedules as $schedule){
+                    $q->orWhereJsonContains('schedule', $schedule->id);
+                }
+            });
 
         $this->total = $users->count();
         $this->page_total = ceil($this->total / $this->limit);

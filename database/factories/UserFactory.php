@@ -23,6 +23,10 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $schedules = [null];
+        for($i=1; $i<=27; $i++)
+            array_push($schedules, $i);
+
         return [
             'fullName' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
@@ -34,7 +38,16 @@ class UserFactory extends Factory
             'campus' => ['KMG', 'ALS', 'BDG', 'MLG'][rand(0, 3)],
             'major' => 'None',
             'lnt_course' => 'None',
-            'schedule' => [2, 4, 5],
+            'schedule' => [rand(1,27),
+                           rand(1,27),
+                           rand(1,27),
+                           rand(1,27),
+                           rand(1,27)],
+            // 'schedule' => [$schedules[rand(0,27)],
+            //                $schedules[rand(0,27)],
+            //                $schedules[rand(0,27)],
+            //                $schedules[rand(0,27)],
+            //                $schedules[rand(0,27)]],
             'batch' => ['Batch 1', 'Batch 2', 'Batch 3', 'Batch 4', 'Batch 5'][rand(0, 4)],
             'gender' => ['Male', 'Female'][rand(0, 1)],
             'birthDate' => now(),
