@@ -305,10 +305,10 @@ selectFunc("bncc-select-als");
         $mKMG = ["Accounting",'Architecture',
         'Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
               'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
-           'Cyber Security', 
+           'Cyber Security',
            'Data Science',
-           'English Literature', 
-           'Game Application and Technology','Global Business Marketing', 
+           'English Literature',
+           'Game Application and Technology','Global Business Marketing',
            'Hotel Management (Diploma Program)',
            'Industrial Engineering','Information Systems','Information Systems & Accounting', 'Information Systems, Accounting, & Auditing', 'Information Systems & Management',
            'Interior Design','International Relations','Japanese Literature','Law - Business Law','Management','Master of Information Systems Management',
@@ -342,8 +342,8 @@ selectFunc("bncc-select-als");
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
 
         $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4", "Batch 5"];
-        $fMLG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
-        $fBDG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
+        $fMLG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4", "Batch 5"];
+        $fBDG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4", "Batch 5"];
 
         let a = $cKMG;
         let b = $mKMG;
