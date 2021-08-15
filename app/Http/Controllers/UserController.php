@@ -60,24 +60,6 @@ class UserController extends Controller
             case 5:
                 return redirect('/admin');
                 break;
-            // case 2: {
-            //     return redirect('/admin');
-            //     break;
-            // }
-            // case 3: {
-
-            //     return redirect('/admin');
-            //     break;
-            // }
-            // case 4: {
-            //     return redirect('/admin');
-            //     break;
-            // }
-
-            // case 5: {
-            //     return redirect('/admin');
-            //     break;
-            // }
         }
     }
 
