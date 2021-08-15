@@ -18,7 +18,14 @@ class UserController extends Controller
             case 0: {
                 $schedules = $user->schedules();
 
-                $schedules_from_region = Schedule::where('campus', 'like', $user->campus)->get();
+                $_schedules_from_region = Schedule::where('campus', 'like', $user->campus)->get();
+
+                $schedules_from_region = collect([]);
+
+                foreach($_schedules_from_region->lazy() as $schedule){
+                    if($schedule->count_users() < $schedule->quota)
+                        $schedules_from_region->push($schedule);
+                }
 
                 $birthDate = Carbon::parse($user->birthDate)->format('F d, Y');
 
@@ -60,24 +67,6 @@ class UserController extends Controller
             case 5:
                 return redirect('/admin');
                 break;
-            // case 2: {
-            //     return redirect('/admin');
-            //     break;
-            // }
-            // case 3: {
-
-            //     return redirect('/admin');
-            //     break;
-            // }
-            // case 4: {
-            //     return redirect('/admin');
-            //     break;
-            // }
-
-            // case 5: {
-            //     return redirect('/admin');
-            //     break;
-            // }
         }
     }
 
@@ -91,6 +80,19 @@ class UserController extends Controller
         ]);
 
         $user = $request->user();
+
+        foreach(Schedule::findOrFail($request['schedule-change']) as $schedule){
+            if(strtolower($user->campus) != strtolower($schedule->campus))
+                return back()->withInput()->withErrors([
+                    "schedule" => "The schedule you choose is not available in your campus."
+                ]);
+
+            if($schedule->count_users() >= $schedule->quota)
+                return back()->withInput()->withErrors([
+                    "schedule" => "The schedule you choose is full right now."
+                ]);
+        }
+
         $user->schedule = $request['schedule-change'];
         $user->save();
         return back();
