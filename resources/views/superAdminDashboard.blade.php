@@ -21,7 +21,7 @@
         }
     </style>
 
-    @livewireStyles
+    {{-- @livewireStyles --}}
 
 </head>
 <body class="text-base">
@@ -100,15 +100,10 @@
                     </tbody>
                 </table>
             </div>
-            {{-- <form action="{{route('reject')}}" method="POST"> --}}
                 <div class="flex flex-row justify-between w-full mt-5 button-cont">
-                    {{-- @csrf
-                    <input type="hidden" name="delete-id" value=""> --}}
-                    {{-- <div class="text-center delete-back text-cLightBlue mx-2 border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Cancel</div> --}}
                     <div class="text-center deleteParticipant-back text-cLightBlue mx-2 border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Cancel</div>
                     <button class="submitDeleteParticipant text-center modal-continue mx-2 text-cWhite font-bold text-xl rounded-lg p-2 bg-cReddeny w-100 mb-5 hover:bg-cDarkerReddeny transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-44">Delete</button>
                 </div>
-            {{-- </form> --}}
         </div>
     </div>
     <div class="pop-up fixed loggingout w-screen h-screen z-30 hidden">
@@ -136,13 +131,13 @@
                     Participants</div>
 
                 @if($user->role >= 2)
-                {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
+                <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
-                    Payment</div> --}}
+                    Payment</div>
                 @endif
 
-                @if($user->role >= 2)
+                @if($user->role == 2)
                 {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
@@ -159,7 +154,7 @@
             </div>
         </div>
 
-        <div class="xl:w-4/5 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
+        <div class="w-full xl:w-4/5 right-cont bg-cLightGray absolute right-0 min-h-screen">
 
             {{-- PARTICIPANT --}}
             <div class="section participant-sec bg-cLightGray h-full">
@@ -171,15 +166,6 @@
 
                 <!-- isi nya -->
                 @livewire('users-table')
-                {{-- @if(in_array($user->role, [1, 2]))
-                    @livewire('users-table', ['auth' => $user])
-                @elseif($user->role == 3)
-                    @livewire('users-table', ['region'=>'ALS', 'lock_region' => true, 'auth' => $user])
-                @elseif($user->role == 4)
-                    @livewire('users-table', ['region'=>'BDG', 'lock_region' => true, 'auth' => $user])
-                @elseif($user->role == 5)
-                    @livewire('users-table', ['region'=>'MLG', 'lock_region' => true, 'auth' => $user])
-                @endif --}}
 
                 {{-- CLOSED SECTION PARTICIPANTS --}}
             </div>
@@ -194,325 +180,7 @@
 
 
                 <!-- isi nya -->
-                <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">
-                        <button class="btnAllReg btnRegion btnRegion-active">
-                            All Region
-                        </button>
-                        <button class="btnKMG btnRegion">
-                            KMG
-                        </button>
-                        <button class="btnAS btnRegion">
-                            AS
-                        </button>
-                        <button class="btnBDG btnRegion">
-                            BDG
-                        </button>
-                        <button class="btnMLG btnRegion">
-                            MLG
-                        </button>
-                    </span>
-                </div>
-
-                {{-- ALL REGION --}}
-                <div class="tblAllReg tbl tbl-active">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th >No</th>
-                            <th >Actions</th>
-                            <th >Time Stamp</th>
-                            <th >Status</th>
-                            <th >Full Name</th>
-                            <th >LnT Course</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >1.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon ALL REGION</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                            <tr>
-                                <td >2.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung Kook</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION KEMANGGISAN --}}
-                <div class="tblKMG tbl">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th >No</th>
-                            <th >Actions</th>
-                            <th >Time Stamp</th>
-                            <th >Status</th>
-                            <th >Full Name</th>
-                            <th >LnT Course</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >1.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung Kook KMG</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                            <tr>
-                                <td >2.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung Kook</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION ALSUT --}}
-                <div class="tblAS tbl">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th >No</th>
-                            <th >Actions</th>
-                            <th >Time Stamp</th>
-                            <th >Status</th>
-                            <th >Full Name</th>
-                            <th >LnT Course</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >1.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung AS</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                            <tr>
-                                <td >2.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung Kook</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION BANDUNG --}}
-                <div class="tblBDG tbl">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th >No</th>
-                            <th >Actions</th>
-                            <th >Time Stamp</th>
-                            <th >Status</th>
-                            <th >Full Name</th>
-                            <th >LnT Course</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >1.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung BDG</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                            <tr>
-                                <td >2.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung Kook</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION MALANG --}}
-                <div class="tblMLG tbl">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th >No</th>
-                            <th >Actions</th>
-                            <th >Time Stamp</th>
-                            <th >Status</th>
-                            <th >Full Name</th>
-                            <th >LnT Course</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >1.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung MLG</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                            <tr>
-                                <td >2.</td>
-                                <td>
-                                    <div class="flex flex-row justify-around">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                        <button class="verifyBtn p-2 bg-cGreenacc hover:bg-cDarkerGreenacc rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-tick.svg')}}" alt="">
-                                        </button>
-                                        <button class="rejectBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Verified</td>
-                                <td >Jeon Jung Kook</td>
-                                <td >Java Programming</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
+                @livewire("payments-table")
 
                 {{-- CLOSED SECTION PAYEMNT  --}}
             </div>

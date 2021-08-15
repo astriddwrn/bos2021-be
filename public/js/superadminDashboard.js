@@ -64,12 +64,13 @@ $(document).ready(function () {
         });
     }
 
-    showhideModal(verifyBtn, verifyBtnBack, verifyModal);
-    showhideModal(rejectBtn, rejectBtnBack, rejectModal);
+    // showhideModal(verifyBtn, verifyBtnBack, verifyModal);
+    // showhideModal(rejectBtn, rejectBtnBack, rejectModal);
     // showhideModal(deleteBtn, deleteBtnBack, deleteModal);
     showhideModal(deleteParticipantBtn, deleteParticipantBtnBack, deleteParticipantModal);
 
     $(".menu-list div").click(function() {
+        console.log(["73", this]);
         $('.on').each(function() {
             if(!$(this).hasClass('hidden')){
                 $(this).parent().find('img').toggleClass("hidden");
@@ -185,20 +186,21 @@ $(document).ready(function () {
     let editformParticipant = $('.editdata-participantsec')
     let editformReregis = $('.editdata-reregistrationsec')
 
-    const showEditForm = (btn, editform, inputAttr) => {
+    const showEditForm = (btn, editform, inputAttr, callback) => {
         $(btn).click(function () {
             var $btn = $(this);
             $btn.closest('.section').hide();
             var x = $btn.attr("data-id");
-            // console.log({btn, editform, inputAttr, x});
             $(inputAttr).val(x);
-            Livewire.emit('changeId', x);
             $(editform).show();
             $('.menu-cont').hide();
+            callback(this, btn, editform, inputAttr);
         });
     }
 
-    showEditForm(btnEditParticipant, editformParticipant, inputAttrPart);
+    showEditForm(btnEditParticipant, editformParticipant, inputAttrPart, function(el){
+        Livewire.emit('changeId', $(this).attr("data-id"));
+    });
     showEditForm(btnEditReregis, editformReregis, inputAttrReregis);
 
     const closeEditForm = (btn, editform, sec) => {

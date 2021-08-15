@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User2;
 use App\Models\Schedule;
 
@@ -13,7 +13,6 @@ class UsersTable extends Component
 
     public $lock_region = false;
     public $region = "ALL";
-    // public $_region = '%%';
 
     public $limit = 10;
     public $page = 1;

@@ -16,6 +16,13 @@ class User2 extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ["status"];
+
+    /**
      * The table associated with the model.
      *
      * @var string
@@ -57,10 +64,12 @@ class User2 extends Authenticatable
     }
 
     public function getCreatedAtAttribute($date){
-        return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
+        // return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y');
     }
 
     public function getUpdatedAtAttribute($date){
-        return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
+        // return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y');
     }
 }
