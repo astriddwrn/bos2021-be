@@ -62,7 +62,7 @@
                             </button>
                         </div>
                     </td>
-                    <td>{{$user->updated_at}}</td>
+                    <td>Not Available{{-- $user->format_updated_at() --}}</td>
                     <td>{{$user->status == 1 ? "Verified" : ($user->status == 2 ? "Rejected" : "Unverified")}}</td>
                     <td>{{$user->fullName}}</td>
                     <td>{{$user->nim}}</td>

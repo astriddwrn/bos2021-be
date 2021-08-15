@@ -15,6 +15,8 @@ class User2 extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public $date_non_formatted;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -64,12 +66,21 @@ class User2 extends Authenticatable
     }
 
     public function getCreatedAtAttribute($date){
-        // return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y');
+        return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
+        // return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y');
     }
 
     public function getUpdatedAtAttribute($date){
-        // return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y');
+        $this->date_non_formatted = $date;
+        return Carbon::createFromFormat('Y-m-d\TH:i:s.u\Z', $date)->format('l, d F, Y');
+        // return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('l, d F, Y');
+    }
+
+    public function format_updated_at(){
+        // $date = $this->updated_at;
+        // echo($this->date_non_formatted);
+        return "";
+        // return Carbon::createFromFormat('Y-m-d H:i:s', $this->date_non_formatted)
+        //                 ->format('l, d F, Y');
     }
 }
