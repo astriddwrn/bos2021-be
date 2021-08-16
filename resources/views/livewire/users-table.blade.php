@@ -30,16 +30,16 @@
                         @endif
 
                         @if($auth->role <= 2)
-                        <button wire:click="$set('region', 'ASO')" class="btnAllReg btnRegion @if($region == 'ALL') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'ASO')" class="btnAllReg btnRegion @if($region == 'ASO') btnRegion-active @endif">
                             ASO
                         </button>
-                        <button wire:click="$set('region', 'BKS')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'BKS')" class="btnKMG btnRegion @if($region == 'BKS') btnRegion-active @endif">
                             BKS
                         </button>
-                        <button wire:click="$set('region', 'OL')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'OL')" class="btnKMG btnRegion @if($region == 'OL') btnRegion-active @endif">
                             OL
                         </button>
-                        <button wire:click="$set('region', 'SNY')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'SNY')" class="btnKMG btnRegion @if($region == 'SNY') btnRegion-active @endif">
                             SNY
                         </button>
                         @endif
