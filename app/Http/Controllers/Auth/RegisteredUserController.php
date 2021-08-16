@@ -84,7 +84,8 @@ class RegisteredUserController extends Controller
 
 
         foreach(Schedule::findOrFail($request->schedule) as $schedule){
-            if(strtolower($request->campus) != strtolower($schedule->campus))
+            if(strtolower($request->campus) != strtolower($schedule->campus) ||
+               !(in_array($request->campus, ['ASO', 'BKS', 'OL', 'SNY'])))
                 return back()->withInput()->withErrors([
                     "schedule" => "The schedule you choose is not available in your campus."
                 ]);
