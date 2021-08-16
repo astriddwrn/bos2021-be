@@ -170,9 +170,13 @@
                             <select id="custom-select campus-select" name="campus">
                                 <option class="off" value="0">Select your campus location</option>
                                 <option value="ALS">Alam Sutera</option>
+                                <option value="ASO">ASO</option>
                                 <option value="BDG">Bandung</option>
+                                <option value="BKS">Bekasi</option>
                                 <option value="KMG">Kemanggisan</option>
                                 <option value="MLG">Malang</option>
+                                <option value="OL">Online Learning</option>
+                                <option value="SNY">Senayan</option>
                             </select>
                         </div>
                         <span class="msg-error"></span>

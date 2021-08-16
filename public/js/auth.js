@@ -1,10 +1,8 @@
-
 $(document).ready(function(){
 
     setTimeout(function(){
        $('.section').removeClass('hidden');
     }, 1000);
-
 
 function selectFunc(z){
     var x, i, j, l, ll, selElmnt, a, b, c;
@@ -65,7 +63,6 @@ function selectFunc(z){
         this.classList.toggle("select-arrow-active");
         });
     }
-
 
     /*if the user clicks anywhere outside the select box,
     then close all select boxes:*/
@@ -241,13 +238,11 @@ selectFunc("bncc-select-als");
             if(sec.hasClass("account-sec")){
                 // $('.success').toggleClass('is-visible');
                     $('form').submit();
-
                 return;
             }
             if(sec.hasClass("login-sec") || sec.hasClass("resetPass-form") || sec.hasClass("forgotPass-form")){
                 $('form').submit();
                 return;
-
             }
             sec.addClass('left-section');
             sec.next().removeClass('right-section');
@@ -282,9 +277,9 @@ selectFunc("bncc-select-als");
         checkEmpty($(this));
     })
 
-
     function changeCampus(x, y, z ,cmps){
-        $mBDG = ['Computer Science',
+        $mBDG = [
+            'Computer Science',
             'Creativepreneurship',
             'Interior Design',
             'Visual Communication Design',
@@ -300,29 +295,30 @@ selectFunc("bncc-select-als");
             'Visual Communication Design',
             'Digital Business Innovation',
             'Interactive Design & Technology'
-
         ];
-        $mKMG = ["Accounting",'Architecture',
-        'Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
-              'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
-           'Cyber Security',
-           'Data Science',
-           'English Literature',
-           'Game Application and Technology','Global Business Marketing',
-           'Hotel Management (Diploma Program)',
-           'Industrial Engineering','Information Systems','Information Systems & Accounting', 'Information Systems, Accounting, & Auditing', 'Information Systems & Management',
-           'Interior Design','International Relations','Japanese Literature','Law - Business Law','Management','Master of Information Systems Management',
-           'Master of Information Technology','Mobile Application and Technology','Primary Teacher Education','Program Profesi Insinyur (Professional Program)',
-           'Psychology','Taxation','Tourism','Visual Communication Design - Animation','Visual Communication Design - Creative Advertising','Visual Communication Design - New Media'
+        $mKMG = [
+            "Accounting",'Architecture',
+            'Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
+            'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
+            'Cyber Security',
+            'Data Science',
+            'English Literature',
+            'Game Application and Technology','Global Business Marketing',
+            'Hotel Management (Diploma Program)',
+            'Industrial Engineering','Information Systems','Information Systems & Accounting', 'Information Systems, Accounting, & Auditing', 'Information Systems & Management',
+            'Interior Design','International Relations','Japanese Literature','Law - Business Law','Management','Master of Information Systems Management',
+            'Master of Information Technology','Mobile Application and Technology','Primary Teacher Education','Program Profesi Insinyur (Professional Program)',
+            'Psychology','Taxation','Tourism','Visual Communication Design - Animation','Visual Communication Design - Creative Advertising','Visual Communication Design - New Media'
         ];
-        $mALS = ['Accounting',
+        $mALS = [
+            'Accounting',
             'Automotive and Robotics Engineering (International Program)',
             'Business Creation',
             'Chinese Literature',
             'Communication - Marketing Communication',
-             'Communication - Mass Communication',
-           'Computer Science',
-           'Film',
+            'Communication - Mass Communication',
+            'Computer Science',
+            'Film',
             'Finance',
             'Food Technology',
             'Global Business Marketing',
@@ -333,11 +329,25 @@ selectFunc("bncc-select-als");
             'Product Design Engineering (International Program)',
             'Visual Communication Design - Animation',
             'Visual Communication Design - New Media'
-
         ];
+        $mSNY = [
+            'Fashion Design', 'Fashion Management', 'Graphic Design & New Media', 'Interactive Digital Media',
+            'Business Informations Systmens', 'Business Management & Marketing', 'Communication',
+            'Computer Science', 'Finance', 'International Business'
+        ];
+        $mASO = [
+            'Automotive & Robotics Engineering', 'Product Design Engineering'
+        ];
+        $mOL = [
+            'Information Systems', 'Management'
+        ];
+        $mBKS = [
+            'Accounting', 'Business Hotel Management', 'Business Information Technology', 'Business Management',
+            'Management', 'Psychology'
+        ]
 
-        $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
-        $cBDG =  ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        $cALS = ['Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
+        $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
 
@@ -373,6 +383,30 @@ selectFunc("bncc-select-als");
             c = $fMLG;
             d = $('.schedule-mlg')
         }
+        else if(cmps=='SNY'){
+            a = $cKMG;
+            b = $mSNY;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
+        else if(cmps=='ASO'){
+            a = $cKMG;
+            b = $mASO;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
+        else if(cmps=='OL'){
+            a = $cKMG;
+            b = $mOL;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
+        else if(cmps=='BKS'){
+            a = $cKMG;
+            b = $mBKS;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
 
         $len = b.length;
         $lenSel = $('#major-select').length;
@@ -397,7 +431,6 @@ selectFunc("bncc-select-als");
         z.next().remove();
         z.remove();
         selectFunc('fyp-select');
-
 
         $len = a.length;
         $lenSel = $('#lnt-select').length;
