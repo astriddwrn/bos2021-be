@@ -18,6 +18,8 @@ class UserController extends Controller
             case 0: {
                 $schedules = $user->schedules();
 
+                $campus = $user->campus;
+                if(in_array($campus , ['ASO', 'BKS', 'OL', 'SNY'])) $campus = 'KMG';
                 $_schedules_from_region = Schedule::where('campus', 'like', $user->campus)->get();
 
                 $schedules_from_region = collect([]);
@@ -31,7 +33,7 @@ class UserController extends Controller
 
                 $now = Carbon::now('GMT+7');
 
-                if($user->campus == 'KMG')
+                if(in_array($user->campus, ['KMG', 'ASO', 'BKS', 'OL', 'SNY']))
                 {
                     $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(120);
                 }
@@ -82,7 +84,8 @@ class UserController extends Controller
         $user = $request->user();
 
         foreach(Schedule::findOrFail($request['schedule-change']) as $schedule){
-            if(strtolower($user->campus) != strtolower($schedule->campus))
+            if(strtolower($user->campus) != strtolower($schedule->campus) ||
+               !(in_array($user->campus, ['ASO', 'BKS', 'OL', 'SNY'])))
                 return back()->withInput()->withErrors([
                     "schedule" => "The schedule you choose is not available in your campus."
                 ]);

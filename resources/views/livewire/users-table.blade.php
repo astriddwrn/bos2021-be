@@ -28,6 +28,21 @@
                             MLG
                         </button>
                         @endif
+
+                        @if($auth->role <= 2)
+                        <button wire:click="$set('region', 'ASO')" class="btnAllReg btnRegion @if($region == 'ALL') btnRegion-active @endif">
+                            ASO
+                        </button>
+                        <button wire:click="$set('region', 'BKS')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
+                            BKS
+                        </button>
+                        <button wire:click="$set('region', 'OL')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
+                            OL
+                        </button>
+                        <button wire:click="$set('region', 'SNY')" class="btnKMG btnRegion @if($region == 'KMG') btnRegion-active @endif">
+                            SNY
+                        </button>
+                        @endif
                     </span>
 
                     <a href="{{route('download_users',['region'=>$region])}}" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
