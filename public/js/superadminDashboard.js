@@ -194,12 +194,12 @@ $(document).ready(function () {
             $(inputAttr).val(x);
             $(editform).show();
             $('.menu-cont').hide();
-            callback(this, btn, editform, inputAttr);
+            if(callback && typeof callback == 'function') callback(this, btn, editform, inputAttr);
         });
     }
 
     showEditForm(btnEditParticipant, editformParticipant, inputAttrPart, function(el){
-        Livewire.emit('changeId', $(this).attr("data-id"));
+        Livewire.emit('changeId', $(el).attr("data-id"));
     });
     showEditForm(btnEditReregis, editformReregis, inputAttrReregis);
 
