@@ -10,7 +10,8 @@ $(document).ready(function(){
         if(campus == 'MLG' || campus == 'BDG'){
             $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
         }
-        if(campus == 'KMG' || campus == 'ALS'){
+        if(campus == 'KMG' || campus == 'ALS' || campus == 'ASO' || campus == 'BKS'
+           || campus == 'OL' || campus == 'SNY'){
             $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
         }
     }

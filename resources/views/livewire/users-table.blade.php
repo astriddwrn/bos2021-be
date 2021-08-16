@@ -30,16 +30,16 @@
                         @endif
 
                         @if($auth->role <= 2)
-                        <button wire:click="$set('region', 'ASO')" class="btnAllReg btnRegion @if($region == 'ASO') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'ASO')" class="btnASO btnRegion @if($region == 'ASO') btnRegion-active @endif">
                             ASO
                         </button>
-                        <button wire:click="$set('region', 'BKS')" class="btnKMG btnRegion @if($region == 'BKS') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'BKS')" class="btnBKS btnRegion @if($region == 'BKS') btnRegion-active @endif">
                             BKS
                         </button>
-                        <button wire:click="$set('region', 'OL')" class="btnKMG btnRegion @if($region == 'OL') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'OL')" class="btnOL btnRegion @if($region == 'OL') btnRegion-active @endif">
                             OL
                         </button>
-                        <button wire:click="$set('region', 'SNY')" class="btnKMG btnRegion @if($region == 'SNY') btnRegion-active @endif">
+                        <button wire:click="$set('region', 'SNY')" class="btnSNY btnRegion @if($region == 'SNY') btnRegion-active @endif">
                             SNY
                         </button>
                         @endif
@@ -92,13 +92,13 @@
                                 <td>
                                     @if($auth->role >= 2)
                                     <div class="w-24 flex flex-row justify-center">
-                                        <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        {{-- <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
+                                        </button> --}}
                                         {{-- <button data-id="{{$user['id']}}" class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200"> --}}
-                                        <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        {{-- <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
+                                        </button> --}}
                                     </div>
                                     @endif
                                 </td>
