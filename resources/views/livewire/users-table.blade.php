@@ -92,13 +92,15 @@
                                 <td>
                                     @if($auth->role >= 2)
                                     <div class="w-24 flex flex-row justify-center">
-                                        {{-- <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                        <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button> --}}
-                                        {{-- <button data-id="{{$user['id']}}" class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200"> --}}
-                                        {{-- <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        </button>
+                                        {{--<button data-id="{{$user['id']}}" class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+
+                                        </button>--}}
+                                        <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button> --}}
+                                        </button>
                                     </div>
                                     @endif
                                 </td>

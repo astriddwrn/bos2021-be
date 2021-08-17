@@ -618,9 +618,13 @@
                                 <select id="campus-select" name="campus">
                                     <option class="off" value="0">Select your campus location</option>
                                     <option value="ALS">Alam Sutera</option>
+                                    <option value="ASO">ASO</option>
                                     <option value="BDG">Bandung</option>
+                                    <option value="BKS">Bekasi</option>
                                     <option value="KMG">Kemanggisan</option>
                                     <option value="MLG">Malang</option>
+                                    <option value="OL">Online Learning</option>
+                                    <option value="SNY">Senayan</option>
                                 </select>
                             </div>
                             <span class="msg-error"></span>
@@ -680,7 +684,7 @@
                                 <span class="msg-error"></span>
 
                                 <div class="mt-5 text-cDarkBlue font-sans font-medium w-100 text-xl mb-4">Do You Want to Join Our E-Sport Community?</div>
-                                <div class="flex">
+                                <div class="flex esport-radio">
                                     <span class="radio">
                                         <input type="radio" id="radio-1" class="radio-input" value="yes"/>
                                         <label for="radio-1"></label>
@@ -805,7 +809,7 @@
 
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108161656"></script>
+    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108171846"></script>
 
 </body>
 </html>

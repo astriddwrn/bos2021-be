@@ -147,7 +147,6 @@ selectFunc("bncc-select-als");
         }
     }
     function multiple(x){
-        console.log(x);
         let a = false;
         x.find('label input').each(function() {
             if($(this).is(':checked')){
@@ -233,7 +232,6 @@ selectFunc("bncc-select-als");
     }
 
     function continueTransition(sec){
-        console.log(sec.find('.msg-error').text());
         if(!sec.find('.msg-error').text()){
             if(sec.hasClass("account-sec")){
                 // $('.success').toggleClass('is-visible');
@@ -262,7 +260,6 @@ selectFunc("bncc-select-als");
         $('.dot').eq(prog).addClass('active-dot');
         $('.line').eq(prog-1).addClass('active-line');
         $('.title').eq(prog).addClass('active-title');
-        heightChanges();
     }
 
     function progressPrev(){
@@ -270,7 +267,6 @@ selectFunc("bncc-select-als");
         $('.line').eq(prog-1).removeClass('active-line');
         $('.title').eq(prog).removeClass('active-title');
         prog--;
-        heightChanges();
     }
 
     $("input").blur(function(){
@@ -339,7 +335,8 @@ selectFunc("bncc-select-als");
             'Automotive & Robotics Engineering', 'Product Design Engineering'
         ];
         $mOL = [
-            'Information Systems', 'Management'
+            'Information Systems', 'Management', 'Computer Science',
+            'Industrial Engineering'
         ];
         $mBKS = [
             'Accounting', 'Business Hotel Management', 'Business Information Technology', 'Business Management',
@@ -449,12 +446,18 @@ selectFunc("bncc-select-als");
             $(this).find('.msg-error').empty();
             $(this).find('select').removeAttr('name');
             $(this).find('.radio-input').removeAttr('name');
+            $(this).find('input:checkbox').removeAttr('name');
         });
         d.removeClass('hidden');
-        d.find('select').attr('name', 'schedule[]');
         if (cmps=='BDG'){
-
             d.find('.radio-input').attr('name', 'is_esport');
+        }
+
+        if (cmps == 'KMG' || cmps == 'ALS' || cmps=='SNY' || cmps=='ASO' || cmps=='OL' || cmps=='BKS'){
+            d.find('select').attr('name', 'schedule[]');
+        }
+        else{
+            d.find('input:checkbox').attr('name', 'schedule[]');
         }
     }
 
@@ -509,25 +512,6 @@ selectFunc("bncc-select-als");
     //     evt.preventDefault();
     // });
 
-    // height
-    heightChanges();
-    function heightChanges(){
-        return;
-        if($('.personal-sec').hasClass('left-section')==false && !$('.personal-sec').hasClass('right-section')){
-        console.log($('.personal-sec').hasClass('hidden'));
-
-            $('form').css('height', '1650px');
-        }
-        else if($('.student-sec').hasClass('left-section')==false && !$('.student-sec').hasClass('right-section')){
-            $('form').css('height', '1050px');
-        }
-        else if($('.bncc-sec').hasClass('left-section')==false && !$('.bncc-sec').hasClass('right-section')){
-            $('form').css('height', '1100px');
-        }
-        else if($('.account-sec').hasClass('left-section')==false && !$('.account-sec').hasClass('right-section')){
-            $('form').css('height', '1500px');
-        }
-    }
 
 
     $( ".close" ).click(function() {

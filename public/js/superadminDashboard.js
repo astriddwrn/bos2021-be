@@ -456,8 +456,22 @@ $(document).ready(function () {
             'Product Design Engineering (International Program)',
             'Visual Communication Design - Animation',
             'Visual Communication Design - New Media'
-
         ];
+        $mSNY = [
+            'Fashion Design', 'Fashion Management', 'Graphic Design & New Media', 'Interactive Digital Media',
+            'Business Informations Systmens', 'Business Management & Marketing', 'Communication',
+            'Computer Science', 'Finance', 'International Business'
+        ];
+        $mASO = [
+            'Automotive & Robotics Engineering', 'Product Design Engineering'
+        ];
+        $mOL = [
+            'Information Systems', 'Management'
+        ];
+        $mBKS = [
+            'Accounting', 'Business Hotel Management', 'Business Information Technology', 'Business Management',
+            'Management', 'Psychology'
+        ]
 
         $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
         $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
@@ -495,6 +509,30 @@ $(document).ready(function () {
             b = $mMLG;
             c = $fMLG;
             d = $('.schedule-mlg');
+        }
+        else if(cmps=='SNY'){
+            a = $cKMG;
+            b = $mSNY;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
+        else if(cmps=='ASO'){
+            a = $cKMG;
+            b = $mASO;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
+        else if(cmps=='OL'){
+            a = $cKMG;
+            b = $mOL;
+            c = $fKMG;
+            d = $('.schedule-kmg')
+        }
+        else if(cmps=='BKS'){
+            a = $cKMG;
+            b = $mBKS;
+            c = $fKMG;
+            d = $('.schedule-kmg')
         }
 
         $len = b.length;
@@ -548,21 +586,26 @@ $(document).ready(function () {
             $(this).find('.msg-error').empty();
             $(this).find('select').removeAttr('name');
             $(this).find('.radio-input').removeAttr('name');
+            $(this).find('input:checkbox').removeAttr('name');
         });
         d.removeClass('hidden');
-        d.find('select').attr('name', 'schedule[]');
         if (cmps=='BDG'){
             d.find('.radio-input').attr('name', 'is_esport');
             d.find('.radio-input[value='+'"' +esport+ '"]').prop('checked', true);
         }
-        if (cmps == 'KMG' || cmps == 'ALS'){
+
+        if (cmps == 'KMG' || cmps == 'ALS' || cmps=='SNY' || cmps=='ASO' || cmps=='OL' || cmps=='BKS'){
             $('.bncc-select-kmg .select-selected').remove();
             $('.bncc-select-als .select-selected').remove();
+            $('.bncc-select-kmg .select-items').remove();
+            $('.bncc-select-als .select-items').remove();
+            d.find('select').attr('name', 'schedule[]');
             d.find('select option[value='+'"' +bl[0]+ '"]').attr('selected', 'selected');
             selectFunc("bncc-select-kmg");
             selectFunc("bncc-select-als");
         }
         else{
+            d.find('input:checkbox').attr('name', 'schedule[]');
             for(let i=0; i<bl.length; i++ ){
                 d.find('input[value='+'"' +bl[i]+ '"]').prop('checked', true);
             }
@@ -617,7 +660,6 @@ $(document).ready(function () {
         });
 
         $('.select-selected').click(function(){
-            // console.log('test');
             let select = $(this).parent();
             if((select).hasClass('major-select') || (select).hasClass('fyp-select')){
                 if($('.campus-select').find(":selected").val()==0){
@@ -634,7 +676,6 @@ $(document).ready(function () {
         });
 
         $('.select-items').click(function(){
-            // console.log('test2');
             x = $(this).parent();
             x.removeClass("border-error");
             x.siblings('.msg-error').empty();
