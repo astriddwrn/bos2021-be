@@ -75,7 +75,8 @@
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
                     Payment</div>
                 @endif
-                @if (!$diff_reregis->invert && $user->status==1 && $user->campus=='KMG')
+                @if (!$diff_reregis->invert && $user->status==1 &&
+                ($user->campus=='KMG'||$user->campus=='SNY'||$user->campus=='OL'||$user->campus=='ASO'||$user->campus=='BKS'))
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
