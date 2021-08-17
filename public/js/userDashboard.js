@@ -1,12 +1,12 @@
 $(document).ready(function(){
-
-
+    
     const json1 = JSON.parse($("meta[name=user]").attr("content"));
     const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
 
     const campus = json1.campus;
     var schedule =  json2;
     for (const [key, val] of Object.entries(schedule)){
+        console.log(val.text);
         if(campus == 'MLG' || campus == 'BDG'){
             $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
         }
@@ -78,7 +78,6 @@ $(document).ready(function(){
                 }
                 }
                 h.click();
-
             });
             b.appendChild(c);
 
@@ -93,8 +92,6 @@ $(document).ready(function(){
             this.classList.toggle("select-arrow-active");
             });
         }
-
-
         /*if the user clicks anywhere outside the select box,
         then close all select boxes:*/
         document.addEventListener("click", closeAllSelect);
