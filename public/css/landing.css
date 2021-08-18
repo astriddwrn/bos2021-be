@@ -62,6 +62,25 @@ html {
     }
 }
 
+#popup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.popup-bg {
+    width: 40rem;
+    height: min-content;
+    background: #FBFBFB;
+    border-radius: 27px;
+}
+
+.remove-scroll {
+    overflow: hidden;
+}
+
 /* About */
 .about .text-orange {
     text-align: center;
@@ -614,6 +633,10 @@ html {
         font-size: 3rem;
     }
 
+    .popup-bg {
+        width: 36rem;
+    }
+
     /* About */
     .about .glass img {
         width: 8rem;
@@ -772,6 +795,25 @@ html {
 }
 
 @media all and (max-width: 767px) {
+    /* Popup */
+    .popup-bg {
+        width: 28rem;
+    }
+    #popup h1 {
+        font-size: 1.5rem;
+    }
+
+    #popup .gift {
+        width: 7rem;
+    }
+    .close-popup {
+        width: 2.5rem;
+    }
+
+    #popup p {
+        font-size: 0.8rem;
+    }
+
     /* ff */
     .ff .boxCont .w-32 {
         width: 6rem;
@@ -850,13 +892,10 @@ html {
         padding: 1rem;
     }
 
-
-
     .what .text-base{
         font-size: .8rem;
         line-height: 1.2rem;
     }
-
 
     /* Faq */
     .faq .ques .top {
@@ -909,6 +948,40 @@ html {
     }
     .landing .arrowcont {
         bottom: 0.1rem;
+    }
+
+    /* Popup */
+    .popup-bg {
+        width: 18rem;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    #popup .close-popup {
+        width: 2rem;
+    }
+
+    #popup h1 {
+        font-size: 1.2rem;
+    }
+
+    #popup p {
+        font-size: 0.7rem;
+    }
+
+    #popup .gift {
+        width: 5.5rem;
+        padding: 0.8rem 0rem;
+    }
+
+    #popup a button {
+        font-size: 0.9rem;
+        padding: 0.2rem 0rem;
+        border-radius: 3px;
+    }
+
+    #popup a {
+        padding: 0rem 0.5rem;
     }
 
     /* About */

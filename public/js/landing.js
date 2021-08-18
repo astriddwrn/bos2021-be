@@ -348,3 +348,16 @@ $(".bose-ch").click(function () {
     $(this).parent().siblings(".bose-cs").slideDown();
 });
 
+/* POPUP */
+
+let popup = $("#popup");
+let closePopup = $(".close-popup");
+$(closePopup).click(function () {
+    $(document.body).removeClass("remove-scroll");
+    $(popup).hide();
+});
+
+$("#popup a").click(function () {
+    $(document.body).removeClass("remove-scroll");
+    $(popup).hide();
+});

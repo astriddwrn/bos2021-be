@@ -14,14 +14,54 @@
     <link rel="stylesheet" href="{{ asset('css/app.css?time=202108062000') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
-<body class="bg-cWhite text-cBlackHome">
+<body class="bg-cWhite text-cBlackHome remove-scroll">
+    
+    {{-- Popup --}}
+    <div id="popup" class="w-full h-screen absolute top-0 z-50">
+        <div class="w-full popup-bg flex flex-col p-8">
+            <div>
+                <img class="close-popup w-12 float-right cursor-pointer" src="{{url('./Asset/Image/landing/landing-x.svg')}}" alt="">
+            </div>
+            <div class="w-full flex flex-col justify-center items-center">
+                <h1 class="font-extrabold text-cLntBlue text-4xl">Welcome Binusian!</h1>
+                <img class="gift w-36 py-6" src="{{url('./Asset/Image/landing/landing-gift.svg')}}" alt="">
+                <p class="text-cBlack text-center text-md mb-4">
+                    Want to win Hacktiv8's "Menguasai python tingkat pemula"
+                    course worth <strong>IDR 399.000</strong> and other exclusive prizes by playing a game?
+                </p>
+                <p class="text-cBlack text-center text-md mb-4 sm:mb-8">
+                    Take a look at our story on Instagram, <strong>@bnccbinus</strong>. In addition, there will be more exciting games and prizes, so stay tuned!
+                </p>
+                <a class="w-full px-8 mb-4 text-White" target="_blank" href="https://www.instagram.com/bnccbinus/">
+                    <button class="
+                    w-full
+                    text-cWhite
+                    text-xl
+                    font-semibold
+                    bg-cLntBlue
+                    hover:bg-cToscaBlue
+                    transition
+                    duration-300
+                    ease-in-out
+                    rounded-lg
+                    cursor-pointer
+                    py-3
+                    ">
+                        Join Now!
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
     {{-- Landing --}}
     <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-24 bg-bgSpace text-cWhite overflow-hidden">
         <div class="landing-content w-full flex flex-col justify-content items-center z-10 mb-20">
             <h1 class="font-extrabold text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl">We Are BNCC</h1>
             <h3 class="font-semibold text-center text-xs sm:text-lg md:text-xl lg:text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
             <h5 class="font-medium text-xs sm:text-lg md:text-xl lg:text-2xl mb-4">Want to be a part of BNCC?</h5>
-            <a class="btnReg
+            <a class="
+            btnReg
             bg-cLntBlue
             hover:bg-cToscaBlue
             transition
@@ -37,8 +77,8 @@
         <img class="cloud w-full absolute bottom-0 z-0" src="{{url('./Asset/Image/landing/landing-cloud.svg')}}" alt="">
         <a class="arrowcont absolute bottom-6 z-10" href="#about"><img class="arrow" src="{{url('./Asset/Image/landing/landing-arrow.svg')}}" alt=""></a>
         {{-- Navbar --}}
-        <div id="navbar" class="w-full fixed top-0 h-24 z-50 lg:px-48 px-0">
-            <div class="w-full  flex flex-row h-full justify-between items-center py-8">
+        <div id="navbar" class="w-full fixed top-0 h-24 z-40 lg:px-48 px-0">
+            <div class="w-full flex flex-row h-full justify-between items-center py-8">
                 <a href="/" class="w-32 flex items-center relative lg:ml-0 ml-5">
                     <img id="logo-up" class="absolute w-32" src="{{url('./Asset/Image/landing/logo-bnccwhite.svg')}}" alt="">
                     <img id="logo-down" class="absolute w-32 hidden" src="{{url('./Asset/Image/landing/logo-bnccblue.svg')}}" alt="">
@@ -433,7 +473,7 @@
                 <div id="oc-java" class="ocCon ocCon-active w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Java Programming</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-java.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 lg:px-16">
                         Java is well-known for its high performance and flexibility,
                         as it can be used to construct mobile and web-based applications, video games, and more.
                         Through this course, you will learn about object-oriented programming and GUI in Java.
@@ -457,7 +497,7 @@
                 <div id="oc-mobile" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Mobile Application Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-mobile.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 md:px-16">
                         Ever considered mobile app development? In this course,
                         you’ll learn how to develop android applications from scratch.
                         This course is the perfect start for your journey to becoming a mobile apps developer!
@@ -478,7 +518,7 @@
                 <div id="oc-be" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Back-End Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-be.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 lg:px-16">
                         When you visit several websites every day, have you ever wondered how these websites actually work?
                         If you are curious about the answer or interested in becoming a back-end developer,
                         consider joining our Web Programming course!
@@ -499,7 +539,7 @@
                 <div id="oc-ui" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">UI/UX Design</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-ui.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 lg:px-16">
                         More of a design person? Well, this course is just for you! Through this course,
                         you will learn how to create a beautiful and user-friendly interface.
                         Improve your sense of design through various researches to achieve the best user satisfaction.
@@ -523,7 +563,7 @@
                 <div id="oc-fe" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Front-End Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-fe.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 lg:px-16">
                         Want to learn how to make both beautiful and functional websites?
                         If so, our Front-End Development course is a perfect fit for you!
                         You will be able to develop creative displays of a website using HTML, CSS, and Javascript.
@@ -541,7 +581,7 @@
                 <div id="oc-c" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">C Programming</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-c.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 lg:px-16">
                         As the foundation for most programming languages, by learning C,
                         you will be able to learn other programming languages much more easily.
                         C can be used in creating softwares, like operating systems, game engines, and many more.
@@ -556,7 +596,7 @@
                 <div id="oc-game" class="ocCon w-full flex flex-col justify-content items-center">
                     <h2 class="font-bold text-cBlacker text-3xl">Game Development</h2>
                     <img class="w-2/12 my-8" src="{{url('./Asset/Image/landing/oc-game.svg')}}" alt="">
-                    <p class="text-justify leading-6 sm:leading-7 px-16">
+                    <p class="text-justify leading-6 sm:leading-7 px-8 lg:px-16">
                         Ever thought about developing your own games?
                         By joining this course,
                         you will be able to understand the process of making a game and gain the skills to stand out as a game developer.
