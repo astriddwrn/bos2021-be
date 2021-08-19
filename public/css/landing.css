@@ -74,12 +74,10 @@ html {
 .popup-bg {
     width: 40rem;
     height: min-content;
+    max-height: calc(100% - 2rem);
     background: #FBFBFB;
     border-radius: 27px;
-}
-
-.remove-scroll {
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* About */

@@ -353,11 +353,9 @@ $(".bose-ch").click(function () {
 let popup = $("#popup");
 let closePopup = $(".close-popup");
 $(closePopup).click(function () {
-    $(document.body).removeClass("remove-scroll");
     $(popup).hide();
 });
 
 $("#popup a").click(function () {
-    $(document.body).removeClass("remove-scroll");
     $(popup).hide();
 });
