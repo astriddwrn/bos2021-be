@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BNCC Launching</title>
-    <link rel="image_src" href="{{ asset('Asset/Image/auth/logo-png')}}" />
+    <link rel="image_src" href="{{ asset('Asset/Image/auth/logo-png.png')}}" />
     <link id="favicon" rel="shortcut icon" type="image/png" href="{{ asset('Asset/Image/favicon.png') }}" />
     <meta name="title" content="BNCC Launching">
     <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
+
+    <meta property="og:title" content="BNCC Launching">
+    <meta property="og:description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
+    <meta property="og:image" content="{{ asset('Asset/Image/auth/logo-png.png')}}">
+    <meta property="og:url" content="https://launching.bncc.net/">
 
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css?time=202108062000') }}">
@@ -682,7 +687,7 @@
             <div class="w-full h-full slide slide-left absolute">
                 <div class="w-full h-full layer absolute z-20"></div>
                 <img  class="absolute w-full z-10 h-full w-full object-cover" src="{{ asset('Asset/Image/landing/event-pic9.png')}}" alt="">
-                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Design</div>
+                <div class="absolute z-30 w-full text-center sm:bottom-10 bottom-5 sm:text-4xl text-2xl font-bold text-cWhite">Training Web Fundamentals</div>
             </div>
 
             <div class="cursor-pointer h-full sm:w-28 w-16 z-20 left-0 absolute arrow-cont prev flex flex-row justify-center items-center"><img class="sm:w-6 w-3" src="{{ asset('Asset/Image/landing/event-arrow-prev.svg')}}" alt=""></div>
