@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css?time=202108062000') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
-<body class="bg-cWhite text-cBlackHome remove-scroll">
+<body class="bg-cWhite text-cBlackHome">
 
     {{-- Popup --}}
     <div id="popup" class="w-full h-screen fixed top-0 z-50">

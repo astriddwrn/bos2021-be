@@ -683,7 +683,7 @@
                                 </span>
                                 <span class="msg-error"></span>
 
-                                <div class="mt-5 text-cDarkBlue font-sans font-medium w-100 text-xl mb-4">Do You Want to Join Our E-Sport Community?</div>
+                                <div class="mt-5 text-cDarkBlue font-sans font-medium w-100 text-xl mb-4">Do You Want to Join Our Esports Community?</div>
                                 <div class="flex esport-radio">
                                     <span class="radio">
                                         <input type="radio" id="radio-1" class="radio-input" value="yes"/>
