@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
 </head>
 <body class="bg-cWhite text-cBlackHome remove-scroll">
-    
+
     {{-- Popup --}}
-    <div id="popup" class="w-full h-screen absolute top-0 z-50">
+    {{-- <div id="popup" class="w-full h-screen absolute top-0 z-50">
         <div class="w-full popup-bg flex flex-col p-8">
             <div>
                 <img class="close-popup w-12 float-right cursor-pointer" src="{{url('./Asset/Image/landing/landing-x.svg')}}" alt="">
@@ -52,7 +52,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- Landing --}}
     <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-24 bg-bgSpace text-cWhite overflow-hidden">
