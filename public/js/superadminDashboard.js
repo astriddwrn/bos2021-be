@@ -49,25 +49,35 @@ $(document).ready(function () {
         $('#delete-name').text($(`td[data-id=${id}][data-type=fullname]`).text());
         $('#delete-nim').text($(`td[data-id=${id}][data-type=nim]`).text());
         $('#delete-campus').text($(`td[data-id=${id}][data-type=campus]`).text());
+        // console.log({btn});
     }
 
-    const showhideModal = (btn, btnback, modal) => {
-        $(btn).click(function () {
-            // console.log([this]);
-
-            if(deleteParticipantBtn == btn) initDeleteModal(this);
+    const showhideModal = (btn, btnback, modal, callback) => {
+        var el = $(btn);
+        el.off('click');
+        el.click(function () {
+            console.log([this]);
 
             $(modal).toggleClass('is-visible');
+
+            if(callback && typeof callback == 'function') callback(this, btn, btnback, modal);
         });
-        $(btnback).click(function () {
+
+        var el = $(btnback);
+        el.off('click');
+        el.click(function () {
             $(modal).toggleClass('is-visible');
+            el[0].flagDelete = true;
+            if(callback && typeof callback == 'function') callback(this, btn, btnback, modal);
         });
     }
 
     // showhideModal(verifyBtn, verifyBtnBack, verifyModal);
     // showhideModal(rejectBtn, rejectBtnBack, rejectModal);
     // showhideModal(deleteBtn, deleteBtnBack, deleteModal);
-    showhideModal(deleteParticipantBtn, deleteParticipantBtnBack, deleteParticipantModal);
+    showhideModal(deleteParticipantBtn, deleteParticipantBtnBack, deleteParticipantModal, function(el){
+        initDeleteModal(el);
+    });
 
     $(".menu-list div").click(function() {
         console.log(["73", this]);
@@ -187,7 +197,9 @@ $(document).ready(function () {
     let editformReregis = $('.editdata-reregistrationsec')
 
     const showEditForm = (btn, editform, inputAttr, callback) => {
-        $(btn).click(function () {
+        var el = $(btn);
+        el.off('click');
+        el.click(function () {
             var $btn = $(this);
             $btn.closest('.section').hide();
             var x = $btn.attr("data-id");
@@ -697,9 +709,19 @@ $(document).ready(function () {
         var lwName = component.fingerprint.name;
         var ret = message.response.effects.returns;
 
-        if(lwName == 'edit-participant-meta-data' && ret && 'changeId' in ret) hookEditParticipantMetaData(message, component);
-        else if(lwName == 'users-table' && ret && 'deleteParticipant' in ret) hookUsersTable(message, component);
-        // else console.log({message, component});
+        if(ret)
+            if(lwName == 'edit-participant-meta-data' && ret && 'changeId' in ret) hookEditParticipantMetaData(message, component);
+            else if(lwName == 'users-table' && ret && 'deleteParticipant' in ret) hookUsersTable(message, component);
+            // else console.log({message, component});
+
+        if(lwName == 'users-table'){
+            showEditForm('.editBtnParticipant', editformParticipant, inputAttrPart, function(el){
+                Livewire.emit('changeId', $(el).attr("data-id"));
+            });
+            showhideModal('.deleteParticipantBtn', deleteParticipantBtnBack, deleteParticipantModal, function(el){
+                initDeleteModal(el);
+            });
+        }
     });
 
     /* EDIT REREGIS */
