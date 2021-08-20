@@ -1072,17 +1072,18 @@
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
             <span class="sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Silver Sponsor</span>
             <div class="sm:p-5 p-0 flex flex-row justify-around w-full flex-wrap">
-                <a href="" target="_blank"><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver1.svg')}}" alt=""></a>
-                <a href="" target="_blank"><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver2.svg')}}" alt=""></a>
-                <a href="" target="_blank"><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver3.svg')}}" alt=""></a>
+                <a><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver1.svg')}}" alt=""></a>
+                <a><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver2.svg')}}" alt=""></a>
+                <a><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver3.svg')}}" alt=""></a>
+                <a><img class="sm:h-36 h-24 m-5" src="{{ asset('Asset/Image/landing/sponsor-silver4.svg')}}" alt=""></a>
             </div>
         </div>
         <div class="rounded-xl border-2 border-cLightGray flex flex-col items-center mt-14 ">
             <span class="sm:text-2xl text-xl font-medium -mt-5 bg-cWhite px-5">Bronze Sponsor</span>
             <div class="sm:p-5 p-0 flex flex-row justify-around w-full flex-wrap">
-                <a href="" target="_blank"><img class="sm:h-24 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze1.svg')}}" alt=""></a>
-                <!-- <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze2.svg')}}" alt="">
-                <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze3.svg')}}" alt="">
+                <a><img class="sm:h-24 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze1.svg')}}" alt=""></a>
+                <a><img class="sm:h-24 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze2.svg')}}" alt=""></a>
+                <!--  <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze3.svg')}}" alt="">
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze4.svg')}}" alt="">
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze5.svg')}}" alt="">
                 <img class="sm:h-16 h-8 m-5" src="{{ asset('Asset/Image/landing/sponsor-bronze6.svg')}}" alt="">
