@@ -37,7 +37,8 @@ class PaymentsTable extends Component
         if($this->auth->role == 2) ""; // don't do anything.
         else if($this->region != $user->campus) return false;
 
-        $user->update(["status" => 1]);
+        if($user->status != 1) $user->update(["status" => 1]);
+            else $user->update(["status" => 0]);
 
         return true;
     }
@@ -50,7 +51,8 @@ class PaymentsTable extends Component
         if($this->auth->role == 2) ""; // don't do anything.
         else if($this->region != $user->campus) return false;
 
-        $user->update(["status" => 2]);
+        if($user->status != 2) $user->update(["status" => 2]);
+            else $user->update(["status" => 0]);
 
         return true;
     }
