@@ -76,7 +76,7 @@ $(document).ready(function () {
     // showhideModal(rejectBtn, rejectBtnBack, rejectModal);
     // showhideModal(deleteBtn, deleteBtnBack, deleteModal);
     showhideModal(deleteParticipantBtn, deleteParticipantBtnBack, deleteParticipantModal, function(el){
-        initDeleteModal(el);
+        if(/deleteParticipantBtn/.test(el.className)) initDeleteModal(el);
     });
 
     $(".menu-list div").click(function() {
