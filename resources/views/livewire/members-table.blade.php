@@ -77,12 +77,10 @@
                     <td>{{($limit * ($page - 1))+ $i + 1}}</td>
                     <td>
                         <div class="w-24 flex flex-row justify-center">
-                            <button data-id="pokemon"
-                                class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                            <button data-id="{{ $member->id }}" class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                 <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                             </button>
-                            <button
-                                class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                            <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                 <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                             </button>
                         </div>

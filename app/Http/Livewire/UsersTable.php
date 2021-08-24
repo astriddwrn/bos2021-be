@@ -27,6 +27,8 @@ class UsersTable extends Component
     public function checkRegion(){
         $this->auth = Auth::user();
 
+        if(!$this->auth) $this->auth = new \App\Models\User;
+
         if(in_array($this->auth->role, [1, 2])) $this->region = $this->region;
         else if($this->auth->role == 3) $this->region = 'ALS';
         else if($this->auth->role == 4) $this->region = 'BDG';

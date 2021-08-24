@@ -213,7 +213,9 @@ $(document).ready(function () {
     showEditForm(btnEditParticipant, editformParticipant, inputAttrPart, function(el){
         Livewire.emit('changeId', $(el).attr("data-id"));
     });
-    showEditForm(btnEditReregis, editformReregis, inputAttrReregis);
+    showEditForm(btnEditReregis, editformReregis, inputAttrReregis, function(el){
+        Livewire.emit('changeMemberId', $(el).attr("data-id"));
+    });
 
     const closeEditForm = (btn, editform, sec) => {
         $(btn).click(function () {

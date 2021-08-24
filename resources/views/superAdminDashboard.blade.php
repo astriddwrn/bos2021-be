@@ -416,6 +416,8 @@
 
             {{-- EDIT DATA REREGISTRATION --}}
             <div class="section editdata-reregistrationsec bg-cLightGray h-full hidden">
+                @livewire('edit-member-meta-data')
+
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Edit Data Reregistration</span>
                     <img class="h-8 logo-icon" src="{{ asset('Asset/Image/auth/logo.svg')}}" alt="BNCC Launching">
