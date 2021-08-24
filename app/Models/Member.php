@@ -31,7 +31,7 @@ class Member extends Model
         'fyp-upload'
     ];
 
-    public function user() {
-        return $this->has('App\Models\User');
-    }
+    // public function user() {
+    //     return $this->has('App\Models\User');
+    // }
 }

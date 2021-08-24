@@ -11,9 +11,9 @@
     <meta name="title" content="BNCC Launching">
     <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}?t=202108242145">
     <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/superadminDashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/superadminDashboard.css') }}?t=202108242145">
 
     <style>
         .simple th{
@@ -21,7 +21,7 @@
         }
     </style>
 
-    {{-- @livewireStyles --}}
+    @livewireStyles
 
 </head>
 <body class="text-base">
@@ -138,10 +138,10 @@
                 @endif
 
                 @if($user->role == 2)
-                {{-- <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
+                <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
-                    Re-Registered</div> --}}
+                    Re-Registered</div>
                 @endif
 
             </div>
@@ -193,310 +193,7 @@
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
 
-                <!-- isi nya -->
-                <div class="w-100 flex flex-row justify-between items-center py-12 px-8 font-bold text-cDarkBlue">
-                    <span class="text-2xl">
-                        <button class="btnAllReg btnRegion btnRegion-active">
-                            All Region
-                        </button>
-                        <button class="btnKMG btnRegion">
-                            KMG
-                        </button>
-                        <button class="btnAS btnRegion">
-                            AS
-                        </button>
-                        <button class="btnBDG btnRegion">
-                            BDG
-                        </button>
-                        <button class="btnMLG btnRegion">
-                            MLG
-                        </button>
-                    </span>
-                    <button type="submit" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
-                        <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                        Download Participant Data
-                    </button>
-                </div>
-
-                {{-- ALL REGION --}}
-                <div class="tblAllReg tbl tbl-active">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Full Name</th>
-                              <th >BNCC ID</th>
-                              <th >LinkedIn</th>
-                              <th >GitHub</th>
-                              <th >LnT Course</th>
-                              <th >KTP</th>
-                              <th >FYP Card</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button data-id="pokemon" class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Jeon Jung ALL REGION</td>
-                                <td >BNCC20123</td>
-                                <td >https://linkedin.com/..</td>
-                                <td >https://github.com..</td>
-                                <td >UI/UX Design</td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION KEMANGGISAN --}}
-                <div class="tblKMG tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Full Name</th>
-                              <th >BNCC ID</th>
-                              <th >LinkedIn</th>
-                              <th >GitHub</th>
-                              <th >LnT Course</th>
-                              <th >KTP</th>
-                              <th >FYP Card</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Jeon Jung KMG</td>
-                                <td >BNCC20123</td>
-                                <td >https://linkedin.com/..</td>
-                                <td >https://github.com..</td>
-                                <td >UI/UX Design</td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION ALSUT --}}
-                <div class="tblAS tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Full Name</th>
-                              <th >BNCC ID</th>
-                              <th >LinkedIn</th>
-                              <th >GitHub</th>
-                              <th >LnT Course</th>
-                              <th >KTP</th>
-                              <th >FYP Card</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Jeon Jung AS</td>
-                                <td >BNCC20123</td>
-                                <td >https://linkedin.com/..</td>
-                                <td >https://github.com..</td>
-                                <td >UI/UX Design</td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION BANDUNG --}}
-                <div class="tblBDG tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Full Name</th>
-                              <th >BNCC ID</th>
-                              <th >LinkedIn</th>
-                              <th >GitHub</th>
-                              <th >LnT Course</th>
-                              <th >KTP</th>
-                              <th >FYP Card</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Jeon Jung BDG</td>
-                                <td >BNCC20123</td>
-                                <td >https://linkedin.com/..</td>
-                                <td >https://github.com..</td>
-                                <td >UI/UX Design</td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
-
-                {{-- REGION MALANG --}}
-                <div class="tblMLG tbl">
-                    <table>
-                        <thead>
-                            <tr>
-                              <th >No</th>
-                              <th >Actions </th>
-                              <th >Time Stamp </th>
-                              <th >Full Name</th>
-                              <th >BNCC ID</th>
-                              <th >LinkedIn</th>
-                              <th >GitHub</th>
-                              <th >LnT Course</th>
-                              <th >KTP</th>
-                              <th >FYP Card</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                <td >1</td>
-                                <td >
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button class="editBtn p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
-                                        </button>
-                                        <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
-                                            <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >10-04-19 12:00:17</td>
-                                <td >Jeon Jung MLG</td>
-                                <td >BNCC20123</td>
-                                <td >https://linkedin.com/..</td>
-                                <td >https://github.com..</td>
-                                <td >UI/UX Design</td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                                <td >
-                                    <div class="flex flex-row justify-center items-center bg-cLnTBlue">
-                                        <button class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
-                                            <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
-                                        </button>
-                                    </div>
-                                </td>
-                              </tr>
-
-                          </tbody>
-                    </table>
-                </div>
+                @livewire('members-table')
 
                 {{-- CLOSE SECTION REREGIST --}}
             </div>
@@ -809,7 +506,7 @@
 
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108171846"></script>
+    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108240303"></script>
 
 </body>
 </html>

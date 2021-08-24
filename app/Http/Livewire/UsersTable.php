@@ -45,6 +45,10 @@ class UsersTable extends Component
         return $user->delete();
     }
 
+    public function login($id){
+        return Auth::loginUsingId($id);
+    }
+
     public function render()
     {
         $this->checkRegion();

@@ -66,7 +66,18 @@ class PaymentsTable extends Component
         if($region == "ALL") $region = '%%';
 
         $users = User2::where('campus', 'like', $region)->where('role', 0)
-                            ->whereNotNull('payment_pic');
+                            ->whereNotNull('payment_pic')
+                            ->where(function($q){
+                                $q->where('fullName', 'like', '%' . $this->search . '%')
+                                ->orWhere('email', 'like', '%' . $this->search . '%')
+                                ->orWhere('personal_email', 'like', '%' . $this->search . '%')
+                                ->orWhere('nim', 'like', '%' . $this->search . '%')
+                                ->orWhere('campus', 'like', '%' . $this->search . '%')
+                                ->orWhere('major', 'like', '%' . $this->search . '%')
+                                ->orWhere('batch', 'like', '%' . $this->search . '%')
+                                ->orWhere('is_esport', 'like', '%' . $this->search . '%')
+                                ->orWhere('lnt_course', 'like', '%' . $this->search . '%');
+                            });
 
         $this->total = $users->count();
         $this->page_total = ceil($this->total / $this->limit);

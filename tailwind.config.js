@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 
 module.exports = {
@@ -9,6 +10,7 @@ module.exports = {
     ],
     theme: {
         colors:{
+            ...colors,
             cWhite: '#FBFBFB',
             cBluishGray: '#CDD8DD',
             cLightBlue: '#25B8DE',

@@ -27,13 +27,32 @@
                 MLG
             </button>
             @endif
+
+            @if($auth->role <= 2)
+            <button wire:click="$set('region', 'ASO')" class="btnASO btnRegion @if($region == 'ASO') btnRegion-active @endif">
+                ASO
+            </button>
+            <button wire:click="$set('region', 'BKS')" class="btnBKS btnRegion @if($region == 'BKS') btnRegion-active @endif">
+                BKS
+            </button>
+            <button wire:click="$set('region', 'OL')" class="btnOL btnRegion @if($region == 'OL') btnRegion-active @endif">
+                OL
+            </button>
+            <button wire:click="$set('region', 'SNY')" class="btnSNY btnRegion @if($region == 'SNY') btnRegion-active @endif">
+                SNY
+            </button>
+            @endif
         </span>
+    </div>
+
+    <div class="flex flex-row-reverse mb-4">
+        <div class="mr-4"><input type="text" wire:model="search" placeholder="Search something..."></div>
     </div>
 
     {{-- ALL REGION --}}
     <div class="tblAllReg tbl tbl-active overflow-auto" style="height: calc(100vh - 13rem);">
         <table class="overflow-visible">
-            <thead>
+            <thead class="sticky top-0">
                 <tr>
                     <th>No</th>
                     <th>Actions</th>

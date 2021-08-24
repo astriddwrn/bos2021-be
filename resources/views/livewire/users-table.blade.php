@@ -43,6 +43,7 @@
                             SNY
                         </button>
                         @endif
+
                     </span>
 
                     <a href="{{route('download_users',['region'=>$region])}}" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
@@ -58,7 +59,7 @@
                 {{-- ALL REGION --}}
                 <div class="tblAllReg tbl tbl-active overflow-auto" style="height: calc(100vh - 13rem);">
                     <table class="overflow-visible">
-                        <thead>
+                        <thead class="sticky top-0">
                             <tr>
                             <th >No</th>
                             <th >Actions </th>
@@ -91,14 +92,16 @@
                                 </td>
                                 <td>
                                     @if($auth->role >= 2)
-                                    <div class="w-24 flex flex-row justify-center">
-                                        <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
+                                    <div class="w-36 flex flex-row justify-center">
+                                        <button wire:click="login({{$user['id']}})" onclick="setTimeout(()=>{location.pathname = '/login';}, 1000);" class="loginParticipantBtn p-2 bg-green-500 hover:bg-green-600 rounded-md mr-1 cursor-pointer duration-200">
+                                            <img class="w-8" src="{{ asset('Asset/Image/auth/login_black_24dp.svg')}}" alt="">
+                                        </button>
+
+                                        <button data-id="{{$user['id']}}" class="editBtnParticipant p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-1 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                                         </button>
-                                        {{--<button data-id="{{$user['id']}}" class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
 
-                                        </button>--}}
-                                        <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                                        <button data-id="{{$user['id']}}" class="deleteParticipantBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md mr-1 cursor-pointer duration-200">
                                             <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
                                         </button>
                                     </div>
