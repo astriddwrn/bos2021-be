@@ -485,7 +485,7 @@ $(document).ready(function () {
             'Management', 'Psychology'
         ]
 
-        $cALS = [ 'Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
+        $cALS = ['Front-End Development', 'UI/UX Design', 'C Programming', 'Java Programming'];
         $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
@@ -625,10 +625,10 @@ $(document).ready(function () {
     }
 
     const json = JSON.parse($("meta[name=schedules]").attr("content"));
-    var outputKMG =  json.filter(schedule => schedule.campus == "kmg");
-    var outputALS =  json.filter(schedule => schedule.campus == "als");
-    var outputMLG =  json.filter(schedule => schedule.campus == "mlg");
-    var outputBDG =  json.filter(schedule => schedule.campus == "bdg");
+    var outputKMG = json.filter(schedule => schedule.campus == "kmg");
+    var outputALS = json.filter(schedule => schedule.campus == "als");
+    var outputMLG = json.filter(schedule => schedule.campus == "mlg");
+    var outputBDG = json.filter(schedule => schedule.campus == "bdg");
     for (const [key, val] of Object.entries(outputKMG)) {
         $('#bncc-select-kmg').append(new Option(`${val.text}`, `${val.id}`));
     }
@@ -641,9 +641,6 @@ $(document).ready(function () {
     for (const [key, val] of Object.entries(outputBDG)) {
         $('.schedule-bdg .multiple').append('<label class="my-2 main">'+ `${val.text}` + '<input type="checkbox" name="schedule[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
     }
-
-
-    // $('.editBtnParticipant').click(function(){
 
     function hookEditParticipantMetaData(message, component){
         $('.select-selected').remove();

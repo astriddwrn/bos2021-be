@@ -343,7 +343,7 @@ selectFunc("bncc-select-als");
             'Management', 'Psychology'
         ]
 
-        $cALS = ['Front-End Development', 'UI/UX Design', 'C Programming ', 'Java Programming'];
+        $cALS = ['Front-End Development', 'UI/UX Design', 'C Programming', 'Java Programming'];
         $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
         $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
         $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
