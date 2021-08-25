@@ -776,12 +776,6 @@ $(document).ready(function () {
         }
     }
 
-    // $('.select-items').click(function(){
-    //     x = $(this).parent();
-    //     x.removeClass("border-error");
-    //     x.siblings('.msg-error').empty();
-    // });
-
     $("#form-editdata-reregis input").not(':input[type=file]').blur(function(){
         checkValidationInput($(this));
     })
@@ -845,7 +839,6 @@ $(document).ready(function () {
         else if(cmps=='BKS'){
             a = $cKMG;
         }
-        // let y = $('.lnt-select').find('.select-selected')
         let $len = a.length;
         let lnt = memberData.lnt_course
         $('.lnt-select select').removeAttr('name');
@@ -856,8 +849,6 @@ $(document).ready(function () {
         for(let i = 0; i<$len; i++){
             $('#relnt-select').append(new Option(a[i], a[i]));
         }
-        // y.next().remove();
-        // y.remove();
         $('#relnt-select option[value='+'"' +lnt + '"').attr('selected', 'selected');
         selectFunc('relnt-select');
         $('#ktp-upload').prev().prev().find(".file-name").text(memberData["ktp-upload"]).css("color", "black");
@@ -874,9 +865,9 @@ $(document).ready(function () {
         if(ret)
             if(lwName == 'edit-participant-meta-data' && ret && 'changeId' in ret) hookEditParticipantMetaData(message, component);
             else if(lwName == 'users-table' && ret && 'deleteParticipant' in ret) hookUsersTable(message, component);
+            // member-data
             else if(lwName == 'edit-member-meta-data') hookEditMemberMetaData(message,component);
-            // else console.log({message, component});
-
+  
         if(lwName == 'users-table'){
             showEditForm('.editBtnParticipant', editformParticipant, inputAttrPart, function(el){
                 Livewire.emit('changeId', $(el).attr("data-id"));
