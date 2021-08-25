@@ -346,8 +346,8 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
-                            <div class="custom-select lnt-select w-full">
-                                <select id="lnt-select" name="lnt_course">
+                            <div class="custom-select palnt-select lnt-select w-full">
+                                <select id="palnt-select" name="">
                                     <option class="off" value="0">Select your course</option>
                                 </select>
                             </div>
@@ -445,28 +445,9 @@
                         </div>
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">LnT Course</div>
-                            <div class="custom-select relnt-select w-full">
-                                <select id="relnt-select" name="lnt_course">
+                            <div class="custom-select relnt-select lnt-select w-full">
+                                <select id="relnt-select" name="">
                                     <option class="off" value="0">Select Your Course</option>
-                                    <!-- ALS -->
-                                    <option value="Front-End Development">Front-End Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="C Programming">C Programming</option>
-                                    <option value="Java Programming">Java Programming</option>
-
-                                    <!-- BDG & MLG-->
-                                    <option value="Back-End Development">Back-End Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="C Programming">C Programming</option>
-                                    <option value="Mobile Application Development">Mobile Application Development</option>
-                                    <option value="Game Development">Game Development</option>
-
-                                    <!-- KMG -->
-                                    <option value="Back-End Development">Back-End Development</option>
-                                    <option value="Front-End Development">Front-End Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="Java Programming">Java Programming</option>
-
                                 </select>
                             </div>
                             <span class="msg-error"></span>

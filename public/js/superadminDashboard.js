@@ -344,7 +344,6 @@ $(document).ready(function () {
         }
     }
     function checkbox(x){
-
         if(!x.is(":checked")){
             x.parent().next().text("This field must be checked.");
         }
@@ -380,7 +379,6 @@ $(document).ready(function () {
     }
 
     function phoneNumber(x){
-        // var pattern = /^(^\+62|62|^08)(\d{3,4}-?){2}\d{3,4}$/g;
         var pattern = /^(08)\d+/g;
 
         if(x.is('#whatsapp') && (!pattern.test(x.val()) || x.val().length < 8 || x.val().length > 15)){
@@ -400,7 +398,6 @@ $(document).ready(function () {
         }else if(x.is('#personal_email') && !pattern2.test(x.val())){
                 x.addClass("border-error");
                 x.siblings('.msg-error').text("Please input a valid email address.");
-
         }
     }
 
@@ -425,15 +422,14 @@ $(document).ready(function () {
         }
     }
 
-    function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl, esport){
-        $mBDG = ['Computer Science',
+    var $mBDG = ['Computer Science',
             'Creativepreneurship',
             'Interior Design',
             'Visual Communication Design',
             'Digital Business Innovation',
             'Interactive Design & Technology'
             ];
-        $mMLG = [
+        var $mMLG = [
             'Communication',
             'Computer Science',
             'Entrepreneurship - Business Creation',
@@ -444,7 +440,7 @@ $(document).ready(function () {
             'Interactive Design & Technology'
 
         ];
-        $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
+        var $mKMG = ["Accounting",'Architecture','Business Analytics','Chinese Literature','Civil Engineering', 'Communication - Marketing Communication',
                 'Communication - Mass Communication','Computer Engineering','Computer Science','Computer Science & Mathematics','Computer Science & Statistics',
             'Cyber Security', 'Data Science','English Literature', 'Game Application and Technology','Global Business Marketing', 'Hotel Management (Diploma Program)',
             'Industrial Engineering','Information Systems','Information Systems & Accounting','Information Systems & Management',
@@ -452,7 +448,7 @@ $(document).ready(function () {
             'Master of Information Technology','Mobile Application and Technology','Primary Teacher Education','Program Profesi Insinyur (Professional Program)',
             'Psychology','Taxation','Tourism','Visual Communication Design - Animation','Visual Communication Design - Creative Advertising','Visual Communication Design - New Media'
         ];
-        $mALS = ['Accounting',
+        var $mALS = ['Accounting',
             'Automotive and Robotics Engineering (International Program)',
             'Business Creation',
             'Chinese Literature',
@@ -471,31 +467,32 @@ $(document).ready(function () {
             'Visual Communication Design - Animation',
             'Visual Communication Design - New Media'
         ];
-        $mSNY = [
+        var $mSNY = [
             'Fashion Design', 'Fashion Management', 'Graphic Design & New Media', 'Interactive Digital Media',
             'Business Informations Systmens', 'Business Management & Marketing', 'Communication',
             'Computer Science', 'Finance', 'International Business'
         ];
-        $mASO = [
+        var $mASO = [
             'Automotive & Robotics Engineering', 'Product Design Engineering'
         ];
-        $mOL = [
+        var $mOL = [
             'Information Systems', 'Management'
         ];
-        $mBKS = [
+        var $mBKS = [
             'Accounting', 'Business Hotel Management', 'Business Information Technology', 'Business Management',
             'Management', 'Psychology'
         ]
 
-        $cALS = ['Front-End Development', 'UI/UX Design', 'C Programming', 'Java Programming'];
-        $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
-        $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
-        $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        var $cALS = ['Front-End Development', 'UI/UX Design', 'C Programming', 'Java Programming'];
+        var $cBDG = ['None', 'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
+        var $cKMG = ['Front-End Development' ,'Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development'];
+        var $cMLG = ['Back-End Development', 'UI/UX Design', 'Java Programming', 'Mobile Application Development', 'Game Development'];
 
-        $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4", "Batch 5"];
-        $fMLG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
-        $fBDG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
+        var $fKMG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4", "Batch 5"];
+        var $fMLG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
+        var $fBDG = ["Batch 1", "Batch 2", "Batch 3", "Batch 4"];
 
+    function changeCampus(x, y, z ,cmps, major, fyp, lnt, bl, esport){
         let a = $cKMG;
         let b = $mKMG;
         let c = $fKMG;
@@ -581,19 +578,21 @@ $(document).ready(function () {
 
 
         $len = a.length;
-        $lenSel = $('#lnt-select').length;
-        $("#lnt-select > option:not(:first)").each(function() {
+        $lenSel = $('#palnt-select').length;
+        $('.lnt-select select').removeAttr('name');
+        $('#palnt-select').attr('name', 'lnt_course');
+        $("#palnt-select > option:not(:first)").each(function() {
             $(this).remove();
         });
         for(let i = 0; i<$len; i++){
-            $('#lnt-select').append(new Option(a[i], a[i]));
+            $('#palnt-select').append(new Option(a[i], a[i]));
         }
         y.next().remove();
         y.remove();
         if(lnt){
-            $('.lnt-select option[value='+'"' +lnt + '"').attr('selected', 'selected');
+            $('#palnt-select option[value='+'"' +lnt + '"').attr('selected', 'selected');
         }
-        selectFunc('lnt-select');
+        selectFunc('palnt-select');
 
         $('.schedule').each(function(){
             $(this).addClass('hidden');
@@ -702,6 +701,170 @@ $(document).ready(function () {
         });
     }
 
+    // REREGIST
+
+    $('input:file').change(function() {
+        var file = $(this)[0].files[0].name;
+        $(this).prev().prev().find(".file-name").text(file).css("color", "black");
+        checkValidationInput($(this));
+     });
+
+     function checkValidationSelect(x){
+        if(x.hasClass("custom-select") && x.find(":selected").val()==0 && x.is(':visible')){
+            x.addClass("border-error");
+            x.siblings('.msg-error').text("This is a required space.");
+        }
+     }
+
+     function checkValidationInput(x){
+        if(x.attr('type') == 'file'){
+            fileVal(x);
+        }
+        else if(x.is('input') && x.val()==""){
+            x.addClass("border-error");
+            x.siblings('.msg-error').text("This is a required space.");
+        }
+        else{
+            x.removeClass("border-error");
+            x.siblings('.msg-error').empty();
+            if(x.is('#bnccid')){
+                bnccidVal(x);
+            }
+            if(x.is('#linkedinUrl')){
+                linkedinVal(x);
+            }
+            if(x.is('#githubUrl')){
+                githubVal(x);
+            }
+        }
+    }
+
+    function bnccidVal(x){
+        if(x.val().length!=9 || x.val().substring(0, 6)!="BNCC21"){
+            x.addClass("border-error");
+            x.siblings('.msg-error').text("Please input a valid BNCC ID.");
+        }
+    }
+
+    function fileVal(x){
+        if (x.val()== ''){
+            x.prev().prev().addClass("border-error");
+            x.next().addClass('msg-error');
+        }
+        else if((x[0].files[0].size / 1024 / 1024) > 5){
+            x.prev().prev().addClass("border-error");
+            x.next().addClass('msg-error');
+        }
+        else{
+            x.prev().prev().removeClass("border-error");
+            x.next().removeClass('msg-error');
+        }
+    }
+
+    function linkedinVal(x){
+        if( x.val().substring(0, 28)!="https://www.linkedin.com/in/"){
+            x.addClass("border-error");
+            x.siblings('.msg-error').text("Please input a valid LinkedIn URL.");
+        }
+
+    }
+
+    function githubVal(x){
+        if( x.val().substring(0, 19)!="https://github.com/"){
+            x.addClass("border-error");
+            x.siblings('.msg-error').text("Please input a valid Github URL.");
+        }
+    }
+
+    // $('.select-items').click(function(){
+    //     x = $(this).parent();
+    //     x.removeClass("border-error");
+    //     x.siblings('.msg-error').empty();
+    // });
+
+    $("#form-editdata-reregis input").not(':input[type=file]').blur(function(){
+        checkValidationInput($(this));
+    })
+
+
+    $('#form-editdata-reregis .btn-continue').click(function(){
+        let a;
+        let b;
+        let c;
+        
+        a=$('#form-editdata-reregis input');
+        b=$('#form-editdata-reregis .custom-select');
+        c=$('#form-editdata-reregis');
+        
+        a.each(function() {
+            checkValidationInput($(this));
+        });
+        b.each(function() {
+            checkValidationSelect($(this));
+        });
+        setTimeout(function() {
+            if(!c.find('.msg-error').text()){
+                c.submit();
+            }
+        },300);
+     });
+
+    function hookEditMemberMetaData(message,component){
+        $('.select-selected').remove();
+
+        var memberData = JSON.parse($("meta[name=member]").attr("content"));
+        console.log(memberData);
+
+        $('#bnccid').val(memberData.bnccid);
+        $('#linkedinUrl').val(memberData.linkedinUrl);
+        $('#githubUrl').val(memberData.githubUrl);
+        let cmps = memberData.campus;
+        let a;
+        if(cmps=='ALS'){
+            a = $cALS;
+            console.log('tst');
+        }
+        else if(cmps=='BDG'){
+            a = $cBDG;
+        }
+        else if(cmps=='KMG'){
+            a = $cKMG;
+        }
+        else if(cmps=='MLG'){
+            a = $cMLG;
+        }
+        else if(cmps=='SNY'){
+            a = $cKMG;
+        }
+        else if(cmps=='ASO'){
+            a = $cKMG;
+        }
+        else if(cmps=='OL'){
+            a = $cKMG;
+        }
+        else if(cmps=='BKS'){
+            a = $cKMG;
+        }
+        // let y = $('.lnt-select').find('.select-selected')
+        let $len = a.length;
+        let lnt = memberData.lnt_course
+        $('.lnt-select select').removeAttr('name');
+        $('#relnt-select').attr('name', 'lnt_course');
+        $("#relnt-select > option:not(:first)").each(function() {
+            $(this).remove();
+        });
+        for(let i = 0; i<$len; i++){
+            $('#relnt-select').append(new Option(a[i], a[i]));
+        }
+        // y.next().remove();
+        // y.remove();
+        $('#relnt-select option[value='+'"' +lnt + '"').attr('selected', 'selected');
+        selectFunc('relnt-select');
+        $('#ktp-upload').prev().prev().find(".file-name").text(memberData["ktp-upload"]).css("color", "black");
+        $('#fyp-upload').prev().prev().find(".file-name").text(memberData["fyp-upload"]).css("color", "black");
+
+    }
+
     Livewire.hook('message.processed', (message, component) => {
         // console.log({message, component});
 
@@ -711,6 +874,7 @@ $(document).ready(function () {
         if(ret)
             if(lwName == 'edit-participant-meta-data' && ret && 'changeId' in ret) hookEditParticipantMetaData(message, component);
             else if(lwName == 'users-table' && ret && 'deleteParticipant' in ret) hookUsersTable(message, component);
+            else if(lwName == 'edit-member-meta-data') hookEditMemberMetaData(message,component);
             // else console.log({message, component});
 
         if(lwName == 'users-table'){
@@ -724,5 +888,6 @@ $(document).ready(function () {
     });
 
     /* EDIT REREGIS */
+
 });
 

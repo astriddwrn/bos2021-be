@@ -28,7 +28,6 @@ $(document).ready(function(){
         $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
     }
 
-
     setTimeout(function(){
         $('.pop-up').removeClass('hidden');
      }, 1000);
@@ -130,9 +129,8 @@ $(document).ready(function(){
     selectFunc("lnt-select");
     selectFunc("schedule-select");
 
-
     $('input:file').change(function() {
-        var file = $(this)[0].files[0].name;
+        let file = $(this)[0].files[0].name;
         $(this).prev().prev().find(".file-name").text(file).css("color", "black");
         checkValidationInput($(this));
      });
@@ -213,7 +211,6 @@ $(document).ready(function(){
     $("input").not(':input[type=file]').blur(function(){
         checkValidationInput($(this));
     })
-
 
     $('.btn').click(function(){
         let a;
