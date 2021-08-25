@@ -397,8 +397,7 @@
                                 <div class="custom-select lnt-select w-full">
                                     <select id="lnt-select" name="lnt_course">
                                         <option class="off" value="0">Select Your Course</option>
-                                        <!-- ALS -->
-
+                                
                                         @if ($user->campus=='ALS')
                                         <option value="Front-End Development">Front-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
@@ -406,23 +405,29 @@
                                         <option value="Java Programming">Java Programming</option>
                                         @endif
 
-                                        <!-- BDG & MLG-->
-
-                                        @if ($user->campus=='BDG'||$user->campus=='MLG')
+                                        @if ($user->campus=='MLG')
                                         <option value="Back-End Development">Back-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
-                                        <option value="C Programming">C Programming</option>
+                                        <option value="Java Programming">Java Programming</option>
                                         <option value="Mobile Application Development">Mobile Application Development</option>
                                         <option value="Game Development">Game Development</option>
                                         @endif
 
-                                        <!-- KMG -->
+                                        @if ($user->campus=='BDG')
+                                        <option value="None">None</option>
+                                        <option value="Back-End Development">Back-End Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="Java Programming">Java Programming</option>
+                                        <option value="Mobile Application Development">Mobile Application Development</option>
+                                        <option value="Game Development">Game Development</option>
+                                        @endif
 
-                                        @if ($user->campus=='KMG')
+                                        @if ($user->campus=='KMG' || $user->campus=='OL' || $user->campus=='SNY' || $user->campus=='BKS' || $user->campus=='ASO')
                                         <option value="Back-End Development">Back-End Development</option>
                                         <option value="Front-End Development">Front-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
                                         <option value="Java Programming">Java Programming</option>
+                                        <option value="Mobile Application Development">Mobile Application Development</option>
                                         @endif
 
                                     </select>
@@ -609,32 +614,12 @@
 
             const campus = json1.campus;
             var schedule =  json2;
-            // for (const [key, val] of Object.entries(schedule)){
-            //     if(campus == 'MLG' || campus == 'BDG'){
-            //         $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
-            //     }
-            //     if(campus == 'KMG' || campus == 'ALS'){
-            //         $('#schedule-select').append(new Option(`${val.text}`, `${val.id}`));
-            //     }
-            // }
-
-            // $('.schedule-input').each(function(){
-            //     $(this).addClass('hidden');
-            //     $(this).find('.msg-error').empty();
-            //     $(this).find('select').removeAttr('name');
-            // });
-            // if(campus == 'MLG' || campus == 'BDG'){
-            //     $('.schedule-checkbox-cont').removeClass('hidden');
-            // }
-            // else{
-            //     $('.schedule-select-cont').removeClass('hidden');
-            //     $('.schedule-select-cont').find('select').attr('name', 'schedule-change[]');
     }
         });
 
     </script>
 
-    <script src="{{ asset('js/userDashboard.js')}}?t=202108170120"></script>
+    <script src="{{ asset('js/userDashboard.js')}}?t=202108251712"></script>
 
 </body>
 </html>

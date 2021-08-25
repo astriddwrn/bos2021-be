@@ -6,7 +6,6 @@ $(document).ready(function(){
     const campus = json1.campus;
     var schedule =  json2;
     for (const [key, val] of Object.entries(schedule)){
-        console.log(val.text);
         if(campus == 'MLG' || campus == 'BDG'){
             $('.schedule-checkbox').append('<label class=" main text-sm w-full mt-2">'+ `${val.text}` + '<input type="checkbox" name="schedule-change[]" value="'+ `${val.id}` + '"> <span class="mark"></span> </label>');
         }
@@ -192,7 +191,6 @@ $(document).ready(function(){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Please input a valid LinkedIn URL.");
         }
-
     }
 
     function githubVal(x){
@@ -216,7 +214,7 @@ $(document).ready(function(){
         let a;
         let b;
         let c;
-        let e;
+        let d;
         if( $(this).hasClass("reregistration-btn")){
             a=$('#form-reregistration input');
             b=$('#form-reregistration .custom-select');

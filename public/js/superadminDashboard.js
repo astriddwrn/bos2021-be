@@ -701,7 +701,7 @@ $(document).ready(function () {
         });
     }
 
-    // REREGIST
+    // REREGIST EDIT
 
     $('input:file').change(function() {
         var file = $(this)[0].files[0].name;
@@ -807,7 +807,6 @@ $(document).ready(function () {
         $('.select-selected').remove();
 
         var memberData = JSON.parse($("meta[name=member]").attr("content"));
-        console.log(memberData);
 
         $('#bnccid').val(memberData.bnccid);
         $('#linkedinUrl').val(memberData.linkedinUrl);
