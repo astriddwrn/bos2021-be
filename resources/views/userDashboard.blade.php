@@ -397,7 +397,7 @@
                                 <div class="custom-select lnt-select w-full">
                                     <select id="lnt-select" name="lnt_course">
                                         <option class="off" value="0">Select Your Course</option>
-                                
+
                                         @if ($user->campus=='ALS')
                                         <option value="Front-End Development">Front-End Development</option>
                                         <option value="UI/UX Design">UI/UX Design</option>
@@ -558,7 +558,11 @@
                         </div>
                         <div>
                             <div class="mt-5">LnT Course</div>
-                            @if ($user->campus=="KMG")
+                            @if ($user->campus=="KMG"||
+                                 $user->campus=="OL"||
+                                 $user->campus=="ASO"||
+                                 $user->campus=="BKS"||
+                                 $user->campus=="SNY")
                                 <div class="flex flex-row items-center text-lg font-semibold">
                                     {{($user->lnt_course)}}
                                 </div>
