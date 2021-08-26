@@ -13,6 +13,7 @@
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="text-base">
     <!--
@@ -307,6 +308,7 @@
                         <img class="absolute x-30 top-12 mt-1 right-3 eye-close hidden" src="{{asset('./Asset/Image/auth/eye-close.svg')}}" alt="BNCC Launching">
                         <span class="msg-error"></span>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_SITE_KEY')}}"></div>
                     <label class="mt-11 main">I certify that the information I have provided is true and accurate
                         <input type="checkbox" id="checkbox">
                         <span class="mark"></span>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsLetterController;
+use App\Http\Controllers\ExtrasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,10 @@ Route::middleware(["auth", 'admin'])->group(function() {
     // Route::get('/admin/downl/pay_mem/bdgxlsx', [AdminController::class, "downloadPaymentBDG"])->name('download_BDGPay');
     // Route::get('/admin/downl/pay_mem/mlgxlsx', [AdminController::class, "downloadPaymentMLG"])->name('download_MLGPay');
     // Route::get('/admin/downl/reg_mem/mlgxlsx', [AdminController::class, "downloadMemberMLG"])->name('download_MLG');
+
+    // EXTRAS: FOR DEBUGGING ONLY
+    Route::get('/admin/extras/phpinfo', [ExtrasController::class, 'showPhpInfo']);
+    Route::get('/admin/extras', [ExtrasController::class, 'showExtras']);
 });
 
 Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsletter');
@@ -77,8 +82,8 @@ Route::post('/newsletter', [NewsLetterController::class, 'create'])->name('newsl
 // DEPLOYED TO PRODUCTION ENVIRONEMNT. LEAVE IT ACTIVE WOULD
 // LEAD IT TO SECURITY ISSUE.
 Route::prefix("/debug")->group(function(){
-    // Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
-    // Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
+    Route::get("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleView"])->name("debug.view");
+    Route::post("/view/{view}", [App\Http\Controllers\DebugController::class, "simpleResponse"]);
 });
 
 require __DIR__.'/auth.php';

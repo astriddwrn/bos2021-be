@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Models\Schedule;
 use Illuminate\Cache\RateLimiting\Limit;
+use App\Services\CaptchaService;
 
 class RegisteredUserController extends Controller
 {
@@ -81,8 +82,14 @@ class RegisteredUserController extends Controller
             'lnt_course' => ['required'],
             'schedule' => ['required'],
             'personal_email' => ['required','string','email','unique:users,personal_email', 'regex:/^[^0-9].+(@).+/'],
+            'g-recaptcha-response' => ['required']
         ],$message);
 
+        $isCaptchaValid = CaptchaService::checkCaptcha($request["g-recaptcha-response"], $request);
+        if(!($isCaptchaValid->success))
+            return back()->withInput()->withErrors([
+                "g-recaptcha-response" => join(", ", $isCaptchaValid["error-codes"])
+            ]);
 
         foreach(Schedule::findOrFail($request->schedule) as $schedule){
             if(in_array($request->campus, ['ASO', 'BKS', 'OL', 'SNY'])) "";
