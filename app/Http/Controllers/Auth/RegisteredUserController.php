@@ -62,8 +62,9 @@ class RegisteredUserController extends Controller
             'personal_email.unique' => "This email has been taken",
             'personal_email.regex' => "Email can't begin with numbers"
         ];
+        // dd($request->all());
 
-
+        // dd($request["g-recaptcha-response"]);
         $request->validate([
             'fullName' => 'required|string',
             'gender' => 'required',
