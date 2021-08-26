@@ -129,7 +129,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        (new Limit('register', '1', 2))->by($request->ip());
         return redirect(RouteServiceProvider::HOME);
     }
 }
