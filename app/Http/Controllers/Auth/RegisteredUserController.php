@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Models\Schedule;
+use Illuminate\Cache\RateLimiting\Limit;
 
 class RegisteredUserController extends Controller
 {
@@ -121,6 +122,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        (new Limit('register', '1', 2))->by($request->ip());
         return redirect(RouteServiceProvider::HOME);
     }
 }
