@@ -819,9 +819,9 @@
                 cursor-default">
                     Coming Soon
                 </a> --}}
-                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
-                href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a>
+                href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a> --}}
             </div>
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
@@ -838,9 +838,9 @@
                 cursor-default">
                     Coming Soon
                 </a> --}}
-                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2 sm:mt-8 lg:mt-7"
-                href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a>
+                href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a> --}}
             </div>
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
