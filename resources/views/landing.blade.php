@@ -811,14 +811,14 @@
                 <p class="text-cBlackHome mb-4 xl:mb-6 leading-7">
                     An online workshop that will teach you the fundamentals of how to design and build a website.
                 </p>
-                {{-- <a class="w-full flex flex-row justify-center items-center
+                <a class="w-full flex flex-row justify-center items-center
                 bg-cBluishGray
                 transition duration-300
                 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2
                 cursor-default">
-                    Coming Soon
-                </a> --}}
+                    Registration Has Ended
+                </a>
                 {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
                 href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a> --}}
@@ -830,14 +830,15 @@
                 <p class="text-cBlackHome mb-4 sm:mb-4 md:mb-9 lg:mb-11 leading-7">
                     An online workshop that will teach you the fundamentals of UI/UX design from scratch.
                 </p>
-                {{-- <a class="w-full flex flex-row justify-center items-center
+                <a class="w-full flex flex-row justify-center items-center
                 bg-cBluishGray
                 transition duration-300
                 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2
+                sm:mt-8 lg:mt-7
                 cursor-default">
-                    Coming Soon
-                </a> --}}
+                    Registration Has Ended
+                </a>
                 {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2 sm:mt-8 lg:mt-7"
                 href="https://bit.ly/BNCC_Codesign_Registration" target="_blank">Join Now</a> --}}
