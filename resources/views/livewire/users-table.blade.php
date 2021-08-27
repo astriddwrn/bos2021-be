@@ -46,7 +46,7 @@
 
                     </span>
 
-                    <a href="{{$this->auth->region ? route('download_users',['region'=>$region]) : ''}}" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
+                    <a href="{{$this->region != '' ? route('download_users',['region'=>$region]) : ''}}" class="flex flex-row justify-center items-center bg-cLightBlue hover:bg-cDarkerLightBlue text-cWhite font-semibold rounded px-4 py-2">
                         <img class="w-4 mr-2" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                         Download Participant Data
                     </a>
