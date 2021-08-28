@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsLetterController;
 use App\Http\Controllers\ExtrasController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::middleware(["auth", 'admin'])->group(function() {
     // Route::get('/admin', \App\Http\Livewire\PaginateUsers::class);
     Route::get('/admin', [AdminController::class, "showSuperAdmin"])->name('superadmin');
     Route::post('/admin/update_participant', [AdminController::class, "updateParticipant"])->name('update.participant');
+    Route::post('/admin/update_reregis', [MemberController::class, "update"])->name('update.reregis');
 
     Route::get('/download/payment/{id}', [AdminController::class, "downloadPayment"])->name('download_payment');
     Route::get('/download/ktp/{id}', [AdminController::class, "downloadKTP"])->name('download_ktp');

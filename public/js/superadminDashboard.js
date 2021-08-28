@@ -747,6 +747,7 @@ $(document).ready(function () {
     }
 
     function fileVal(x){
+        return;
         if (x.val()== ''){
             x.prev().prev().addClass("border-error");
             x.next().addClass('msg-error');
@@ -785,11 +786,11 @@ $(document).ready(function () {
         let a;
         let b;
         let c;
-        
+
         a=$('#form-editdata-reregis input');
         b=$('#form-editdata-reregis .custom-select');
         c=$('#form-editdata-reregis');
-        
+
         a.each(function() {
             checkValidationInput($(this));
         });
@@ -866,7 +867,7 @@ $(document).ready(function () {
             else if(lwName == 'users-table' && ret && 'deleteParticipant' in ret) hookUsersTable(message, component);
             // member-data
             else if(lwName == 'edit-member-meta-data') hookEditMemberMetaData(message,component);
-  
+
         if(lwName == 'users-table'){
             showEditForm('.editBtnParticipant', editformParticipant, inputAttrPart, function(el){
                 Livewire.emit('changeId', $(el).attr("data-id"));

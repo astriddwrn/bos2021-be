@@ -63,7 +63,10 @@
                     <th>Actions </th>
                     <th>Time Stamp </th>
                     <th>Full Name</th>
+                    <th>NIM</th>
+                    <th>Campus</th>
                     <th>BNCC ID</th>
+                    <th>Email</th>
                     <th>LinkedIn</th>
                     <th>GitHub</th>
                     <th>LnT Course</th>
@@ -80,14 +83,17 @@
                             <button data-id="{{ $member->id }}" class="editBtnReregis p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md mr-2 cursor-pointer duration-200">
                                 <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-edit.svg')}}" alt="">
                             </button>
-                            <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
+                            {{-- <button class="deleteBtn p-2 bg-cReddeny hover:bg-cDarkerReddeny rounded-md cursor-pointer duration-200">
                                 <img class="w-8" src="{{ asset('Asset/Image/userDashboard/menu-x.svg')}}" alt="">
-                            </button>
+                            </button> --}}
                         </div>
                     </td>
                     <td>Not Supported</td>
                     <td>{{ $member->fullName }}</td>
+                    <td>{{ $member->nim }}</td>
+                    <td>{{ $member->campus }}</td>
                     <td>{{ $member->bnccid }}</td>
+                    <td>{{ $member->email }}</td>
                     <td>{{ $member->linkedinUrl }}</td>
                     <td>{{ $member->githubUrl }}</td>
                     <td>{{ $member->lnt_course }}</td>

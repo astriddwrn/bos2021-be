@@ -425,8 +425,9 @@
                 </div>
 
                 {{-- Isi nya --}}
-                <form id="form-editdata-reregis" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{--  --}}" enctype="multipart/form-data" method="POST">
+                <form id="form-editdata-reregis" class="main-container bg-cWhite rounded-xl px-8 py-5 f m-8 xl:w-7/12" action="{{route('update.reregis')}}" enctype="multipart/form-data" method="POST">
                     <div>
+                        @csrf
                         <input id="data-reregis" type="hidden" name="id">
                         <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
@@ -489,7 +490,7 @@
 
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108251712"></script>
+    <script src="{{ asset('js/superadminDashboard.js')}}?t=202108282043"></script>
 
 </body>
 </html>
