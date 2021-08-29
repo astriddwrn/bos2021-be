@@ -461,6 +461,7 @@ $(document).ready(function () {
             'Global Business Marketing',
             'Information Systems',
             'International Business Management',
+            'International Relations',
             'Management',
             'Master of Management',
             'Product Design Engineering (International Program)',

@@ -320,6 +320,7 @@ selectFunc("bncc-select-als");
             'Global Business Marketing',
             'Information Systems',
             'International Business Management',
+            'International Relations',
             'Management',
             'Master of Management',
             'Product Design Engineering (International Program)',
