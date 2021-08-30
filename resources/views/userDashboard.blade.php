@@ -110,6 +110,7 @@
                         <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
                             <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
+
                             @foreach ($schedules as $schedule)
                             <div class="mt-4">
                                 <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="BNCC Launching">
@@ -121,13 +122,16 @@
                             </div>
                             @php
                                 $now = Carbon\Carbon::now('GMT+7');
-                                $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
+                                $dt_now = (new \DateTime($now))->modify("+10 minutes");
+                                $diff = ((new \DateTime($schedule->date))->diff($dt_now));
                                 $is_waiting_end = !$diff->invert;
                             @endphp
-                            <a class="mb-5 sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn" href="{{$is_waiting_end ? $schedule->link1 : route("countdown") . "?s=" . $schedule->id}}">
+                            <a class="mb-5 sm:w-96 w-full mt-5 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-1 text-center cursor-pointer hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn"
+                            href="{{$is_waiting_end ? $schedule->link1 : route("countdown") . "?s=" . $schedule->id}}">
                                 Join Now
                             </a>
                             @endforeach
+
                         </div>
 
                         @if ($diff_change_schedule->invert)

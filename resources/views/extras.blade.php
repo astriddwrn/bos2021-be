@@ -29,7 +29,7 @@
 
         <div class="rounded shadow my-4 bg-white">
             <div class="p-4 bg-gray-50 border-b border-gray-200">
-                Request Header
+                Request Header & Configurations
             </div>
             <div class="p-4">
                 <table>
@@ -44,6 +44,20 @@
                             <td>Socket IP</td>
                             <td>{{$request->ip()}}</td>
                         </tr>
+                        <tr>
+                            <td>Current Time</td>
+                            <td>{{ Carbon\Carbon::now() }}</td>
+                        </tr>
+                        <tr>
+                            <td>Current Time (GMT+7)</td>
+                            <td>{{ Carbon\Carbon::now('GMT+7') }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>###############</td>
+                            <td>##############################</td>
+                        </tr>
+
 
                         @foreach ($request->header() as $hkey => $harr)
                             @foreach ($harr as $hval)
