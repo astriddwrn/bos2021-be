@@ -15,7 +15,7 @@
     <meta name="description" content="BNCC (Bina Nusantara Computer Club) is one of the best technology-based organizations at Binus University. Want to be part of us? Register now!">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/userDashboard.css') }}?t=202121082452">
 
 
 </head>
