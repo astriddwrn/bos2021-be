@@ -275,13 +275,13 @@
                                             <ul style="list-style-type: inherit;" class="pl-5">
                                                 @if ($user->campus=='ALS')
 
-                                                @endif
+
                                                 @elseif ($user->campus=='BDG')
 
-                                                @endif
+
                                                 @elseif ($user->campus=='MLG')
 
-                                                @endif
+
                                                 @else
                                                 <li>Camelia - 085714990994 -  LINE: claudiacameliaa</li>
                                                 <li>Natasya Febryani - 081315304769 - LINE: natasyafebryani</li>
