@@ -269,12 +269,24 @@
                             <div class="text-2xl font-bold text-cDarkBlue">Payment Procedure</div>
                             <div class="">Proceed your payment via transfer to following BCA account <br>
                                             <b>5271723327 (Felisha Miranda)</b> <br>
-                                            *Format detail: Full Name - NIM<br><br>
+                                            *Format detail: NIM - Full Name <br><br>
 
                                             Send your payment receipt to our contact person and upload it below
                                             <ul style="list-style-type: inherit;" class="pl-5">
-                                                <li>Astrid - 081287422520 -  LINE: astriddwrn</li>
-                                                <li>Samuel - 081251442125 - LINE: ssam223</li>
+                                                @if ($user->campus=='ALS')
+
+                                                @endif
+                                                @elseif ($user->campus=='BDG')
+
+                                                @endif
+                                                @elseif ($user->campus=='MLG')
+
+                                                @endif
+                                                @else
+                                                <li>Camelia - 085714990994 -  LINE: claudiacameliaa</li>
+                                                <li>Natasya Febryani - 081315304769 - LINE: natasyafebryani</li>
+                                                <li>Carissa Christie - 082386151732 - LINE: carissa107</li>
+                                                @endif
                                             </ul>
                             </div>
                         </div>
