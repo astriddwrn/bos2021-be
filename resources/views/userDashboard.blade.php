@@ -114,7 +114,7 @@
                             @foreach ($schedules as $schedule)
                             <div class="mt-4">
                                 <div class="flex flex-row items-center text-lg font-semibold"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="BNCC Launching">
-                                {{$schedule->formatting_date()}}
+                                {{$schedule->formatting_date()}} @if($user->campus=='BDG'||$user->campus=='MLG')({{$schedule->lnt_course}})@endif
                                 </div>
                                 <div class="flex flex-row items-center text-lg font-semibold mt-3"><img class="mr-3 w-9" src="{{ asset('Asset/Image/userDashboard/time.svg')}}" alt="BNCC Launching">
                                     {{$schedule->start_date()}} - {{$schedule->end_date()}} (GMT +07.00)
