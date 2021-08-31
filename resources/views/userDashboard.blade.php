@@ -192,7 +192,7 @@
                                     <div class="sm:text-center font-bold my-2 font-lg">Jeta</div>
                                     <div>
                                         <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">087871447555</div>
-                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
+                                        <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Jetaaa1</div>
                                     </div>
                                 </div>
                                 @elseif($user->campus == 'BDG')
@@ -596,6 +596,50 @@
                         <div class="text-2xl font-bold text-cDarkBlue">Contact Person</div>
                         <div class="text-md font-medium">Got a question in mind? Reach out our contact person!</div>
                         <div class="w-full flex lg:flex-row flex-col lg:justify-around mt-2">
+                            @if ($user->campus=='ALS')
+                            <div class="flex flex-col lg:items-center">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                <div class="lg:text-center font-bold my-2 font-lg">Nikita</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">087886316523</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Nikitafelicia</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:items-center mt-3 lg:mt-0">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                <div class="lg:text-center font-bold my-2 font-lg">Jeta</div>
+                                <div>
+                                    <div class="flex flex-row items-center font-base"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">087871447555</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Jetaaa1</div>
+                                </div>
+                            </div>
+                            @elseif ($user->campus=='BDG')
+                            <div class="flex flex-col lg:items-center">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                <div class="lg:text-center font-bold my-2 font-lg">Rhenal</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">0818235657</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Add by phone</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col lg:items-center mt-3 lg:mt-0">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                <div class="lg:text-center font-bold my-2 font-lg">Fajar</div>
+                                <div>
+                                    <div class="flex flex-row items-center font-base"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082114365818</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">fajarhamka21</div>
+                                </div>
+                            </div>
+                            @elseif ($user->campus=='MLG')
+                            <div class="flex flex-col lg:items-center">
+                                <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
+                                <div class="lg:text-center font-bold my-2 font-lg">Novelia</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082301020777</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">agatha.s_</div>
+                                </div>
+                            </div>
+                            @else
                             <div class="flex flex-col lg:items-center">
                                 <img class="lg:block hidden" src="{{ asset('Asset/Image/userDashboard/contact-icon.svg')}}" alt="BNCC Launching">
                                 <div class="lg:text-center font-bold my-2 font-lg">Astrid</div>
@@ -612,6 +656,7 @@
                                     <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
                                 </div>
                             </div>
+                            @endif
 
                         </div>
                     </div>
