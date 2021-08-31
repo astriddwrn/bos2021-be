@@ -105,7 +105,7 @@ class UserController extends Controller
         $user = $request->user();
 
         $schedule = Schedule::findOrFail($request->s);
-        $countdown = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->format('Y, m, d, H, i, s');
+        $countdown = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->subMinutes(10)->format('Y, m, d, H, i, s');
         // dd($countdown);
         $now = Carbon::now('GMT+7');
         $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
