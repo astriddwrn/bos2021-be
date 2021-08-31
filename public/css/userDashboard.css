@@ -62,7 +62,7 @@
     grid-template-areas:
     'one two'
     'one three';
-    grid-template-rows: 280px 280px;
+    grid-template-rows: 350px 350px;
     grid-template-columns: 42% 55% ;
     width: 100%;
     min-height: 600px;
