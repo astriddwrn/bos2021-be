@@ -18,12 +18,12 @@
 
 </head>
 <body class="font-sans">
-    
+
     <div class="w-screen h-screen bg-bgSpace relative overflow-hidden">
 
         <div class="main-container w-full h-full flex flex-col sm:justify-center items-center relative z-10">
             <div class="font-extrabold sm:text-5xl text-3xl text-center text-cWhite font-sans sm:mt-0 mt-10">Hi, {{(Auth::user()->fullName)}}</div>
-         
+
             <div class="relative mt-20 mb-8">
                 <div class="clock" id="clock1"></div>
                 <div class="time flex flex-row justify-around text-center mt-2">
@@ -33,7 +33,7 @@
                     <label class="font-extrabold text-cWhite text-xl md:text-2xl font-sans sec">Seconds</label>
                 </div>
             </div>
-         
+
             <div class="text-center font-extrabold sm:text-4xl text-xl text-cWhite">left until BNCC Launching!</div>
 
             <div class="text-center text-cWhite font-bold sm:text-xl text-lg rounded p-2 bg-cLightBlue sm:w-96 w-64 sm:mt-20 mt-10 hover:bg-cWhite hover:text-cLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn"><a href="{{route('dashboard')}}">Return to Dashboard</a></div>
@@ -45,6 +45,8 @@
         <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
     </div>
     <script>
+        var link = {!! json_encode($link, JSON_HEX_TAG) !!};
+        console.log(link);
         var countdownTime = new Date({{$countdown}});
     </script>
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>

@@ -109,11 +109,11 @@ class UserController extends Controller
         // dd($countdown);
         $now = Carbon::now('GMT+7');
         $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
-
+        $link = $schedule->link1;
         if(!$diff->invert)
             return redirect('/dashboard');
         else
-            return view('countdown', compact('countdown'));
+            return view('countdown', compact('countdown','link'));
 
     }
 
