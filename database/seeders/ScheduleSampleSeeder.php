@@ -148,7 +148,7 @@ class ScheduleSampleSeeder extends Seeder
             'lnt_course' => 'Java Programming',
             'text' => '02 September (13.00 - 14.55) - Java Programming'],
 
-            ['date' =>  "2021-09-02 10:00:00",
+            ['date' =>  "2021-09-03 10:00:00",
             'link1' => 'https://zoom.us/' . Str::random(16),
             'quota' => rand(10, 200),
             'campus' => 'bdg',

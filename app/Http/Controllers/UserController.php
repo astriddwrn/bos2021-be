@@ -73,8 +73,10 @@ class UserController extends Controller
     }
 
     public function changeSchedule(Request $request){
+        $schedules = $request->user()->schedules();
         $now = Carbon::now('GMT+7');
-        $diff_change_schedule = ((new \DateTime('2021-08-31 16:08:00'))->diff(new \DateTime($now)));
+        $disable_datetime = Carbon::parse($schedules[0]->date);
+        $diff_change_schedule = ((new \DateTime($disable_datetime))->diff(new \DateTime($now)));
         if(!$diff_change_schedule->invert) return back();
 
         $request->validate([
