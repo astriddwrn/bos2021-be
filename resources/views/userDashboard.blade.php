@@ -274,13 +274,15 @@
                                             Send your payment receipt to our contact person and upload it below
                                             <ul style="list-style-type: inherit;" class="pl-5">
                                                 @if ($user->campus=='ALS')
-
+                                                <li>Fraderic - 089649499832 -  LINE: fazbear</li>
+                                                <li>Jeta - 087871447555 - LINE: jetaaa1</li>
 
                                                 @elseif ($user->campus=='BDG')
-
+                                                <li>Rhenal - 0818235657 -  LINE: Add by phone</li>
+                                                <li>Fajar - 082114365818 - LINE: fajarhamka21</li>
 
                                                 @elseif ($user->campus=='MLG')
-
+                                                <li>Novelia - 082301020777 - LINE: agatha.s_</li>
 
                                                 @else
                                                 <li>Camelia - 085714990994 -  LINE: claudiacameliaa</li>
@@ -344,21 +346,68 @@
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold xs:mt-10 mt-5">Oops! There’s an Error in Verifying Your Payment</div>
                         <div class="font-medium mt-3">Ask for our contact person’s help below to assist you with your payment verification.</div>
-                        <div class="reject-contact-cont w-100 flex flex-row justify-around mt-5 w-96 bg-cWhite rounded-xl xs:p-5 p-3">
+                        <div class="reject-contact-cont w-100 flex flex-row justify-around mt-5 w-97 bg-cWhite rounded-xl xs:p-5 p-3">
+                            @if ($user->campus=='ALS')
                             <div class="flex flex-col items-center">
-                                <div class="text-center font-bold mb-2 font-lg">Astrid</div>
+                                <div class="text-center font-bold mb-2 font-lg">Fraderic</div>
                                 <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081287422520</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">astriddwrn</div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">089649499832</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">fazbear</div>
                                 </div>
                             </div>
                             <div class="flex flex-col items-center">
-                                <div class="text-center font-bold mb-2 font-lg">Samuel</div>
+                                <div class="text-center font-bold mb-2 font-lg">Jeta</div>
                                 <div>
-                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081251442125</div>
-                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">ssam223</div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">087871447555</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">jetaaa1</div>
                                 </div>
                             </div>
+                            @elseif ($user->campus=='BDG')
+                            <div class="flex flex-col items-center">
+                                <div class="text-center font-bold mb-2 font-lg">Fajar</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082114365818</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">fajarhamka21</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-center font-bold mb-2 font-lg">Rhenal</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">0818235657</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">Add by phone</div>
+                                </div>
+                            </div>
+                            @elseif ($user->campus=='MLG')
+                            <div class="flex flex-col items-center">
+                                <div class="text-center font-bold mb-2 font-lg">Novelia</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082301020777</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">agatha.s_</div>
+                                </div>
+                            </div>
+                            @else
+                            <div class="flex flex-col items-center">
+                                <div class="text-center font-bold mb-2 font-lg">Camelia</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">085714990994</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">claudiacameliaa</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-center font-bold mb-2 font-lg">Natasya Febryani</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">081315304769</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">natasyafebryani</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-center font-bold mb-2 font-lg">Carissa Christie</div>
+                                <div>
+                                    <div class="flex flex-row items-center"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-wa.svg')}}" alt="BNCC Launching">082386151732</div>
+                                    <div class="flex flex-row items-center mt-1"><img class="mr-2" src="{{ asset('Asset/Image/userDashboard/contact-line.svg')}}" alt="BNCC Launching">carissa107</div>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
