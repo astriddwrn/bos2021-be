@@ -105,10 +105,10 @@ class UserController extends Controller
 
     public function countdown(Request $request) {
         $user = $request->user();
-
         $schedule = Schedule::findOrFail($request->s);
         $countdown = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->subMinutes(10)->format('Y, m, d, H, i, s');
-        $time = Carbon::parse('2021-09-01 10:33:00')->subMonth(1)->subHours('7')->subMinutes(10)->format('Y-m-d H:i:s');
+
+        $time = Carbon::parse($schedule->date)->subMinutes(10)->format('Y-m-d H:i:s');
 
         $now = Carbon::now('GMT+7');
         $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));

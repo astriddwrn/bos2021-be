@@ -46,9 +46,9 @@
     </div>
     @php
         $now = Carbon\Carbon::now('GMT+7');
-        $diff = ((new \DateTime($time))->diff(new \DateTime($now)));
+        $diff = ((new \DateTime($now))->diff(new \DateTime($time)));
     @endphp
-    @if (!$diff->invert)
+    @if ($diff->invert)
         <script>var link = {!! json_encode($link, JSON_HEX_TAG) !!};</script>
     @else
         <script>var link = "";</script>
