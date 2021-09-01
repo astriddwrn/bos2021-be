@@ -13,7 +13,7 @@ setInterval(function () {
     var time_now = new Date();
     var time_diff = (date.getTime()/1000) - (time_now .getTime()/1000);
     refreshCheck(time_diff);
-}, 2000);
+}, 1000);
 
 function refreshCheck(timed) {
     if(timed<=0){

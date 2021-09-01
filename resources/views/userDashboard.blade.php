@@ -268,7 +268,19 @@
                         <div class="procedure card bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Payment Procedure</div>
                             <div class="">Proceed your payment via transfer to following BCA account <br>
-                                            <b>5271723327 (Felisha Miranda)</b> <br>
+                                            <b>
+                                            @if ($user->campus=='BDG')
+                                            7772324173 (Rhenal Za Maulana Wongso)
+                                            @elseif ($user->campus=='ALS')
+                                            5271723327 (Felisha Miranda)
+                                            @elseif ($user->campus=='MLG')
+                                            5271723327 (Felisha Miranda)
+                                            @else
+                                            5271723327 (Felisha Miranda)
+                                            @endif
+
+                                            </b> <br>
+
                                             *Format detail: NIM - Full Name <br><br>
 
                                             Send your payment receipt to our contact person and upload it below
