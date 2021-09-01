@@ -44,9 +44,16 @@
         <img class="rocket absolute z-4" src="{{url('./Asset/Image/countdown/bg-rocket.svg')}}" alt="">
         <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
     </div>
+    @php
+        $now = Carbon\Carbon::now('GMT+7');
+        $diff = ((new \DateTime($time))->diff($now));
+    @endphp
+    @if ($diff->invert)
+        <script>var link = {!! json_encode($link, JSON_HEX_TAG) !!};</script>
+    @else
+        <script>var link = "";</script>
+    @endif
     <script>
-        var link = {!! json_encode($link, JSON_HEX_TAG) !!};
-        console.log(link);
         var countdownTime = new Date({{$countdown}});
     </script>
     <script src="{{url('./js/jquery-3.6.0.min.js')}}"></script>

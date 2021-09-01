@@ -108,6 +108,7 @@ class UserController extends Controller
 
         $schedule = Schedule::findOrFail($request->s);
         $countdown = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->subMinutes(10)->format('Y, m, d, H, i, s');
+        $time = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->subMinutes(10)->format('Y-m-d H:i:s');
         // dd($countdown);
         $now = Carbon::now('GMT+7');
         $diff = ((new \DateTime($schedule->date))->diff(new \DateTime($now)));
@@ -115,7 +116,7 @@ class UserController extends Controller
         if(!$diff->invert)
             return redirect('/dashboard');
         else
-            return view('countdown', compact('countdown','link'));
+            return view('countdown', compact('countdown','link', 'time'));
 
     }
 
