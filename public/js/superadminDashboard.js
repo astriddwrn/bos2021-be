@@ -477,7 +477,7 @@ $(document).ready(function () {
             'Automotive & Robotics Engineering', 'Product Design Engineering'
         ];
         var $mOL = [
-            'Information Systems', 'Management'
+            'Information Systems', 'Management', 'Computer Science'
         ];
         var $mBKS = [
             'Accounting', 'Business Hotel Management', 'Business Information Technology', 'Business Management',
