@@ -10,23 +10,23 @@ class MemberController extends Controller
 {
     public function create(Request $request){
         if(Auth::user()->is_reregistered==0){
+
             $request->validate([
                 'lnt_course' => 'required',
                 'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC21)([0-9]{3})/'],
                 'linkedinUrl' => ['required','regex:/^(https:\/\/www.linkedin.com\/in\/)\w+/'],
-                'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/'],
-                'ktp-upload' => 'required|mimes:jpg,jpeg,png|max:5480',
-                'fyp-upload' => 'required|mimes:jpg,jpeg,png|max:5480'
+                'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/']
+                // 'ktp-upload' => 'required|mimes:jpg,jpeg,png|max:5480',
+                // 'fyp-upload' => 'required|mimes:jpg,jpeg,png|max:5480'
             ] );
 
-            $ktp = $request->file('ktp-upload');
-            $fn_ktp = $request->user()->fullName."_".$request->user()->nim."_ktp".time().".".$ktp->getClientOriginalExtension();
-            $ktp->move(public_path('ktp'),$fn_ktp);
+            // $ktp = $request->file('ktp-upload');
+            // $fn_ktp = $request->user()->fullName."_".$request->user()->nim."_ktp".time().".".$ktp->getClientOriginalExtension();
+            // $ktp->move(public_path('ktp'),$fn_ktp);
 
-            $fyp = $request->file('fyp-upload');
-            $fn_fyp = $request->user()->fullName."_".$request->user()->nim."_fyp".time().".".$fyp->getClientOriginalExtension();
-            $fyp->move(public_path('fyp'),$fn_fyp);
-
+            // $fyp = $request->file('fyp-upload');
+            // $fn_fyp = $request->user()->fullName."_".$request->user()->nim."_fyp".time().".".$fyp->getClientOriginalExtension();
+            // $fyp->move(public_path('fyp'),$fn_fyp);
             Member::create([
                 'fullName' => $request->user()->fullName,
                 'email' => $request->user()->email,
@@ -44,9 +44,9 @@ class MemberController extends Controller
                 'lnt_course' => $request->lnt_course,
                 'bnccid' => $request->bnccid,
                 'linkedinUrl' => $request->linkedinUrl,
-                'githubUrl' => $request->githubUrl,
-                'ktp-upload' => $fn_ktp,
-                'fyp-upload' => $fn_fyp
+                'githubUrl' => $request->githubUrl
+                // 'ktp-upload' => $fn_ktp,
+                // 'fyp-upload' => $fn_fyp
             ]);
             $request->user()->is_reregistered = 1;
             $request->user()->save();
@@ -61,35 +61,35 @@ class MemberController extends Controller
             'lnt_course' => 'required',
             'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC21)([0-9]{3})/'],
             'linkedinUrl' => ['required','regex:/^(https:\/\/www.linkedin.com\/in\/)\w+/'],
-            'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/'],
-            'ktp-upload' => 'optional|mimes:jpg,jpeg,png|max:5480',
-            'fyp-upload' => 'optional|mimes:jpg,jpeg,png|max:5480'
+            'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/']
+            // 'ktp-upload' => 'optional|mimes:jpg,jpeg,png|max:5480',
+            // 'fyp-upload' => 'optional|mimes:jpg,jpeg,png|max:5480'
         ] );
 
         $member = Member::findOrFail($request->id);
 
-        $fn_ktp = null;
-        $fn_fyp = null;
+        // $fn_ktp = null;
+        // $fn_fyp = null;
 
-        if($request->hasFile('ktp-upload')){
-            $ktp = $request->file('ktp-upload');
-            $fn_ktp = $member->fullName."_".$member->nim."_ktp".time().".".$ktp->getClientOriginalExtension();
-            $ktp->move(public_path('ktp'),$fn_ktp);
-        }else $fn_ktp = $member['ktp-upload'];
+        // if($request->hasFile('ktp-upload')){
+        //     $ktp = $request->file('ktp-upload');
+        //     $fn_ktp = $member->fullName."_".$member->nim."_ktp".time().".".$ktp->getClientOriginalExtension();
+        //     $ktp->move(public_path('ktp'),$fn_ktp);
+        // }else $fn_ktp = $member['ktp-upload'];
 
-        if($request->hasFile('fyp-upload')){
-            $fyp = $request->file('fyp-upload');
-            $fn_fyp = $member->fullName."_".$member->nim."_fyp".time().".".$fyp->getClientOriginalExtension();
-            $fyp->move(public_path('fyp'),$fn_fyp);
-        }else $fn_fyp = $member['fyp-upload'];
+        // if($request->hasFile('fyp-upload')){
+        //     $fyp = $request->file('fyp-upload');
+        //     $fn_fyp = $member->fullName."_".$member->nim."_fyp".time().".".$fyp->getClientOriginalExtension();
+        //     $fyp->move(public_path('fyp'),$fn_fyp);
+        // }else $fn_fyp = $member['fyp-upload'];
 
         $member->update([
             'lnt_course' => $request->lnt_course,
             'bnccid' => $request->bnccid,
             'linkedinUrl' => $request->linkedinUrl,
-            'githubUrl' => $request->githubUrl,
-            'ktp-upload' => $fn_ktp,
-            'fyp-upload' => $fn_fyp
+            'githubUrl' => $request->githubUrl
+            // 'ktp-upload' => $fn_ktp,
+            // 'fyp-upload' => $fn_fyp
         ]);
 
         $request->user()->is_reregistered = 1;

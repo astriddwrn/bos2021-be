@@ -27,8 +27,8 @@ class Member extends Model
         'bnccid',
         'linkedinUrl',
         'githubUrl',
-        'ktp-upload',
-        'fyp-upload'
+        // 'ktp-upload',
+        // 'fyp-upload'
     ];
 
     // public function user() {
