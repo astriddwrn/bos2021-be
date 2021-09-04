@@ -782,7 +782,7 @@
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
                 <h2 class="font-bold text-2xl text-cBlackHome mb-2">Twibbon Challenge</h2>
-                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Until September 3, 2021</h5>
+                <h5 class="font-semibold text-cDarkBlue text-lg mb-4">Until September 14, 2021</h5>
                 <p class="text-cBlackHome mb-12 xl:mb-14 leading-7">
                     Show to the world that you are going to be a part of BNCC family and get your chance to win valuable prizes!
                 </p>

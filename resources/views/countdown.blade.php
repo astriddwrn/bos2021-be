@@ -44,6 +44,7 @@
         <img class="rocket absolute z-4" src="{{url('./Asset/Image/countdown/bg-rocket.svg')}}" alt="">
         <img class="absolute bottom-0 z-5 w-full" src="{{url('./Asset/Image/countdown/bg-cloud2.svg')}}" alt="">
     </div>
+
     @php
         $now = Carbon\Carbon::now('GMT+7');
         $diff = ((new \DateTime($now))->diff(new \DateTime($time)));
