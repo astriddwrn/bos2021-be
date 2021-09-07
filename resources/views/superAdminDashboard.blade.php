@@ -453,7 +453,7 @@
                             </div>
                             <span class="msg-error"></span>
                         </div>
-                        <div class="mt-5">
+                        <!-- <div class="mt-5">
                             <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">KTP or Binusian Card</div>
                             <div class="relative">
                                 <div class="w-full bg-cLightGray font-sans rounded p-2 my-1 border-0 flex flex-row justify-between overflow-hidden">
@@ -474,7 +474,7 @@
                                 <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="fyp-upload" id="fyp-upload" accept="image/png, image/jpeg, image/jpg" >
                                 <div class="file-constraint">Your FYP Card must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="flex flex-row justify-between">
                             <div {{-- onClick="window.location.reload();" --}} class="cancel-editReregis text-center btn-back text-cLightBlue border-2 border-cLightBlue font-bold text-xl rounded-lg p-2 hover:bg-cDarkerLightBlue hover:border-cDarkerLightBlue hover:text-cWhite w-100 mt-11 mb-5 bg-cWhite transition duration-300 ease-in-out cursor-pointer shadow-bsBtn w-5/12">Cancel Edit</div>
