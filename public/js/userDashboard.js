@@ -165,7 +165,8 @@ $(document).ready(function(){
     }
 
     function bnccidVal(x){
-        if(x.val().length!=9 || x.val().substring(0, 6)!="BNCC21"){
+        let regex = new RegExp('^(BNCC210)([1-4])([0-9]{3})$')
+        if(!regex.test(x.val())){
             x.addClass("border-error");
             x.siblings('.msg-error').text("Please input a valid BNCC ID.");
         }

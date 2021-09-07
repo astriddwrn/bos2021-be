@@ -456,7 +456,7 @@
 
                             <div class="mt-5">
                                 <div class="text-cDarkBlue font-sans font-medium w-100 text-xl">BNCC ID</div>
-                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC21xxx">
+                                <input class="w-full bg-cLightGray font-sans rounded p-2 text-lg my-1 border-0" type="text" name="bnccid" id="bnccid" placeholder="e.g. BNCC210xxxx">
                                 <span class="msg-error"></span>
                             </div>
                             <div class="mt-5">
