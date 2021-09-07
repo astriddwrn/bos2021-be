@@ -739,7 +739,6 @@
 
             const campus = json1.campus;
             var schedule =  json2;
-    }
         });
 
     </script>
