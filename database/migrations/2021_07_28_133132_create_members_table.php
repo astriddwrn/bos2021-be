@@ -32,8 +32,8 @@ class CreateMembersTable extends Migration
             $table->string('bnccid')->unique();
             $table->string('linkedinUrl');
             $table->string('githubUrl');
-            $table->string('ktp-upload');
-            $table->string('fyp-upload');
+            // $table->string('ktp-upload');
+            // $table->string('fyp-upload');
             $table->timestamps();
         });
     }
