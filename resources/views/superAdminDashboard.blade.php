@@ -490,7 +490,7 @@
 
     @livewireScripts
     <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('js/superadminDashboard.js')}}?t=202109021036"></script>
+    <script src="{{ asset('js/superadminDashboard.js')}}?t=202109071441"></script>
 
 </body>
 </html>

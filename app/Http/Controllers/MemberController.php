@@ -59,7 +59,7 @@ class MemberController extends Controller
         $request->validate([
             'id' => ['required'],
             'lnt_course' => 'required',
-            'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC21)([0-9]{3})/'],
+            'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC21)/'],
             'linkedinUrl' => ['required','regex:/^(https:\/\/www.linkedin.com\/in\/)\w+/'],
             'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/']
             // 'ktp-upload' => 'optional|mimes:jpg,jpeg,png|max:5480',
