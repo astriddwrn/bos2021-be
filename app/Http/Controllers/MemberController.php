@@ -13,13 +13,12 @@ class MemberController extends Controller
 
             $request->validate([
                 'lnt_course' => 'required',
-                'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC21)([0-9]{3})/'],
+                'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC210)(1|2|3|4)([0-9]{3})/'],
                 'linkedinUrl' => ['required','regex:/^(https:\/\/www.linkedin.com\/in\/)\w+/'],
                 'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/']
                 // 'ktp-upload' => 'required|mimes:jpg,jpeg,png|max:5480',
                 // 'fyp-upload' => 'required|mimes:jpg,jpeg,png|max:5480'
             ] );
-
             // $ktp = $request->file('ktp-upload');
             // $fn_ktp = $request->user()->fullName."_".$request->user()->nim."_ktp".time().".".$ktp->getClientOriginalExtension();
             // $ktp->move(public_path('ktp'),$fn_ktp);
