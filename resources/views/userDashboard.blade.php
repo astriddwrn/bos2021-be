@@ -254,7 +254,7 @@
                     <img class="h-8 menu-icon cursor-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <!-- SEBELUM UPLOAD PAYMENT -->
-                @if ($user->payment_pic==NULL)
+                @if ($user->payment_pic==NULL || $user->status==2)
                 <div class="main-container">
                     <div class="grid-cont-payment">
                         <div class="info card bg-cWhite rounded-xl px-8 py-5 ">
@@ -351,8 +351,7 @@
 
 
                 <!-- PAYMENT REJECTED -->
-                @if ($user->payment_pic!=NULL && $user->status==2 && $user->is_reregistered==0)
-                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="absolute main-container md:w-8/12 w-11/12">
+                <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class="hidden absolute main-container md:w-8/12 w-11/12">
                     <div class="w-full flex flex-col items-center text-center">
                         <img class="xs:w-48 w-28" src="{{ asset('Asset/Image/userDashboard/rejected-payment-icon.svg')}}" alt="BNCC Launching">
                         <div class="text-2xl font-extrabold xs:mt-10 mt-5">Oops! There’s an Error in Verifying Your Payment</div>
@@ -422,7 +421,6 @@
                         </div>
                     </div>
                 </div>
-                @endif
 
 
 
