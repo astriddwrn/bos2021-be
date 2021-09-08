@@ -37,7 +37,16 @@ class MembersTable extends Component
         $region = $this->region;
         if($region == "ALL") $region = '%%';
 
-        $members = Member::where('campus', 'like', $region);
+        $members = Member::where('campus', 'like', $region)
+        ->where(function($q) {
+        $q->where('fullName', 'like', '%' . $this->search . '%')
+        ->orWhere('nim', 'like', '%' . $this->search . '%')
+        ->orWhere('email', 'like', '%' . $this->search . '%')
+        ->orWhere('bnccid', 'like', '%' . $this->search . '%')
+        ->orWhere('lnt_course', 'like', '%' . $this->search . '%')
+        ->orWhere('linkedinUrl', 'like', '%' . $this->search . '%')
+        ->orWhere('githubUrl', 'like', '%' . $this->search . '%');
+        });
 
         $this->total = $members->count();
         $this->page_total = ceil($this->total / $this->limit);
