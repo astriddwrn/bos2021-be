@@ -70,8 +70,8 @@
                     <th>LinkedIn</th>
                     <th>GitHub</th>
                     <th>LnT Course</th>
-                    <th>KTP</th>
-                    <th>FYP Card</th>
+                    {{-- <th>KTP</th>
+                    <th>FYP Card</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -97,7 +97,7 @@
                     <td>{{ $member->linkedinUrl }}</td>
                     <td>{{ $member->githubUrl }}</td>
                     <td>{{ $member->lnt_course }}</td>
-                    <td>
+                    {{-- <td>
                         <div class="flex flex-row justify-center items-center bg-cLnTBlue">
                             <a href="{{ asset('ktp/' . $member['ktp-upload']) }}" target="_blank" class="p-2 bg-cLntBlue hover:bg-cDarkerLightBlue rounded-md cursor-pointer duration-200">
                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
@@ -110,7 +110,7 @@
                                 <img class="w-6" src="{{ asset('Asset/Image/userDashboard/menu-download.svg')}}" alt="">
                             </a>
                         </div>
-                    </td>
+                    </td> --}}
                 </tr>
                 @endforeach
             </tbody>
