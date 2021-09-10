@@ -130,14 +130,14 @@
                     <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-profile-on.svg')}}" alt="BNCC Launching">
                     Participants</div>
 
-                @if($user->role >= 2)
+                @if($user->role >= 2 && !in_array($user->role, [3,4]))
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-payment-on.svg')}}" alt="BNCC Launching">
                     Payment</div>
                 @endif
 
-                @if($user->role == 2)
+                @if($user->role >= 2 && !in_array($user->role, [3,4]))
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-reregistration cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 hidden on" src="{{ asset('Asset/Image/userDashboard/menu-reregistration-on.svg')}}" alt="BNCC Launching">
