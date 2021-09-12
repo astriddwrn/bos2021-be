@@ -98,7 +98,7 @@
         </div>
 
         <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
-            @if ($user->campus=='BDG'||$user->campus=='ALS'||$user->campus=='MLG')
+
             <div class="section schedule-sec bg-cLightGray h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Schedule</span>
@@ -106,10 +106,11 @@
                     <img class="h-8 menu-icon cursor-pointer curson-pointer" src="{{ asset('Asset/Image/userDashboard/menu-icon.svg')}}" alt="BNCC Launching">
                 </div>
                 <!-- SEBELUM REREGIST -->
-                @if ($user->is_reregistered==0 || $user->campus=='BDG'||$user->campus=='ALS'||$user->campus=='MLG')
+
                 <div class="main-container">
                     <div class="grid-cont-schedule">
-                        <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
+                        @if ($user->is_reregistered==0 || $user->campus=='BDG'||$user->campus=='ALS'||$user->campus=='MLG')
+                        <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly hidden">
                             <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
                             <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
 
@@ -135,7 +136,7 @@
                             @endforeach
 
                         </div>
-
+                        @endif
                         @if ($diff_change_schedule->invert)
                         <form action="{{ route('dashboard') }}" method="POST" enctype="application/x-www-form-urlencoded" id="form-schedule" class="card schedule rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             @csrf
@@ -236,7 +237,7 @@
                         </div>
                     </div>
                 </div>
-                @endif
+
                 <!-- USER REGISTERED -->
                 @if ($user->is_reregistered==1)
                 <div style="top:50%; left:50%; transform:translate(-50%, -50%);" class=" absolute main-container md:w-8/12 w-11/12">
@@ -249,7 +250,6 @@
                 @endif
 
             </div>
-            @endif
 
             <div class="section payment-sec bg-cLightGray h-full hidden">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
