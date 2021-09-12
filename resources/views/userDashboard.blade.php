@@ -65,10 +65,12 @@
                 {!! \Illuminate\Support\Str::words($user->fullName, 2,'')  !!}
             </div>
             <div class="mt-7 text-lg menu-list w-52">
+                @if ($user->campus=='BDG'||$user->campus=='ALS'||$user->campus=='MLG')
                 <div class="menu flex flex-row items-center font-semibold menu-schedule cursor-pointer">
                     <img class="mr-4 w-9 off hidden" src="{{ asset('Asset/Image/userDashboard/menu-schedule-off.svg')}}" alt="BNCC Launching">
                     <img class="mr-4 w-9 on" src="{{ asset('Asset/Image/userDashboard/menu-schedule-on.svg')}}" alt="BNCC Launching">
                     Schedule</div>
+                @endif
                 @if (!$diff_payment->invert && $user->campus!='BDG' && $user->campus!='ALS')
                 <div class="menu mt-7 flex flex-row items-center font-semibold menu-payment cursor-pointer">
                     <img class="mr-4 w-9 off" src="{{ asset('Asset/Image/userDashboard/menu-payment-off.svg')}}" alt="BNCC Launching">
@@ -96,6 +98,7 @@
         </div>
 
         <div class="xl:w-9/12 w-full right-cont bg-cLightGray absolute right-0 min-h-screen w-full">
+            @if ($user->campus=='BDG'||$user->campus=='ALS'||$user->campus=='MLG')
             <div class="section schedule-sec bg-cLightGray h-full">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
                     <span>Schedule</span>
@@ -246,6 +249,7 @@
                 @endif
 
             </div>
+            @endif
 
             <div class="section payment-sec bg-cLightGray h-full hidden">
                 <div class="w-100 bg-cWhite flex flex-row justify-between items-center py-4 px-8 text-2xl font-bold text-cDarkBlue">
@@ -622,6 +626,7 @@
 
                     <div class="card bncc bg-cWhite rounded-xl px-8 py-5 flex flex-col justify-evenly">
                         <div class="text-2xl font-bold text-cDarkBlue">BNCC Registration</div>
+                        @if ($user->campus=='BDG'||$user->campus=='ALS'||$user->campus=='MLG')
                         <div>
                             <div class="mt-5">BNCC Launching Schedule</div>
                             @foreach ($schedules as $schedule)
@@ -630,6 +635,7 @@
                             </div>
                             @endforeach
                         </div>
+                        @endif
                         <div>
                             <div class="mt-5">LnT Course</div>
                             @if ($user->campus=="KMG"||
