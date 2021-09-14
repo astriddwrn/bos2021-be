@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
     const json1 = JSON.parse($("meta[name=user]").attr("content"));
     const json2 = JSON.parse($("meta[name=schedules]").attr("content"));
 
