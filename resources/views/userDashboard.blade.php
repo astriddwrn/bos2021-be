@@ -319,7 +319,7 @@
                                     <span style="color: rgba(32, 32, 32, 0.2);" class="file-name">Upload Your Payment Proof Here </span>
                                 </div>
                                 <img class="absolute top-2 right-3" src="{{ asset('./Asset/Image/userDashboard/upload-payment-icon.svg')}}" alt="BNCC Launching">
-                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="payment_pic" id="payment-upload" accept="image/png, image/jpeg, image/jpg">
+                                <input class="input-payment absolute top-0 right-3 w-10 h-8 bg-cLightGray font-sans rounded-xl p-2 my-1 opacity-0" type="file" name="payment_pic" id="payment-upload">
                                 <div class="file-constraint">Your payment receipt must be in .jpg, .jpeg, or .png format. <br>Max. file size is 5MB.</div>
                             </div>
                             <div class="btn payment-btn w-full mt-3 bg-cLightBlue text-cWhite text-lg font-semibold rounded-lg p-2 text-center hover:bg-cDarkerLightBlue transition duration-300 ease-in-out cursor-pointer shadow-bsBtn">Submit</div>
