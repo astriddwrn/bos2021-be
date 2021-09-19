@@ -109,7 +109,7 @@
                 @if ($user->is_reregistered==0)
                 <div class="main-container">
                     <div class="grid-cont-schedule">
-                        @if ($user->campus=='ALS'||$user->campus=='BDG'||$user->campus=='MLG')
+                        @if ($user->campus=='ALS'||$user->campus=='MLG')
                         <div class="card join rounded-xl bg-cWhite px-8 py-5 flex flex-col justify-evenly">
                             <div class="text-2xl font-bold text-cDarkBlue">Join Our Launch!</div>
                             <div class="text-md font-medium">Don’t forget to join our BNCC Launching on:</div>
