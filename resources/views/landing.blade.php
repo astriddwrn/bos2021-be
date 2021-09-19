@@ -22,7 +22,7 @@
 <body class="bg-cWhite text-cBlackHome">
 
     {{-- Popup --}}
-    <div id="popup" class="w-full h-screen fixed top-0 z-50">
+    {{-- <div id="popup" class="w-full h-screen fixed top-0 z-50">
         <div class="w-full popup-bg flex flex-col p-8">
             <div>
                 <img class="close-popup w-12 float-right cursor-pointer" src="{{url('./Asset/Image/landing/landing-x.svg')}}" alt="">
@@ -57,7 +57,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- Landing --}}
     <div id="landing" class="landing w-full h-screen relative flex flex-col justify-center items-center font-sans py-24 bg-bgSpace text-cWhite overflow-hidden">
@@ -65,7 +65,7 @@
             <h1 class="font-extrabold text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl">We Are BNCC</h1>
             <h3 class="font-semibold text-center text-xs sm:text-lg md:text-xl lg:text-2xl mb-8">Unlocking Your Potential Beyond Limits!</h3>
             <h5 class="font-medium text-xs sm:text-lg md:text-xl lg:text-2xl mb-4">Want to be a part of BNCC?</h5>
-            <a class="
+            {{-- <a class="
             btnReg
             bg-cLntBlue
             hover:bg-cToscaBlue
@@ -74,7 +74,16 @@
             ease-in-out
             rounded-md xl:rounded-lg
             font-semibold text-sm sm:text-lg md:text-xl
-            py-1.5 px-12 sm:px-24" href="{{url('/register')}}">Register Now!</a>
+            py-1.5 px-12 sm:px-24" href="{{url('/register')}}">Register Now!</a> --}}
+            <a class="
+            btnReg
+            bg-cBluishGray
+            rounded-md xl:rounded-lg
+            font-semibold text-sm sm:text-lg md:text-xl
+            cursor-default
+            py-1.5 px-8 sm:px-16">
+                Registration Has Ended
+            </a>
         </div>
         <img class="stars absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-stars.svg')}}" alt="">
         <img class="starstablet absolute top-0 z-0" src="{{url('./Asset/Image/landing/landing-starstablet.svg')}}" alt="">
@@ -308,7 +317,7 @@
     </div>
 
     {{-- Our Courses --}}
-     <div id="ourcourses" class="oc w-full font-sans my-48 px-36 sm:px-48">
+    <div id="ourcourses" class="oc w-full font-sans my-48 px-36 sm:px-48">
         <h1 class="font-extrabold text-cDarkBlue text-3xl sm:text-4xl md:text-5xl mb-14 text-center">Our Courses</h1>
         <div class="w-full">
             <div class="btnCont w-full flex flex-row flex-wrap justify-center sm:justify-around items-center">
@@ -747,11 +756,19 @@
                         Click here to hide schedule
                     </div>
                 </div>
-                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
                 href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
                 BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&ten
-                antId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a>
+                antId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a> --}}
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Registration Has Ended
+                </a>
             </div>
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
@@ -773,11 +790,19 @@
                         Click here to hide schedule
                     </div>
                 </div>
-                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
                 href="https://teams.microsoft.com/l/channel/19%3a243424fa3e5946ec839266c9f5c41dd8%40thread.tacv2/
                 BNCC%2520(Bina%2520Nusantara%2520Computer%2520Club)?groupId=4d3e8a58-c835-4687-9c43-9e2b075500d8&
-                tenantId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a>
+                tenantId=3485b963-82ba-4a6f-810f-b5cc226ff898">Join Now</a> --}}
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Registration Has Ended
+                </a>
             </div>
 
             <div class="card rounded-xl flex flex-col p-8 shadow-bsWhy">
@@ -794,7 +819,7 @@
                 cursor-default">
                     Coming Soon
                 </a> --}}
-                <a class="w-full flex flex-row justify-center items-center
+                {{-- <a class="w-full flex flex-row justify-center items-center
                 bg-cLntBlue
                 hover:bg-cDarkerLightBlue
                 transition duration-300
@@ -802,6 +827,14 @@
                 text-cWhite font-semibold rounded py-2" href="https://www.instagram.com/p/CSb0w94hgZU/?utm_source=ig_web_copy_link"
                 target="_blank">
                     Join Now
+                </a> --}}
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Registration Has Ended
                 </a>
             </div>
 
@@ -851,9 +884,17 @@
                     Sessions where you can earn sharing sessions with our seniors or fun workshops,
                     learn more about BNCC and the procedures to be a proud BNCC member!
                 </p>
-                <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
+                {{-- <a class="w-full bg-cLntBlue hover:bg-cDarkerLightBlue transition duration-300 ease-in-out text-center
                 text-cWhite font-semibold rounded py-2"
-                href="{{url('/register')}}">Register Now</a>
+                href="{{url('/register')}}">Register Now</a> --}}
+                <a class="w-full flex flex-row justify-center items-center
+                bg-cBluishGray
+                transition duration-300
+                ease-in-out text-center
+                text-cWhite font-semibold rounded py-2
+                cursor-default">
+                    Registration Has Ended
+                </a>
             </div>
 
         </div>
