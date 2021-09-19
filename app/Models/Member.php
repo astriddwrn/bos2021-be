@@ -26,12 +26,7 @@ class Member extends Model
         'lnt_course',
         'bnccid',
         'linkedinUrl',
-        'githubUrl',
-        // 'ktp-upload',
-        // 'fyp-upload'
+        'githubUrl'
     ];
 
-    // public function user() {
-    //     return $this->has('App\Models\User');
-    // }
 }

@@ -50,8 +50,10 @@ class UserController extends Controller
                     $payment_appear = Carbon::parse($schedules[0]->date)->addMinutes(135);
                 }
 
+                //Untuk munculin payment ketika BL selesai
                 $diff_payment = ((new \DateTime($payment_appear))->diff(new \DateTime($now)));
 
+                //Untuk munculin section reregist kalau user sudah verified dan tanggal reregist sudah mulai
                 $diff_reregis = ((new \DateTime('2021-09-07 13:00:00'))->diff(new \DateTime($now)));
 
                 //Untuk disable change schedule kalau jadwal BL sudah mulai
@@ -106,8 +108,13 @@ class UserController extends Controller
     public function countdown(Request $request) {
         $user = $request->user();
         $schedule = Schedule::findOrFail($request->s);
+
+        //$countdown sebagai indikator kapan ganti route dari /countdown ke linkzoom
+        //waktu $countdown dikurangi 1 bulan dan 7 menit agar sesuai dengan perhitungan waktu di countdown.js
+        //dikurangi 10 menit supaya sudah ganti 10 menit sebelum BL mulai
         $countdown = Carbon::parse($schedule->date)->subMonth(1)->subHours('7')->subMinutes(10)->format('Y, m, d, H, i, s');
 
+        //$time dipake sebagai indikator auto-refresh untuk munculin link zoom
         $time = Carbon::parse($schedule->date)->subMinutes(10)->format('Y-m-d H:i:s');
 
         $now = Carbon::now('GMT+7');
@@ -129,7 +136,6 @@ class UserController extends Controller
         $fn_payment_pic = $request->user()->fullName."_".$request->user()->nim."_".time().".".$file->getClientOriginalExtension();
 
         if($request->user()->payment_pic!=NULL){
-            // dd($request->user()->payment_pic);
             File::delete(public_path('payment_pic/'.$request->user()->payment_pic));
         }
 

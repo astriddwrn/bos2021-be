@@ -57,19 +57,7 @@ Route::middleware(["auth", 'admin'])->group(function() {
     Route::get('/download/fyp/{id}', [AdminController::class, "downloadFYP"])->name('download_fyp');
 
     Route::get('/admin/downl/usersxlsx/{region}', [AdminController::class, "downloadUsers"])->name('download_users');
-    // Route::get('/admin/downl/allexlsx', [AdminController::class, "downloadAllUsers"])->name('download_all');
-    // Route::get('/admin/downl/alsexlsx', [AdminController::class, "downloadALS"])->name('download_ALS');
-    // Route::get('/admin/downl/kmgexlsx', [AdminController::class, "downloadKMG"])->name('download_KMG');
-    // Route::get('/admin/downl/bdgexlsx', [AdminController::class, "downloadBDG"])->name('download_BDG');
-    // Route::get('/admin/downl/mlgexlsx', [AdminController::class, "downloadMLG"])->name('download_MLG');
-    // Route::get('/admin/downl/reg_mem/alsxlsx', [AdminController::class, "downloadMemberALS"])->name('download_ALS');
-    // Route::get('/admin/downl/reg_mem/bdgxlsx', [AdminController::class, "downloadMemberBDG"])->name('download_BDG');
     Route::get('/admin/downl/reg_mem/kmgxlsx', [AdminController::class, "downloadMemberKMG"])->name('download_KMGMem');
-    // Route::get('/admin/downl/pay_mem/kmgxlsx', [AdminController::class, "downloadPaymentKMG"])->name('download_KMGPay');
-    // Route::get('/admin/downl/pay_mem/alsxlsx', [AdminController::class, "downloadPaymentALS"])->name('download_ALSPay');
-    // Route::get('/admin/downl/pay_mem/bdgxlsx', [AdminController::class, "downloadPaymentBDG"])->name('download_BDGPay');
-    // Route::get('/admin/downl/pay_mem/mlgxlsx', [AdminController::class, "downloadPaymentMLG"])->name('download_MLGPay');
-    // Route::get('/admin/downl/reg_mem/mlgxlsx', [AdminController::class, "downloadMemberMLG"])->name('download_MLG');
 
     // EXTRAS: FOR DEBUGGING ONLY
     Route::get('/admin/extras/phpinfo', [ExtrasController::class, 'showPhpInfo']);
