@@ -48,8 +48,8 @@ class MemberController extends Controller
             'id' => ['required'],
             'lnt_course' => 'required',
             'bnccid' => ['required','string','unique:members,bnccid','regex:/^(BNCC21)/'],
-            'linkedinUrl' => ['required','regex:/^(https:\/\/www.linkedin.com\/in\/)\w+/'],
-            'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+/']
+            'linkedinUrl' => ['required','regex:/^(https:\/\/www.linkedin.com\/in\/)\w+'],
+            'githubUrl' => ['required', 'regex:/^(https:\/\/github.com\/)\w+']
         ] );
 
         $member = Member::findOrFail($request->id);
