@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire;
 
+use App\Exports\AllMembersExport;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Member;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MembersTable extends Component
 {
@@ -27,6 +29,16 @@ class MembersTable extends Component
         else if($this->auth->role == 4) $this->region = 'BDG';
         else if($this->auth->role == 5) $this->region = 'MLG';
         else $this->region = '';
+    }
+
+    public function downloadMembers(){
+        $this->checkRegion();
+
+        $region = "";
+        $region = $this->region;
+        if($region == "ALL") $region = '%%';
+
+        Excel::download(new AllMembersExport($region), 'all_members.xlsx');
     }
 
     public function render()
