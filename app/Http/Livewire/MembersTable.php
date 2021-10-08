@@ -38,7 +38,7 @@ class MembersTable extends Component
         $region = $this->region;
         if($region == "ALL") $region = '%%';
 
-        Excel::download(new AllMembersExport($region), 'all_members.xlsx');
+        return Excel::download(new AllMembersExport($region), 'all_members.xlsx');
     }
 
     public function render()
